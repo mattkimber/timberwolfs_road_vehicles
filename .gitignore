@@ -1,0 +1,6 @@
+*.grf
+*.nml
+*.prenml
+.nmlcache/
+unused/
+~$*

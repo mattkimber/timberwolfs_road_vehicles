@@ -1,0 +1,22 @@
+##grflangid 0x01
+STR_GRF_NAME        :Timberwolf's UK Road Vehicles (alpha)
+STR_GRF_DESCRIPTION :Description: {SILVER}A small set of UK freight vehicles.{}(c) 2016 Matt Kimber. {}{BLACK}License: {SILVER}GPLv2.
+STR_OPENTTD_VERSION :1.5.0 (r27000)
+
+# vehicle names
+STR_NAME_ERF_B      :ERF B-Series Flatbed
+STR_NAME_ERF_B_BOX  :ERF B-Series Box Truck
+STR_NAME_OCTOPUS    :Leyland Octopus
+STR_NAME_LEYLAND_BADGER :Leyland Badger
+STR_NAME_LEYLAND_T45 :Leyland T45 Roadtrain
+STR_NAME_AEC_MANDATOR :AEC Mandator V8
+STR_NAME_THORNYCROFT_J :Thornycroft Type J
+STR_NAME_BOID: Alignment Tester
+STR_NAME_FODEN_S20: Foden S20
+STR_NAME_FODEN_S21: Foden S21
+STR_NAME_LEYLAND_BEAVER: Leyland Beaver (Ergomatic)
+STR_NAME_FODEN_5T: Foden 5 Ton Steam Wagon
+STR_PARAM_BOB_COMPATIBLE: Bob's Random British Vehicles compatibility
+STR_PARAM_BOB_COMPATIBLE_DESC: Disables vehicles which are duplicates of those in Bob's Random British Vehicles set.
+STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
+STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted.
