@@ -1,2 +1,2 @@
-# timberwolfs_road_vehicles
-Road vehicle set for OpenTTD
+# Timberwolf's UK Road Vehicles
+A road vehicle set for OpenTTD
