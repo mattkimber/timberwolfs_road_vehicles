@@ -25,7 +25,7 @@ item(FEAT_ROADVEHS, foden_alpha, 4971) {
       misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
       refit_cost:                     0; // Refitting is free
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          450 hp;
+      power:                          405 hp;
       weight:                         9 ton;
       /* TE and air drag coefficient is left at default */
       cargo_capacity:                 32;

@@ -7,7 +7,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                2;
+  version:                3;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -49,7 +49,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * ( ) ERF B series
  * (x) Foden S20
  * (x) Foden S21
- * ( ) Foden Alpha
+ * (x) Foden Alpha
  * (x) Thornycroft J
  * (x) AEC Mandator V8
  * ( ) Volvo F86
