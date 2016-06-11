@@ -27,13 +27,6 @@ grf {
   }
 }
 
-// New cargos:
-// grey (scrap metal, stone, etc)
-// timber
-// copper
-
-
-
 cargotable {
     PASS, TOUR, MAIL, COAL, IORE, GRVL, SAND, AORE, CORE, CLAY, SCMT, WOOD,
     LIME, GOOD, FOOD, STEL, FMSP, ENSP, BEER, BDMT, MNSP, PAPR, WDPR, VEHI,

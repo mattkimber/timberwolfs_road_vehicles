@@ -20,3 +20,4 @@ STR_PARAM_BOB_COMPATIBLE: Bob's Random British Vehicles compatibility
 STR_PARAM_BOB_COMPATIBLE_DESC: Disables vehicles which are duplicates of those in Bob's Random British Vehicles set.
 STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
 STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted.
+STR_NAME_FODEN_ALPHA: Foden Alpha
