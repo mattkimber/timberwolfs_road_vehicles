@@ -7,7 +7,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                1;
+  version:                2;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -27,17 +27,19 @@ grf {
   }
 }
 
-cargotable {
-  COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA,
-  FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM
-}
+// New cargos:
+// grey (scrap metal, stone, etc)
+// timber
+// copper
 
-//cargotable {
-//    PASS, TOUR, MAIL, COAL, IORE, GRVL, SAND, AORE, CORE, CLAY, SCMT, WOOD,
-//    LIME, GOOD, FOOD, STEL, FMSP, ENSP, BEER, BDMT, MNSP, PAPR, WDPR, VEHI,
-//    COPR, DYES, OIL_, RFPR, PETR, PLAS, WATR, FISH, CERE, FICR, FRVG, FRUT,
-//    GRAI, LVST, MAIZ, MILK, RUBR, SGBT, SGCN, WHEA, WOOL, OLSD, SUGR,
-//}
+
+
+cargotable {
+    PASS, TOUR, MAIL, COAL, IORE, GRVL, SAND, AORE, CORE, CLAY, SCMT, WOOD,
+    LIME, GOOD, FOOD, STEL, FMSP, ENSP, BEER, BDMT, MNSP, PAPR, WDPR, VEHI,
+    COPR, DYES, OIL_, RFPR, PETR, PLAS, WATR, FISH, CERE, FICR, FRVG, FRUT,
+    GRAI, LVST, MAIZ, MILK, RUBR, SGBT, SGCN, WHEA, WOOL, OLSD, SUGR,
+}
 
 //Disable all default vehicles
 disable_item(FEAT_ROADVEHS, 0, 254);

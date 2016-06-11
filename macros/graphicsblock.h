@@ -12,6 +12,17 @@
   MAIZ: spritegroup_##VEHICLENAME##_grain;        \
   CORE: spritegroup_##VEHICLENAME##_iore;         \
   WATR: sprite##TANKER_TYPE##_##VEHICLENAME##_tanker;         \
+  SAND: spritegroup_##VEHICLENAME##_grain;                  \
+  AORE: spritegroup_##VEHICLENAME##_iore;         \
+  CLAY: spritegroup_##VEHICLENAME##_iore;          \
+  SCMT: spritegroup_##VEHICLENAME##_grey;        \
+  GRVL: spritegroup_##VEHICLENAME##_grey;        \
+  LIME: spritegroup_##VEHICLENAME##_grey;          \
+  WDPR: spritegroup_##VEHICLENAME##_timber;        \
+  COPR: spritegroup_##VEHICLENAME##_copper;        \
+  RFPR: sprite##TANKER_TYPE##_##VEHICLENAME##_tanker;        \
+  MILK: sprite##TANKER_TYPE##_##VEHICLENAME##_tanker;         \
+  SGBT: spritegroup_##VEHICLENAME##_iore;                    \
   default: sprite##GOODS_TYPE##_##VEHICLENAME##_goods;       \
 
 

@@ -32,11 +32,14 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
   #define ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)                               \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _goods, set)                                   \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _coal, group)                                  \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _copper, group)                                \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _iore, group)                                  \
-    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _grain, group)                                 \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _tanker, set)                                  \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _grain, group)                                 \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _grey, group)                                  \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _lvst, set)                                    \
-    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _stel, group)                                  \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _stel, group)                                    \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _timber, group)                                \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _wood, group)
 
 #define ARTIC(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)         \
@@ -62,4 +65,15 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
   MAIZ: switch_##VEHICLENAME##_graphics_grain;            \
   CORE: switch_##VEHICLENAME##_graphics_iore;             \
   WATR: switch_##VEHICLENAME##_graphics_tanker;           \
+  SAND: switch_##VEHICLENAME##_graphics_grain;            \
+  AORE: switch_##VEHICLENAME##_graphics_iore;             \
+  CLAY: switch_##VEHICLENAME##_graphics_iore;             \
+  GRVL: switch_##VEHICLENAME##_graphics_grey;             \
+  SCMT: switch_##VEHICLENAME##_graphics_grey;             \
+  LIME: switch_##VEHICLENAME##_graphics_grey;             \
+  WDPR: switch_##VEHICLENAME##_graphics_timber;           \
+  COPR: switch_##VEHICLENAME##_graphics_copper;           \
+  RFPR: switch_##VEHICLENAME##_graphics_tanker;           \
+  MILK: switch_##VEHICLENAME##_graphics_tanker;           \
+  SGBT: switch_##VEHICLENAME##_graphics_iore;             \
   default: switch_##VEHICLENAME##_graphics_goods;
