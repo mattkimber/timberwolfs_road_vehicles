@@ -1,11 +1,11 @@
-ARTIC(leyland_beaver, t45_trailer, 16, 36)
+ARTIC(guy_big_j4, t45_trailer, 16, 36)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
+item(FEAT_ROADVEHS, vehicle_guy_big_j4, 4641) {
   property {
-      name:                           string(STR_NAME_LEYLAND_BEAVER);
+      name:                           string(STR_NAME_GUY_BIG_J4);
       climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-      introduction_date:              date(1965,06,01);
+      introduction_date:              date(1964,09,01);
       model_life:                     20;
       /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   15;
@@ -14,18 +14,18 @@ item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    151;
-      running_cost_factor:            136;
+      cost_factor:                    147;
+      running_cost_factor:            132;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */
       sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
-      speed:                          57 mph;
+      speed:                          54 mph;
       misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          140 hp;
+      power:                          192 hp;
       weight:                         9.5 ton;
       /* TE and air drag coefficient is left at default */
       cargo_capacity:                 18;
@@ -34,7 +34,6 @@ item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
   }
 
   graphics {
-    speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 46 ;
-    ARTIC_GRAPHICS_BLOCK(leyland_beaver)
+    ARTIC_GRAPHICS_BLOCK(guy_big_j4)
   }
 }

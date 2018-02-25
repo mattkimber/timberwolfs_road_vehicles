@@ -1,12 +1,12 @@
-ARTIC(leyland_beaver, t45_trailer, 16, 36)
+ARTIC(scania_3_series, modern_trailer, 16, 44)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
+item(FEAT_ROADVEHS, vehicle_scania_3_series, 4871) {
   property {
-      name:                           string(STR_NAME_LEYLAND_BEAVER);
+      name:                           string(STR_NAME_SCANIA_3_SERIES);
       climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-      introduction_date:              date(1965,06,01);
-      model_life:                     20;
+      introduction_date:              date(1987,01,01);
+      model_life:                     -1;
       /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   15;
       reliability_decay:              20;
@@ -14,27 +14,27 @@ item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    151;
-      running_cost_factor:            136;
+      cost_factor:                    178;
+      running_cost_factor:            160;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */
       sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
-      speed:                          57 mph;
+      speed:                          65 mph;
       misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          140 hp;
-      weight:                         9.5 ton;
+      power:                          420 hp;
+      weight:                         12 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 18;
-      sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+      cargo_capacity:                 22;
+      sound_effect:                   SOUND_TRUCK_START_2;
       /* Visual effect is left at default (no effect) */
   }
 
   graphics {
-    speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 46 ;
-    ARTIC_GRAPHICS_BLOCK(leyland_beaver)
+    speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 52;
+    ARTIC_GRAPHICS_BLOCK(scania_3_series)
   }
 }

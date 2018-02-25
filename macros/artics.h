@@ -59,6 +59,7 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
   GRAI: switch_##VEHICLENAME##_graphics_grain;            \
   WOOD: switch_##VEHICLENAME##_graphics_wood;             \
   STEL: switch_##VEHICLENAME##_graphics_stel;             \
+  METL: switch_##VEHICLENAME##_graphics_stel;             \
   IORE: switch_##VEHICLENAME##_graphics_iore;             \
   WHEA: switch_##VEHICLENAME##_graphics_grain;            \
   RUBR: switch_##VEHICLENAME##_graphics_tanker;           \

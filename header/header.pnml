@@ -7,7 +7,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                3;
+  version:                4;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -31,16 +31,18 @@ cargotable {
     PASS, TOUR, MAIL, COAL, IORE, GRVL, SAND, AORE, CORE, CLAY, SCMT, WOOD,
     LIME, GOOD, FOOD, STEL, FMSP, ENSP, BEER, BDMT, MNSP, PAPR, WDPR, VEHI,
     COPR, DYES, OIL_, RFPR, PETR, PLAS, WATR, FISH, CERE, FICR, FRVG, FRUT,
-    GRAI, LVST, MAIZ, MILK, RUBR, SGBT, SGCN, WHEA, WOOL, OLSD, SUGR,
+    GRAI, LVST, MAIZ, MILK, RUBR, SGBT, SGCN, WHEA, WOOL, OLSD, SUGR, METL,
 }
 
 //Disable all default vehicles
 disable_item(FEAT_ROADVEHS, 0, 254);
 
 /*
- * List of vehicles:
+ * List of goods vehicles:
  *
+ * ( ) Ox Wagon
  * ( ) Leyland Steam Van
+ * (x) Foden 5 ton steam wagon
  * ( ) Leyland X Type
  * (x) Leyland Badger
  * (x) Leyland Octopus
@@ -53,10 +55,29 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * (x) Thornycroft J
  * (x) AEC Mandator V8
  * ( ) Volvo F86
- * ( ) Guy Big J
- * ( ) Scania 3 Series
- * ( ) Scania 4 Series
- * (x) Foden 5 ton steam wagon
+ * ( ) Guy Big J6
+ * ( ) Guy Big J4
+ * (x) Scania 3 Series
+ * (x) Scania 4 Series
+ * (x) Scania R Series
+ * ( ) DAF XF
+ *
+ * List of passenger vehicles:
+ * ( ) Stagecoach
+ * ( ) LGOC B-Type
+ * ( ) AEC Regent
+ * ( ) AEC Routemaster
+ * ( ) Bedford VAL
+ * ( ) Midland Red CM5T
+ * ( ) Leyland Tiger
+ * ( ) Leyland Leopard
+ * ( ) Leyland Olympian
+ * ( ) Leyland National
+ * ( ) Volvo B10M
+ * ( ) Optare Solo
+ * ( ) Ford Transit
+ * ( ) Austin FX4
+ * ( ) Ford Cortina Minicab
  */
 
  /*
