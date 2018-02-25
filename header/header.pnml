@@ -55,8 +55,8 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * (x) Thornycroft J
  * (x) AEC Mandator V8
  * ( ) Volvo F86
- * ( ) Guy Big J6
- * ( ) Guy Big J4
+ * (x) Guy Big J6
+ * (x) Guy Big J4
  * (x) Scania 3 Series
  * (x) Scania 4 Series
  * (x) Scania R Series
