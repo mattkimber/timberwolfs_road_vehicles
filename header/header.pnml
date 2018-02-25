@@ -7,7 +7,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                4;
+  version:                5;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -43,7 +43,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * ( ) Ox Wagon
  * ( ) Leyland Steam Van
  * (x) Foden 5 ton steam wagon
- * ( ) Leyland X Type
+ * (x) Leyland X Type
  * (x) Leyland Badger
  * (x) Leyland Octopus
  * (x) Leyland Beaver (Ergomatic)
