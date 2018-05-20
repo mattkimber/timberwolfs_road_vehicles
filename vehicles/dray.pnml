@@ -1,0 +1,40 @@
+HORSE_DRAWN(dray, dray_trailer, 16, 12)
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, vehicle_dray, 3741) {
+  property {
+      name:                           string(STR_NAME_DRAY);
+      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      introduction_date:              date(1800,01,01);
+      model_life:                     -1;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   12;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
+      cargo_disallow_refit:           [LVST];
+      default_cargo_type:             GOOD;
+      loading_speed:                  4;
+      cost_factor:                    46;
+      running_cost_factor:            42;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          16 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          15 hp;
+      weight:                         2 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 6;
+      sound_effect:                   SOUND_HORSE;
+      /* Visual effect is left at default (no effect) */
+  }
+
+  graphics {
+    HORSE_DRAWN_GRAPHICS_BLOCK(dray)
+  }
+}

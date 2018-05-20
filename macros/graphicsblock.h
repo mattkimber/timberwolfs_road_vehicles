@@ -26,5 +26,4 @@
   SGBT: spritegroup_##VEHICLENAME##_iore;                    \
   default: sprite##GOODS_TYPE##_##VEHICLENAME##_goods;       \
 
-
 #define GRAPHICSBLOCK(VEHICLENAME, CAPACITY) CUSTOMGRAPHICSBLOCK(VEHICLENAME, CAPACITY, set, set, set)

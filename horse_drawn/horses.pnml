@@ -1,0 +1,4 @@
+SPRITESET(horses_1,,16)
+ALTERNATIVESPRITE(horses_1, , 16)
+SPRITESET(horses_2,,16)
+ALTERNATIVESPRITE(horses_2, , 16)  

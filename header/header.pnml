@@ -2,6 +2,7 @@
 #include "macros/2xsprites.h"
 #include "macros/graphicsblock.h"
 #include "macros/artics.h"
+#include "macros/horse_drawn.h"
 
 grf {
   grfid:                  "TWF\04";
