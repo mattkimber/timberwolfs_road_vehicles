@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                5;
+  version:                6;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -41,7 +41,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
 /*
  * List of goods vehicles:
  *
- * ( ) Ox Wagon
+ * (x) Dray
  * ( ) Leyland Steam Van
  * (x) Foden 5 ton steam wagon
  * (x) Leyland X Type
@@ -64,7 +64,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * ( ) DAF XF
  *
  * List of passenger vehicles:
- * ( ) Stagecoach
+ * (x) Stagecoach
  * ( ) LGOC B-Type
  * ( ) AEC Regent
  * ( ) AEC Routemaster
