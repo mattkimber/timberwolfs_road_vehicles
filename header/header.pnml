@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                6;
+  version:                7;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -66,8 +66,9 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * List of passenger vehicles:
  * (x) Stagecoach
  * (x) LGOC B-Type
- * ( ) AEC Regent
- * ( ) AEC Routemaster
+ * (x) AEC Regent I
+ * (x) AEC Regent II
+ * (x) AEC Routemaster
  * (x) Bedford VAL
  * ( ) Midland Red CM5T
  * ( ) Leyland Tiger
