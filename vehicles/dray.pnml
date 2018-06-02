@@ -6,7 +6,7 @@ item(FEAT_ROADVEHS, vehicle_dray, 3741) {
       name:                           string(STR_NAME_DRAY);
       climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
       introduction_date:              date(1800,01,01);
-      model_life:                     -1;
+      model_life:                     120;
       /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   12;
       reliability_decay:              20;

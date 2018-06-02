@@ -8,7 +8,6 @@ item(FEAT_ROADVEHS, vehicle_aec_mandator, 4681) {
       introduction_date:              date(1968,01,01);
       model_life:                     15;
       retire_early:                   -5;
-      /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   15;
       reliability_decay:              25;
       refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);

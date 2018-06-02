@@ -12,7 +12,7 @@ item(FEAT_ROADVEHS, badger, 4361) {
       name:                           string(STR_NAME_LEYLAND_BADGER);
       climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
       introduction_date:              date(1936,01,01);
-      model_life:                     20;
+      model_life:                     25;
       /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   15;
       reliability_decay:              20;

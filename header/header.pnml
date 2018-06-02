@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                7;
+  version:                10;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -58,6 +58,8 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * ( ) Volvo F86
  * (x) Guy Big J6
  * (x) Guy Big J4
+ * (x) ERF C-Series
+ * (x) ERF E-Series
  * (x) Scania 3 Series
  * (x) Scania 4 Series
  * (x) Scania R Series
@@ -70,7 +72,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * (x) AEC Regent II
  * (x) AEC Routemaster
  * (x) Bedford VAL
- * ( ) Midland Red CM5T
+ * (x) BMMO CM5T
  * ( ) Leyland Tiger
  * ( ) Leyland Leopard
  * ( ) Leyland Olympian
@@ -80,6 +82,8 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * ( ) Ford Transit
  * ( ) Austin FX4
  * ( ) Ford Cortina Minicab
+ * ( ) Dennis Enviro 400
+ * ( ) Wright NB4L
  */
 
  /*

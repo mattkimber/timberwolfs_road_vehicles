@@ -2,13 +2,12 @@ VEHICLESPRITES_BUS(aec_routemaster, 56)
 SPRITES2X_BUS(aec_routemaster, 56)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, aec_routemaster, 1551) {
+item(FEAT_ROADVEHS, aec_routemaster, 1541) {
   property {
       name:                           string(STR_NAME_ROUTEMASTER);
       climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-      introduction_date:              date(1945,09,01);
+      introduction_date:              date(1954,09,01);
       model_life:                     40;
-      /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   25;
       reliability_decay:              20;
       refittable_cargo_classes:       bitmask(CC_PASSENGERS);

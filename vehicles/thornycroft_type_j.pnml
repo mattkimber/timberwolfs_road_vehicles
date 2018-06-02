@@ -1,3 +1,4 @@
+
 // Badger Sprites
 spriteset (spriteset_thornycroft_j, "png/thornycroft_j.vox.png") {
   template_length_48()
