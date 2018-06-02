@@ -14,7 +14,7 @@ item(FEAT_ROADVEHS, erf_e_series, 4861) {
       reliability_decay:              20;
       refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
-      default_cargo_type:             GOOD;
+      default_cargo_type:             COAL;
       loading_speed:                  5;
       cost_factor:                    144;
       running_cost_factor:            129;
