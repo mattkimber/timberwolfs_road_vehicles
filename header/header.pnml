@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                14;
+  version:                15;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -67,6 +67,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  *
  * List of passenger vehicles:
  * (x) Stagecoach
+ * ( ) Hancock Enterprise
  * (x) LGOC B-Type
  * (x) AEC Regent I
  * (x) AEC Regent II

@@ -1,4 +1,4 @@
-HORSE_DRAWN(dray, dray_trailer, 16, 12)
+HORSE_DRAWN(dray, dray_trailer, 32, 12)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, vehicle_dray, 3741) {
