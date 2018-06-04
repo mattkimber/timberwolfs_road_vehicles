@@ -18,7 +18,7 @@ STR_NAME_FODEN_5T: Foden 5 Ton Steam Wagon
 STR_PARAM_BOB_COMPATIBLE: Bob's Random British Vehicles compatibility
 STR_PARAM_BOB_COMPATIBLE_DESC: Disables vehicles which are duplicates of those in Bob's Random British Vehicles set.
 STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
-STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted.
+STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).
 STR_NAME_FODEN_ALPHA: Foden Alpha
 STR_NAME_SCANIA_3_SERIES: Scania 3 Series
 STR_NAME_SCANIA_4_SERIES: Scania 4 Series
@@ -44,3 +44,4 @@ STR_PARAM_REALISTIC_EARLY_CAPACITY: Realistic early vehicle statistics
 STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC: Prefer realism over gameplay for pre-1920s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.
 STR_PARAM_REALISTIC_MODERN_CAPACITY: Realistic modern vehicle capacity
 STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC: Prefer realistic capacities over gameplay for post-1920s vehicles.
+STR_NAME_HANCOCK_ENTERPRISE: Hancock Enterprise
