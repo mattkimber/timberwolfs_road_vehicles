@@ -1,4 +1,4 @@
-HORSE_DRAWN(dray, dray_trailer, 32, 12)
+HORSE_DRAWN(dray, dray_trailer, 32, 12, 2)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, vehicle_dray, 3741) {
@@ -15,8 +15,8 @@ item(FEAT_ROADVEHS, vehicle_dray, 3741) {
       cargo_disallow_refit:           [LVST];
       default_cargo_type:             GOOD;
       loading_speed:                  4;
-      cost_factor:                    46;
-      running_cost_factor:            42;
+      cost_factor:                    param_realistic_early_vehicle_capacity ? 10 : 46;
+      running_cost_factor:            param_realistic_early_vehicle_capacity ? 6 : 42;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */
@@ -26,15 +26,16 @@ item(FEAT_ROADVEHS, vehicle_dray, 3741) {
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          15 hp;
-      weight:                         2 ton;
+      power:                          param_realistic_early_vehicle_capacity ? 5: 15;
+      weight:                         1 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 6;
+      cargo_capacity:                 param_realistic_early_vehicle_capacity ? 1 : 6;
       sound_effect:                   SOUND_HORSE;
       /* Visual effect is left at default (no effect) */
   }
 
   graphics {
+    speed:                          param_realistic_early_vehicle_capacity ? 8 : 13;
     HORSE_DRAWN_GRAPHICS_BLOCK(dray)
   }
 }

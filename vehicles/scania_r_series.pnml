@@ -1,4 +1,4 @@
-ARTIC(scania_r_series, modern_trailer, 16, 54)
+ARTIC(scania_r_series, modern_trailer, 16, 54, 30)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, vehicle_scania_r_series, 5041) {
@@ -28,7 +28,7 @@ item(FEAT_ROADVEHS, vehicle_scania_r_series, 5041) {
       power:                          580 hp;
       weight:                         12.5 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 27;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 15 : 27;
       sound_effect:                   SOUND_TRUCK_START_2;
       /* Visual effect is left at default (no effect) */
   }

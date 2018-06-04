@@ -20,8 +20,8 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
       sprite##CARGOTYPE##_##TRAILERNAME##CARGONAME;                                                  \
   }
 
-  #define HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)                          \
-    ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, capacity, 1, CAPACITY - 1)                         \
+  #define HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY) \
+    ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, capacity, 1, param_realistic_early_vehicle_capacity ? REALISTIC_CAPACITY - 1 : CAPACITY - 1)                         \
     ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, length, LENGTH / 8, 8)                             \
     switch (FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_articulation, extra_callback_info1) { \
         0..1: return vehicle_##VEHICLENAME##;                                                   \
@@ -40,15 +40,15 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
     HORSE_DRAWN_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _timber, group)                                \
     HORSE_DRAWN_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _wood, group)
 
-#define HORSE_DRAWN(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)         \
+#define HORSE_DRAWN(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY)         \
       HORSE_DRAWN_BASE_GFX(VEHICLENAME)                               \
       HORSE_DRAWN_GFX(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)       \
-      HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)
+      HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY)
 
 #define HORSE_DRAWN_BUS(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)         \
       HORSE_DRAWN_BASE_GFX(VEHICLENAME)                               \
       HORSE_DRAWN_GFX_SWITCH(VEHICLENAME, TRAILERNAME, , set)  \
-      HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)
+      HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, CAPACITY)
 
 #define HORSE_DRAWN_BUS_GRAPHICS_BLOCK(VEHICLENAME) \
   articulated_part: switch_##VEHICLENAME##_articulation;  \

@@ -16,19 +16,19 @@ item(FEAT_ROADVEHS, vehicle_stagecoach, 741) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  4;
-      cost_factor:                    53;
-      running_cost_factor:            48;
+      cost_factor:                    param_realistic_early_vehicle_capacity ? 18 : 53;
+      running_cost_factor:            param_realistic_early_vehicle_capacity ? 12 : 48;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */
       sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
-      speed:                          18 mph;
+      speed:                          18mph;
       misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          15 hp;
-      weight:                         2 ton;
+      power:                          param_realistic_early_vehicle_capacity ? 5 : 15;
+      weight:                         1 ton;
       /* TE and air drag coefficient is left at default */
       cargo_capacity:                 6;
       sound_effect:                   SOUND_HORSE;
@@ -36,6 +36,7 @@ item(FEAT_ROADVEHS, vehicle_stagecoach, 741) {
   }
 
   graphics {
+    speed: param_realistic_early_vehicle_capacity ? 9 : 15;
     HORSE_DRAWN_BUS_GRAPHICS_BLOCK(stagecoach)
   }
 }

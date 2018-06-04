@@ -30,13 +30,13 @@ item(FEAT_ROADVEHS, erf_e_series, 4861) {
       power:                          315 hp;
       weight:                         9 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 30;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 20 : 30;
       sound_effect:                   SOUND_TRUCK_START_2;
       /* Visual effect is left at default (no effect) */
   }
 
   graphics {
     speed: param_speed_limiters ? 45 : 50 ;
-    GRAPHICSBLOCK(erf_e_series, 30)
+    GRAPHICSBLOCK(erf_e_series, param_realistic_modern_vehicle_capacity ? 20 : 30)
   }
 }

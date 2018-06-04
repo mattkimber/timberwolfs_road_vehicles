@@ -1,4 +1,4 @@
-ARTIC(aec_mandator, t45_trailer, 16, 36)
+ARTIC(aec_mandator, t45_trailer, 16, 36, 28)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, vehicle_aec_mandator, 4681) {
@@ -28,7 +28,7 @@ item(FEAT_ROADVEHS, vehicle_aec_mandator, 4681) {
       power:                          247 hp;
       weight:                         10 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 18;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 14 : 18;
       sound_effect:                   SOUND_TRUCK_START;
       /* Visual effect is left at default (no effect) */
   }

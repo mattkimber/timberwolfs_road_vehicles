@@ -21,15 +21,15 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
       sprite##CARGOTYPE##_##TRAILERNAME##CARGONAME;                                                  \
   }
 
-  #define ARTIC_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)                          \
-    ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, capacity, 1, CAPACITY - 1)                         \
+  #define ARTIC_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY)                          \
+    ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, capacity, 1, param_realistic_modern_vehicle_capacity ? REALISTIC_CAPACITY - 1 : CAPACITY - 1)                         \
     ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, length, LENGTH / 8, 8)                             \
     switch (FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_articulation, extra_callback_info1) { \
         0..1: return vehicle_##VEHICLENAME;                                                   \
         return CB_RESULT_NO_MORE_ARTICULATED_PARTS;                                           \
     }
 
-  #define ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)                               \
+  #define ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH)                               \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _goods, set)                                   \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _coal, group)                                  \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _copper, group)                                \
@@ -42,10 +42,10 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _timber, group)                                \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _wood, group)
 
-#define ARTIC(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)         \
+#define ARTIC(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY) \
       TRACTOR(VEHICLENAME, LENGTH)                                \
-      ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)       \
-      ARTIC_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY)  \
+      ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH)       \
+      ARTIC_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY)  \
 
 #define ARTIC_GRAPHICS_BLOCK(VEHICLENAME)                 \
   articulated_part: switch_##VEHICLENAME##_articulation;  \

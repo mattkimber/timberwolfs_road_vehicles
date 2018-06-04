@@ -28,12 +28,12 @@ item(FEAT_ROADVEHS, foden_alpha, 4971) {
       power:                          405 hp;
       weight:                         9 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 32;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 23 : 32;
       sound_effect:                   SOUND_TRUCK_START_2;
   }
 
   graphics {
     speed: param_speed_limiters ? 45 : 56 ;
-    GRAPHICSBLOCK(foden_alpha, 32)
+    GRAPHICSBLOCK(foden_alpha, param_realistic_modern_vehicle_capacity ? 23 : 32)
   }
 }

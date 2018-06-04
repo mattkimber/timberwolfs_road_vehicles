@@ -30,12 +30,12 @@ item(FEAT_ROADVEHS, guy_big_j6, 4642) {
       power:                          170 hp;
       weight:                         7.5 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 22;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 18 : 22;
       sound_effect:                   SOUND_BUS_START_PULL_AWAY;
       /* Visual effect is left at default (no effect) */
   }
 
   graphics {
-    GRAPHICSBLOCK(guy_big_j6, 22)
+    GRAPHICSBLOCK(guy_big_j6, param_realistic_modern_vehicle_capacity ? 18 : 22)
   }
 }

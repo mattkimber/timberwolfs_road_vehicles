@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                15;
+  version:                17;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -26,6 +26,22 @@ grf {
       def_value: 0;
     }
   }
+  param 2 {
+    param_realistic_early_vehicle_capacity {
+      name: string(STR_PARAM_REALISTIC_EARLY_CAPACITY);
+      desc: string(STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC);
+      type: bool;
+      def_value: 0;      
+    }
+  }
+  param 3 {
+    param_realistic_modern_vehicle_capacity {
+      name: string(STR_PARAM_REALISTIC_MODERN_CAPACITY);
+      desc: string(STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC);
+      type: bool;
+      def_value: 0;      
+    }
+  }  
 }
 
 cargotable {

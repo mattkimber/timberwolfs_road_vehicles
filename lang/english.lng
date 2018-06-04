@@ -40,3 +40,7 @@ STR_NAME_LEYLAND_OLYMPIAN: Leyland Olympian
 STR_NAME_ENVIRO400: Dennis Enviro400
 STR_NAME_VOLVO_B10M: Volvo B10M
 STR_NAME_VOLVO_B12M: Volvo B12M
+STR_PARAM_REALISTIC_EARLY_CAPACITY: Realistic early vehicle statistics
+STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC: Prefer realism over gameplay for pre-1920s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.
+STR_PARAM_REALISTIC_MODERN_CAPACITY: Realistic modern vehicle capacity
+STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC: Prefer realistic capacities over gameplay for post-1920s vehicles.

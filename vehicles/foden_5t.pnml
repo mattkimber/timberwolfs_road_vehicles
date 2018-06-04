@@ -34,12 +34,12 @@ item(FEAT_ROADVEHS, foden_5t, 4021) {
       power:                          35 hp;
       weight:                         5 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 16;
+      cargo_capacity:                 param_realistic_early_vehicle_capacity ? 5 : 16;
       sound_effect:                   SOUND_TRAIN;
       /* Visual effect is left at default (no effect) */
       visual_effect:                  visual_effect(VISUAL_EFFECT_STEAM, -4);
   }
   graphics {
-    CUSTOMGRAPHICSBLOCK(foden_5t, 16, group, group, group)
+    CUSTOMGRAPHICSBLOCK(foden_5t, param_realistic_early_vehicle_capacity ? 5 : 16, group, group, group)
   }
 }

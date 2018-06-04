@@ -1,4 +1,4 @@
-ARTIC(leyland_t45, t45_trailer, 16, 42)
+ARTIC(leyland_t45, t45_trailer, 16, 42, 28)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, vehicle_leyland_t45, 4801) {
@@ -28,7 +28,7 @@ item(FEAT_ROADVEHS, vehicle_leyland_t45, 4801) {
       power:                          350 hp;
       weight:                         11.5 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 21;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 14 : 21;
       sound_effect:                   SOUND_TRUCK_START_2;
       /* Visual effect is left at default (no effect) */
   }
