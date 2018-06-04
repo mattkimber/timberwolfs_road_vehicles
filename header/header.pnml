@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                19;
+  version:                20;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -83,7 +83,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  *
  * List of passenger vehicles:
  * (x) Stagecoach
- * ( ) Hancock Enterprise
+ * (x) Hancock Enterprise
  * (x) LGOC B-Type
  * (x) AEC Regent I
  * (x) AEC Regent II
@@ -101,7 +101,7 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * ( ) Austin FX4
  * ( ) Ford Cortina Minicab
  * (x) Dennis Enviro 400
- * ( ) Wright NB4L
+ * (x) Wright NB4L
  */
 
  /*
