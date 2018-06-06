@@ -1,0 +1,51 @@
+spriteset (spriteset_bedford_rascal, "png/bedford_rascal.vox.png") {
+  template_length_24()
+}
+
+spritegroup spritegroup_bedford_rascal {
+	loading: spriteset_bedford_rascal;
+	loaded:  spriteset_bedford_rascal;
+}
+
+alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/bedford_rascal.vox.png") { template_length_24_2x() }
+alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/bedford_rascal.vox.png", "2x_32bpp/bedford_rascal.vox.mask.png") { template_length_24_2x() }
+alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/bedford_rascal.vox.png", "32bpp/bedford_rascal.vox.mask.png") { template_length_24() }
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, bedford_rascal, 7862) {
+  property {
+      name:                           string(STR_NAME_BEDFORD_RASCAL);
+      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      introduction_date:              date(1986,01,01);
+      model_life:                     20;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   14;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_MAIL, CC_REFRIGERATED, CC_ARMOURED);
+      non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_BULK);
+      default_cargo_type:             GOOD;
+      loading_speed:                  5;
+      cost_factor:                    54;
+      running_cost_factor:            param_realistic_modern_vehicle_capacity ? 20 : 48;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          65 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          44 hp;
+      weight:                         1 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 1 : 4;
+      sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+      /* Visual effect is left at default (no effect) */
+  }
+
+  graphics {
+    default: spritegroup_bedford_rascal;
+    cargo_capacity: param_realistic_modern_vehicle_capacity ? 1 : 4;
+  }
+}

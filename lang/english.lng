@@ -46,3 +46,10 @@ STR_PARAM_REALISTIC_MODERN_CAPACITY: Realistic modern vehicle capacity
 STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC: Prefer realistic capacities over gameplay for post-1920s vehicles.
 STR_NAME_HANCOCK_ENTERPRISE: Hancock Enterprise
 STR_NAME_WRIGHT_NB4L: Wrightbus New Routemaster
+STR_NAME_FORD_TRANSIT_MK1: Ford Transit Mk1
+STR_NAME_FORD_TRANSIT_MK3: Ford Transit Mk3
+STR_NAME_LEYLAND_STEAM_VAN: Leyland Steam Van
+STR_NAME_BEDFORD_RASCAL: Bedford Rascal
+STR_NAME_FORD_TRANSIT_CUSTOM: Ford Transit Custom
+STR_NAME_MERCEDES_SPRINTER: Mercedes-Benz Sprinter
+STR_NAME_FORD_THAMES_400E: Ford Thames 400E

@@ -8,7 +8,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                20;
+  version:                21;
   min_compatible_version: 1;
   param 0 {
     param_bob_compatible {
@@ -58,9 +58,10 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * List of goods vehicles:
  *
  * (x) Dray
- * ( ) Leyland Steam Van
+ * (x) Leyland Steam Van
  * (x) Foden 5 ton steam wagon
  * (x) Leyland X Type
+ * ( ) Sentinel DG4
  * (x) Leyland Badger
  * (x) Leyland Octopus
  * (x) Leyland Beaver (Ergomatic)
@@ -80,11 +81,17 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * (x) Scania 4 Series
  * (x) Scania R Series
  * ( ) DAF XF
+ * ( ) Ford Transit Mk1
+ * ( ) Ford Transit Mk2
+ * ( ) Ford Transit Custom
+ * ( ) Mercedes Sprinter
+ * ( ) Bedford Rascal
  *
  * List of passenger vehicles:
  * (x) Stagecoach
  * (x) Hancock Enterprise
  * (x) LGOC B-Type
+ * ( ) Sentinel Bus
  * (x) AEC Regent I
  * (x) AEC Regent II
  * (x) AEC Routemaster
@@ -97,7 +104,8 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * (x) Volvo B10M
  * (x) Volvo B12M
  * ( ) Optare Solo
- * ( ) Ford Transit
+ * ( ) Ford Transit Mk1
+ * ( ) Ford Transit Mk3
  * ( ) Austin FX4
  * ( ) Ford Cortina Minicab
  * (x) Dennis Enviro 400
