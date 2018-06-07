@@ -15,7 +15,7 @@ alternative_sprites(spriteset_ford_transit_mk1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32B
 item(FEAT_ROADVEHS, ford_transit_mk1, 7651) {
   property {
       name:                           string(STR_NAME_FORD_TRANSIT_MK1);
-      climates_available:             param_bob_compatible ? NO_CLIMATE : bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
       introduction_date:              date(1965,10,01);
       model_life:                     18;
       /* retire_early not set, use default retirement behaviour */

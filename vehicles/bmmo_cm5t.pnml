@@ -5,7 +5,7 @@ SPRITES2X_BUS(bmmo_cm5t, 48)
 item(FEAT_ROADVEHS, bmmo_cm5t, 1581) {
   property {
       name:                           string(STR_NAME_BMMO_CM5T);
-      climates_available:             param_bob_compatible ? NO_CLIMATE : bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
       introduction_date:              date(1958,06,01);
       model_life:                     15;
       /* retire_early not set, use default retirement behaviour */

@@ -3,6 +3,24 @@ STR_GRF_NAME        :Timberwolf's UK Road Vehicles
 STR_GRF_DESCRIPTION :Description: {SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2018 Matt Kimber. {}{BLACK}License: {SILVER}GPLv2.
 STR_OPENTTD_VERSION :1.5.0 (r27000)
 
+# params
+STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
+STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).
+STR_PARAM_BUILD_COSTS: Purchase Cost Modifier
+STR_PARAM_COSTS_1: 0.25x
+STR_PARAM_COSTS_2: 0.5x
+STR_PARAM_COSTS_3: 1x
+STR_PARAM_COSTS_4: 2x
+STR_PARAM_COSTS_5: 4x
+STR_PARAM_COSTS_6: 8x
+STR_PARAM_COSTS_7: 16x
+STR_PARAM_COSTS_8: 32x
+STR_PARAM_RUNNING_COSTS: Running Cost Modifier
+STR_PARAM_REALISTIC_EARLY_CAPACITY: Realistic early vehicle statistics
+STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC: Prefer realism over gameplay for pre-1920s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.
+STR_PARAM_REALISTIC_MODERN_CAPACITY: Realistic modern vehicle capacity
+STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC: Prefer realistic capacities over gameplay for post-1920s vehicles.
+
 # vehicle names
 STR_NAME_ERF_B      :ERF B-Series Flatbed
 STR_NAME_ERF_B_BOX  :ERF B-Series Box Truck
@@ -15,10 +33,6 @@ STR_NAME_FODEN_S20: Foden S20
 STR_NAME_FODEN_S21: Foden S21
 STR_NAME_LEYLAND_BEAVER: Leyland Beaver (Ergomatic)
 STR_NAME_FODEN_5T: Foden 5 Ton Steam Wagon
-STR_PARAM_BOB_COMPATIBLE: Bob's Random British Vehicles compatibility
-STR_PARAM_BOB_COMPATIBLE_DESC: Disables vehicles which are duplicates of those in Bob's Random British Vehicles set.
-STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
-STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).
 STR_NAME_FODEN_ALPHA: Foden Alpha
 STR_NAME_SCANIA_3_SERIES: Scania 3 Series
 STR_NAME_SCANIA_4_SERIES: Scania 4 Series
@@ -40,10 +54,6 @@ STR_NAME_LEYLAND_OLYMPIAN: Leyland Olympian
 STR_NAME_ENVIRO400: Dennis Enviro400
 STR_NAME_VOLVO_B10M: Volvo B10M
 STR_NAME_VOLVO_B12M: Volvo B12M
-STR_PARAM_REALISTIC_EARLY_CAPACITY: Realistic early vehicle statistics
-STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC: Prefer realism over gameplay for pre-1920s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.
-STR_PARAM_REALISTIC_MODERN_CAPACITY: Realistic modern vehicle capacity
-STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC: Prefer realistic capacities over gameplay for post-1920s vehicles.
 STR_NAME_HANCOCK_ENTERPRISE: Hancock Enterprise
 STR_NAME_WRIGHT_NB4L: Wrightbus New Routemaster
 STR_NAME_FORD_TRANSIT_MK1: Ford Transit Mk1
@@ -53,3 +63,8 @@ STR_NAME_BEDFORD_RASCAL: Bedford Rascal
 STR_NAME_FORD_TRANSIT_CUSTOM: Ford Transit Custom
 STR_NAME_MERCEDES_SPRINTER: Mercedes-Benz Sprinter
 STR_NAME_FORD_THAMES_400E: Ford Thames 400E
+STR_NAME_NORTHERN_GENERAL_SE6: Northern General SE6
+STR_NAME_LEYLAND_TIGER_TS: Leyland Tiger TS
+STR_NAME_LEYLAND_NATIONAL: Leyland National
+STR_NAME_DENNIS_DART: Dennis Dart
+STR_NAME_SENTINEL_BUS: Sentinel Steam Bus
