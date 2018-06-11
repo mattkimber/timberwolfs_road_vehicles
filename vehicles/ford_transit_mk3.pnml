@@ -15,7 +15,7 @@ alternative_sprites(spriteset_ford_transit_mk3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32B
 item(FEAT_ROADVEHS, ford_transit_mk3, 7861) {
   property {
       name:                           string(STR_NAME_FORD_TRANSIT_MK3);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1986,01,01);
       model_life:                     20;
       /* retire_early not set, use default retirement behaviour */

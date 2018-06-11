@@ -15,7 +15,7 @@ alternative_sprites(spriteset_mercedes_sprinter, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32
 item(FEAT_ROADVEHS, mercedes_sprinter, 8061) {
   property {
       name:                           string(STR_NAME_MERCEDES_SPRINTER);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(2006,01,01);
       model_life:                     -1;
       /* retire_early not set, use default retirement behaviour */

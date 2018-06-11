@@ -10,7 +10,7 @@ SPRITEGROUPS_TANKER_FLATBED(leyland_badger)
 item(FEAT_ROADVEHS, badger, 4361) {
   property {
       name:                           string(STR_NAME_LEYLAND_BADGER);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1936,01,01);
       model_life:                     25;
       /* retire_early not set, use default retirement behaviour */

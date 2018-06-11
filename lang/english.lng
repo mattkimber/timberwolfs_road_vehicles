@@ -7,6 +7,7 @@ STR_OPENTTD_VERSION :1.5.0 (r27000)
 STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
 STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).
 STR_PARAM_BUILD_COSTS: Purchase Cost Modifier
+STR_PARAM_BUILD_COSTS_DESC: Increase or decrease build costs to change difficulty, or balance with other GRF sets. Higher values may be difficult, especially in the early game!
 STR_PARAM_COSTS_1: 0.25x
 STR_PARAM_COSTS_2: 0.5x
 STR_PARAM_COSTS_3: 1x
@@ -16,10 +17,27 @@ STR_PARAM_COSTS_6: 8x
 STR_PARAM_COSTS_7: 16x
 STR_PARAM_COSTS_8: 32x
 STR_PARAM_RUNNING_COSTS: Running Cost Modifier
+STR_PARAM_RUNNING_COSTS_DESC: Increase or decrease running costs to change difficulty, or balance with other GRF sets.  Higher values may be difficult, especially in the early game!
 STR_PARAM_REALISTIC_EARLY_CAPACITY: Realistic early vehicle statistics
 STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC: Prefer realism over gameplay for pre-1920s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.
 STR_PARAM_REALISTIC_MODERN_CAPACITY: Realistic modern vehicle capacity
 STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC: Prefer realistic capacities over gameplay for post-1920s vehicles.
+
+STR_PARAM_BUSES_ENABLED: Enable Buses
+STR_PARAM_BUSES_ENABLED_DESC: Choose whether buses and coaches from this set will be available for purchase during the game
+STR_PARAM_LORRIES_ENABLED: Enable Lorries
+STR_PARAM_LORRIES_ENABLED_DESC: Choose whether large freight vehicles from this set will be available for purchase during the game
+STR_PARAM_VANS_ENABLED: Enable Vans
+STR_PARAM_VANS_ENABLED_DESC: Choose whether vans and small freight vehicles from this set will be available for purchase during the game
+STR_PARAM_CARS_ENABLED: Enable Cars
+STR_PARAM_CARS_ENABLED_DESC: Choose whether cabs, minicabs and other small passenger vehicles from this set will be available for purchase during the game
+STR_PARAM_EASTER_EGGS_ENABLED: Enable Easter Eggs
+STR_PARAM_EASTER_EGGS_ENABLED_DESC: This set includes some vehicles which are included only for fun. Use this option to enable or disable them.
+
+# cargo subtypes
+STR_CARGO_PAX_REGULAR: (Company Colours)
+STR_CARGO_PAX_BLACK: (Black Cab)
+
 
 # vehicle names
 STR_NAME_ERF_B      :ERF B-Series Flatbed
@@ -69,3 +87,9 @@ STR_NAME_LEYLAND_NATIONAL: Leyland National
 STR_NAME_DENNIS_DART: Dennis Dart
 STR_NAME_SENTINEL_BUS: Sentinel Steam Bus
 STR_NAME_WRIGHT_PULSAR: Wright Pulsar (Hydrogen)
+STR_NAME_AUSTIN_FX4: Austin FX4 Taxi
+STR_NAME_LTI_TX1: LTI TX1 Taxi
+STR_NAME_FORD_CORTINA: Ford Cortina Minicab
+STR_NAME_VAUXHALL_OMEGA: Vauxhall Omega Minicab
+STR_NAME_TOYOTA_PRIUS: Toyota Prius Minicab
+STR_NAME_VOLVO_S40: Volvo S40 T5

@@ -5,7 +5,7 @@ SPRITES2X_BUS(aec_regent_2, 56)
 item(FEAT_ROADVEHS, aec_regent_2, 1451) {
   property {
       name:                           string(STR_NAME_REGENT_2);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_buses ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1945,09,01);
       model_life:                     20;
       vehicle_life:                   20;

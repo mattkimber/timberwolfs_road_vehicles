@@ -5,7 +5,7 @@ SPRITES2X_BUS(sentinel_steam_bus, 48)
 item(FEAT_ROADVEHS, sentinel_steam_bus, 1241) {
   property {
       name:                           string(STR_NAME_SENTINEL_BUS);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_buses ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1932,01,01);
       model_life:                     18;
       vehicle_life:                   19;

@@ -5,7 +5,7 @@ SPRITES2X_BUS(leyland_olympian, 56)
 item(FEAT_ROADVEHS, leyland_olympian, 1801) {
   property {
       name:                           string(STR_NAME_LEYLAND_OLYMPIAN);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_buses ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1980,01,01);
       model_life:                     20;
       vehicle_life:                   22;

@@ -1,0 +1,5 @@
+switch(FEAT_ROADVEHS, SELF, switch_cab_livery, cargo_subtype) {
+    0: return string(STR_CARGO_PAX_REGULAR);
+    1: return string(STR_CARGO_PAX_BLACK);
+    return CB_RESULT_NO_TEXT;
+}

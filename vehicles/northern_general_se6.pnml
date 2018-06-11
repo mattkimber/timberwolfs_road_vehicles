@@ -5,7 +5,7 @@ SPRITES2X_BUS(northern_general_se6, 56)
 item(FEAT_ROADVEHS, northern_general_se6, 1331) {
   property {
       name:                           string(STR_NAME_NORTHERN_GENERAL_SE6);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_buses ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1933,01,01);
       model_life:                     20;
       vehicle_life:                   16;

@@ -4,7 +4,7 @@ ARTIC(scania_r_series, modern_trailer, 16, 54, 30)
 item(FEAT_ROADVEHS, vehicle_scania_r_series, 5041) {
   property {
       name:                           string(STR_NAME_SCANIA_R_SERIES);
-      climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+      climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(2004,06,01);
       model_life:                     -1;
       /* retire_early not set, use default retirement behaviour */
