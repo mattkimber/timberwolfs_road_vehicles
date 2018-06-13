@@ -31,6 +31,12 @@ STR_PARAM_VANS_ENABLED: Enable Vans
 STR_PARAM_VANS_ENABLED_DESC: Choose whether vans and small freight vehicles from this set will be available for purchase during the game
 STR_PARAM_CARS_ENABLED: Enable Cars
 STR_PARAM_CARS_ENABLED_DESC: Choose whether cabs, minicabs and other small passenger vehicles from this set will be available for purchase during the game
+STR_PARAM_HORSE_DRAWN_ENABLED: Enable Horse-Drawn Vehicles
+STR_PARAM_HORSE_DRAWN_ENABLED_DESC: Choose whether horse-drawn wagons and coaches from this set will be available for purchase during the game
+STR_PARAM_STEAM_BUSES_ENABLED: Enable Steam Buses
+STR_PARAM_STEAM_BUSES_ENABLED_DESC: Choose whether early steam-powered passenger vehicles from this set will be available for purchase during the game
+STR_PARAM_STEAM_FREIGHT_ENABLED: Enable Steam Freight Vehicles
+STR_PARAM_STEAM_FREIGHT_ENABLED_DESC: Choose whether early steam-powered freight vehicles from this set will be available for purchase during the game
 STR_PARAM_EASTER_EGGS_ENABLED: Enable Easter Eggs
 STR_PARAM_EASTER_EGGS_ENABLED_DESC: This set includes some vehicles which are included only for fun. Use this option to enable or disable them.
 
@@ -86,7 +92,7 @@ STR_NAME_LEYLAND_TIGER_TS: Leyland Tiger TS
 STR_NAME_LEYLAND_NATIONAL: Leyland National
 STR_NAME_DENNIS_DART: Dennis Dart
 STR_NAME_SENTINEL_BUS: Sentinel Steam Bus
-STR_NAME_WRIGHT_PULSAR: Wright Pulsar (Hydrogen)
+STR_NAME_WRIGHT_PULSAR: Wrightbus Pulsar (Hydrogen)
 STR_NAME_AUSTIN_FX4: Austin FX4 Taxi
 STR_NAME_LTI_TX1: LTI TX1 Taxi
 STR_NAME_FORD_CORTINA: Ford Cortina Minicab

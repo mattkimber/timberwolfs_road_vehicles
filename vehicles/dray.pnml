@@ -4,7 +4,7 @@ HORSE_DRAWN(dray, dray_trailer, 32, 12, 2)
 item(FEAT_ROADVEHS, vehicle_dray, 3741) {
   property {
       name:                           string(STR_NAME_DRAY);
-      climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      climates_available:             param_enable_horse_drawn ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1800,01,01);
       model_life:                     120;
       /* retire_early not set, use default retirement behaviour */
