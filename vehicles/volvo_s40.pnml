@@ -32,7 +32,7 @@ item(FEAT_ROADVEHS, volvo_s40, 11041) {
       weight:                         1.4 ton;
       air_drag_coefficient:           0.025;
       cargo_capacity:                 4;
-      sound_effect:                   SOUND_TRUCK_START;
+      sound_effect:                   sound("sounds/volvo.wav");
       /* Visual effect is left at default (no effect) */
   }
 
