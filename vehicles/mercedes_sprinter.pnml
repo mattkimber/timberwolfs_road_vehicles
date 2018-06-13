@@ -36,7 +36,7 @@ item(FEAT_ROADVEHS, mercedes_sprinter, 8061) {
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          127 hp;
+      power:                          160 hp;
       weight:                         2 ton;
       /* TE and air drag coefficient is left at default */
       cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 3 : 12;
@@ -47,5 +47,6 @@ item(FEAT_ROADVEHS, mercedes_sprinter, 8061) {
   graphics {
     default: spritegroup_mercedes_sprinter;
     cargo_capacity: param_realistic_modern_vehicle_capacity ? 3 : 12;
+    speed: param_car_speed_limits ? 56 : 68;
   }
 }

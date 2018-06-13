@@ -6,6 +6,8 @@ STR_OPENTTD_VERSION :1.5.0 (r27000)
 # params
 STR_PARAM_SPEED_LIMITERS: 56mph speed limiters
 STR_PARAM_SPEED_LIMITERS_DESC: Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).
+STR_PARAM_CAR_SPEED_LIMITS: Cars and vans obey national speed limit
+STR_PARAM_CAR_SPEED_LIMITS_DESC: Cars and vans obey the 70mph UK national speed limit
 STR_PARAM_BUILD_COSTS: Purchase Cost Modifier
 STR_PARAM_BUILD_COSTS_DESC: Increase or decrease build costs to change difficulty, or balance with other GRF sets. Higher values may be difficult, especially in the early game!
 STR_PARAM_COSTS_1: 0.25x

@@ -38,5 +38,6 @@ item(FEAT_ROADVEHS, vauxhall_omega, 10941) {
 
   graphics {
     default: spriteset_vauxhall_omega;
+    speed: param_car_speed_limits ? 56 : 96;
   }
 }

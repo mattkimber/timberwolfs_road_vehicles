@@ -30,7 +30,7 @@ item(FEAT_ROADVEHS, volvo_s40, 11041) {
       running_cost_base:              RUNNING_COST_ROADVEH;
       power:                          217 hp;
       weight:                         1.4 ton;
-      air_drag_coefficient:           0.03;
+      air_drag_coefficient:           0.025;
       cargo_capacity:                 4;
       sound_effect:                   SOUND_TRUCK_START;
       /* Visual effect is left at default (no effect) */
@@ -38,5 +38,6 @@ item(FEAT_ROADVEHS, volvo_s40, 11041) {
 
   graphics {
     default: spriteset_volvo_s40;
+    speed: param_car_speed_limits ? 56 : 116;
   }
 }

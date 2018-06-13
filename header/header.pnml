@@ -19,6 +19,14 @@ grf {
     }
   }
   param 1 {
+    param_car_speed_limits {
+      name: string(STR_PARAM_CAR_SPEED_LIMITS);
+      desc: string(STR_PARAM_CAR_SPEED_LIMITS_DESC);
+      type: bool;
+      def_value: 0;
+    }
+  }  
+  param 2 {
     param_realistic_early_vehicle_capacity {
       name: string(STR_PARAM_REALISTIC_EARLY_CAPACITY);
       desc: string(STR_PARAM_REALISTIC_EARLY_CAPACITY_DESC);
@@ -26,7 +34,7 @@ grf {
       def_value: 0;
     }
   }
-  param 2 {
+  param 3 {
     param_realistic_modern_vehicle_capacity {
       name: string(STR_PARAM_REALISTIC_MODERN_CAPACITY);
       desc: string(STR_PARAM_REALISTIC_MODERN_CAPACITY_DESC);
@@ -34,7 +42,7 @@ grf {
       def_value: 0;
     }
   }
-  param 3 {
+  param 4 {
     param_build_costs {
       type: int;
       name: string(STR_PARAM_BUILD_COSTS);
@@ -54,7 +62,7 @@ grf {
 		  };
     }
   }
-  param 4 {
+  param 5 {
     param_running_costs {
       type: int;
       name: string(STR_PARAM_RUNNING_COSTS);
@@ -74,7 +82,7 @@ grf {
 		  };
     }
   }
-  param 5 {
+  param 6 {
     param_enable_buses {
       name: string(STR_PARAM_BUSES_ENABLED);
       desc: string(STR_PARAM_BUSES_ENABLED_DESC);
@@ -82,7 +90,7 @@ grf {
       def_value: 1;
     }
   }
-  param 6 {
+  param 7 {
     param_enable_lorries {
       name: string(STR_PARAM_LORRIES_ENABLED);
       desc: string(STR_PARAM_LORRIES_ENABLED_DESC);
@@ -90,7 +98,7 @@ grf {
       def_value: 1;
     }
   }
-  param 7 {
+  param 8 {
     param_enable_vans {
       name: string(STR_PARAM_VANS_ENABLED);
       desc: string(STR_PARAM_VANS_ENABLED_DESC);
@@ -98,7 +106,7 @@ grf {
       def_value: 1;
     }
   }
-  param 8 {
+  param 9 {
     param_enable_cars {
       name: string(STR_PARAM_CARS_ENABLED);
       desc: string(STR_PARAM_CARS_ENABLED_DESC);
@@ -106,7 +114,7 @@ grf {
       def_value: 1;
     }
   }
-  param 9 {
+  param 10 {
     param_enable_horse_drawn {
       name: string(STR_PARAM_HORSE_DRAWN_ENABLED);
       desc: string(STR_PARAM_HORSE_DRAWN_ENABLED_DESC);
@@ -114,7 +122,7 @@ grf {
       def_value: 1;
     }
   }
-  param 10 {
+  param 11 {
     param_enable_steam_buses {
       name: string(STR_PARAM_STEAM_BUSES_ENABLED);
       desc: string(STR_PARAM_STEAM_BUSES_ENABLED_DESC);
@@ -122,7 +130,7 @@ grf {
       def_value: 1;
     }
   }    
-  param 11 {
+  param 12 {
     param_enable_steam_freight {
       name: string(STR_PARAM_STEAM_FREIGHT_ENABLED);
       desc: string(STR_PARAM_STEAM_FREIGHT_ENABLED_DESC);
@@ -130,7 +138,7 @@ grf {
       def_value: 1;
     }
   }
-  param 12 {
+  param 13 {
     param_enable_easter_eggs {
       name: string(STR_PARAM_EASTER_EGGS_ENABLED);
       desc: string(STR_PARAM_EASTER_EGGS_ENABLED_DESC);
@@ -202,11 +210,12 @@ disable_item(FEAT_ROADVEHS, 0, 254);
  * (x) BMMO CM5T
  * (x) Dennis Dart
  * (x) Leyland Tiger
- * ( ) Leyland Leopard
+ * (x) Leyland Leopard
  * (x) Leyland Olympian
  * (x) Leyland National
  * (x) Volvo B10M
  * (x) Volvo B12M
+ * (x) Mercedes-Benz Citaro
  * ( ) Optare Solo
  * ( ) Ford Transit Mk1
  * ( ) Ford Transit Mk3

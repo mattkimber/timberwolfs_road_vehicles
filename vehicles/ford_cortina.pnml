@@ -38,5 +38,6 @@ item(FEAT_ROADVEHS, ford_cortina, 10761) {
 
   graphics {
     default: spriteset_ford_cortina;
+    speed: param_car_speed_limits ? 56 : 72;
   }
 }

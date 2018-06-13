@@ -47,5 +47,6 @@ item(FEAT_ROADVEHS, ford_transit_custom, 8121) {
   graphics {
     default: spritegroup_ford_transit_custom;
     cargo_capacity: param_realistic_modern_vehicle_capacity ? 3 : 10;
+    speed: param_car_speed_limits ? 56 : 74;
   }
 }
