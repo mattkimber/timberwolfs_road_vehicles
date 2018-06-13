@@ -2,11 +2,11 @@ VEHICLESPRITES_BUS(ford_model_t, 32)
 SPRITES2X_BUS(ford_model_t, 32)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, ford_model_t, 7081) {
+item(FEAT_ROADVEHS, ford_model_t, 7121) {
   property {
       name:                           string(STR_NAME_FORD_MODEL_T);
       climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
-      introduction_date:              date(1908,10,01);
+      introduction_date:              date(1912,01,01);
       model_life:                     20;
       /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   12;
