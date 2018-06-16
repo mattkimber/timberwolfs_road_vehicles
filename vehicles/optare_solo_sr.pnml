@@ -2,7 +2,7 @@ VEHICLESPRITES_BUS(optare_solo_sr, 48)
 SPRITES2X_BUS(optare_solo_sr, 48)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, optare_solo_sr, 2121) {
+item(FEAT_ROADVEHS, optare_solo_sr, 2122) {
   property {
       name:                           string(STR_NAME_OPTARE_SOLO_SR);
       climates_available:             param_enable_buses ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
