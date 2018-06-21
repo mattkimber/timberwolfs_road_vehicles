@@ -3,7 +3,7 @@ SPRITES2X_WITH_FLATBED(leyland_x_type, 48)
 
 SPRITEGROUPS(leyland_x_type)
 SPRITEGROUPS_PIECE_GOODS_FLATBED(leyland_x_type)
-SPRITEGROUPS_LIVESTOCK_FLATBED(leyland_x_type)
+SPRITEGROUPS_LIVESTOCK(leyland_x_type)
 SPRITEGROUPS_TANKER_FLATBED(leyland_x_type)
 
 /* Define the road vehicle */

@@ -29,22 +29,29 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
         return CB_RESULT_NO_MORE_ARTICULATED_PARTS;                                           \
     }
 
-  #define ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH)                               \
-    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _goods, set)                                   \
+
+  #define ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH, LVST_TYPE, GOODS_TYPE)          \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _goods, ##GOODS_TYPE##)                         \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _coal, group)                                  \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _copper, group)                                \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _iore, group)                                  \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _tanker, set)                                  \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _grain, group)                                 \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _grey, group)                                  \
-    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _lvst, set)                                    \
+    ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _lvst, ##LVST_TYPE##)                                    \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _stel, group)                                    \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _timber, group)                                \
     ARTIC_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _wood, group)
 
+#define ARTIC_PREWAR(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY) \
+      TRACTOR(VEHICLENAME, LENGTH)                                \
+      ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH, group, group)       \
+      ARTIC_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY)  \
+
+
 #define ARTIC(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY) \
       TRACTOR(VEHICLENAME, LENGTH)                                \
-      ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH)       \
+      ARTIC_GFX(VEHICLENAME, TRAILERNAME, LENGTH, set, set)       \
       ARTIC_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY)  \
 
 #define ARTIC_GRAPHICS_BLOCK(VEHICLENAME)                 \
