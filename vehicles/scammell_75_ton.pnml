@@ -25,7 +25,7 @@ item(FEAT_ROADVEHS, vehicle_scammell_75_ton, 4201) {
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          50 hp;
+      power:                          80 hp;
       weight:                         5 ton;
       /* TE and air drag coefficient is left at default */
       cargo_capacity:                 param_realistic_early_vehicle_capacity ? 4 : 14;
