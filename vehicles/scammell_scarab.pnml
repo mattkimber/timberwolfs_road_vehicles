@@ -27,7 +27,7 @@ switch (FEAT_ROADVEHS, SELF, switch_scammell_scarab_capacity, position_in_consis
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_scammell_scarab_length, position_in_consist ) {
-  0: return 2;
+  0: return 1;
   return 4;
 }
 
