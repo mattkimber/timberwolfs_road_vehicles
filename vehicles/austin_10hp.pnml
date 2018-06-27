@@ -1,6 +1,11 @@
 VEHICLESPRITES_BUS(austin_10hp, 32)
 SPRITES2X_BUS(austin_10hp, 32)
 
+switch(FEAT_ROADVEHS, SELF, switch_capacity_austin_10hp, cargo_type_in_veh) {
+  MAIL: return param_realistic_early_vehicle_capacity ? 3 : 5;
+  return param_realistic_early_vehicle_capacity ? 1 : 5;
+}
+
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, austin_10hp, 7381) {
   property {
@@ -36,6 +41,6 @@ item(FEAT_ROADVEHS, austin_10hp, 7381) {
 
   graphics {
     default: spriteset_austin_10hp;
-    cargo_capacity: param_realistic_early_vehicle_capacity ? 1 : 5;
+    cargo_capacity: switch_capacity_austin_10hp;
   }
 }

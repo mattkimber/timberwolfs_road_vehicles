@@ -11,6 +11,11 @@ alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, 
 alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/bedford_rascal.vox.png", "2x_32bpp/bedford_rascal.vox.mask.png") { template_length_24_2x() }
 alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/bedford_rascal.vox.png", "32bpp/bedford_rascal.vox.mask.png") { template_length_24() }
 
+switch(FEAT_ROADVEHS, SELF, switch_capacity_bedford_rascal, cargo_type_in_veh) {
+  MAIL: param_realistic_modern_vehicle_capacity ? 3 : 4;
+  return param_realistic_modern_vehicle_capacity ? 1 : 4;
+}
+
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, bedford_rascal, 7862) {
   property {
@@ -46,6 +51,6 @@ item(FEAT_ROADVEHS, bedford_rascal, 7862) {
 
   graphics {
     default: spritegroup_bedford_rascal;
-    cargo_capacity: param_realistic_modern_vehicle_capacity ? 1 : 4;
+    cargo_capacity: switch_capacity_bedford_rascal;
   }
 }

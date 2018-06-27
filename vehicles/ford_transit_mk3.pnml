@@ -11,6 +11,12 @@ alternative_sprites(spriteset_ford_transit_mk3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP
 alternative_sprites(spriteset_ford_transit_mk3, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/ford_transit_mk3.vox.png", "2x_32bpp/ford_transit_mk3.vox.mask.png") { template_length_32_2x() }
 alternative_sprites(spriteset_ford_transit_mk3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/ford_transit_mk3.vox.png", "32bpp/ford_transit_mk3.vox.mask.png") { template_length_32() }
 
+switch(FEAT_ROADVEHS, SELF, switch_capacity_ford_transit_mk3, cargo_type_in_veh) {
+  MAIL: param_realistic_modern_vehicle_capacity ? 7 : 10;
+  return param_realistic_modern_vehicle_capacity ? 3 : 10;
+}
+
+
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, ford_transit_mk3, 7861) {
   property {
@@ -46,7 +52,7 @@ item(FEAT_ROADVEHS, ford_transit_mk3, 7861) {
 
   graphics {
     default: spritegroup_ford_transit_mk3;
-    cargo_capacity: param_realistic_modern_vehicle_capacity ? 3 : 10;
+    cargo_capacity: switch_capacity_ford_transit_mk3;
     speed: param_car_speed_limits ? 56 : 64;
   }
 }

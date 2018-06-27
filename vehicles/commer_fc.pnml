@@ -1,6 +1,12 @@
 VEHICLESPRITES_BUS(commer_fc, 32)
 SPRITES2X_BUS(commer_fc, 32)
 
+switch(FEAT_ROADVEHS, SELF, switch_capacity_commer_fc, cargo_type_in_veh) {
+  MAIL: return param_realistic_modern_vehicle_capacity ? 4 : 7;
+  return param_realistic_modern_vehicle_capacity ? 1 : 7;
+}
+
+
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, commer_fc, 7601) {
   property {
@@ -36,6 +42,6 @@ item(FEAT_ROADVEHS, commer_fc, 7601) {
 
   graphics {
     default: spriteset_commer_fc;
-    cargo_capacity: param_realistic_modern_vehicle_capacity ? 1 : 7;
+    cargo_capacity: switch_capacity_commer_fc;
   }
 }
