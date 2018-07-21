@@ -1,0 +1,40 @@
+VEHICLESPRITES_BUS(bristol_ls, 48)
+SPRITES2X_BUS(bristol_ls, 48)
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, bristol_ls, 1501) {
+  property {
+      name:                           string(STR_NAME_BRISTOL_LS);
+      climates_available:             param_enable_buses ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(1950,01,01);
+      model_life:                     15;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   17;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+      non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      default_cargo_type:             PASS;
+      loading_speed:                  4;
+      cost_factor:                    145;
+      running_cost_factor:            130;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          45 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          120 hp;
+      weight:                         5 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 42;
+      sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+      /* Visual effect is left at default (no effect) */
+  }
+
+  graphics {
+    default: spriteset_bristol_ls;
+  }
+}
