@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(wright_nb4l, 56)
-SPRITES2X_BUS(wright_nb4l, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, wright_nb4l, 2121) {

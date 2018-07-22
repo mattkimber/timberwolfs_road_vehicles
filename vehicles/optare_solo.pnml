@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(optare_solo, 48)
-SPRITES2X_BUS(optare_solo, 48)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, optare_solo, 1981) {

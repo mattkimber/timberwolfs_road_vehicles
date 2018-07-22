@@ -1,5 +1,4 @@
 VEHICLESPRITES(leyland_steam_van, 32)
-SPRITES2X(leyland_steam_van, 32)
 
 SPRITEGROUPS(leyland_steam_van)
 SPRITEGROUPS_PIECE_GOODS(leyland_steam_van)

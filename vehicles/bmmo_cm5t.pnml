@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(bmmo_cm5t, 48)
-SPRITES2X_BUS(bmmo_cm5t, 48)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, bmmo_cm5t, 1581) {

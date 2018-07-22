@@ -1,9 +1,7 @@
 VEHICLESPRITES_GOODS_MAIL(scammell_scarab_trailer, 32)
-SPRITES2X_GOODS_MAIL(scammell_scarab_trailer, 32)
 SPRITEGROUPS_PIECE_GOODS(scammell_scarab_trailer)
 SPRITEGROUPS_MAIL(scammell_scarab_trailer)
 VEHICLESPRITES_BUS(scammell_scarab, 16)
-SPRITES2X_BUS(scammell_scarab, 16)
 PURCHASE_SPRITESET(scammell_scarab)
 
 switch (FEAT_ROADVEHS, SELF, switch_scammell_scarab_articulation, extra_callback_info1) {

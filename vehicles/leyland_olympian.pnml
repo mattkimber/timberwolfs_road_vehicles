@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(leyland_olympian, 56)
-SPRITES2X_BUS(leyland_olympian, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, leyland_olympian, 1801) {

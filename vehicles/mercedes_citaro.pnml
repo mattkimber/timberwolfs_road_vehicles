@@ -1,7 +1,5 @@
 VEHICLESPRITES_BUS(mercedes_citaro_front, 48)
-SPRITES2X_BUS(mercedes_citaro_front, 48)
 VEHICLESPRITES_BUS(mercedes_citaro_rear, 32)
-SPRITES2X_BUS(mercedes_citaro_rear, 32)
 PURCHASE_SPRITESET(mercedes_citaro)
 
 switch (FEAT_ROADVEHS, SELF, switch_mercedes_citaro_articulation, extra_callback_info1) {

@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(toyota_prius, 32)
-SPRITES2X_BUS(toyota_prius, 32)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, toyota_prius, 11091) {

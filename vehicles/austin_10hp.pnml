@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(austin_10hp, 32)
-SPRITES2X_BUS(austin_10hp, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_austin_10hp, cargo_type_in_veh) {
   MAIL: return param_realistic_early_vehicle_capacity ? 3 : 5;

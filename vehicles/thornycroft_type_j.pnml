@@ -1,17 +1,4 @@
-
-// Badger Sprites
-spriteset (spriteset_thornycroft_j, "png/thornycroft_j.vox.png") {
-  template_length_48()
-}
-
-spritegroup spritegroup_thornycroft_j {
-	loading: spriteset_thornycroft_j;
-	loaded:  spriteset_thornycroft_j;
-}
-
-alternative_sprites(spriteset_thornycroft_j, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/thornycroft_j.vox.png") { template_length_48_2x() }
-alternative_sprites(spriteset_thornycroft_j, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/thornycroft_j.vox.png", "2x_32bpp/thornycroft_j.vox.mask.png") { template_length_48_2x() }
-alternative_sprites(spriteset_thornycroft_j, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/thornycroft_j.vox.png", "32bpp/thornycroft_j.vox.mask.png") { template_length_48() }
+VEHICLESPRITES_BUS(thornycroft_j, 48)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, thornycroft_type_j, 4131) {
@@ -47,7 +34,7 @@ item(FEAT_ROADVEHS, thornycroft_type_j, 4131) {
   }
 
   graphics {
-    default: spritegroup_thornycroft_j;
+    default: spriteset_thornycroft_j;
     cargo_capacity: param_realistic_early_vehicle_capacity ? 5 : 18;
   }
 }

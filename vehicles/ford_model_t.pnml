@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(ford_model_t, 32)
-SPRITES2X_BUS(ford_model_t, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_ford_model_t, cargo_type_in_veh) {
   MAIL: return param_realistic_early_vehicle_capacity ? 3 : 4;

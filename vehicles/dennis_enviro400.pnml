@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(dennis_enviro_400, 56)
-SPRITES2X_BUS(dennis_enviro_400, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, dennis_enviro_400, 2051) {

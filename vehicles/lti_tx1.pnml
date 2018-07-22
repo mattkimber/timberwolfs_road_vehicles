@@ -1,8 +1,5 @@
 VEHICLESPRITES_BUS(lti_tx1, 32)
-SPRITES2X_BUS(lti_tx1, 32)
-
 VEHICLESPRITES_BUS(lti_tx1_black, 32)
-SPRITES2X_BUS(lti_tx1_black, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_lti_tx1_graphics, cargo_subtype) {
   0: return spriteset_lti_tx1;

@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(sentinel_steam_bus, 48)
-SPRITES2X_BUS(sentinel_steam_bus, 48)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, sentinel_steam_bus, 1241) {

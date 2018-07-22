@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(stagecoach, 24)
-SPRITES2X_BUS(stagecoach, 24)
 HORSE_DRAWN_BUS(stagecoach, stagecoach, 32, 12)
 
 /* Define the road vehicle */

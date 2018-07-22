@@ -1,15 +1,4 @@
-spriteset (spriteset_mercedes_sprinter, "png/mercedes_sprinter.vox.png") {
-  template_length_32()
-}
-
-spritegroup spritegroup_mercedes_sprinter {
-	loading: spriteset_mercedes_sprinter;
-	loaded:  spriteset_mercedes_sprinter;
-}
-
-alternative_sprites(spriteset_mercedes_sprinter, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/mercedes_sprinter.vox.png") { template_length_32_2x() }
-alternative_sprites(spriteset_mercedes_sprinter, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/mercedes_sprinter.vox.png", "2x_32bpp/mercedes_sprinter.vox.mask.png") { template_length_32_2x() }
-alternative_sprites(spriteset_mercedes_sprinter, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/mercedes_sprinter.vox.png", "32bpp/mercedes_sprinter.vox.mask.png") { template_length_32() }
+VEHICLESPRITES_BUS(mercedes_sprinter, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_mercedes_sprinter, cargo_type_in_veh) {
   MAIL: return param_realistic_modern_vehicle_capacity ? 9 : 12;
@@ -50,7 +39,7 @@ item(FEAT_ROADVEHS, mercedes_sprinter, 8061) {
   }
 
   graphics {
-    default: spritegroup_mercedes_sprinter;
+    default: spriteset_mercedes_sprinter;
     cargo_capacity: switch_capacity_mercedes_sprinter;
     speed: param_car_speed_limits ? 56 : 68;
   }

@@ -1,8 +1,5 @@
 VEHICLESPRITES_BUS(austin_fx4, 32)
-SPRITES2X_BUS(austin_fx4, 32)
-
 VEHICLESPRITES_BUS(austin_fx4_black, 32)
-SPRITES2X_BUS(austin_fx4_black, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_austin_fx4_graphics, cargo_subtype) {
   0: return spriteset_austin_fx4;

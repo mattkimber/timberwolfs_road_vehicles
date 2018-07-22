@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(hancock_enterprise, 48)
-SPRITES2X_BUS(hancock_enterprise, 48)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, hancock_enterprise, 807) {

@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(aec_regent_1, 56)
-SPRITES2X_BUS(aec_regent_1, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, aec_regent_1, 1291) {

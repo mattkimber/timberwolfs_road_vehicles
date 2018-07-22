@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(bristol_lodekka, 48)
-SPRITES2X_BUS(bristol_lodekka, 48)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, bristol_lodekka, 1491) {

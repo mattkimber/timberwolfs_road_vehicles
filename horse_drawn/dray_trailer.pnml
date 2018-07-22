@@ -1,5 +1,4 @@
 VEHICLESPRITES(dray_trailer, 24)
-SPRITES2X(dray_trailer, 24)
 SPRITEGROUPS(dray_trailer)
 SPRITEGROUPS_PIECE_GOODS(dray_trailer)
 SPRITEGROUPS_TANKER(dray_trailer)

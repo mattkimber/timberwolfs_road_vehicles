@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(volvo_b10m, 56)
-SPRITES2X_BUS(volvo_b10m, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, volvo_b10m, 1781) {

@@ -1,15 +1,4 @@
-spriteset (spriteset_bedford_rascal, "png/bedford_rascal.vox.png") {
-  template_length_24()
-}
-
-spritegroup spritegroup_bedford_rascal {
-	loading: spriteset_bedford_rascal;
-	loaded:  spriteset_bedford_rascal;
-}
-
-alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/bedford_rascal.vox.png") { template_length_24_2x() }
-alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/bedford_rascal.vox.png", "2x_32bpp/bedford_rascal.vox.mask.png") { template_length_24_2x() }
-alternative_sprites(spriteset_bedford_rascal, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/bedford_rascal.vox.png", "32bpp/bedford_rascal.vox.mask.png") { template_length_24() }
+VEHICLESPRITES_BUS(bedford_rascal, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_bedford_rascal, cargo_type_in_veh) {
   MAIL: param_realistic_modern_vehicle_capacity ? 3 : 4;
@@ -50,7 +39,7 @@ item(FEAT_ROADVEHS, bedford_rascal, 7862) {
   }
 
   graphics {
-    default: spritegroup_bedford_rascal;
+    default: spriteset_bedford_rascal;
     cargo_capacity: switch_capacity_bedford_rascal;
   }
 }

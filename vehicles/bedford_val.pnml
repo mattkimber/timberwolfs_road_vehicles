@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(bedford_val, 56)
-SPRITES2X_BUS(bedford_val, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, bedford_val, 1631) {

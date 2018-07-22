@@ -1,15 +1,4 @@
-spriteset (spriteset_ford_transit_mk1, "png/ford_transit_mk1.vox.png") {
-  template_length_32()
-}
-
-spritegroup spritegroup_ford_transit_mk1 {
-	loading: spriteset_ford_transit_mk1;
-	loaded:  spriteset_ford_transit_mk1;
-}
-
-alternative_sprites(spriteset_ford_transit_mk1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/ford_transit_mk1.vox.png") { template_length_32_2x() }
-alternative_sprites(spriteset_ford_transit_mk1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/ford_transit_mk1.vox.png", "2x_32bpp/ford_transit_mk1.vox.mask.png") { template_length_32_2x() }
-alternative_sprites(spriteset_ford_transit_mk1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/ford_transit_mk1.vox.png", "32bpp/ford_transit_mk1.vox.mask.png") { template_length_32() }
+VEHICLESPRITES_BUS(ford_transit_mk1, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_ford_transit_mk1, cargo_type_in_veh) {
   MAIL: param_realistic_modern_vehicle_capacity ? 6 : 8;
@@ -51,7 +40,7 @@ item(FEAT_ROADVEHS, ford_transit_mk1, 7651) {
   }
 
   graphics {
-    default: spritegroup_ford_transit_mk1;
+    default: spriteset_ford_transit_mk1;
     cargo_capacity: switch_capacity_ford_transit_mk1;
   }
 }

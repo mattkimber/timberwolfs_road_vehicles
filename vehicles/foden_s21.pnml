@@ -1,5 +1,4 @@
 VEHICLESPRITES_WITH_FLATBED(foden_s21, 56)
-SPRITES2X_WITH_FLATBED(foden_s21, 56)
 
 SPRITEGROUPS_WITH_FLATBED(foden_s21)
 
@@ -16,13 +15,13 @@ item(FEAT_ROADVEHS, s21, 4631) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    108;
-      running_cost_factor:            97;
+      cost_factor:                    113;
+      running_cost_factor:            102;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */
       sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
-      speed:                          42 mph;
+      speed:                          48 mph;
       misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */

@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(northern_general_se6, 56)
-SPRITES2X_BUS(northern_general_se6, 56)
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, northern_general_se6, 1331) {

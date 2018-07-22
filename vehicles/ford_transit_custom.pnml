@@ -1,15 +1,4 @@
-spriteset (spriteset_ford_transit_custom, "png/ford_transit_custom.vox.png") {
-  template_length_32()
-}
-
-spritegroup spritegroup_ford_transit_custom {
-	loading: spriteset_ford_transit_custom;
-	loaded:  spriteset_ford_transit_custom;
-}
-
-alternative_sprites(spriteset_ford_transit_custom, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/ford_transit_custom.vox.png") { template_length_32_2x() }
-alternative_sprites(spriteset_ford_transit_custom, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x_32bpp/ford_transit_custom.vox.png", "2x_32bpp/ford_transit_custom.vox.mask.png") { template_length_32_2x() }
-alternative_sprites(spriteset_ford_transit_custom, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "32bpp/ford_transit_custom.vox.png", "32bpp/ford_transit_custom.vox.mask.png") { template_length_32() }
+VEHICLESPRITES_BUS(ford_transit_custom, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_ford_transit_custom, cargo_type_in_veh) {
   MAIL: param_realistic_modern_vehicle_capacity ? 8 : 10;
@@ -50,7 +39,7 @@ item(FEAT_ROADVEHS, ford_transit_custom, 8121) {
   }
 
   graphics {
-    default: spritegroup_ford_transit_custom;
+    default: spriteset_ford_transit_custom;
     cargo_capacity: switch_capacity_ford_transit_custom;
     speed: param_car_speed_limits ? 56 : 74;
   }

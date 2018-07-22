@@ -1,5 +1,4 @@
 VEHICLESPRITES_BUS(commer_fc, 32)
-SPRITES2X_BUS(commer_fc, 32)
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_commer_fc, cargo_type_in_veh) {
   MAIL: return param_realistic_modern_vehicle_capacity ? 4 : 7;
