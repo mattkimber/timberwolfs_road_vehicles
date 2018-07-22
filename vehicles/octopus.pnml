@@ -39,5 +39,6 @@ item(FEAT_ROADVEHS, octopus, 4521) {
 
   graphics {
     CUSTOMGRAPHICSBLOCK(octopus, param_realistic_modern_vehicle_capacity ? 18 : 25, set, group, group)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

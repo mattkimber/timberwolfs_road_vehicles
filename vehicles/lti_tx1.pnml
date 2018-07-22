@@ -46,5 +46,6 @@ item(FEAT_ROADVEHS, lti_tx1, 10971) {
     cargo_subtype_text: switch_cab_livery;
     default: switch_lti_tx1_graphics;
     speed: param_car_speed_limits ? 56 : 71;
+    additional_text: return string(STR_USAGE_CAB);
   }
 }

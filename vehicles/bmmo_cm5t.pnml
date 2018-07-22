@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, bmmo_cm5t, 1581) {
   graphics {
     default: spriteset_bmmo_cm5t;
     speed: (build_year >= 1991 && param_speed_limiters) ? 48 : 61;
+    additional_text: return string(STR_USAGE_COACH);
   }
 }

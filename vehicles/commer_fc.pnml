@@ -42,5 +42,6 @@ item(FEAT_ROADVEHS, commer_fc, 7601) {
   graphics {
     default: spriteset_commer_fc;
     cargo_capacity: switch_capacity_commer_fc;
+    additional_text: return string(STR_USAGE_VAN);
   }
 }

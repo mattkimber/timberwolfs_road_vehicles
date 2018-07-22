@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, leyland_sherpa, 10741) {
 
   graphics {
     default: spriteset_leyland_sherpa;
+    additional_text: return string(STR_USAGE_MINIBUS);
   }
 }

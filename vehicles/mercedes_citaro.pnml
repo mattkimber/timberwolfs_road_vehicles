@@ -62,5 +62,6 @@ item(FEAT_ROADVEHS, mercedes_citaro, 2012) {
     purchase_cargo_capacity: spriteset_mercedes_citaro_front; 
     length: switch_mercedes_citaro_length;
     purchase: spriteset_purchase_mercedes_citaro;    
+    additional_text: return string(STR_USAGE_BENDY);
   }
 }

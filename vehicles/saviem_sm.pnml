@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, saviem_sm, 4671) {
 
   graphics {
     GRAPHICSBLOCK(saviem_sm, param_realistic_modern_vehicle_capacity ? 10 : 22)
+    additional_text: return string(STR_USAGE_MGV);
   }
 }

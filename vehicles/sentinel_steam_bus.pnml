@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, sentinel_steam_bus, 1241) {
 
   graphics {
     default: spriteset_sentinel_steam_bus;
+    additional_text: return string(STR_USAGE_SINGLE_DECKER);
   }
 }

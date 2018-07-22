@@ -38,5 +38,6 @@ item(FEAT_ROADVEHS, toyota_prius, 11091) {
   graphics {
     default: spriteset_toyota_prius;
     speed: param_car_speed_limits ? 56 : 88;
+    additional_text: return string(STR_USAGE_MINICAB);
   }
 }

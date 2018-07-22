@@ -35,5 +35,6 @@ item(FEAT_ROADVEHS, bristol_ls, 1501) {
 
   graphics {
     default: spriteset_bristol_ls;
+    additional_text: return string(STR_USAGE_SINGLE_DECKER);
   }
 }

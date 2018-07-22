@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, aec_regent_2, 1451) {
 
   graphics {
     default: spriteset_aec_regent_2;
+    additional_text: return string(STR_USAGE_DOUBLE_DECKER);
   }
 }

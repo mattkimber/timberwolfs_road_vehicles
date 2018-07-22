@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, foden_alpha, 4971) {
   graphics {
     speed: param_speed_limiters ? 45 : 56 ;
     GRAPHICSBLOCK(foden_alpha, param_realistic_modern_vehicle_capacity ? 23 : 32)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

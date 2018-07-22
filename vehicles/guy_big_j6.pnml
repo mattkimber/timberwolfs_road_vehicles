@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, guy_big_j6, 4642) {
 
   graphics {
     GRAPHICSBLOCK(guy_big_j6, param_realistic_modern_vehicle_capacity ? 18 : 22)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

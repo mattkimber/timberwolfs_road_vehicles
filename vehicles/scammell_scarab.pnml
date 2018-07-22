@@ -71,5 +71,6 @@ item(FEAT_ROADVEHS, scammell_scarab, 4481) {
       purchase: spriteset_purchase_scammell_scarab;
       MAIL: switch_scammell_scarab_graphics_mail;
       default: switch_scammell_scarab_graphics_goods;
+      additional_text: return string(STR_USAGE_SCARAB);
   }
 }

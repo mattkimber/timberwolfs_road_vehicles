@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, wright_pulsar, 2112) {
 
   graphics {
     default: spriteset_wright_pulsar;
+    additional_text: return string(STR_USAGE_WRIGHT_PULSAR);
   }
 }

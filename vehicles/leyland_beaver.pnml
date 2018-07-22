@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
   graphics {
     speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 46 ;
     ARTIC_GRAPHICS_BLOCK(leyland_beaver)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
   }
 }

@@ -41,5 +41,6 @@ item(FEAT_ROADVEHS, bedford_rascal, 7862) {
   graphics {
     default: spriteset_bedford_rascal;
     cargo_capacity: switch_capacity_bedford_rascal;
+    additional_text: return string(STR_USAGE_VAN);
   }
 }

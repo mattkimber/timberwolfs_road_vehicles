@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, leyland_leopard, 1582) {
 
   graphics {
     default: spriteset_leyland_leopard;
+    additional_text: return string(STR_USAGE_COACH);
   }
 }

@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, vehicle_renault_magnum, 5011) {
   graphics {
     speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 56;
     ARTIC_GRAPHICS_BLOCK(renault_magnum)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
   }
 }

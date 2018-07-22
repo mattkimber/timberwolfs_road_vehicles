@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, daf_lf, 5012) {
   graphics {
     speed: param_speed_limiters ? 45 : 60 ;
     GRAPHICSBLOCK(daf_lf, param_realistic_modern_vehicle_capacity ? 8 : 24)
+    additional_text: return string(STR_USAGE_MGV);
   }
 }

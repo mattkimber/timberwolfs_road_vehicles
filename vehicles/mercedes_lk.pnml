@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, mercedes_lk, 4831) {
   graphics {
     speed: param_speed_limiters ? 45 : 51 ;
     GRAPHICSBLOCK(mercedes_lk, param_realistic_modern_vehicle_capacity ? 8 : 22)
+    additional_text: return string(STR_USAGE_MGV);
   }
 }

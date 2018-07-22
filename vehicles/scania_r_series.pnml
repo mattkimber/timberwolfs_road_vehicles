@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, vehicle_scania_r_series, 5041) {
   graphics {
     speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 58;
     ARTIC_GRAPHICS_BLOCK(scania_r_series)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
   }
 }

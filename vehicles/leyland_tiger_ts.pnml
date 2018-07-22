@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, leyland_tiger_ts, 1271) {
 
   graphics {
     default: spriteset_leyland_tiger_ts;
+    additional_text: return string(STR_USAGE_SINGLE_DECKER);
   }
 }

@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, vehicle_dray, 3741) {
   graphics {
     speed:                          param_realistic_early_vehicle_capacity ? 8 : 13;
     HORSE_DRAWN_GRAPHICS_BLOCK(dray)
+    additional_text: return string(STR_USAGE_HORSE_DRAWN);
   }
 }

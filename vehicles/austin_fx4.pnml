@@ -46,5 +46,6 @@ item(FEAT_ROADVEHS, austin_fx4, 10581) {
     cargo_subtype_text: switch_cab_livery;
     default: switch_austin_fx4_graphics;
     speed: param_car_speed_limits ? 56 : 60;
+    additional_text: return string(STR_USAGE_CAB);
   }
 }

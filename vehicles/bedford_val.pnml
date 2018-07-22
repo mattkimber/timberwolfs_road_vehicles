@@ -35,5 +35,6 @@ item(FEAT_ROADVEHS, bedford_val, 1631) {
 
   graphics {
     default: spriteset_bedford_val;
+    additional_text: return string(STR_USAGE_COACH);
   }
 }

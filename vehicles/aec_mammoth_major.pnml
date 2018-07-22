@@ -38,5 +38,6 @@ item(FEAT_ROADVEHS, mammoth_major_8, 4351) {
 
   graphics {
     CUSTOMGRAPHICSBLOCK(mammoth_major_8, param_realistic_modern_vehicle_capacity ? 15 : 24, set, set, group)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

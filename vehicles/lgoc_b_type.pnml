@@ -41,5 +41,6 @@ item(FEAT_ROADVEHS, lgoc_b_type, 1111) {
 
   graphics {
     default: spritegroup_lgoc_b_type;
+    additional_text: return string(STR_USAGE_DOUBLE_DECKER);
   }
 }

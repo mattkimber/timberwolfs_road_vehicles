@@ -41,5 +41,6 @@ item(FEAT_ROADVEHS, austin_10hp, 7381) {
   graphics {
     default: spriteset_austin_10hp;
     cargo_capacity: switch_capacity_austin_10hp;
+    additional_text: return string(STR_USAGE_VAN);
   }
 }

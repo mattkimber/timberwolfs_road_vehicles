@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, iveco_eurocargo, 4931) {
   graphics {
     speed: param_speed_limiters ? 45 : 58 ;
     GRAPHICSBLOCK(iveco_eurocargo, param_realistic_modern_vehicle_capacity ? 5 : 18)
+    additional_text: return string(STR_USAGE_LGV);
   }
 }

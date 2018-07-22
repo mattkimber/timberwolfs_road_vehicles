@@ -36,6 +36,7 @@ item(FEAT_ROADVEHS, s20, 4571) {
 
   graphics {
     GRAPHICSBLOCK(foden_s20, param_realistic_modern_vehicle_capacity ? 16 : 21)
+    additional_text: return string(STR_USAGE_HGV);
   }
 
 }

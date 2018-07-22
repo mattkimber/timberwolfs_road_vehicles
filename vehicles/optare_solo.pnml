@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, optare_solo, 1981) {
 
   graphics {
     default: spriteset_optare_solo;
+    additional_text: return string(STR_USAGE_MIDIBUS);
   }
 }

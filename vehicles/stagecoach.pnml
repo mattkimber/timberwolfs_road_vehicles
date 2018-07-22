@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, vehicle_stagecoach, 741) {
   graphics {
     speed: param_realistic_early_vehicle_capacity ? 9 : 15;
     HORSE_DRAWN_BUS_GRAPHICS_BLOCK(stagecoach)
+    additional_text: return string(STR_USAGE_HORSE_DRAWN);
   }
 }

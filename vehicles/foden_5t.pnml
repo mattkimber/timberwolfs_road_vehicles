@@ -39,5 +39,6 @@ item(FEAT_ROADVEHS, foden_5t, 4021) {
   }
   graphics {
     CUSTOMGRAPHICSBLOCK(foden_5t, param_realistic_early_vehicle_capacity ? 5 : 16, group, group, group)
+    additional_text: return string(STR_USAGE_STEAM);
   }
 }

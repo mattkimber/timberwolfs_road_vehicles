@@ -40,5 +40,6 @@ item(FEAT_ROADVEHS, badger, 4361) {
 
   graphics {
     CUSTOMGRAPHICSBLOCK(leyland_badger, param_realistic_modern_vehicle_capacity ? 12 : 20, group, group, group)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

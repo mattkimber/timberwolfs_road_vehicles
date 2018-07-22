@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, bedford_tk, 4591) {
   graphics {
     speed: param_speed_limiters ? 45 : 46 ;
     GRAPHICSBLOCK(bedford_tk, param_realistic_modern_vehicle_capacity ? 4 : 16)
+    additional_text: return string(STR_USAGE_LGV);
   }
 }

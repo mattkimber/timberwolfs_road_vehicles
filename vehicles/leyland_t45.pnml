@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, vehicle_leyland_t45, 4801) {
   graphics {
     speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 50;
     ARTIC_GRAPHICS_BLOCK(leyland_t45)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
   }
 }

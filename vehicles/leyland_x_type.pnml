@@ -40,5 +40,6 @@ item(FEAT_ROADVEHS, x_type, 4071) {
 
   graphics {
     CUSTOMGRAPHICSBLOCK(leyland_x_type, param_realistic_early_vehicle_capacity ? 5 : 18, group, group, group)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

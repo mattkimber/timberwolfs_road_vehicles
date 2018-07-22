@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, volvo_b12m, 2011) {
   graphics {
     default: spriteset_volvo_b12m;
     speed: (build_year >= 1991 && param_speed_limiters) ? 50 : 56;
+    additional_text: return string(STR_USAGE_COACH);
   }
 }

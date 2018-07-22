@@ -35,5 +35,6 @@ item(FEAT_ROADVEHS, vehicle_scammell_75_ton, 4201) {
 
   graphics {
     ARTIC_GRAPHICS_BLOCK(scammell_75_ton)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
   }
 }

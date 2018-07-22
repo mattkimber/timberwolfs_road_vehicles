@@ -35,5 +35,6 @@ item(FEAT_ROADVEHS, vehicle_guy_big_j4, 4641) {
 
   graphics {
     ARTIC_GRAPHICS_BLOCK(guy_big_j4)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
   }
 }

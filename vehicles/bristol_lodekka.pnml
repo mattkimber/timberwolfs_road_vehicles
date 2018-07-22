@@ -35,5 +35,6 @@ item(FEAT_ROADVEHS, bristol_lodekka, 1491) {
 
   graphics {
     default: spriteset_bristol_lodekka;
+    additional_text: return string(STR_USAGE_DOUBLE_DECKER);
   }
 }

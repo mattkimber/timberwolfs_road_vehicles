@@ -39,5 +39,6 @@ item(FEAT_ROADVEHS, sentinel_dg4, 4281) {
 
   graphics {
     CUSTOMGRAPHICSBLOCK(sentinel_dg4, param_realistic_early_vehicle_capacity ? 6 : 15, set, group, group)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

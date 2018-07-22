@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, erf_c_series, 4821) {
   graphics {
     speed: param_speed_limiters ? 45 : 48 ;
     GRAPHICSBLOCK(erf_c_series, param_realistic_modern_vehicle_capacity ? 19 : 28)
+    additional_text: return string(STR_USAGE_HGV);
   }
 }

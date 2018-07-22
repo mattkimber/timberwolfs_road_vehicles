@@ -36,5 +36,6 @@ item(FEAT_ROADVEHS, thornycroft_type_j, 4131) {
   graphics {
     default: spriteset_thornycroft_j;
     cargo_capacity: param_realistic_early_vehicle_capacity ? 5 : 18;
+    additional_text: return string(STR_USAGE_THORNYCROFT);
   }
 }

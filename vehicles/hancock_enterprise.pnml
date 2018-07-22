@@ -35,5 +35,6 @@ item(FEAT_ROADVEHS, hancock_enterprise, 807) {
 
   graphics {
     default: spriteset_hancock_enterprise;
+    additional_text: return string(STR_USAGE_STEAM);
   }
 }

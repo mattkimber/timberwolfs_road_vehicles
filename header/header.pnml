@@ -1,5 +1,6 @@
 #include "macros/spritesets.h"
 #include "macros/2xsprites.h"
+#include "macros/4xsprites.h"
 #include "macros/graphicsblock.h"
 #include "macros/artics.h"
 #include "macros/horse_drawn.h"

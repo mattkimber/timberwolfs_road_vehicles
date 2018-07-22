@@ -39,5 +39,6 @@ item(FEAT_ROADVEHS, leyland_steam_van, 3935) {
   }
   graphics {
     CUSTOMGRAPHICSBLOCK(leyland_steam_van, param_realistic_early_vehicle_capacity ? 4 : 14, group, group, group)
+    additional_text: return string(STR_USAGE_STEAM);
   }
 }

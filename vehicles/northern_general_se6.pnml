@@ -34,5 +34,6 @@ item(FEAT_ROADVEHS, northern_general_se6, 1331) {
 
   graphics {
     default: spriteset_northern_general_se6;
+    additional_text: return string(STR_USAGE_COACH);
   }
 }

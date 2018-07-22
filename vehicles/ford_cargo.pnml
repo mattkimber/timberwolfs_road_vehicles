@@ -37,5 +37,6 @@ item(FEAT_ROADVEHS, ford_cargo, 4811) {
   graphics {
     speed: param_speed_limiters ? 45 : 54 ;
     GRAPHICSBLOCK(ford_cargo, param_realistic_modern_vehicle_capacity ? 5 : 18)
+    additional_text: return string(STR_USAGE_LGV);
   }
 }

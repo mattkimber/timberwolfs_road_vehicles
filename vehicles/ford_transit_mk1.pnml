@@ -42,5 +42,6 @@ item(FEAT_ROADVEHS, ford_transit_mk1, 7651) {
   graphics {
     default: spriteset_ford_transit_mk1;
     cargo_capacity: switch_capacity_ford_transit_mk1;
+    additional_text: return string(STR_USAGE_VAN);
   }
 }
