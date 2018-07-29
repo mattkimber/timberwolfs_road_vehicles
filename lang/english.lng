@@ -130,6 +130,7 @@ STR_NAME_MCW_METROBUS:MCW Metrobus
 STR_NAME_VOLVO_F10:Volvo F10
 STR_NAME_RENAULT_AGORA:Renault Agora
 STR_NAME_FORD_TRANSIT_MK3_MINIBUS:Ford Transit Mk3 Minibus
+STR_NAME_RENAULT_TRAFIC_MINIBUS:Renault Trafic Minibus
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
