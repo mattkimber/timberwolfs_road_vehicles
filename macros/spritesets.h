@@ -3,7 +3,12 @@
 
 #define SPRITESET(VEHICLENAME, CARGONAME, LENGTH) \
 spriteset (spriteset_##VEHICLENAME##CARGONAME, PNGNAME(VEHICLENAME,CARGONAME) ) { \
-  template_length_##LENGTH()                                                      \
+  template_rv_1x()                                                      \
+}
+
+#define SPRITESET_TRAM(VEHICLENAME, CARGONAME, LENGTH) \
+spriteset (spriteset_##VEHICLENAME##CARGONAME, PNGNAME(VEHICLENAME,CARGONAME) ) { \
+  template_tram_1x()                                                      \
 }
 
 #define SPRITEGROUP(VEHICLENAME, EMPTYSTATE, CARGONAME)                                 \
@@ -16,6 +21,12 @@ spritegroup spritegroup_##VEHICLENAME##CARGONAME {                              
 SPRITESET(VEHICLENAME,,LENGTH)                   \
 SPRITES2X_BUS(VEHICLENAME, LENGTH)               \
 SPRITES4X_BUS(VEHICLENAME, LENGTH)
+
+#define VEHICLESPRITES_TRAM(VEHICLENAME, LENGTH)  \
+SPRITESET_TRAM(VEHICLENAME,,LENGTH)                   \
+SPRITES2X_TRAM(VEHICLENAME, LENGTH)               \
+SPRITES4X_TRAM(VEHICLENAME, LENGTH)
+
 
 #define VEHICLESPRITES_GOODS_MAIL(VEHICLENAME, LENGTH) \
 SPRITESET(VEHICLENAME,,LENGTH)                   \
@@ -38,7 +49,7 @@ SPRITESET(VEHICLENAME,_tanker,LENGTH)            \
 SPRITESET(VEHICLENAME,_timber,LENGTH)            \
 SPRITESET(VEHICLENAME,_wood,LENGTH)              \
 SPRITES2X(VEHICLENAME, LENGTH)                   \
-SPRITES4X(VEHICLENAME, LENGTH)                   
+SPRITES4X(VEHICLENAME, LENGTH)
 
 #define VEHICLESPRITES_WITH_FLATBED(VEHICLENAME, LENGTH) \
 VEHICLESPRITES(VEHICLENAME, LENGTH)                      \

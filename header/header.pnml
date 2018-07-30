@@ -4,12 +4,13 @@
 #include "macros/graphicsblock.h"
 #include "macros/artics.h"
 #include "macros/horse_drawn.h"
+#include "macros/horse_drawn_tram.h"
 
 grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                39;
+  version:                40;
   min_compatible_version: 24;
   param 0 {
     param_speed_limiters {
@@ -26,7 +27,7 @@ grf {
       type: bool;
       def_value: 0;
     }
-  }  
+  }
   param 2 {
     param_realistic_early_vehicle_capacity {
       name: string(STR_PARAM_REALISTIC_EARLY_CAPACITY);
@@ -130,7 +131,7 @@ grf {
       type: bool;
       def_value: 1;
     }
-  }    
+  }
   param 12 {
     param_enable_steam_freight {
       name: string(STR_PARAM_STEAM_FREIGHT_ENABLED);
@@ -145,6 +146,14 @@ grf {
       desc: string(STR_PARAM_EASTER_EGGS_ENABLED_DESC);
       type: bool;
       def_value: 0;
+    }
+  }
+param 14 {
+    param_enable_trams {
+      name: string(STR_PARAM_TRAMS_ENABLED);
+      desc: string(STR_PARAM_TRAMS_ENABLED_DESC);
+      type: bool;
+      def_value: 1;
     }
   }
 }

@@ -6,13 +6,13 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
 #define HORSE_DRAWN_BASE_GFX(VEHICLENAME) \
   PURCHASE_SPRITESET(VEHICLENAME) \
   HORSE_DRAWN_ANIM_SWITCH(VEHICLENAME)
-  
+
 
 #define HORSE_DRAWN_ANIM_SWITCH(VEHICLENAME) \
   switch(FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_animation, motion_counter % 4) { \
     0..1: return spriteset_horses_1;   \
     return spriteset_horses_2;       \
-  } 
+  }
 
 #define HORSE_DRAWN_GFX_SWITCH(VEHICLENAME, TRAILERNAME, CARGONAME, CARGOTYPE)                             \
   switch (FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_graphics##CARGONAME, position_in_consist ) { \
@@ -22,7 +22,7 @@ spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) { 
 
   #define HORSE_DRAWN_SWITCHES(VEHICLENAME, TRAILERNAME, LENGTH, CAPACITY, REALISTIC_CAPACITY) \
     ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, capacity, 1, param_realistic_early_vehicle_capacity ? REALISTIC_CAPACITY - 1 : CAPACITY - 1)                         \
-    ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, length, LENGTH / 8, 8)                             \
+    ARTIC_SWITCH(VEHICLENAME, TRAILERNAME, length, 4, LENGTH / 8)                             \
     switch (FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_articulation, extra_callback_info1) { \
         0..1: return vehicle_##VEHICLENAME##;                                                   \
         return CB_RESULT_NO_MORE_ARTICULATED_PARTS;                                           \

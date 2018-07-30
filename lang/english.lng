@@ -41,6 +41,9 @@ STR_PARAM_STEAM_FREIGHT_ENABLED:Enable Steam Freight Vehicles
 STR_PARAM_STEAM_FREIGHT_ENABLED_DESC:Choose whether early steam-powered freight vehicles from this set will be available for purchase during the game
 STR_PARAM_EASTER_EGGS_ENABLED:Enable Easter Eggs
 STR_PARAM_EASTER_EGGS_ENABLED_DESC:This set includes some vehicles which are included only for fun. Use this option to enable or disable them.
+STR_PARAM_TRAMS_ENABLED:Enable Trams
+STR_PARAM_TRAMS_ENABLED_DESC:Choose whether trams from this set will be available for purchase during the game
+
 
 # cargo subtypes
 STR_CARGO_PAX_REGULAR:(Company Colours)
@@ -131,6 +134,9 @@ STR_NAME_VOLVO_F10:Volvo F10
 STR_NAME_RENAULT_AGORA:Renault Agora
 STR_NAME_FORD_TRANSIT_MK3_MINIBUS:Ford Transit Mk3 Minibus
 STR_NAME_RENAULT_TRAFIC_MINIBUS:Renault Trafic Minibus
+STR_NAME_DENNIS_ACE:Dennis Ace
+STR_NAME_VOLVO_FM9:Volvo FM9
+STR_NAME_HORSE_TRAM:Horse-Drawn Tram
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
@@ -151,4 +157,4 @@ STR_USAGE_THORNYCROFT:{SILVER}The Thornycroft Type J can be used to carry goods 
 STR_USAGE_WRIGHT_PULSAR:{SILVER}This hydrogen bus combines high capacity and good performance with low emissions.
 STR_USAGE_HORSE_DRAWN:{SILVER}Early horse drawn vehicles are slow, but were the only option for road transport for much of history.
 STR_USAGE_STEAM:{SILVER}Early steam vehicles only offer a small advantage over their horse drawn counterparts.
-
+STR_USAGE_DENNIS_ACE:{SILVER}The small size and short wheelbase of the Dennis Ace make it manoeuvrable on narrow country lanes between small villages.

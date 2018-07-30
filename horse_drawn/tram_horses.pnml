@@ -1,0 +1,6 @@
+SPRITESET_TRAM(tram_horses_1,,24)
+ALTERNATIVESPRITE_TRAM(tram_horses_1, , 24)
+ALTERNATIVESPRITE_4X_TRAM(tram_horses_1, , 24)
+SPRITESET_TRAM(tram_horses_2,,24)
+ALTERNATIVESPRITE_TRAM(tram_horses_2, , 24)
+ALTERNATIVESPRITE_4X_TRAM(tram_horses_2, , 24)
