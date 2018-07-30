@@ -1,4 +1,11 @@
-VEHICLESPRITES_TRAM(horse_tram, 24)
+VEHICLESPRITES_TRAM(horse_tram, 48)
+VEHICLESPRITES_TRAM(horse_tram_loaded, 48)
+
+spritegroup spritegroup_horse_tram {
+	loading: [ spriteset_horse_tram, spriteset_horse_tram_loaded ];
+	loaded:  [ spriteset_horse_tram, spriteset_horse_tram_loaded ];
+}
+
 HORSE_DRAWN_TRAM(horse_tram, horse_tram, 48, 60)
 
 /* Define the road vehicle */
@@ -29,7 +36,7 @@ item(FEAT_ROADVEHS, vehicle_horse_tram, 12861) {
       power:                          param_realistic_early_vehicle_capacity ? 5 : 15;
       weight:                         8 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 60;
+      cargo_capacity:                 30;
       sound_effect:                   SOUND_HORSE;
       /* Visual effect is left at default (no effect) */
   }
