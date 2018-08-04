@@ -137,6 +137,7 @@ STR_NAME_RENAULT_TRAFIC_MINIBUS:Renault Trafic Minibus
 STR_NAME_DENNIS_ACE:Dennis Ace
 STR_NAME_VOLVO_FM9:Volvo FM9
 STR_NAME_HORSE_TRAM:Horse-Drawn Tram
+STR_NAME_GRANTHAM_STEAM_TRAM:Grantham's Steam Tram
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
@@ -158,3 +159,4 @@ STR_USAGE_WRIGHT_PULSAR:{SILVER}This hydrogen bus combines high capacity and goo
 STR_USAGE_HORSE_DRAWN:{SILVER}Early horse drawn vehicles are slow, but were the only option for road transport for much of history.
 STR_USAGE_STEAM:{SILVER}Early steam vehicles only offer a small advantage over their horse drawn counterparts.
 STR_USAGE_DENNIS_ACE:{SILVER}The small size and short wheelbase of the Dennis Ace make it manoeuvrable on narrow country lanes between small villages.
+STR_USAGE_GRANTHAM_STEAM_TRAM:{SILVER}John Grantham's steam tramcar was an early attempt to replace horse-drawn trams.
