@@ -138,6 +138,13 @@ STR_NAME_DENNIS_ACE:Dennis Ace
 STR_NAME_VOLVO_FM9:Volvo FM9
 STR_NAME_HORSE_TRAM:Horse-Drawn Tram
 STR_NAME_GRANTHAM_STEAM_TRAM:Grantham's Steam Tram
+STR_NAME_CONDUIT_CAR:Conduit Car
+STR_NAME_GF_MILNE_TRAM:GF Milne Tram
+STR_NAME_MER_TUNNEL_CAR:GF Milne Tunnel Car
+STR_NAME_MER_WINTER_SALOON:GF Milne Winter Saloon
+STR_NAME_FLEETWOOD_BOX_CAR:UEC Fleetwood Box Car
+STR_NAME_UEC_TOASTRACK:UEC "Toastrack" Tram
+
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
@@ -160,3 +167,9 @@ STR_USAGE_HORSE_DRAWN:{SILVER}Early horse drawn vehicles are slow, but were the 
 STR_USAGE_STEAM:{SILVER}Early steam vehicles only offer a small advantage over their horse drawn counterparts.
 STR_USAGE_DENNIS_ACE:{SILVER}The small size and short wheelbase of the Dennis Ace make it manoeuvrable on narrow country lanes between small villages.
 STR_USAGE_GRANTHAM_STEAM_TRAM:{SILVER}John Grantham's steam tramcar was an early attempt to replace horse-drawn trams.
+STR_USAGE_CONDUIT_CAR:{SILVER}This early electric tram used a conduit beneath the road surface to draw power.
+STR_USAGE_GF_MILNE_TRAM:{SILVER}The GF Milne "Car No. 1" holds the Guinness World Record for oldest tram still operating on its original line.
+STR_USAGE_MER_TUNNEL_CAR:{SILVER}The Tunnel Cars were named after their long interiors, originally fitted with longitudinal seating.
+STR_USAGE_MER_WINTER_SALOON:{SILVER}Despite the name, enclosed winter saloon trams were often operated year-round.
+STR_USAGE_FLEETWOOD_BOX_CAR:{SILVER}Fleetwood box cars operated between Blackpool and Fleetwood in the early 20th century.
+STR_USAGE_UEC_TOASTRACK:{SILVER}Toastrack trams were very popular with tourists during summer months.
