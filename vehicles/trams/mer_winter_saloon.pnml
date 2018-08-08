@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 VEHICLESPRITES_TRAM(mer_winter_saloon, 48)
-=======
-VEHICLESPRITES_TRAM(mer_winter_saloon, 56)
->>>>>>> fec5d76360f04f7fd817a007221f7ebd038ebc38
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, mer_winter_saloon, 12939) {
