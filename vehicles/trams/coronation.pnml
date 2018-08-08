@@ -1,0 +1,40 @@
+VEHICLESPRITES_TRAM(coronation_tram, 64)
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, coronation_tram, 13521) {
+  property {
+      name:                           string(STR_NAME_CORONATION);
+      climates_available:             param_enable_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(1952,01,01);
+      model_life:                     20;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   35;
+      reliability_decay:              16;
+      refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+      non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      default_cargo_type:             PASS;
+      loading_speed:                  6;
+      cost_factor:                    158;
+      running_cost_factor:            159;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          40mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          180 hp;
+      weight:                         12 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 56;
+
+      sound_effect:                   SOUND_ELECTRIC_SPARK;
+  }
+
+  graphics {
+    additional_text: return string(STR_USAGE_CORONATION);
+    default: spriteset_coronation_tram;
+  }
+}

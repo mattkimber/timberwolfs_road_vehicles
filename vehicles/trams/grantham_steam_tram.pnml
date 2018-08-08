@@ -31,7 +31,7 @@ item(FEAT_ROADVEHS, grantham_steam_tram, 12887) {
       refit_cost:                     0; // Refitting is free
       /* callback_flags are not set, no need to manually enable callbacks */
       running_cost_base:              RUNNING_COST_ROADVEH;
-      power:                          param_realistic_early_vehicle_capacity ? 5 : 15;
+      power:                          30hp;
       weight:                         9 ton;
       /* TE and air drag coefficient is left at default */
       cargo_capacity:                 50;
