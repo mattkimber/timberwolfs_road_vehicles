@@ -144,14 +144,11 @@ STR_NAME_MER_TUNNEL_CAR:GF Milne Tunnel Car
 STR_NAME_MER_WINTER_SALOON:GF Milne Winter Saloon
 STR_NAME_FLEETWOOD_BOX_CAR:UEC Fleetwood Box Car
 STR_NAME_UEC_TOASTRACK:UEC "Toastrack" Tram
-<<<<<<< HEAD
 STR_NAME_MARTON_BOX_CAR:Marton Box Car
 STR_NAME_STANDARD_CAR:Standard Car
 STR_NAME_BALLOON:English Electric "Balloon"
 STR_NAME_CORONATION:Coronation Tram
 STR_NAME_PROGRESS_TWIN_CAR:Progress Twin Car
-=======
->>>>>>> fec5d76360f04f7fd817a007221f7ebd038ebc38
 
 
 # Usage
