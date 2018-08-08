@@ -181,10 +181,7 @@ STR_USAGE_MER_TUNNEL_CAR:{SILVER}The Tunnel Cars were named after their long int
 STR_USAGE_MER_WINTER_SALOON:{SILVER}Despite the name, enclosed winter saloon trams were often operated year-round.
 STR_USAGE_FLEETWOOD_BOX_CAR:{SILVER}Fleetwood box cars operated between Blackpool and Fleetwood in the early 20th century.
 STR_USAGE_UEC_TOASTRACK:{SILVER}Toastrack trams were very popular with tourists during summer months.
-<<<<<<< HEAD
 STR_USAGE_TRAM:{SILVER}Trams transport large numbers of passengers in towns with a tramway system.
 STR_USAGE_BALLOON:{SILVER}The "Balloon" tram was so named due to its bulbous streamlined shape.
 STR_USAGE_CORONATION:{SILVER}Although technically advanced, the Coronation tram had high power requirements and poor reliability.
 STR_USAGE_PROGRESS_TWIN_CAR:{SILVER}The Progress Twin Cars were rebuilt from earlier Blackpool trams.
-=======
->>>>>>> fec5d76360f04f7fd817a007221f7ebd038ebc38
