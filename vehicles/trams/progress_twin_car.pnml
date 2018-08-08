@@ -54,8 +54,9 @@ item(FEAT_ROADVEHS, progress_twin_car, 13601) {
     additional_text: return string(STR_USAGE_PROGRESS_TWIN_CAR);
     articulated_part: switch_progress_twin_car_articulation;
     default: switch_progress_twin_car_graphics;
-    cargo_capacity: switch_progress_twin_car_capacity; 
-    purchase_cargo_capacity: return 61; 
+    cargo_capacity: switch_progress_twin_car_capacity;
+    purchase_cargo_capacity: return 61;
     length: return 7;
+    purchase: spriteset_purchase_progress_twin_car; 
   }
 }

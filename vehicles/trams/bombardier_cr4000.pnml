@@ -1,0 +1,58 @@
+VEHICLESPRITES_TRAM(bombardier_cr4000_front, 56)
+VEHICLESPRITES_TRAM(bombardier_cr4000_rear, 56)
+PURCHASE_SPRITESET(bombardier_cr4000)
+
+switch (FEAT_ROADVEHS, SELF, switch_bombardier_cr4000_articulation, extra_callback_info1) {
+  0..1: return bombardier_cr4000;
+  return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_bombardier_cr4000_graphics, position_in_consist ) {
+  0: spriteset_bombardier_cr4000_front;
+  spriteset_bombardier_cr4000_rear;
+}
+
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, bombardier_cr4000, 13981) {
+  property {
+      name:                           string(STR_NAME_BOMBARDIER_CR4000);
+      climates_available:             param_enable_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(1998,09,01);
+      model_life:                     -1;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   25;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+      non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      default_cargo_type:             PASS;
+      loading_speed:                  8;
+      cost_factor:                    255;
+      running_cost_factor:            255;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          50 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          480 hp;
+      weight:                         36 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 104;
+
+      sound_effect:                   SOUND_ELECTRIC_SPARK;
+  }
+
+  graphics {
+    additional_text: return string(STR_USAGE_BOMBARDIER_CR4000);
+    articulated_part: switch_bombardier_cr4000_articulation;
+    default: switch_bombardier_cr4000_graphics;
+    cargo_capacity: return 104;
+    purchase_cargo_capacity: return 104;
+    length: return 7;
+    purchase: spriteset_purchase_bombardier_cr4000; 
+  }
+}

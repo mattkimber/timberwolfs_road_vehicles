@@ -151,6 +151,7 @@ STR_NAME_CORONATION:Coronation Tram
 STR_NAME_PROGRESS_TWIN_CAR:Progress Twin Car
 STR_NAME_JUBILEE_TRAM:Jubilee Tram
 STR_NAME_CENTENARY_TRAM:Centenary Tram
+STR_NAME_BOMBARDIER_CR4000:Bombardier CR4000
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
@@ -185,3 +186,4 @@ STR_USAGE_CORONATION:{SILVER}Although technically advanced, the Coronation tram 
 STR_USAGE_PROGRESS_TWIN_CAR:{SILVER}The Progress Twin Cars were rebuilt from earlier Blackpool trams.
 STR_USAGE_JUBILEE_TRAM:{SILVER}The Jubilee trams were extended and rebodied Balloon trams.
 STR_USAGE_CENTENARY_TRAM:{SILVER}Centenary trams used large numbers of bus parts.
+STR_USAGE_BOMBARDIER_CR4000:{SILVER}The CR4000 was the first tram to run in London since the end of the original system in 1952.
