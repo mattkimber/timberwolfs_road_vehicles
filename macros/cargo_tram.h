@@ -44,8 +44,9 @@
   }
 
 
-  #define CARGO_TRAM_SWITCHES(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY)                  \
+  #define CARGO_TRAM_SWITCHES(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY, VISUAL_EFFECT)                  \
     CARGO_TRAM_CAPACITY_SWITCH(VEHICLENAME, TRAILERNAME, capacity, 1, CAPACITY - 1, CAPACITY)      \
+    CARGO_TRAM_SWITCH(VEHICLENAME, TRAILERNAME, visual_effect, VISUAL_EFFECT, VISUAL_EFFECT_DISABLE) \
     CARGO_TRAM_SWITCH(VEHICLENAME, TRAILERNAME, length, LENGTH / 8, 4)                             \
     switch (FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_articulation, extra_callback_info1) { \
         0..##WAGONS##: return vehicle_##VEHICLENAME;                                          \
@@ -80,16 +81,16 @@
     HORSE_CARGO_TRAM_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _timber, group) \
     HORSE_CARGO_TRAM_GFX_SWITCH(VEHICLENAME, TRAILERNAME, _wood, group)
 
-#define CARGO_TRAM(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY)    \
+#define CARGO_TRAM(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY, VISUAL_EFFECT)    \
       TRAM_ENGINE(VEHICLENAME, LENGTH)                                    \
       CARGO_TRAM_GFX(VEHICLENAME, TRAILERNAME, length)                    \
-      CARGO_TRAM_SWITCHES(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY) 
+      CARGO_TRAM_SWITCHES(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY, VISUAL_EFFECT)
 
 #define HORSE_CARGO_TRAM(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY)  \
       PURCHASE_SPRITESET(VEHICLENAME)                                         \
       HORSE_DRAWN_TRAM_ANIM_SWITCH(VEHICLENAME)                               \
       HORSE_CARGO_TRAM_GFX(VEHICLENAME, TRAILERNAME, LENGTH)                  \
-      CARGO_TRAM_SWITCHES(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY) 
+      CARGO_TRAM_SWITCHES(VEHICLENAME, TRAILERNAME, WAGONS, LENGTH, CAPACITY, VISUAL_EFFECT_DISABLE)
 
 #define CARGO_TRAM_GRAPHICS_BLOCK(VEHICLENAME)            \
   articulated_part: switch_##VEHICLENAME##_articulation;  \
@@ -97,6 +98,7 @@
   purchase_cargo_capacity: spriteset_purchase_##VEHICLENAME; \
   length: switch_##VEHICLENAME##_length;                  \
   purchase: spriteset_purchase_##VEHICLENAME;             \
+  visual_effect: switch_##VEHICLENAME##_visual_effect;    \
   COAL: switch_##VEHICLENAME##_graphics_coal;             \
   OIL_: switch_##VEHICLENAME##_graphics_tanker;           \
   LVST: switch_##VEHICLENAME##_graphics_lvst;             \
