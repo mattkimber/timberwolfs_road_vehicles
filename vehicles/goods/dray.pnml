@@ -15,8 +15,8 @@ item(FEAT_ROADVEHS, vehicle_dray, 3741) {
       cargo_disallow_refit:           [LVST];
       default_cargo_type:             GOOD;
       loading_speed:                  4;
-      cost_factor:                    param_realistic_early_vehicle_capacity ? 10 : 46;
-      running_cost_factor:            param_realistic_early_vehicle_capacity ? 6 : 42;
+      cost_factor:                    param_realistic_early_vehicle_capacity ? 4 : 10;
+      running_cost_factor:            param_realistic_early_vehicle_capacity ? 6 : 12;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

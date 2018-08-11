@@ -4,7 +4,7 @@ VEHICLESPRITES_TRAM(centenary_tram, 64)
 item(FEAT_ROADVEHS, centenary_tram, 13841) {
   property {
       name:                           string(STR_NAME_CENTENARY_TRAM);
-      climates_available:             param_enable_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1984,01,01);
       model_life:                     30;
       /* retire_early not set, use default retirement behaviour */
@@ -14,8 +14,8 @@ item(FEAT_ROADVEHS, centenary_tram, 13841) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  6;
-      cost_factor:                    183;
-      running_cost_factor:            165;
+      cost_factor:                    73;
+      running_cost_factor:            75;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

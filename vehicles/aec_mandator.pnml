@@ -1,0 +1,41 @@
+ARTIC(aec_mandator, t45_trailer, 16, 36, 28)
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, vehicle_aec_mandator, 4681) {
+  property {
+      name:                           string(STR_NAME_AEC_MANDATOR);
+      climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(1968,01,01);
+      model_life:                     15;
+      retire_early:                   -5;
+      vehicle_life:                   15;
+      reliability_decay:              25;
+      refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
+      loading_speed:                  5;
+      cost_factor:                    220;
+      running_cost_factor:            240;
+      default_cargo_type:             GOOD;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          68 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          247 hp;
+      weight:                         10 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 14 : 18;
+      sound_effect:                   SOUND_TRUCK_START;
+      /* Visual effect is left at default (no effect) */
+  }
+
+  graphics {
+    speed: (build_year >= 1991 && param_speed_limiters) ? 45 : 55;
+    ARTIC_GRAPHICS_BLOCK(aec_mandator)
+    additional_text: return string(STR_USAGE_ARTICULATED_HGV);
+  }
+}

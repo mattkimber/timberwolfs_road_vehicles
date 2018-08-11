@@ -15,8 +15,8 @@ item(FEAT_ROADVEHS, mitsubishi_canter, 5051) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    126;
-      running_cost_factor:            param_realistic_modern_vehicle_capacity ? 56 : 114;
+      cost_factor:                    40;
+      running_cost_factor:            param_realistic_modern_vehicle_capacity ? 39 : 79;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

@@ -17,8 +17,8 @@ item(FEAT_ROADVEHS, foden_alpha, 4971) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    158;
-      running_cost_factor:            142;
+      cost_factor:                    41;
+      running_cost_factor:            101;
       sprite_id:                      SPRITE_ID_NEW_ROADVEH;
       speed:                          70 mph;
       misc_flags:                     bitmask(ROADVEH_FLAG_2CC);

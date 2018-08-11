@@ -1,0 +1,66 @@
+VEHICLESPRITES_TRAM(vossloh_class_399_front, 56)
+VEHICLESPRITES_TRAM(vossloh_class_399_rear, 56)
+VEHICLESPRITES_TRAM(vossloh_class_399_mid, 56)
+PURCHASE_SPRITESET(vossloh_class_399)
+
+switch (FEAT_ROADVEHS, SELF, switch_vossloh_class_399_articulation, extra_callback_info1) {
+  0..2: return vossloh_class_399;
+  return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_vossloh_class_399_graphics, position_in_consist ) {
+  0: spriteset_vossloh_class_399_front;
+  1: spriteset_vossloh_class_399_mid;
+  spriteset_vossloh_class_399_rear;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_vossloh_class_399_capacity, position_in_consist ) {
+  0: return 75;
+  1: return 87;
+  return 75;
+}
+
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, vossloh_class_399, 14171) {
+  property {
+      name:                           string(STR_NAME_VOSSLOH_CLASS_399);
+      climates_available:             param_enable_passenger_trams && (param_hybrid_tram_mode == 1 || param_hybrid_tram_mode == 2) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(2017,01,01);
+      model_life:                     -1;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   30;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+      non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      default_cargo_type:             PASS;
+      loading_speed:                  10;
+      cost_factor:                    154;
+      running_cost_factor:            214;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          62 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          1180 hp;
+      weight:                         63 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 79;
+
+      sound_effect:                   SOUND_ELECTRIC_SPARK;
+  }
+
+  graphics {
+    additional_text: return string(STR_USAGE_VOSSLOH_CLASS_399);
+    articulated_part: switch_vossloh_class_399_articulation;
+    default: switch_vossloh_class_399_graphics;
+    cargo_capacity: switch_vossloh_class_399_capacity;
+    purchase_cargo_capacity: return 79;
+    length: return 7;
+    purchase: spriteset_purchase_vossloh_class_399; 
+  }
+}

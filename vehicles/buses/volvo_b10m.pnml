@@ -14,8 +14,8 @@ item(FEAT_ROADVEHS, volvo_b10m, 1781) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  4;
-      cost_factor:                    195;
-      running_cost_factor:            175;
+      cost_factor:                    69;
+      running_cost_factor:            102;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

@@ -21,7 +21,7 @@ switch (FEAT_ROADVEHS, SELF, switch_progress_twin_car_capacity, position_in_cons
 item(FEAT_ROADVEHS, progress_twin_car, 13601) {
   property {
       name:                           string(STR_NAME_PROGRESS_TWIN_CAR);
-      climates_available:             param_enable_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1960,01,01);
       model_life:                     30;
       /* retire_early not set, use default retirement behaviour */
@@ -31,8 +31,8 @@ item(FEAT_ROADVEHS, progress_twin_car, 13601) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  8;
-      cost_factor:                    221;
-      running_cost_factor:            199;
+      cost_factor:                    88;
+      running_cost_factor:            80;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

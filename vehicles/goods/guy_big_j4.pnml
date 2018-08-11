@@ -14,8 +14,8 @@ item(FEAT_ROADVEHS, vehicle_guy_big_j4, 4641) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    147;
-      running_cost_factor:            132;
+      cost_factor:                    38;
+      running_cost_factor:            78;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

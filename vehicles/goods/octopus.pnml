@@ -18,8 +18,8 @@ item(FEAT_ROADVEHS, octopus, 4521) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    103;
-      running_cost_factor:            92;
+      cost_factor:                    26;
+      running_cost_factor:            48;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

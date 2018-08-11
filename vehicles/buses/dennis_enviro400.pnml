@@ -13,8 +13,8 @@ item(FEAT_ROADVEHS, dennis_enviro_400, 2051) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  7;
-      cost_factor:                    245;
-      running_cost_factor:            220;
+      cost_factor:                    82;
+      running_cost_factor:            112;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

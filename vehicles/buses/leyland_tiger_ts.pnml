@@ -13,8 +13,8 @@ item(FEAT_ROADVEHS, leyland_tiger_ts, 1271) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  4;
-      cost_factor:                    128;
-      running_cost_factor:            114;
+      cost_factor:                    37;
+      running_cost_factor:            56;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

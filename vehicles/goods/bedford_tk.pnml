@@ -15,8 +15,8 @@ item(FEAT_ROADVEHS, bedford_tk, 4591) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    102;
-      running_cost_factor:            param_realistic_modern_vehicle_capacity ? 42 : 91;
+      cost_factor:                    34;
+      running_cost_factor:            param_realistic_modern_vehicle_capacity ? 30 : 51;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

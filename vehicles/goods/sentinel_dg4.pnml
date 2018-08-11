@@ -18,8 +18,8 @@ item(FEAT_ROADVEHS, sentinel_dg4, 4281) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    75;
-      running_cost_factor:            param_realistic_early_vehicle_capacity ? 50 : 105;
+      cost_factor:                    21;
+      running_cost_factor:            param_realistic_early_vehicle_capacity ? 19 : 40;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

@@ -17,8 +17,8 @@ item(FEAT_ROADVEHS, mammoth_major_8, 4351) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    97;
-      running_cost_factor:            87;
+      cost_factor:                    25;
+      running_cost_factor:            46;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

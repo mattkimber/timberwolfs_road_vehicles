@@ -13,8 +13,8 @@ item(FEAT_ROADVEHS, optare_solo, 1981) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  5;
-      cost_factor:                    147;
-      running_cost_factor:            115;
+      cost_factor:                    42;
+      running_cost_factor:            74;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

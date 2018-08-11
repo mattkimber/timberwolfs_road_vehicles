@@ -1,0 +1,60 @@
+VEHICLESPRITES_TRAM(dlr_p86_front, 56)
+VEHICLESPRITES_TRAM(dlr_p86_rear, 56)
+PURCHASE_SPRITESET(dlr_p86)
+
+switch (FEAT_ROADVEHS, SELF, switch_dlr_p86_articulation, extra_callback_info1) {
+  0..3: return dlr_p86;
+  return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_dlr_p86_graphics, position_in_consist ) {
+  0: spriteset_dlr_p86_front;
+  1: spriteset_dlr_p86_rear;
+  2: spriteset_dlr_p86_front;
+  spriteset_dlr_p86_rear;
+}
+
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, dlr_p86, 13871) {
+  property {
+      name:                           string(STR_NAME_DLR_P86);
+      climates_available:             param_enable_passenger_trams && (param_lr_mode == 1 || param_lr_mode == 2) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(1987,01,01);
+      model_life:                     28;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   25;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+      non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      default_cargo_type:             PASS;
+      loading_speed:                  10;
+      cost_factor:                    106;
+      running_cost_factor:            123;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          45 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          280 hp;
+      weight:                         36 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 72;
+
+      sound_effect:                   SOUND_ELECTRIC_SPARK;
+  }
+
+  graphics {
+    additional_text: return string(STR_USAGE_DLR_P86);
+    articulated_part: switch_dlr_p86_articulation;
+    default: switch_dlr_p86_graphics;
+    cargo_capacity: return 72;
+    purchase_cargo_capacity: return 72;
+    length: return 7;
+    purchase: spriteset_purchase_dlr_p86;
+  }
+}

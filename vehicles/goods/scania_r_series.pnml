@@ -14,8 +14,8 @@ item(FEAT_ROADVEHS, vehicle_scania_r_series, 5041) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    208;
-      running_cost_factor:            187;
+      cost_factor:                    54;
+      running_cost_factor:            130;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

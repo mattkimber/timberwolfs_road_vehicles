@@ -15,8 +15,8 @@ item(FEAT_ROADVEHS, erf_c_series, 4821) {
       non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
       default_cargo_type:             GOOD;
       loading_speed:                  5;
-      cost_factor:                    137;
-      running_cost_factor:            123;
+      cost_factor:                    46;
+      running_cost_factor:            84;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

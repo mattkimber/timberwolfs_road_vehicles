@@ -17,7 +17,7 @@ switch (FEAT_ROADVEHS, SELF, switch_bombardier_cr4000_graphics, position_in_cons
 item(FEAT_ROADVEHS, bombardier_cr4000, 13981) {
   property {
       name:                           string(STR_NAME_BOMBARDIER_CR4000);
-      climates_available:             param_enable_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1998,09,01);
       model_life:                     -1;
       /* retire_early not set, use default retirement behaviour */
@@ -27,8 +27,8 @@ item(FEAT_ROADVEHS, bombardier_cr4000, 13981) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  8;
-      cost_factor:                    255;
-      running_cost_factor:            255;
+      cost_factor:                    125;
+      running_cost_factor:            155;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */

@@ -1,0 +1,41 @@
+CARGO_TRAM(y6, tram_trailer, 3, 24, 12)
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, vehicle_y6, 15907) {
+  property {
+      name:                           string(STR_NAME_Y6);
+      climates_available:             param_enable_cargo_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(1883,01,01);
+      model_life:                     30;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   30;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+      non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
+      default_cargo_type:             GOOD;
+      loading_speed:                  5;
+      cost_factor:                    34;
+      running_cost_factor:            31;
+      /* cargo_age_period is left at default */
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          18mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_TRAM, ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          50hp;
+      weight:                         19 ton;
+      /* TE and air drag coefficient is left at default */
+      cargo_capacity:                 9;
+
+      sound_effect:                   SOUND_TRAIN;
+      visual_effect:                  visual_effect(VISUAL_EFFECT_STEAM, -1);
+  }
+
+  graphics {
+    CARGO_TRAM_GRAPHICS_BLOCK(y6)
+    additional_text: return string(STR_USAGE_Y6);
+  }
+}

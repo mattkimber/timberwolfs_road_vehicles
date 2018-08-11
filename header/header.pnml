@@ -5,6 +5,7 @@
 #include "macros/artics.h"
 #include "macros/horse_drawn.h"
 #include "macros/horse_drawn_tram.h"
+#include "macros/cargo_tram.h"
 
 grf {
   grfid:                  "TWF\04";
@@ -149,18 +150,61 @@ grf {
     }
   }
 param 14 {
-    param_enable_trams {
-      name: string(STR_PARAM_TRAMS_ENABLED);
-      desc: string(STR_PARAM_TRAMS_ENABLED_DESC);
+    param_enable_passenger_trams {
+      name: string(STR_PARAM_PASSENGER_TRAMS_ENABLED);
+      desc: string(STR_PARAM_PASSENGER_TRAMS_ENABLED_DESC);
       type: bool;
       def_value: 1;
     }
   }
+param 15 {
+    param_enable_cargo_trams {
+      name: string(STR_PARAM_CARGO_TRAMS_ENABLED);
+      desc: string(STR_PARAM_CARGO_TRAMS_ENABLED_DESC);
+      type: bool;
+      def_value: 1;
+    }
+  }
+
+param 16 {
+    param_hybrid_tram_mode {
+      name: string(STR_PARAM_HYBRID_TRAM_MODE);
+      desc: string(STR_PARAM_HYBRID_TRAM_MODE_DESC);
+      type: int;
+      min_value: 0;
+		  max_value: 3;
+		  def_value: 1;
+      names: {
+			  0: string(STR_PARAM_NONE);
+			  1: string(STR_PARAM_TRAM_ONLY);
+			  2: string(STR_PARAM_TRAM_AND_RAIL);
+			  3: string(STR_PARAM_RAIL_ONLY);
+		  };
+    }
+  }
+param 17 {
+    param_lr_mode {
+      name: string(STR_PARAM_LR_MODE);
+      desc: string(STR_PARAM_LR_MODE_DESC);
+      type: int;
+      min_value: 0;
+		  max_value: 3;
+		  def_value: 1;
+      names: {
+			  0: string(STR_PARAM_NONE);
+			  1: string(STR_PARAM_TRAM_ONLY);
+			  2: string(STR_PARAM_TRAM_AND_RAIL);
+			  3: string(STR_PARAM_RAIL_ONLY);
+		  };
+    }
+  }    
 }
 
 basecost {
-  PR_BUILD_VEHICLE_ROAD: param_build_costs - 2;
-  PR_RUNNING_ROADVEH: param_running_costs - 2;
+  PR_BUILD_VEHICLE_ROAD: param_build_costs - 1;
+  PR_RUNNING_ROADVEH: param_running_costs - 1;
+  PR_BUILD_VEHICLE_TRAIN: param_build_costs - 5;
+  PR_RUNNING_TRAIN_ELECTRIC: param_running_costs - 1;
 }
 
 cargotable {

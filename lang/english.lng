@@ -41,9 +41,20 @@ STR_PARAM_STEAM_FREIGHT_ENABLED:Enable Steam Freight Vehicles
 STR_PARAM_STEAM_FREIGHT_ENABLED_DESC:Choose whether early steam-powered freight vehicles from this set will be available for purchase during the game
 STR_PARAM_EASTER_EGGS_ENABLED:Enable Easter Eggs
 STR_PARAM_EASTER_EGGS_ENABLED_DESC:This set includes some vehicles which are included only for fun. Use this option to enable or disable them.
-STR_PARAM_TRAMS_ENABLED:Enable Trams
-STR_PARAM_TRAMS_ENABLED_DESC:Choose whether trams from this set will be available for purchase during the game
+STR_PARAM_PASSENGER_TRAMS_ENABLED:Enable Passenger Trams
+STR_PARAM_PASSENGER_TRAMS_ENABLED_DESC:Choose whether passenger trams from this set will be available for purchase during the game
+STR_PARAM_CARGO_TRAMS_ENABLED:Enable Cargo Trams
+STR_PARAM_CARGO_TRAMS_ENABLED_DESC:Choose whether cargo trams from this set will be available for purchase during the game
+STR_PARAM_HYBRID_TRAM_MODE:Hybrid Tram Purchase Mode
+STR_PARAM_HYBRID_TRAM_MODE_DESC:Choose whether hybrid rail/tram vehicles appear in the tram purchase list, the rail vehicle purchase list, both, or neither.
+STR_PARAM_LR_MODE:Light Rail Purchase Mode
+STR_PARAM_LR_MODE_DESC:Choose whether light rail vehicles appear in the tram purchase list, the rail vehicle purchase list, both, or neither.
 
+# Purchase modes
+STR_PARAM_NONE:Unavailable
+STR_PARAM_TRAM_ONLY:Tram only
+STR_PARAM_TRAM_AND_RAIL:Tram and Rail
+STR_PARAM_RAIL_ONLY:Rail only
 
 # cargo subtypes
 STR_CARGO_PAX_REGULAR:(Company Colours)
@@ -152,6 +163,13 @@ STR_NAME_PROGRESS_TWIN_CAR:Progress Twin Car
 STR_NAME_JUBILEE_TRAM:Jubilee Tram
 STR_NAME_CENTENARY_TRAM:Centenary Tram
 STR_NAME_BOMBARDIER_CR4000:Bombardier CR4000
+STR_NAME_FLEXITY_2:Bombardier Flexity 2
+STR_NAME_VOSSLOH_CLASS_399:Vossloh Class 399
+STR_NAME_DLR_P86:Linke-Hofmann-Busch P86 Stock
+STR_NAME_DLR_B07:Bombardier B07 Stock
+STR_NAME_HORSE_WAGONS:Horse-Drawn Wagons
+STR_NAME_Y6:Y6 0-4-0
+STR_NAME_J70:J70 0-6-0
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
@@ -187,3 +205,9 @@ STR_USAGE_PROGRESS_TWIN_CAR:{SILVER}The Progress Twin Cars were rebuilt from ear
 STR_USAGE_JUBILEE_TRAM:{SILVER}The Jubilee trams were extended and rebodied Balloon trams.
 STR_USAGE_CENTENARY_TRAM:{SILVER}Centenary trams used large numbers of bus parts.
 STR_USAGE_BOMBARDIER_CR4000:{SILVER}The CR4000 was the first tram to run in London since the end of the original system in 1952.
+STR_USAGE_FLEXITY_2:{SILVER}The Flexity 2 is a modern low-floor tram with a large capacity and multiple doors for fast loading.
+STR_USAGE_VOSSLOH_CLASS_399:{SILVER}The Vossloh Class 399 is a powerful and advanced tram/train hybrid vehicle.
+STR_USAGE_DLR_P86:{SILVER}The P86 stock was used both on London's DLR system as a light rail vehicle and in the German city of Essen as a tram.
+STR_USAGE_DLR_B07:{SILVER}B07 stock was the first type to operate as a 3-car train on London's DLR.
+STR_USAGE_Y6:{SILVER}The Y6 steam tram was designed for running on public roads.
+STR_USAGE_J70:{SILVER}The J70 steam tram was a more powerful version of the Y6 designed to handle more cargo.
