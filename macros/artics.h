@@ -1,5 +1,7 @@
+#define PURCHASE_PNGNAME(VEHICLENAME, CARGONAME) STR(purchase/VEHICLENAME##CARGONAME.vox.png)
+
 #define PURCHASE_SPRITESET(VEHICLENAME)                         \
-spriteset (spriteset_purchase_##VEHICLENAME, PNGNAME(VEHICLENAME,_purchase) ) {   \
+spriteset (spriteset_purchase_##VEHICLENAME, PURCHASE_PNGNAME(VEHICLENAME,_purchase) ) {   \
   template_purchase()                                           \
 }
 

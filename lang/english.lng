@@ -172,6 +172,7 @@ STR_NAME_Y6:Y6 0-4-0
 STR_NAME_J70:J70 0-6-0
 STR_NAME_Y10:Y10 "Super Sentinel"
 STR_NAME_DREWRY_SHUNTER:Drewry Shunter
+STR_NAME_FC_HIBBERD_PLANET:FC Hibberd Planet
 
 # Usage
 STR_USAGE_VAN:{SILVER}Vans can only transport small amounts of light cargo, but are faster than other goods vehicles.
@@ -215,3 +216,4 @@ STR_USAGE_Y6:{SILVER}The Y6 steam tram was designed for running on public roads.
 STR_USAGE_J70:{SILVER}The J70 steam tram was a more powerful version of the Y6 designed to handle more cargo.
 STR_USAGE_Y10:{SILVER}This Sentinel tram engine had two engines and a two-speed gearbox.
 STR_USAGE_DREWRY_SHUNTER:{SILVER}Diesel shunters with special tramway adaptations were used to replace steam trams in East Anglia.
+STR_USAGE_FC_HIBBERD_PLANET:{SILVER}FC Hibberd built many different types of locomotive under the "Planet" nameplate, often using a Dorman engine.

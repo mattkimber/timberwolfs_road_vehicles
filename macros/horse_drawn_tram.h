@@ -5,8 +5,8 @@
 
 #define HORSE_DRAWN_TRAM_ANIM_SWITCH(VEHICLENAME) \
   switch(FEAT_ROADVEHS, SELF, switch_##VEHICLENAME##_animation, motion_counter % 4) { \
-    0..1: return spriteset_tram_horses_1;   \
-    return spriteset_tram_horses_2;       \
+    0..1: return spriteset_cargo_tram_horses_1;   \
+    return spriteset_cargo_tram_horses_2;       \
   }
 
 #define HORSE_DRAWN_TRAM_GFX_SWITCH(VEHICLENAME, TRAILERNAME, CARGONAME, CARGOTYPE)                             \

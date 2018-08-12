@@ -6,7 +6,7 @@ item(FEAT_ROADVEHS, vehicle_drewry_shunter, 16051) {
       name:                           string(STR_NAME_DREWRY_SHUNTER);
       climates_available:             param_enable_cargo_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
       introduction_date:              date(1952,01,01);
-      model_life:                     45;
+      model_life:                     -1;
       /* retire_early not set, use default retirement behaviour */
       vehicle_life:                   26;
       reliability_decay:              20;
