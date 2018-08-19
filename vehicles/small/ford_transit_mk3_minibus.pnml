@@ -1,7 +1,7 @@
 VEHICLESPRITES_BUS(ford_transit_mk3_minibus, 32)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, ford_transit_mk3_minibus, 10861) {
+item(FEAT_ROADVEHS, ford_transit_mk3_minibus, 7861) {
   property {
       name:                           string(STR_NAME_FORD_TRANSIT_MK3_MINIBUS);
       climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

@@ -6,7 +6,7 @@ SPRITEGROUPS_LIVESTOCK(leyland_badger)
 SPRITEGROUPS_TANKER_FLATBED(leyland_badger)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, badger, 4361) {
+item(FEAT_ROADVEHS, badger, 3361) {
   property {
       name:                           string(STR_NAME_LEYLAND_BADGER);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

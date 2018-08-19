@@ -14,7 +14,7 @@ switch (FEAT_ROADVEHS, SELF, switch_bombardier_cr4000_graphics, position_in_cons
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, bombardier_cr4000, 13981) {
+item(FEAT_ROADVEHS, bombardier_cr4000, 9981) {
   property {
       name:                           string(STR_NAME_BOMBARDIER_CR4000);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

@@ -31,7 +31,7 @@ switch (FEAT_ROADVEHS, SELF, switch_scammell_scarab_length, position_in_consist 
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, scammell_scarab, 4481) {
+item(FEAT_ROADVEHS, scammell_scarab, 3481) {
   property {
       name:                           string(STR_SCAMMELL_SCARAB);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

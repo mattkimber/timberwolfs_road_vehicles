@@ -2,7 +2,7 @@ VEHICLESPRITES_WITH_FLATBED(bedford_tk, 32)
 
 SPRITEGROUPS_WITH_FLATBED(bedford_tk)
 
-item(FEAT_ROADVEHS, bedford_tk, 4591) {
+item(FEAT_ROADVEHS, bedford_tk, 3591) {
   property {
       name:                           string(STR_NAME_BEDFORD_TK);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

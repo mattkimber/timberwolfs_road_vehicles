@@ -7,7 +7,7 @@ spritegroup spritegroup_grantham_steam_tram {
 }
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, grantham_steam_tram, 12887) {
+item(FEAT_ROADVEHS, grantham_steam_tram, 8887) {
   property {
       name:                           string(STR_NAME_GRANTHAM_STEAM_TRAM);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

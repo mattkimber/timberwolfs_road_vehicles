@@ -1,7 +1,7 @@
 VEHICLESPRITES_BUS(renault_trafic_minibus, 32)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, renault_trafic_minibus, 11141) {
+item(FEAT_ROADVEHS, renault_trafic_minibus, 8141) {
   property {
       name:                           string(STR_NAME_RENAULT_TRAFIC_MINIBUS);
       climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

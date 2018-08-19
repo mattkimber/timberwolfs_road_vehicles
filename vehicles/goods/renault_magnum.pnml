@@ -1,7 +1,7 @@
 ARTIC(renault_magnum, modern_trailer, 16, 50, 30)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_renault_magnum, 5011) {
+item(FEAT_ROADVEHS, vehicle_renault_magnum, 4011) {
   property {
       name:                           string(STR_NAME_RENAULT_MAGNUM);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

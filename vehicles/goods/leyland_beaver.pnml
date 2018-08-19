@@ -1,7 +1,7 @@
 ARTIC(leyland_beaver, t45_trailer, 16, 36, 28)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_leyland_beaver, 4661) {
+item(FEAT_ROADVEHS, vehicle_leyland_beaver, 3661) {
   property {
       name:                           string(STR_NAME_LEYLAND_BEAVER);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

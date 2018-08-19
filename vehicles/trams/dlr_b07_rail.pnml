@@ -17,7 +17,7 @@ switch (FEAT_TRAINS, SELF, switch_dlr_b07_rail_graphics, position_in_consist ) {
 
 
 /* Define the road vehicle */
-item(FEAT_TRAINS, dlr_b07_rail, 14082) {
+item(FEAT_TRAINS, dlr_b07_rail, 10082) {
   property {
       name:                           string(STR_NAME_DLR_B07);
       climates_available:             param_enable_passenger_trams && (param_lr_mode == 2 || param_lr_mode == 3) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

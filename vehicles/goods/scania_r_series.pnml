@@ -1,7 +1,7 @@
 ARTIC(scania_r_series, modern_trailer, 16, 54, 30)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_scania_r_series, 5041) {
+item(FEAT_ROADVEHS, vehicle_scania_r_series, 4041) {
   property {
       name:                           string(STR_NAME_SCANIA_R_SERIES);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

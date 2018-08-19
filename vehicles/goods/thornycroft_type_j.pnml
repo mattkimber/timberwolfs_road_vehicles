@@ -1,7 +1,7 @@
 VEHICLESPRITES_BUS(thornycroft_j, 48)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, thornycroft_type_j, 4131) {
+item(FEAT_ROADVEHS, thornycroft_type_j, 3131) {
   property {
       name:                           string(STR_NAME_THORNYCROFT_J);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

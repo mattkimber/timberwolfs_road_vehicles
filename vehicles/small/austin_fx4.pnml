@@ -8,7 +8,7 @@ switch(FEAT_ROADVEHS, SELF, switch_austin_fx4_graphics, cargo_subtype) {
 }
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, austin_fx4, 10581) {
+item(FEAT_ROADVEHS, austin_fx4, 7581) {
   property {
       name:                           string(STR_NAME_AUSTIN_FX4);
       climates_available:             param_enable_cars ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

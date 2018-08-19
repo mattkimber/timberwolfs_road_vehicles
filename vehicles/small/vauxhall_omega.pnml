@@ -1,7 +1,7 @@
 VEHICLESPRITES_BUS(vauxhall_omega, 32)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vauxhall_omega, 10941) {
+item(FEAT_ROADVEHS, vauxhall_omega, 7941) {
   property {
       name:                           string(STR_NAME_VAUXHALL_OMEGA);
       climates_available:             param_enable_cars ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

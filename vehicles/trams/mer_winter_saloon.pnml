@@ -1,7 +1,7 @@
 VEHICLESPRITES_TRAM(mer_winter_saloon, 48)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, mer_winter_saloon, 12939) {
+item(FEAT_ROADVEHS, mer_winter_saloon, 8939) {
   property {
       name:                           string(STR_NAME_MER_WINTER_SALOON);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

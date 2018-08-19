@@ -1,7 +1,7 @@
 VEHICLESPRITES_BUS(volvo_s40, 32)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, volvo_s40, 11041) {
+item(FEAT_ROADVEHS, volvo_s40, 8041) {
   property {
       name:                           string(STR_NAME_VOLVO_S40);
       climates_available:             param_enable_easter_eggs ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

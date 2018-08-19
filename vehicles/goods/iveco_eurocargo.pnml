@@ -2,7 +2,7 @@ VEHICLESPRITES_WITH_FLATBED(iveco_eurocargo, 32)
 
 SPRITEGROUPS_WITH_FLATBED(iveco_eurocargo)
 
-item(FEAT_ROADVEHS, iveco_eurocargo, 4931) {
+item(FEAT_ROADVEHS, iveco_eurocargo, 3931) {
   property {
       name:                           string(STR_NAME_IVECO_EUROCARGO);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

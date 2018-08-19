@@ -21,7 +21,7 @@ switch (FEAT_TRAINS, SELF, switch_vossloh_class_399_rail_capacity, position_in_c
 
 
 /* Define the road vehicle */
-item(FEAT_TRAINS, vossloh_class_399_rail, 14172) {
+item(FEAT_TRAINS, vossloh_class_399_rail, 10172) {
   property {
       name:                           string(STR_NAME_VOSSLOH_CLASS_399);
       climates_available:             param_enable_passenger_trams && (param_hybrid_tram_mode == 2 || param_hybrid_tram_mode == 3) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

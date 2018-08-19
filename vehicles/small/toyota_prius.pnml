@@ -1,7 +1,7 @@
 VEHICLESPRITES_BUS(toyota_prius, 32)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, toyota_prius, 11091) {
+item(FEAT_ROADVEHS, toyota_prius, 8091) {
   property {
       name:                           string(STR_NAME_TOYOTA_PRIUS);
       climates_available:             param_enable_cars ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

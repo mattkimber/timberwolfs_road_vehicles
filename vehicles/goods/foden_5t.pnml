@@ -6,7 +6,7 @@ SPRITEGROUPS_LIVESTOCK(foden_5t)
 SPRITEGROUPS_TANKER(foden_5t)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, foden_5t, 4021) {
+item(FEAT_ROADVEHS, foden_5t, 3021) {
   property {
       name:                           string(STR_NAME_FODEN_5T);
       climates_available:             param_enable_steam_freight ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

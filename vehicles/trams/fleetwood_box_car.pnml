@@ -1,7 +1,7 @@
 VEHICLESPRITES_TRAM(fleetwood_box_car, 56)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, fleetwood_box_car, 12937) {
+item(FEAT_ROADVEHS, fleetwood_box_car, 8937) {
   property {
       name:                           string(STR_NAME_FLEETWOOD_BOX_CAR);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

@@ -6,10 +6,10 @@ spritegroup spritegroup_horse_tram {
 	loaded:  [ spriteset_horse_tram, spriteset_horse_tram_loaded ];
 }
 
-HORSE_DRAWN_TRAM(horse_tram, horse_tram, 48, 60)
+HORSE_DRAWN_TRAM(horse_tram, horse_tram, 48, 48)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_horse_tram, 12861) {
+item(FEAT_ROADVEHS, vehicle_horse_tram, 8861) {
   property {
       name:                           string(STR_NAME_HORSE_TRAM);
       climates_available:             param_enable_horse_drawn && param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
@@ -22,8 +22,8 @@ item(FEAT_ROADVEHS, vehicle_horse_tram, 12861) {
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
       loading_speed:                  6;
-      cost_factor:                    param_realistic_early_vehicle_capacity ? 30 : 43;
-      running_cost_factor:            param_realistic_early_vehicle_capacity ? 15 : 23;
+      cost_factor:                    param_realistic_early_vehicle_capacity ? 30 : 38;
+      running_cost_factor:            param_realistic_early_vehicle_capacity ? 15 : 21;
       /* cargo_age_period is left at default */
 
       /* RV-specific properties */
@@ -36,7 +36,7 @@ item(FEAT_ROADVEHS, vehicle_horse_tram, 12861) {
       power:                          param_realistic_early_vehicle_capacity ? 5 : 15;
       weight:                         8 ton;
       /* TE and air drag coefficient is left at default */
-      cargo_capacity:                 30;
+      cargo_capacity:                 24;
       sound_effect:                   SOUND_HORSE;
       /* Visual effect is left at default (no effect) */
   }

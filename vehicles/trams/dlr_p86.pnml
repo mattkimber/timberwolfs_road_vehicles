@@ -16,7 +16,7 @@ switch (FEAT_ROADVEHS, SELF, switch_dlr_p86_graphics, position_in_consist ) {
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, dlr_p86, 13871) {
+item(FEAT_ROADVEHS, dlr_p86, 9871) {
   property {
       name:                           string(STR_NAME_DLR_P86);
       climates_available:             param_enable_passenger_trams && (param_lr_mode == 1 || param_lr_mode == 2) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

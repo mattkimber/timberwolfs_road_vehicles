@@ -1,7 +1,7 @@
 VEHICLESPRITES_TRAM(gf_milne_tram, 48)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, gf_milne_tram, 12927) {
+item(FEAT_ROADVEHS, gf_milne_tram, 8927) {
   property {
       name:                           string(STR_NAME_GF_MILNE_TRAM);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

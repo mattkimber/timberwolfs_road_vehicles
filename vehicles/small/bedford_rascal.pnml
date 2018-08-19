@@ -6,7 +6,7 @@ switch(FEAT_ROADVEHS, SELF, switch_capacity_bedford_rascal, cargo_type_in_veh) {
 }
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, bedford_rascal, 7862) {
+item(FEAT_ROADVEHS, bedford_rascal, 5862) {
   property {
       name:                           string(STR_NAME_BEDFORD_RASCAL);
       climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

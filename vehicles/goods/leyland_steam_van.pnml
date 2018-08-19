@@ -6,7 +6,7 @@ SPRITEGROUPS_LIVESTOCK(leyland_steam_van)
 SPRITEGROUPS_TANKER(leyland_steam_van)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, leyland_steam_van, 3935) {
+item(FEAT_ROADVEHS, leyland_steam_van, 2935) {
   property {
       name:                           string(STR_NAME_LEYLAND_STEAM_VAN);
       climates_available:             param_enable_steam_freight ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

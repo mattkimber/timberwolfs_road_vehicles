@@ -2,7 +2,7 @@ VEHICLESPRITES_WITH_FLATBED(saviem_sm, 40)
 
 SPRITEGROUPS_WITH_FLATBED(saviem_sm)
 
-item(FEAT_ROADVEHS, saviem_sm, 4671) {
+item(FEAT_ROADVEHS, saviem_sm, 3671) {
   property {
       name:                           string(STR_NAME_SAVIEM_SM);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

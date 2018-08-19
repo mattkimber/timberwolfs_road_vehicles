@@ -22,7 +22,7 @@ switch (FEAT_ROADVEHS, SELF, switch_vossloh_class_399_capacity, position_in_cons
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vossloh_class_399, 14171) {
+item(FEAT_ROADVEHS, vossloh_class_399, 10171) {
   property {
       name:                           string(STR_NAME_VOSSLOH_CLASS_399);
       climates_available:             param_enable_passenger_trams && (param_hybrid_tram_mode == 1 || param_hybrid_tram_mode == 2) ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

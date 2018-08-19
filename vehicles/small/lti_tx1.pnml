@@ -8,7 +8,7 @@ switch(FEAT_ROADVEHS, SELF, switch_lti_tx1_graphics, cargo_subtype) {
 }
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, lti_tx1, 10971) {
+item(FEAT_ROADVEHS, lti_tx1, 7971) {
   property {
       name:                           string(STR_NAME_LTI_TX1);
       climates_available:             param_enable_cars ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

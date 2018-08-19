@@ -2,7 +2,7 @@ VEHICLESPRITES_WITH_FLATBED(guy_big_j6, 56)
 
 SPRITEGROUPS_WITH_FLATBED(guy_big_j6)
 
-item(FEAT_ROADVEHS, guy_big_j6, 4642) {
+item(FEAT_ROADVEHS, guy_big_j6, 3642) {
   property {
       name:                           string(STR_NAME_GUY_BIG_J6);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

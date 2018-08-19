@@ -1,7 +1,7 @@
 ARTIC(volvo_f10, t45_trailer, 16, 36, 28)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_volvo_f10, 4771) {
+item(FEAT_ROADVEHS, vehicle_volvo_f10, 3771) {
   property {
       name:                           string(STR_NAME_VOLVO_F10);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

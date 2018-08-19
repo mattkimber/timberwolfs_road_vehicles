@@ -7,7 +7,7 @@ switch(FEAT_ROADVEHS, SELF, switch_capacity_ford_transit_mk3, cargo_type_in_veh)
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, ford_transit_mk3, 7861) {
+item(FEAT_ROADVEHS, ford_transit_mk3, 5861) {
   property {
       name:                           string(STR_NAME_FORD_TRANSIT_MK3);
       climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

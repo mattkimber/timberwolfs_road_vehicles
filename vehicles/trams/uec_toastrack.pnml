@@ -7,7 +7,7 @@ spritegroup spritegroup_uec_toastrack {
 }
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, uec_toastrack, 13111) {
+item(FEAT_ROADVEHS, uec_toastrack, 9111) {
   property {
       name:                           string(STR_NAME_UEC_TOASTRACK);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

@@ -6,7 +6,7 @@ SPRITEGROUPS_LIVESTOCK(leyland_x_type)
 SPRITEGROUPS_TANKER_FLATBED(leyland_x_type)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, x_type, 4071) {
+item(FEAT_ROADVEHS, x_type, 3071) {
   property {
       name:                           string(STR_NAME_LEYLAND_X_TYPE);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

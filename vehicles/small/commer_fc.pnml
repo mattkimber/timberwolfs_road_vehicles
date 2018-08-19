@@ -7,7 +7,7 @@ switch(FEAT_ROADVEHS, SELF, switch_capacity_commer_fc, cargo_type_in_veh) {
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, commer_fc, 7601) {
+item(FEAT_ROADVEHS, commer_fc, 5601) {
   property {
       name:                           string(STR_NAME_COMMER_FC);
       climates_available:             param_enable_vans ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

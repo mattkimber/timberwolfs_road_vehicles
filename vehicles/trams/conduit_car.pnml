@@ -7,7 +7,7 @@ spritegroup spritegroup_conduit_car {
 }
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, conduit_car, 12911) {
+item(FEAT_ROADVEHS, conduit_car, 8911) {
   property {
       name:                           string(STR_NAME_CONDUIT_CAR);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

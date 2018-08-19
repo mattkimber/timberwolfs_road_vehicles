@@ -36,7 +36,7 @@ switch (FEAT_ROADVEHS, SELF, switch_flexity_2_length, position_in_consist ) {
 
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, flexity_2, 14101) {
+item(FEAT_ROADVEHS, flexity_2, 10101) {
   property {
       name:                           string(STR_NAME_FLEXITY_2);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

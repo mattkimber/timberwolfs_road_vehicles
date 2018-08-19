@@ -1,7 +1,7 @@
 VEHICLESPRITES_TRAM(balloon_tram, 64)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, balloon_tram, 13341) {
+item(FEAT_ROADVEHS, balloon_tram, 9341) {
   property {
       name:                           string(STR_NAME_BALLOON);
       climates_available:             param_enable_passenger_trams ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

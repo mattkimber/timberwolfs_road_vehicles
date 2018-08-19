@@ -1,7 +1,7 @@
 HORSE_DRAWN(dray, dray_trailer, 32, 12, 2)
 
 /* Define the road vehicle */
-item(FEAT_ROADVEHS, vehicle_dray, 3741) {
+item(FEAT_ROADVEHS, vehicle_dray, 2741) {
   property {
       name:                           string(STR_NAME_DRAY);
       climates_available:             param_enable_horse_drawn ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;

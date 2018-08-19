@@ -2,7 +2,7 @@ VEHICLESPRITES_WITH_FLATBED(foden_s21, 56)
 
 SPRITEGROUPS_WITH_FLATBED(foden_s21)
 
-item(FEAT_ROADVEHS, s21, 4631) {
+item(FEAT_ROADVEHS, s21, 3631) {
   property {
       name:                           string(STR_NAME_FODEN_S21);
       climates_available:             param_enable_lorries ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
