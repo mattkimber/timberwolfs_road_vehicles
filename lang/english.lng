@@ -1,6 +1,6 @@
 ##grflangid 0x01
 STR_GRF_NAME        :Timberwolf's UK Road Vehicles
-STR_GRF_DESCRIPTION :Description:{SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2018 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.
+STR_GRF_DESCRIPTION :Description:{SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2019 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.
 STR_OPENTTD_VERSION :1.5.0 (r27000)
 
 # params
@@ -57,8 +57,10 @@ STR_PARAM_TRAM_AND_RAIL:Tram and Rail
 STR_PARAM_RAIL_ONLY:Rail only
 
 # cargo subtypes
-STR_CARGO_PAX_REGULAR:(Company Colours)
-STR_CARGO_PAX_BLACK:(Black Cab)
+STR_CARGO_PAX_REGULAR: (Company Colours)
+STR_CARGO_PAX_BLACK: (Black Cab)
+STR_TRAM_LIVERY_REGULAR: (Regular Livery)
+STR_TRAM_LIVERY_ALT: (Alternate Livery)
 
 
 # vehicle names

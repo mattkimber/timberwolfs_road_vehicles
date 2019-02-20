@@ -1,4 +1,11 @@
 VEHICLESPRITES_TRAM(standard_car, 56)
+VEHICLESPRITES_TRAM(standard_car_alt, 56)
+
+switch(FEAT_ROADVEHS, SELF, switch_standard_car_graphics, cargo_subtype) {
+  0: return spriteset_standard_car;
+  1: return spriteset_standard_car_alt;
+  return spriteset_standard_car;
+}
 
 /* Define the road vehicle */
 item(FEAT_ROADVEHS, standard_car, 9231) {
@@ -34,7 +41,8 @@ item(FEAT_ROADVEHS, standard_car, 9231) {
   }
 
   graphics {
+    cargo_subtype_text: switch_tram_livery;
+    default: switch_standard_car_graphics;    
     additional_text: return string(STR_USAGE_TRAM);
-    default: spriteset_standard_car;
   }
 }
