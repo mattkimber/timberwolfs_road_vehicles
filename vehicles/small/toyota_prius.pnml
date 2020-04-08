@@ -15,7 +15,7 @@ item(FEAT_ROADVEHS, toyota_prius, 8091) {
       default_cargo_type:             PASS;
       loading_speed:                  4;
       cost_factor:                    15;
-      running_cost_factor:            57;
+      running_cost_factor:            50;
       
       /* Cargo ages slower in cabs to simulate greater comfort (default 185) */
       cargo_age_period:               275;

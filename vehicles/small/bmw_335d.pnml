@@ -1,0 +1,50 @@
+VEHICLESPRITES_BUS(bmw_f31, 32)
+
+switch(FEAT_ROADVEHS, SELF, switch_capacity_bmw_f31, cargo_type_in_veh) {
+  MAIL: param_realistic_modern_vehicle_capacity ? 3 : 4;
+  PASS: return 4;
+  return param_realistic_modern_vehicle_capacity ? 2 : 4;
+}
+
+/* Define the road vehicle */
+item(FEAT_ROADVEHS, bmw_335d, 8161) {
+  property {
+      name:                           string(STR_NAME_BMW_335D);
+      climates_available:             param_enable_easter_eggs ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+      introduction_date:              date(2016,01,01);
+      model_life:                     -1;
+      /* retire_early not set, use default retirement behaviour */
+      vehicle_life:                   10;
+      reliability_decay:              20;
+      refittable_cargo_classes:       bitmask(CC_PASSENGERS, CC_EXPRESS, CC_MAIL, CC_ARMOURED);
+      non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_REFRIGERATED);
+      default_cargo_type:             GOOD;
+      loading_speed:                  4;
+      cost_factor:                    24;
+      running_cost_factor:            80;
+      
+      /* Cargo ages slower in cabs to simulate greater comfort (default 185) */
+      cargo_age_period:               275;
+
+      /* RV-specific properties */
+      sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+      speed:                          155 mph;
+      misc_flags:                     bitmask(ROADVEH_FLAG_2CC);
+      refit_cost:                     0; // Refitting is free
+      /* callback_flags are not set, no need to manually enable callbacks */
+      running_cost_base:              RUNNING_COST_ROADVEH;
+      power:                          310 hp;
+      weight:                         1.7 ton;
+      air_drag_coefficient:           0.025;
+      cargo_capacity:                 param_realistic_modern_vehicle_capacity ? 2 : 4;
+      sound_effect:                   sound("sounds/bmw.wav");
+      /* Visual effect is left at default (no effect) */
+  }
+
+  graphics {
+    default: spriteset_bmw_f31;
+    speed: param_car_speed_limits ? 56 : 124;
+    cargo_capacity: switch_capacity_bmw_f31;
+    additional_text: return string(STR_USAGE_MINICAB);
+  }
+}

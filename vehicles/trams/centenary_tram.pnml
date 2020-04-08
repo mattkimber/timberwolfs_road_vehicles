@@ -13,7 +13,7 @@ item(FEAT_ROADVEHS, centenary_tram, 9841) {
       refittable_cargo_classes:       bitmask(CC_PASSENGERS);
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
-      loading_speed:                  6;
+      loading_speed:                  10;
       cost_factor:                    73;
       running_cost_factor:            75;
       /* cargo_age_period is left at default */

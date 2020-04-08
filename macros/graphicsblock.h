@@ -23,6 +23,7 @@
   COPR: spritegroup_##VEHICLENAME##_copper;        \
   RFPR: sprite##TANKER_TYPE##_##VEHICLENAME##_tanker;        \
   MILK: sprite##TANKER_TYPE##_##VEHICLENAME##_tanker;         \
+  PETR: sprite##TANKER_TYPE##_##VEHICLENAME##_tanker;         \
   SGBT: spritegroup_##VEHICLENAME##_iore;                    \
   default: sprite##GOODS_TYPE##_##VEHICLENAME##_goods;       \
 

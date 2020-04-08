@@ -13,7 +13,7 @@ item(FEAT_ROADVEHS, gf_milne_tram, 8927) {
       refittable_cargo_classes:       bitmask(CC_PASSENGERS);
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
-      loading_speed:                  6;
+      loading_speed:                  9;
       cost_factor:                    45;
       running_cost_factor:            34;
       /* cargo_age_period is left at default */

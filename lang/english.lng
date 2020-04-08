@@ -1,6 +1,6 @@
 ##grflangid 0x01
 STR_GRF_NAME        :Timberwolf's UK Road Vehicles
-STR_GRF_DESCRIPTION :Description:{SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2019 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.
+STR_GRF_DESCRIPTION :Description:{SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.
 STR_OPENTTD_VERSION :1.5.0 (r27000)
 
 # params
@@ -117,6 +117,7 @@ STR_NAME_FORD_CORTINA:Ford Cortina Minicab
 STR_NAME_VAUXHALL_OMEGA:Vauxhall Omega Minicab
 STR_NAME_TOYOTA_PRIUS:Toyota Prius Minicab
 STR_NAME_VOLVO_S40:Volvo S40 T5
+STR_NAME_BMW_335D:BMW 335d Touring
 STR_NAME_FORD_MODEL_T:Ford Model T
 STR_NAME_MERCEDES_CITARO:Mercedes-Benz Citaro O530G
 STR_NAME_LEYLAND_LEOPARD:Leyland Leopard

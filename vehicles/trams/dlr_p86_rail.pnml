@@ -28,7 +28,7 @@ item(FEAT_TRAINS, dlr_p86_rail, 9872) {
       refittable_cargo_classes:       bitmask(CC_PASSENGERS);
       non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
       default_cargo_type:             PASS;
-      loading_speed:                  8;
+      loading_speed:                  14;
 
       /* Rail cost: (*14/25), running cost (/3) */
       cost_factor:                    59;

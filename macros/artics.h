@@ -86,5 +86,6 @@ spriteset (spriteset_purchase_##VEHICLENAME, PURCHASE_PNGNAME(VEHICLENAME,_purch
   COPR: switch_##VEHICLENAME##_graphics_copper;           \
   RFPR: switch_##VEHICLENAME##_graphics_tanker;           \
   MILK: switch_##VEHICLENAME##_graphics_tanker;           \
+  PETR: switch_##VEHICLENAME##_graphics_tanker;            \
   SGBT: switch_##VEHICLENAME##_graphics_iore;             \
   default: switch_##VEHICLENAME##_graphics_goods;
