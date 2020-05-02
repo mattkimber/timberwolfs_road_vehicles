@@ -11,7 +11,7 @@ grf {
   grfid:                  "TWF\04";
   name:                   string(STR_GRF_NAME);
   desc:                   string(STR_GRF_DESCRIPTION);
-  version:                49;
+  version:                50;
   min_compatible_version: 45;
   param 0 {
     param_speed_limiters {
