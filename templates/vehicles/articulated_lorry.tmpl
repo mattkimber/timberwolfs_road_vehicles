@@ -1,0 +1,158 @@
+{{ $zoom := parseint .globals.zoom -}}
+{{- $horse_type := .horse_type }}
+{{- $id := .id -}}
+{{- range $index, $element := slice .articulated_graphics -}}
+{{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
+{{- if ne $element "" -}}
+{{ $el_usc := concat "_" $element }}{{ $spr_id := concat $id $el_usc }}{{ altsprites $spr_id "template_rv" $zoom }}
+{{- else -}}{{ altsprites $id "template_rv" $zoom }}{{- end -}}
+{{- end -}}
+{{- end}}
+
+spriteset (spriteset_purchase_{{.id}}, "purchase/{{.id}}_purchase.vox.png" ) 
+{ template_purchase() } 
+
+// Cargo articulation switches
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1) 
+{ 
+    {{- range $index, $element := slice .articulated_configuration -}}
+    {{ $index }}: return {{ $id }};
+    {{- end}}
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+{{- $groups := "_copper,_coal,_grain,_grey,_iore,_stel,_timber,_wood" -}}
+{{- $sets := "" -}}
+
+{{- if .has_covered_goods -}}{{ $sets = concat $sets "_goods" }}
+{{- else -}}
+{{- if .has_alternate_goods -}}{{else -}}
+{{ $groups = concat $groups ",_goods" }}
+{{- end -}}
+{{- end}}
+
+{{- if .has_piece_goods_tanker -}}{{ $groups = concat $groups ",_tanker" }}
+{{- else -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_tanker" }}
+{{- end -}}
+
+{{- if .has_covered_livestock -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_lvst" }}
+{{- else -}}{{ $groups = concat $groups ",_lvst" }}
+{{- end -}}
+
+{{- $id := .id }}
+{{- $trailer := .trailer }}
+
+{{ range $index, $element := slice $sets }}
+{{- if ne $element "" -}}
+switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
+     0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     spriteset_{{$trailer}}{{$element}}; 
+}
+{{- end -}}
+{{- end}}
+
+{{ range $index, $element := slice $groups }}
+switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
+     0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     spritegroup_{{$trailer}}{{$element}}; 
+}
+{{- end}}
+
+{{- if .has_alternate_goods -}}
+switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist ) { 
+     0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     switch_{{.trailer}}_random_goods; 
+}
+{{- end }}
+
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
+{ 
+    0: return 1;
+    {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+    return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{- else -}}
+    return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{- end}}
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
+{ 
+    {{- range $index, $element := slice .articulated_lengths -}}
+    {{$index }}: return {{ $element }};
+    {{- end}}    
+    return 8;
+}
+
+{{ $engine := .engine }}
+{{ $smoke_loc := .smoke_location }}
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist ) 
+{ 
+    {{- range $index, $element := slice .articulated_visual_effects -}}
+    {{- if ne $element "" -}}
+    {{- if eq $engine "steam" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_STEAM, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "diesel" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "powerful" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "coach" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "electric" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else }}
+    {{ $index }}: return VISUAL_EFFECT_DISABLE;
+    {{ end -}}
+    {{- end -}}
+    {{- end}}
+    return VISUAL_EFFECT_DISABLE;    
+}
+
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+    property {
+        {{template "rv_props" . }}
+        refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
+        default_cargo_type:             GOOD;
+    }
+
+    graphics {
+        additional_text: return {{.additional_text_string}};
+        {{template "speed_limiter" . }}
+
+        visual_effect: switch_{{.id}}_visual_effect;
+        articulated_part: switch_{{.id}}_articulation;
+        cargo_capacity: switch_{{.id}}_capacity;
+        length: switch_{{.id}}_length;
+        purchase_cargo_capacity: spriteset_purchase_{{.id}};
+        purchase: spriteset_purchase_{{.id}};
+
+        COAL: switch_{{.id}}_graphics_coal;
+        COPR: switch_{{.id}}_graphics_copper;
+        GRAI: switch_{{.id}}_graphics_grain;
+        WHEA: switch_{{.id}}_graphics_grain;
+        MAIZ: switch_{{.id}}_graphics_grain;
+        SAND: switch_{{.id}}_graphics_grain;
+        SCMT: switch_{{.id}}_graphics_grey;
+        GRVL: switch_{{.id}}_graphics_grey;
+        LIME: switch_{{.id}}_graphics_grey;
+        IORE: switch_{{.id}}_graphics_iore;
+        CORE: switch_{{.id}}_graphics_iore;
+        AORE: switch_{{.id}}_graphics_iore;
+        CLAY: switch_{{.id}}_graphics_iore;
+        SGBT: switch_{{.id}}_graphics_iore;
+        LVST: switch_{{.id}}_graphics_lvst;
+        STEL: switch_{{.id}}_graphics_stel;
+        METL: switch_{{.id}}_graphics_stel;
+        WDPR: switch_{{.id}}_graphics_timber;
+        WOOD: switch_{{.id}}_graphics_wood;
+        OIL_: switch_{{.id}}_graphics_tanker;
+        RUBR: switch_{{.id}}_graphics_tanker;
+        WATR: switch_{{.id}}_graphics_tanker;
+        RFPR: switch_{{.id}}_graphics_tanker;
+        MILK: switch_{{.id}}_graphics_tanker;
+        PETR: switch_{{.id}}_graphics_tanker;
+        default: switch_{{.id}}_graphics_goods;
+    }
+}
+

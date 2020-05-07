@@ -1,0 +1,55 @@
+{{ template "cargo_sprites" . }}
+
+{{ template "cargo_spritegroups" . }}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+    property {
+    {{template "rv_props" . }}
+        refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
+        default_cargo_type:             GOOD;
+    }
+
+    graphics {
+        additional_text: return {{.additional_text_string}};
+        {{ template "speed_limiter" . }}
+
+        COAL: spritegroup_{{.id}}_coal;
+        COPR: spritegroup_{{.id}}_copper;
+        GRAI: spritegroup_{{.id}}_grain;
+        WHEA: spritegroup_{{.id}}_grain;
+        MAIZ: spritegroup_{{.id}}_grain;
+        SAND: spritegroup_{{.id}}_grain;
+        SCMT: spritegroup_{{.id}}_grey;
+        GRVL: spritegroup_{{.id}}_grey;
+        LIME: spritegroup_{{.id}}_grey;
+        IORE: spritegroup_{{.id}}_iore;
+        CORE: spritegroup_{{.id}}_iore;
+        AORE: spritegroup_{{.id}}_iore;
+        CLAY: spritegroup_{{.id}}_iore;
+        SGBT: spritegroup_{{.id}}_iore;
+        LVST: {{if .has_covered_livestock }}spriteset_{{.id}}_lvst;{{else}}spritegroup_{{.id}}_lvst;{{end}}
+        STEL: spritegroup_{{.id}}_stel;
+        METL: spritegroup_{{.id}}_stel;
+        WDPR: spritegroup_{{.id}}_timber;
+        WOOD: spritegroup_{{.id}}_wood;
+        {{- if .has_piece_goods_tanker }}
+        OIL_: spritegroup_{{.id}}_tanker;
+        RUBR: spritegroup_{{.id}}_tanker;
+        WATR: spritegroup_{{.id}}_tanker;
+        RFPR: spritegroup_{{.id}}_tanker;
+        MILK: spritegroup_{{.id}}_tanker;
+        PETR: spritegroup_{{.id}}_tanker;
+        {{- else }}
+        OIL_: spriteset_{{.id}}_tanker;
+        RUBR: spriteset_{{.id}}_tanker;
+        WATR: spriteset_{{.id}}_tanker;
+        RFPR: spriteset_{{.id}}_tanker;
+        MILK: spriteset_{{.id}}_tanker;
+        PETR: spriteset_{{.id}}_tanker;
+        {{- end -}}
+        default: {{if .has_covered_goods }}spriteset_{{.id}}_goods;{{else}}spritegroup_{{.id}}_goods;{{end}}
+
+    }
+}
+

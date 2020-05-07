@@ -1,0 +1,17 @@
+{{define "cargo_sprites" -}}
+{{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
+{{- $zoom := parseint .globals.zoom -}}
+{{ altsprites .id  $template $zoom }}
+
+{{- $cargos := "_copper,_goods,_coal,_grain,_grey,_iore,_lvst,_stel,_tanker,_timber,_wood" }}
+{{- if .has_alternate_goods -}}{{ $cargos = concat $cargos ",_goods_2" }}{{- end -}}
+
+{{- $cargotypes := slice $cargos -}}
+{{- $id := .id }}
+{{ range $index, $element := $cargotypes }}
+{{ $cargo := concat $id $element }}{{ altsprites $cargo  $template $zoom }}
+{{- end}}
+{{ if .has_flatbed }}{{ $cargo := concat .id "_flatbed" }}{{ altsprites $cargo  $template $zoom }}{{end}}
+
+
+{{- end}}

@@ -1,0 +1,244 @@
+{
+    "grf": {
+      "author_id": "TWF",
+      "grf_id": 4,
+      "name": "Timberwolf's UK Road Vehicles",
+      "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.",
+      "min_compat_version": 51,
+      "filename": "timberwolf_uk.nml",
+      "parameters": [
+        {
+            "id": "speed_limiters",
+            "name": "56mph speed limiters",
+            "desc": "Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).",
+            "type": "bool",
+            "default_value": 0
+        },
+        {
+            "id": "car_speed_limits",
+            "name": "Cars and vans obey national speed limit",
+            "desc": "Cars and vans obey the 70mph UK national speed limit.",
+            "type": "bool",
+            "default_value": 0
+        },
+        {
+            "id": "realistic_early_vehicle_capacity",
+            "name": "Realistic early vehicle statistics",
+            "desc": "Prefer realism over gameplay for pre-1940s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.",
+            "type": "bool",
+            "default_value": 0
+        },
+        {
+            "id": "realistic_modern_vehicle_capacity",
+            "name": "Realistic modern vehicle capacity",
+            "desc": "Prefer realistic capacities over gameplay for post-1940s vehicles.",
+            "type": "bool",
+            "default_value": 0
+        },
+        {
+            "id": "smoke",
+            "name": "Smoke effects",
+            "desc": "Whether vehicles should produce steam, diesel smoke and other visual effects.",
+            "type": "bool",
+            "default_value": 1
+        },
+        {
+            "id": "build_costs",
+            "name": "Purchase Cost Modifier",
+            "desc": "Increase or decrease build costs to change difficulty, or balance with other GRF sets. Higher values may be difficult, especially in the early game",
+            "type": "int",
+            "min_value": 0,
+            "max_value": 7,
+            "default_value": 2,
+            "value_names": [ "0.25x", "0.5x", "1x", "2x", "4x", "8x", "16x", "32x" ]
+        },{
+            "id": "running_costs",
+            "name": "Running Cost Modifier",
+            "desc": "Increase or decrease running costs to change difficulty, or balance with other GRF sets.  Higher values may be difficult, especially in the early game.",
+            "type": "int",
+            "min_value": 0,
+            "max_value": 7,
+            "default_value": 2,
+            "value_names": [ "0.25x", "0.5x", "1x", "2x", "4x", "8x", "16x", "32x" ]
+        },{
+            "id": "enable_buses",
+            "name": "Enable Buses",
+            "desc": "Choose whether buses and coaches from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_lorries",
+            "name": "Enable Lorries",
+            "desc": "Choose whether large freight vehicles from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_vans",
+            "name": "Enable Vans",
+            "desc": "Choose whether vans and small freight vehicles from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_cars",
+            "name": "Enable Cars",
+            "desc": "Choose whether cabs, minicabs and other small passenger vehicles from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_horse_drawn",
+            "name": "Enable Horse-Drawn Vehicles",
+            "desc": "Choose whether horse-drawn wagons and coaches from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_steam",
+            "name": "Enable Steam Vehicles",
+            "desc": "Choose whether early steam-powered vehicles from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_passenger_trams",
+            "name": "Enable Passenger Trams",
+            "desc": "Choose whether passenger trams from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_cargo_trams",
+            "name": "Enable Cargo Trams",
+            "desc": "Choose whether cargo trams from this set will be available for purchase during the game.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "enable_easter_eggs",
+            "name": "Enable Easter Eggs",
+            "desc": "This set includes representations of some of the creator's own vehicles for fun. Use this option to enable or disable them.",
+            "type": "bool",
+            "default_value": 1
+        },{
+            "id": "hybrid_tram_mode",
+            "name": "Hybrid Tram Purchase Mode",
+            "desc": "Choose whether hybrid rail/tram vehicles appear in the tram purchase list, the rail vehicle purchase list, both, or neither.",
+            "type": "int",
+            "min_value": 0,
+            "max_value": 3,
+            "default_value": 1,
+            "value_names": [ "Unavailable", "Tram only", "Tram and Rail", "Rail only" ]
+        },{
+            "id": "light_rail_mode",
+            "name": "Light Rail Purchase Mode",
+            "desc": "Choose whether light rail vehicles appear in the tram purchase list, the rail vehicle purchase list, both, or neither.",
+            "type": "int",
+            "min_value": 0,
+            "max_value": 3,
+            "default_value": 1,
+            "value_names": [ "Unavailable", "Tram only", "Tram and Rail", "Rail only" ]
+        }   
+      ]
+    },
+    "cargo_table": [        
+        "PASS", "TOUR", "MAIL", "COAL", "IORE", "GRVL", "SAND", "AORE", 
+        "CORE", "CLAY", "SCMT", "WOOD", "LIME", "GOOD", "FOOD", "STEL", 
+        "FMSP", "ENSP", "BEER", "BDMT", "MNSP", "PAPR", "WDPR", "VEHI",
+        "COPR", "DYES", "OIL_", "RFPR", "PETR", "PLAS", "WATR", "FISH", 
+        "CERE", "FICR", "FRVG", "FRUT", "GRAI", "LVST", "MAIZ", "MILK", 
+        "RUBR", "SGBT", "SGCN", "WHEA", "WOOL", "OLSD", "SUGR", "METL",
+        "PETR", "VALU"
+    ],
+    "static_templates": [
+      {
+        "template":  "templates/static/basecosts.tmpl"
+      },
+      {
+        "template":  "templates/static/disable_items.tmpl",
+        "data" : {
+          "Feature": "FEAT_ROADVEHS",
+          "Start": "0",
+          "End": "254"
+        }
+      },
+      {
+          "template": "templates/static/livery_switches.tmpl"
+      }
+    ],
+    "sprite_templates": [
+      {
+        "names": ["template_rv_1x", "template_rv_2x", "template_rv_4x"],
+        "location_scales": [1,2,4],
+        "size_scales": [1,2,4],
+        "offset_scales": [0.25,0.5,1],
+        "locations" : [[7,0],[40,0],[80,0],[120,0],[167,0],[200,0],[240,0],[280,0]],
+        "sizes": [[10,26],[26,26],[32,18],[26,26],[10,26],[26,26],[32,18],[26,26]],
+        "offsets": [
+            [-20,-47],
+            [-70,-44],
+            [-75,-55],
+            [-43,-51],
+            [-20,-55],
+            [-58,-52],
+            [-55,-55],
+            [-35,-47]
+        ]
+      },
+      {
+        "names": ["template_rail_1x", "template_rail_2x", "template_rail_4x"],
+        "location_scales": [1,2,4],
+        "size_scales": [1,2,4],
+        "offset_scales": [0.25,0.5,1],
+        "locations" : [[7,0],[40,0],[80,0],[120,0],[167,0],[200,0],[240,0],[280,0]],
+        "sizes": [[10,26],[26,26],[32,18],[26,26],[10,26],[26,26],[32,18],[26,26]],
+        "offsets": [
+            [-16,-47],
+            [-67,-52],
+            [-75,-56],
+            [-26,-52],
+            [-16,-55],
+            [-66,-52],
+            [-55,-55],
+            [-28,-52]
+        ]
+      },
+      {
+        "names": ["template_tram_1x", "template_tram_2x", "template_tram_4x"],
+        "location_scales": [1,2,4],
+        "size_scales": [1,2,4],
+        "offset_scales": [0.25,0.5,1],
+        "locations" : [[7,0],[40,0],[80,0],[120,0],[167,0],[200,0],[240,0],[280,0]],
+        "sizes": [[10,26],[26,26],[32,18],[26,26],[10,26],[26,26],[32,18],[26,26]],
+        "offsets": [
+            [-20,-48],
+            [-60,-52],
+            [-70,-48],
+            [-36,-50],
+            [-16,-50],
+            [-54,-46],
+            [-58,-54],
+            [-38,-46]
+        ]
+      },
+      {
+        "names": [ "template_purchase" ],
+        "location_scales": [1],
+        "size_scales": [1],
+        "offset_scales": [1],
+        "locations": [[0,0]],
+        "sizes": [[36,28]],
+        "offsets": [[-16, -20]]
+      }
+    ],
+    "sprites": {
+      "table": "table.csv",
+      "template_directory": "templates/vehicles",
+      "additional_text_field": "text",
+      "additional_text_format": "{SILVER}%s",
+      "nestable_templates": [ "nested/cargo_sprites", "nested/rv_props", "nested/train_props","nested/cargo_spritegroups", "nested/speed_limiter" ],
+      "globals": {
+          "zoom": "4"
+      }
+    },
+    "fixed_strings": {
+        "str_cargo_pax_regular": " (Company Colours)",
+        "str_cargo_pax_black_cab": " (Black Cab)",
+        "str_livery_regular": " (Regular Livery)",
+        "str_livery_alt": " (Alternate Livery)"
+    }
+}

@@ -1,0 +1,33 @@
+{{ $zoom := parseint .globals.zoom }}
+{{ if .is_tram}}{{ altsprites .id "template_tram" $zoom }}{{else}}{{ altsprites .id "template_rv" $zoom }}{{end}}
+
+{{ if .has_alternate_livery -}}
+{{ $alt := concat .id "_alt"}}{{ altsprites $alt "template_rv" $zoom }}
+
+switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
+  0: return spriteset_{{.id}};
+  1: return spriteset_{{.id}}_alt;
+  return spriteset_{{.id}};
+}
+{{- end -}}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+  property {
+    {{template "rv_props" . }}
+    refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+    non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+    default_cargo_type:             PASS;
+  }
+
+  graphics {
+{{ if .has_alternate_livery -}}
+    cargo_subtype_text: switch_alt_livery;
+    default: switch_{{.id}}_graphics;    
+{{- else -}}
+    default: spriteset_{{.id}};
+{{ end -}}
+    additional_text: return {{.additional_text_string}};
+    {{template "speed_limiter" . }}
+  }
+}
+

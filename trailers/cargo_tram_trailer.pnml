@@ -1,9 +1,0 @@
-VEHICLESPRITES_TRAM_WITH_CARGO(tram_trailer, 32)
-
-SPRITEGROUPS_WITH_FLATBED(tram_trailer)
-SPRITEGROUPS_PIECE_GOODS_FLATBED(tram_trailer)
-
-random_switch(FEAT_ROADVEHS, SELF, switch_tram_goods_trailer, ) {
-	2: spritegroup_tram_trailer_goods;
-	2: spriteset_tram_trailer_goods_2;
-}

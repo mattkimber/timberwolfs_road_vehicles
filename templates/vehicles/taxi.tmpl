@@ -1,0 +1,27 @@
+{{- $zoom := parseint .globals.zoom -}}
+{{ altsprites .id "template_rv" $zoom }}
+{{- $black := concat .id "_black" -}}
+{{ altsprites $black "template_rv" $zoom }}
+
+switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
+  0: return spriteset_{{.id}};
+  1: return spriteset_{{.id}}_black;
+  return spriteset_{{.id}};
+}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+  property {
+    {{template "rv_props" . }}
+    refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+    non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+    default_cargo_type:             PASS;
+  }
+
+  graphics {
+    {{template "speed_limiter" . }}
+    default: switch_{{.id}}_graphics;
+    cargo_subtype_text: switch_cab_livery;
+    additional_text: return {{.additional_text_string}};
+  }
+}
+

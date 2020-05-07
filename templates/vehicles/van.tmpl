@@ -1,0 +1,31 @@
+{{ template "cargo_sprites" . }}
+
+switch(FEAT_ROADVEHS, SELF, switch_capacity_{{.id}}, cargo_type_in_veh) {
+  {{- $intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+  MAIL: param_realistic_early_vehicle_capacity ? {{.realistic_mail_capacity}} : {{.capacity_per_unit}};
+  VALU: param_realistic_early_vehicle_capacity ? {{.realistic_mail_capacity}} : {{.capacity_per_unit}};
+  return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
+  {{- else -}}
+  MAIL: param_realistic_modern_vehicle_capacity ? {{.realistic_mail_capacity}} : {{.capacity_per_unit}};
+  VALU: param_realistic_modern_vehicle_capacity ? {{.realistic_mail_capacity}} : {{.capacity_per_unit}};
+  return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
+  {{- end}}
+}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+    property {
+        {{template "rv_props" . }}
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_MAIL, CC_REFRIGERATED, CC_ARMOURED);
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_BULK);
+        default_cargo_type:             GOOD;
+    }
+
+    graphics {
+        additional_text: return {{.additional_text_string}};
+        {{template "speed_limiter" . }}
+
+        cargo_capacity: switch_capacity_{{.id}};
+        default: spriteset_{{.id}};
+    }
+}
+

@@ -1,0 +1,78 @@
+{{- define "rv_props" }}
+    name:                           {{.name_string}};
+    {{if eq .engine "steam" -}}
+    climates_available:             param_{{.enable_param}} && param_enable_steam ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+    {{else if eq .engine "horse" -}}
+    climates_available:             param_{{.enable_param}} && param_enable_steam ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+    {{else -}}
+    climates_available:             param_{{.enable_param}} {{if .is_light_rail}}&& (param_light_rail_mode == 1 || param_light_rail_mode == 2){{else if .is_hybrid_rail}}&& (param_hybrid_tram_mode == 1 || param_hybrid_tram_mode == 2){{end}} ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
+    {{- end}}
+    introduction_date:              date({{.intro_year}},{{.intro_month}},01);
+    model_life:                     {{.model_life}};
+
+    vehicle_life:                   {{.vehicle_life}};
+    reliability_decay:              {{.reliability}};
+    loading_speed:                  {{.loading_speed}};
+
+    sprite_id:                      SPRITE_ID_NEW_ROADVEH; 
+    speed:                          {{.top_speed}} mph;
+    misc_flags:                     bitmask({{if .is_tram}}ROADVEH_FLAG_TRAM, {{end}}ROADVEH_FLAG_2CC);
+    refit_cost:                     0; 
+
+    running_cost_base:              RUNNING_COST_ROADVEH;
+    weight:                         {{.weight}} ton;     
+{{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+    {{- if .realistic_capacity}}
+    cargo_capacity:                 param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
+    cost_factor:                    param_realistic_early_vehicle_capacity ? {{.realistic_cost}} : {{.cost}};
+    running_cost_factor:            param_realistic_early_vehicle_capacity ? {{.realistic_running_cost}} : {{.running_cost}};
+    power:                          {{if .realistic_power}}param_realistic_early_vehicle_capacity ? {{.realistic_power}} : {{end}}{{.power}};
+    {{- else}}
+    cargo_capacity:                 {{.capacity_per_unit}};
+    cost_factor:                    {{.cost}};
+    running_cost_factor:            {{.running_cost}};
+    power:                          {{.power}} hp;
+    {{- end -}}
+{{- else}}
+    {{- if .realistic_capacity}}
+    cargo_capacity:                 param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
+    cost_factor:                    param_realistic_modern_vehicle_capacity ? {{.realistic_cost}} : {{.cost}};
+    running_cost_factor:            param_realistic_modern_vehicle_capacity ? {{.realistic_running_cost}} : {{.running_cost}};
+    power:                          {{if .realistic_power}}param_realistic_modern_vehicle_capacity ? {{.realistic_power}} : {{end}}{{.power}};
+    {{- else}}
+    cargo_capacity:                 {{.capacity_per_unit}};
+    cost_factor:                    {{.cost}};
+    running_cost_factor:            {{.running_cost}};
+    power:                          {{.power}} hp;
+    {{- end -}}
+{{- end}}
+
+{{- if eq .engine "horse" }}
+    sound_effect:                   SOUND_HORSE;
+{{- else if eq .engine "steam" }}
+    sound_effect:                   SOUND_TRAIN;
+    visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_STEAM, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
+{{- else if eq .engine "diesel" }}
+    sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+    visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
+{{- else if eq .engine "powerful" }}
+    sound_effect:                   SOUND_TRUCK_START;
+    visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
+{{- else if eq .engine "coach" }}
+    sound_effect:                   SOUND_TRUCK_START_2;
+    visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
+{{- else if eq .engine "hydrogen" }}
+    sound_effect:                   SOUND_MAGLEV_2;
+{{- else if eq .engine "clean" }}
+    sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+{{- else if eq .engine "petrol" }}
+    sound_effect:                   SOUND_TRUCK_START;
+{{- else if eq .engine "electric" }}
+    sound_effect:                   SOUND_ELECTRIC_SPARK;
+    visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
+{{- else if eq .engine "t5" }}
+    sound_effect:                   sound("sounds/volvo.wav");
+{{- else if eq .engine "35d" }}
+    sound_effect:                   sound("sounds/bmw.wav");
+{{ end -}}
+{{- end}}

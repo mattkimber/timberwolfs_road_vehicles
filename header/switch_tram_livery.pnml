@@ -1,5 +1,0 @@
-switch(FEAT_ROADVEHS, SELF, switch_tram_livery, cargo_subtype) {
-    0: return string(STR_TRAM_LIVERY_REGULAR);
-    1: return string(STR_TRAM_LIVERY_ALT);
-    return CB_RESULT_NO_TEXT;
-}

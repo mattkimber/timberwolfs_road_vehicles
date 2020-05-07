@@ -1,0 +1,49 @@
+{{define "cargo_spritegroups"}}
+
+{{- $groups := "_coal,_grain,_grey,_iore" -}}
+{{- $flatbed_groups := "_copper,_stel,_timber,_wood" -}}
+
+{{- if .has_alternate_goods -}}
+{{- $flatbed_groups = concat $flatbed_groups ",_goods" -}}
+{{- else -}}
+{{- if .has_covered_goods -}}{{- else -}}{{- $flatbed_groups = concat $flatbed_groups ",_goods" -}}{{- end -}}
+{{- end }}
+
+{{- if and .has_flatbed .has_piece_goods_tanker -}}
+{{- $flatbed_groups = concat $flatbed_groups ",_tanker" -}}
+{{- else if .has_piece_goods_tanker -}}
+{{- $groups = concat $groups ",_tanker" -}}
+{{- end -}}
+
+{{- if .has_covered_livestock -}}{{- else -}}{{- $groups = concat $groups ",_lvst" -}}{{- end -}}
+{{- if .has_flatbed -}}{{- else -}}{{- $flatbed_groups = concat "," $flatbed_groups}}{{- $groups = concat $groups $flatbed_groups -}}{{- end -}}
+
+{{- $id := .id -}}
+
+{{- range $index, $element := slice $groups -}}
+{{- $cargo := concat $id $element }}
+spritegroup spritegroup_{{$cargo}}
+{ 
+    loading: [ spriteset_{{$id}}, spriteset_{{$cargo}} ]; 
+    loaded: [ spriteset_{{$id}}, spriteset_{{$cargo}} ]; 
+} 
+{{- end -}}
+
+{{- if .has_flatbed -}}
+{{- range $index, $element := slice $flatbed_groups -}}
+{{- $cargo := concat $id $element }}
+spritegroup spritegroup_{{$cargo}}
+{ 
+    loading: [ spriteset_{{$id}}_flatbed, spriteset_{{$cargo}} ]; 
+    loaded: [ spriteset_{{$id}}_flatbed, spriteset_{{$cargo}} ]; 
+}
+{{- end -}}
+{{- end -}}
+
+{{- if .has_alternate_goods }}
+random_switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_random_goods, ) {
+	2: spritegroup_{{.id}}_goods;
+	2: spriteset_{{.id}}_goods_2;
+}
+{{end -}}
+{{end}}

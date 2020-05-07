@@ -1,0 +1,93 @@
+{{ $zoom := parseint .globals.zoom }}{{ altsprites .id "template_rv" $zoom }}
+
+spriteset (spriteset_purchase_{{.id}}, "purchase/{{.id}}_purchase.vox.png" ) 
+{ template_purchase() } 
+
+// Cargo articulation switches
+{{- $groups := "_goods,_mail" -}}
+
+{{- $id := .id }}
+{{- $trailer := .trailer }}
+
+{{ range $index, $element := slice $groups }}
+switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
+     0: spriteset_{{$id}}; 
+     spritegroup_{{$trailer}}{{$element}}; 
+}
+{{- end}}
+
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
+{ 
+    0: return 1;
+    {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+    return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{- else -}}
+    return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{- end}}
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
+{ 
+    {{- range $index, $element := slice .articulated_lengths -}}
+    {{$index }}: return {{ $element }};
+    {{- end}}    
+    return 8;
+}
+
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1) 
+{ 
+    {{- range $index, $element := slice .articulated_configuration -}}
+    {{ $index }}: return {{ $id }};
+    {{- end}}
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+{{ $engine := .engine }}
+{{ $smoke_loc := .smoke_location }}
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist ) 
+{ 
+    {{- range $index, $element := slice .articulated_visual_effects -}}
+    {{- if ne $element "" -}}
+    {{- if eq $engine "steam" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_STEAM, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "diesel" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "powerful" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "coach" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else if eq $engine "electric" }}
+    {{ $index }}: return param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{ $smoke_loc }}) : VISUAL_EFFECT_DISABLE;
+    {{- else }}
+    {{ $index }}: return VISUAL_EFFECT_DISABLE;
+    {{ end -}}
+    {{- end -}}
+    {{- end}}
+    return VISUAL_EFFECT_DISABLE;    
+}
+
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+    property {
+        {{template "rv_props" . }}
+        refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_MAIL);
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_REFRIGERATED, CC_BULK);
+        default_cargo_type:             MAIL;
+    }
+
+    graphics {
+        additional_text: return {{.additional_text_string}};
+        {{template "speed_limiter" . }}
+
+        articulated_part: switch_{{.id}}_articulation;
+        cargo_capacity: switch_{{.id}}_capacity;
+        length: switch_{{.id}}_length;
+        purchase_cargo_capacity: spriteset_purchase_{{.id}};
+        purchase: spriteset_purchase_{{.id}};
+        visual_effect: switch_{{.id}}_visual_effect;
+
+        MAIL: switch_{{.id}}_graphics_mail;
+        default: switch_{{.id}}_graphics_goods;
+    }
+}
+

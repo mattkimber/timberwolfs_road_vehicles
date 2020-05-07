@@ -1,0 +1,21 @@
+{{- $zoom := parseint .globals.zoom -}}
+{{ altsprites .id "template_rv" $zoom }}
+
+{{- $cargotypes := slice "_goods,_mail" -}}
+{{- $id := .id }}
+{{ range $index, $element := $cargotypes }}
+{{ $cargo := concat $id $element }}{{ altsprites $cargo "template_rv" $zoom }}
+{{- end}}
+
+
+{{- $groups := "_goods,_mail" -}}
+
+{{- range $index, $element := slice $groups -}}
+{{- $cargo := concat $id $element }}
+spritegroup spritegroup_{{$cargo}}
+{ 
+    loading: [ spriteset_{{$id}}, spriteset_{{$cargo}} ]; 
+    loaded: [ spriteset_{{$id}}, spriteset_{{$cargo}} ]; 
+} 
+{{- end}}
+
