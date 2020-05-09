@@ -1,0 +1,19 @@
+{
+    "files": [
+      "../../intermediate/output_fp/modern_trailer_flatbed.vox",
+      "../../intermediate/output_fp/t45_trailer_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_ensp",
+        "type": "repeat",
+        "file": "cargo/_full/eng_supplies_post_1920_b.vox"
+      },      
+      {
+        "name": "_ensp_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_full/eng_supplies_post_1920_b.vox"
+      }
+    ]
+}      

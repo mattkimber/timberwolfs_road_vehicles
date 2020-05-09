@@ -4,25 +4,29 @@
 {{- $zoom := parseint .globals.zoom -}}
 {{ altsprites .id  $template $zoom }}
 
-{{- $cargos := "_coal,_grain,_grey,_iore" -}}
-{{- $flatbed_cargos := "_copper,_stel,_timber,_wood" -}}
+{{- $cargos := "_coal,_clay,_grain,_grey,_iore,_scrap" -}}
+{{- $cargos = concat $cargos ",_coal_half,_clay_half,_grain_half,_grey_half,_iore_half,_scrap_half" }}
+{{- $flatbed_cargos := "_copper,_stel,_timber,_wood,_bdmt,_ensp" -}}
+{{- $flatbed_cargos = concat $flatbed_cargos ",_copper_half,_stel_half,_timber_half,_wood_half,_bdmt_half,_ensp_half" -}}
 
 {{- if .has_covered_goods -}}
     {{- $cargos = concat $cargos ",_goods" }}
 {{- else -}}
-    {{- $flatbed_cargos = concat $flatbed_cargos ",_goods" -}}
+    {{- $flatbed_cargos = concat $flatbed_cargos ",_goods,_goods_half" -}}
 {{- end }}
 
 {{- if and .has_flatbed .has_piece_goods_tanker -}}
-    {{- $flatbed_cargos = concat $flatbed_cargos ",_drums,_barrels" -}}
+    {{- $flatbed_cargos = concat $flatbed_cargos ",_drums,_barrels,_drums_half,_barrels_half" -}}
 {{- else if .has_piece_goods_tanker -}}
-    {{- $cargos = concat $cargos ",_drums,_barrels" -}}
+    {{- $cargos = concat $cargos ",_drums,_barrels,_drums_half,_barrels_half" -}}
 {{- else -}}
     {{- $cargos = concat $cargos ",_tanker" -}}
 {{- end -}}
 
 {{- if .has_flatbed_livestock -}}
-    {{- $flatbed_cargos = concat $flatbed_cargos ",_livestock" }}
+    {{- $flatbed_cargos = concat $flatbed_cargos ",_livestock,_livestock_half" }}
+{{- else if .has_open_livestock -}}
+    {{- $cargos = concat $cargos ",_livestock,_livestock_half" -}}
 {{- else -}}
     {{- $cargos = concat $cargos ",_livestock" -}}
 {{- end -}}

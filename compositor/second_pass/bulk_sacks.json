@@ -18,13 +18,6 @@
         "output_ramp": "72,76"
       },
       {
-        "name": "_core",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "123,127"
-      },
-      {
         "name": "_grey",
         "type": "repeat",
         "file": "cargo/_repeatable/sack.vox",
@@ -37,6 +30,21 @@
         "file": "cargo/_repeatable/sack.vox",
         "input_ramp": "2,6",
         "output_ramp": "35,39"
+      },
+      {
+        "name": "_clay",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "115,122"
+      },
+      {
+        "name": "_scrap",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/metal_small.vox",
+        "input_ramp": "2,7",
+        "output_ramp": "72,74"
       },
       {
         "name": "_coal_half",
@@ -53,14 +61,6 @@
         "output_ramp": "72,76"
       },
       {
-        "name": "_core_half",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "n": 3,
-        "input_ramp": "2,6",
-        "output_ramp": "123,127"
-      },
-      {
         "name": "_grey_half",
         "type": "repeat",
         "file": "cargo/_repeatable/sack.vox",
@@ -75,6 +75,22 @@
         "n": 3,
         "input_ramp": "2,6",
         "output_ramp": "35,39"
+      },
+      {
+        "name": "_clay_half",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "n": 3,
+        "input_ramp": "2,6",
+        "output_ramp": "115,122"
+      },
+      {
+        "name": "_scrap_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/metal_small.vox",
+        "input_ramp": "2,7",
+        "output_ramp": "72,74"
       }
     ]
 }      

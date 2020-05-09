@@ -1,0 +1,20 @@
+{
+    "files": [
+      "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
+      "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
+      "../../intermediate/output_fp/foden_alpha_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_ensp",
+        "type": "repeat",
+        "file": "cargo/_full/eng_supplies_post_1920_a.vox"
+      },      
+      {
+        "name": "_ensp_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_full/eng_supplies_post_1920_a.vox"
+      }
+    ]
+}      

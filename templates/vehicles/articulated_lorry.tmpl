@@ -21,7 +21,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1)
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-{{- $groups := "_copper,_coal,_grain,_grey,_iore,_stel,_timber,_wood" -}}
+{{- $groups := "_copper,_coal,_grain,_grey,_iore,_stel,_timber,_wood,_bdmt,_scrap,_ensp,_clay" -}}
 {{- $sets := "" -}}
 
 {{- if .has_covered_goods -}}{{ $sets = concat $sets "_goods" }}
@@ -127,19 +127,23 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         purchase_cargo_capacity: spriteset_purchase_{{.id}};
         purchase: spriteset_purchase_{{.id}};
 
+        // New cargos
+        BDMT: switch_{{.id}}_graphics_bdmt;
+        SCMT: switch_{{.id}}_graphics_scrap;
+        CLAY: switch_{{.id}}_graphics_clay;
+        ENSP: switch_{{.id}}_graphics_ensp;
+
         COAL: switch_{{.id}}_graphics_coal;
         COPR: switch_{{.id}}_graphics_copper;
         GRAI: switch_{{.id}}_graphics_grain;
         WHEA: switch_{{.id}}_graphics_grain;
         MAIZ: switch_{{.id}}_graphics_grain;
         SAND: switch_{{.id}}_graphics_grain;
-        SCMT: switch_{{.id}}_graphics_grey;
         GRVL: switch_{{.id}}_graphics_grey;
         LIME: switch_{{.id}}_graphics_grey;
         IORE: switch_{{.id}}_graphics_iore;
         CORE: switch_{{.id}}_graphics_iore;
         AORE: switch_{{.id}}_graphics_iore;
-        CLAY: switch_{{.id}}_graphics_iore;
         SGBT: switch_{{.id}}_graphics_iore;
         LVST: switch_{{.id}}_graphics_livestock;
         STEL: switch_{{.id}}_graphics_stel;

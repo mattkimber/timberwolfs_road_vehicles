@@ -5,11 +5,12 @@
 
 // Loaded
 {{ $loaded := concat .id "_loaded" }}{{ altsprites $loaded $template $zoom }}
+{{ $half_loaded := concat .id "_half_loaded" }}{{ altsprites $half_loaded $template $zoom }}
 
 // Spritegroup
 spritegroup spritegroup_{{.id}} {                                      
-	loading: [ spriteset_{{.id}}, spriteset_{{.id}}_loaded ];
-	loaded:  [ spriteset_{{.id}}, spriteset_{{.id}}_loaded ];
+	loading: [ spriteset_{{.id}}, spriteset_{{.id}}_half_loaded, spriteset_{{.id}}_loaded ];
+	loaded:  [ spriteset_{{.id}}, spriteset_{{.id}}_half_loaded, spriteset_{{.id}}_loaded ];
 }
 
 

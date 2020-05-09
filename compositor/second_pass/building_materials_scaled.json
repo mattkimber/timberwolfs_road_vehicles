@@ -1,0 +1,36 @@
+{
+    "files": [
+      "../../intermediate/output_fp/bedford_tk_flatbed.vox",
+      "../../intermediate/output_fp/ford_cargo_flatbed.vox", 
+      "../../intermediate/output_fp/iveco_eurocargo_flatbed.vox", 
+      "../../intermediate/output_fp/mitsubishi_canter_flatbed.vox",
+      "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
+      "../../intermediate/output_fp/saviem_sm_flatbed.vox",
+      "../../intermediate/output_fp/ford_d_series_flatbed.vox",
+      "foden_5t.vox",
+      "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+      "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+      "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
+      "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+      "leyland_steam_van.vox",
+      "dray_trailer.vox",
+      "../../intermediate/output_fp/daf_lf_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_bdmt",        
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_repeatable/building_materials.vox"
+      },
+      {
+        "name": "_bdmt_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/building_materials.vox",
+        "input_ramp": "75,77",
+        "output_ramp": "19,21"
+      }
+    ]
+}      

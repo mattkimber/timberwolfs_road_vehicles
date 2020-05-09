@@ -1,7 +1,7 @@
 {{define "cargo_spritegroups"}}
 
-{{- $groups := "_coal,_grain,_grey,_iore" -}}
-{{- $flatbed_groups := "_copper,_stel,_timber,_wood" -}}
+{{- $groups := "_coal,_clay,_grain,_grey,_iore,_scrap" -}}
+{{- $flatbed_groups := "_copper,_stel,_timber,_wood,_bdmt,_ensp" -}}
 
 {{- if .has_alternate_goods -}}
 {{- $flatbed_groups = concat $flatbed_groups ",_goods" -}}
@@ -37,8 +37,8 @@
 {{- $cargo := concat $id $element }}
 spritegroup spritegroup_{{$cargo}}
 { 
-    loading: [ spriteset_{{$id}}, spriteset_{{$cargo}} ]; 
-    loaded: [ spriteset_{{$id}}, spriteset_{{$cargo}} ]; 
+    loading: [ spriteset_{{$id}}, spriteset_{{$cargo}}_half, spriteset_{{$cargo}} ]; 
+    loaded: [ spriteset_{{$id}}, spriteset_{{$cargo}}_half, spriteset_{{$cargo}} ]; 
 } 
 {{- end -}}
 
@@ -50,8 +50,8 @@ spritegroup spritegroup_{{$cargo}}
 {{- $flatbedcargo := concat $flatbed_id $element }}
 spritegroup spritegroup_{{$cargo}}
 { 
-    loading: [ spriteset_{{$flatbed_id}}, spriteset_{{$flatbedcargo}} ]; 
-    loaded: [ spriteset_{{$flatbed_id}}, spriteset_{{$flatbedcargo}} ]; 
+    loading: [ spriteset_{{$flatbed_id}}, spriteset_{{$flatbedcargo}}_half, spriteset_{{$flatbedcargo}} ]; 
+    loaded: [ spriteset_{{$flatbed_id}}, spriteset_{{$flatbedcargo}}_half, spriteset_{{$flatbedcargo}} ]; 
 }
 {{- end -}}
 {{- end -}}

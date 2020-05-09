@@ -15,19 +15,23 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         {{ template "speed_limiter" . }}
         cargo_capacity: {{ template "capacity_switch" . }}
 
+        // New cargos
+        BDMT: spritegroup_{{.id}}_bdmt;
+        SCMT: spritegroup_{{.id}}_scrap;
+        CLAY: spritegroup_{{.id}}_clay;
+        ENSP: spritegroup_{{.id}}_ensp;
+
         COAL: spritegroup_{{.id}}_coal;
         COPR: spritegroup_{{.id}}_copper;
         GRAI: spritegroup_{{.id}}_grain;
         WHEA: spritegroup_{{.id}}_grain;
         MAIZ: spritegroup_{{.id}}_grain;
         SAND: spritegroup_{{.id}}_grain;
-        SCMT: spritegroup_{{.id}}_grey;
         GRVL: spritegroup_{{.id}}_grey;
         LIME: spritegroup_{{.id}}_grey;
         IORE: spritegroup_{{.id}}_iore;
         CORE: spritegroup_{{.id}}_iore;
         AORE: spritegroup_{{.id}}_iore;
-        CLAY: spritegroup_{{.id}}_iore;
         SGBT: spritegroup_{{.id}}_iore;
         LVST: {{if .has_covered_livestock }}spriteset_{{.id}}_livestock;{{else}}spritegroup_{{.id}}_livestock;{{end}}
         STEL: spritegroup_{{.id}}_stel;

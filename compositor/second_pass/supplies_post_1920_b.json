@@ -1,0 +1,22 @@
+{
+    "files": [
+      "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
+      "../../intermediate/output_fp/daf_lf_flatbed.vox", 
+      "../../intermediate/output_fp/foden_s20_flatbed.vox", 
+      "../../intermediate/output_fp/saviem_sm_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_ensp",
+        "type": "scale",
+        "scale": {"Z": 1.0 },
+        "file": "cargo/_full/eng_supplies_post_1920_b.vox"
+      },      
+      {
+        "name": "_ensp_half",
+        "type": "scale",
+        "scale": {"Z": 1.0 },
+        "file": "cargo/_half/eng_supplies_post_1920_b.vox"
+      }
+    ]
+}      

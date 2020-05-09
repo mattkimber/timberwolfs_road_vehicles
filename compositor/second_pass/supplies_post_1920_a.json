@@ -1,0 +1,23 @@
+{
+    "files": [
+      "../../intermediate/output_fp/bedford_tk_flatbed.vox",
+      "../../intermediate/output_fp/ford_cargo_flatbed.vox", 
+      "../../intermediate/output_fp/iveco_eurocargo_flatbed.vox", 
+      "../../intermediate/output_fp/mitsubishi_canter_flatbed.vox",
+      "../../intermediate/output_fp/ford_d_series_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_ensp",
+        "type": "scale",
+        "scale": {"Z": 1.0 },
+        "file": "cargo/_full/eng_supplies_post_1920_a.vox"
+      },      
+      {
+        "name": "_ensp_half",
+        "type": "scale",
+        "scale": {"Z": 1.0 },
+        "file": "cargo/_half/eng_supplies_post_1920_a.vox"
+      }
+    ]
+}      

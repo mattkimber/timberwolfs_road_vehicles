@@ -10,7 +10,7 @@
         "file": "cargo/_empty/s_type_benches.vox"
       },
       {
-        "name": "_half",
+        "name": "_half_loaded",
         "type": "repeat",
         "n": 1,        
         "file": "cargo/_half/s_type_passengers.vox"
