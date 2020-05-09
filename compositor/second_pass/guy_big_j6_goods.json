@@ -1,0 +1,12 @@
+{
+    "files": [
+      "../../intermediate/output_fp/guy_big_j6_flatbed.vox"
+    ],
+    "operations": [
+        {
+          "name": "_goods",
+          "type": "repeat",
+          "file": "cargo/goods_mixed_large.vox"
+        }
+    ]
+}      

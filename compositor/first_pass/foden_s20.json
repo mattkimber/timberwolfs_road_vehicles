@@ -1,0 +1,37 @@
+{
+    "files": [
+      "foden_s20.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/foden_s20/foden_s20_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/foden_s20/foden_s20_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/foden_s20/foden_s20_tanker.vox"
+      },      
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/foden_s20/foden_s20_curtainside.vox"
+      },      
+      {
+        "name": "_livestock",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/foden_s20/foden_s20_livestock.vox"
+      }
+    ]
+}

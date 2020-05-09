@@ -1,0 +1,15 @@
+{
+    "files": [
+       "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+       "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+       "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+       "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_drums",
+        "type": "repeat",
+        "file": "cargo/oil_drum.vox"
+      }
+    ]
+}      

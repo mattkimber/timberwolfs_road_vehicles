@@ -1,0 +1,19 @@
+{
+    "files": [
+      "prewar_trailer.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/prewar_trailer_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/prewar_trailer_flatbed.vox"
+      }
+    ]
+}

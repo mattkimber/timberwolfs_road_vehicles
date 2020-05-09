@@ -1,0 +1,31 @@
+{
+    "files": [
+      "mammoth_major_8.vox", "leyland_octopus.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mammoth_major_8/mammoth_major_8_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mammoth_major_8/mammoth_major_8_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mammoth_major_8/mammoth_major_8_tanker.vox"
+      },  
+      {
+        "name": "_livestock",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mammoth_major_8/mammoth_major_8_livestock.vox"
+      }
+    ]
+}

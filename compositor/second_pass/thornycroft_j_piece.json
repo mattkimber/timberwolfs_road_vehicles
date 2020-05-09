@@ -1,0 +1,13 @@
+{
+    "files": [
+       "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_barrels",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/barrel_pile.vox"
+      }
+    ]
+}      

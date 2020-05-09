@@ -1,0 +1,31 @@
+{
+    "files": [
+      "bedford_tk.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/bedford/bedford_tk_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/bedford/bedford_tk_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/bedford/bedford_tk_tanker.vox"
+      },      
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/bedford/bedford_tk_curtainside.vox"
+      }
+    ]
+}

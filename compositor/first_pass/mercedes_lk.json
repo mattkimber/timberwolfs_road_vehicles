@@ -1,0 +1,37 @@
+{
+    "files": [
+      "mercedes_lk.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mercedes_lk/mercedes_lk_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mercedes_lk/mercedes_lk_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mercedes_lk/mercedes_lk_tanker.vox"
+      },
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mercedes_lk/mercedes_lk_curtainside.vox"
+      },
+      {
+        "name": "_livestock",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/mercedes_lk/mercedes_lk_livestock.vox"
+      }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "files": [
+      "modern_trailer.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/modern_trailer_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/modern_trailer_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/modern_trailer_tanker.vox"
+      },
+      {
+        "name": "_livestock",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/modern_trailer_livestock.vox"
+      },
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/modern_trailer_curtainside.vox"
+      }
+    ]
+}

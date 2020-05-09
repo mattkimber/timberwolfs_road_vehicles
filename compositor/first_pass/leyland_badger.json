@@ -1,0 +1,19 @@
+{
+    "files": [
+      "leyland_badger.vox", "leyland_x_type.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/leyland_badger/leyland_badger_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/leyland_badger/leyland_badger_flatbed.vox"
+      }
+    ]
+}

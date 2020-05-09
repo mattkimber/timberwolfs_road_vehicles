@@ -1,0 +1,23 @@
+{{define "alt_sprites_rail"}}
+{{- $slice := slice . -}}{{- $id := index $slice 0 -}}{{- $zooml := index $slice 1 -}}{{- $zoom := parseint $zooml -}}
+spriteset (spriteset_{{$id}}_rail, "1x/{{$id}}_8bpp.png" )
+{ template_rail_1x() }
+
+alternative_sprites(spriteset_{{$id}}_rail, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "1x/{{$id}}_32bpp.png", "1x/{{$id}}_mask.png")
+{ template_rail_1x() }
+
+{{if ge $zoom 2}}
+alternative_sprites(spriteset_{{$id}}_rail, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/{{$id}}_8bpp.png")
+{ template_rail_2x() }
+
+alternative_sprites(spriteset_{{$id}}_rail, ZOOM_LEVEL_IN_2X, BIT_DEPTH_32BPP, "2x/{{$id}}_32bpp.png", "2x/{{$id}}_mask.png")
+{ template_rv_2x() }
+
+{{end -}}{{if ge $zoom 4 -}}
+alternative_sprites(spriteset_{{$id}}_rail, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "4x/{{$id}}_8bpp.png")
+{ template_rail_4x() }
+
+alternative_sprites(spriteset_{{$id}}_rail, ZOOM_LEVEL_IN_4X, BIT_DEPTH_32BPP, "4x/{{$id}}_32bpp.png", "4x/{{$id}}_mask.png")
+{ template_rail_4x() }
+{{end}}
+{{end}}

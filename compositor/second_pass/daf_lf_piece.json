@@ -1,0 +1,19 @@
+{
+    "files": [
+      "../../intermediate/output_fp/daf_lf_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_stel",
+        "type": "repeat",
+        "file": "cargo/metal_coil_centred.vox",
+        "input_ramp": "75,77",
+        "output_ramp": "19,21"
+      },
+      {
+        "name": "_copper",
+        "type": "repeat",
+        "file": "cargo/metal_coil_centred.vox"
+      }
+    ]
+}      

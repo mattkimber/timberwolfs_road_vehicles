@@ -1,10 +1,10 @@
 ##grflangid 0x01
 STR_GRF_NAME :Timberwolf's UK Road Vehicles
 STR_GRF_DESCRIPTION :Description:{SILVER}A set of vehicles common in the UK, including trucks and buses.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.
-STR_LIVERY_REGULAR : (Regular Livery)
-STR_LIVERY_ALT : (Alternate Livery)
 STR_CARGO_PAX_REGULAR : (Company Colours)
 STR_CARGO_PAX_BLACK_CAB : (Black Cab)
+STR_LIVERY_REGULAR : (Regular Livery)
+STR_LIVERY_ALT : (Alternate Livery)
 STR_PARAM_SPEED_LIMITERS :56mph speed limiters
 STR_PARAM_SPEED_LIMITERS_DESCRIPTION :Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).
 STR_PARAM_CAR_SPEED_LIMITS :Cars and vans obey national speed limit
@@ -116,6 +116,8 @@ STR_NAME_VOLVO_B10M :Volvo B10M
 STR_NAME_TEXT_VOLVO_B10M :{SILVER}The Volvo B10M sold very well in the UK and was used widely by charter coach companies.
 STR_NAME_LEYLAND_OLYMPIAN :Leyland Olympian
 STR_NAME_TEXT_LEYLAND_OLYMPIAN :{SILVER}The Olympian was the last bus to be manufactured under the Leyland name.
+STR_NAME_MCW_METRORIDER :MCW Metrorider
+STR_NAME_TEXT_MCW_METRORIDER :{SILVER}The MCW Metrorider was a big improvement over van-based small buses. When MCW ended bus production in 1989 the rights to the design were bought by Optare, who continued making it until 2000.
 STR_NAME_DENNIS_DART :Dennis Dart
 STR_NAME_TEXT_DENNIS_DART :{SILVER}The Dennis Dart was a small single decker bus produced with several body variants and a low-floor version called Dart SLF
 STR_NAME_RENAULT_AGORA :Renault Agora

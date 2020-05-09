@@ -1,0 +1,13 @@
+{
+    "files": [
+      "iveco_eurocargo.vox"
+    ],
+    "operations": [  
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/ford_cargo/iveco_eurocargo_curtainside.vox"
+      }
+    ]
+}

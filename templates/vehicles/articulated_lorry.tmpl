@@ -31,12 +31,12 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1)
 {{- end -}}
 {{- end}}
 
-{{- if .has_piece_goods_tanker -}}{{ $groups = concat $groups ",_tanker" }}
+{{- if .has_piece_goods_tanker -}}{{ $groups = concat $groups ",_drums,_barrels" }}
 {{- else -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_tanker" }}
 {{- end -}}
 
-{{- if .has_covered_livestock -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_lvst" }}
-{{- else -}}{{ $groups = concat $groups ",_lvst" }}
+{{- if .has_covered_livestock -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_livestock" }}
+{{- else -}}{{ $groups = concat $groups ",_livestock" }}
 {{- end -}}
 
 {{- $id := .id }}
@@ -141,17 +141,26 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         AORE: switch_{{.id}}_graphics_iore;
         CLAY: switch_{{.id}}_graphics_iore;
         SGBT: switch_{{.id}}_graphics_iore;
-        LVST: switch_{{.id}}_graphics_lvst;
+        LVST: switch_{{.id}}_graphics_livestock;
         STEL: switch_{{.id}}_graphics_stel;
         METL: switch_{{.id}}_graphics_stel;
         WDPR: switch_{{.id}}_graphics_timber;
         WOOD: switch_{{.id}}_graphics_wood;
+        {{ if .has_piece_goods_tanker -}}
+        OIL_: switch_{{.id}}_graphics_drums;
+        RUBR: switch_{{.id}}_graphics_drums;
+        WATR: switch_{{.id}}_graphics_barrels;
+        RFPR: switch_{{.id}}_graphics_barrels;
+        MILK: switch_{{.id}}_graphics_barrels;
+        PETR: switch_{{.id}}_graphics_drums;
+        {{ else -}}
         OIL_: switch_{{.id}}_graphics_tanker;
         RUBR: switch_{{.id}}_graphics_tanker;
         WATR: switch_{{.id}}_graphics_tanker;
         RFPR: switch_{{.id}}_graphics_tanker;
         MILK: switch_{{.id}}_graphics_tanker;
         PETR: switch_{{.id}}_graphics_tanker;
+        {{ end -}}
         default: switch_{{.id}}_graphics_goods;
     }
 }

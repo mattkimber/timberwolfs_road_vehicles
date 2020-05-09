@@ -1,0 +1,25 @@
+{
+    "files": [
+      "ford_d_series.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/ford_d_series/ford_d_series_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/ford_d_series/ford_d_series_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/bedford/bedford_tk_tanker.vox"
+      }
+    ]
+}

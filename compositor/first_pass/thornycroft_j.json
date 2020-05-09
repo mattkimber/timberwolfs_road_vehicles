@@ -1,0 +1,25 @@
+{
+    "files": [
+      "thornycroft_type_j.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/thornycroft_type_j/thornycroft_type_j_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/thornycroft_type_j/thornycroft_type_j_flatbed.vox"
+      },
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/thornycroft_type_j/thornycroft_type_j_curtainside.vox"
+      }
+    ]
+}

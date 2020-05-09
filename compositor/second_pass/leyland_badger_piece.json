@@ -1,0 +1,13 @@
+{
+    "files": [
+      "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+      "../../intermediate/output_fp/leyland_x_type_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_barrels",
+        "type": "repeat",
+        "file": "cargo/barrel_nostack.vox"
+      }
+    ]
+}      

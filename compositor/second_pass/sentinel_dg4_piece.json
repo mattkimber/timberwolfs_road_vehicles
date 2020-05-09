@@ -1,0 +1,12 @@
+{
+    "files": [
+      "../../intermediate/output_fp/sentinel_dg4_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "file": "cargo/crates_staggered.vox"
+      }
+    ]
+}      

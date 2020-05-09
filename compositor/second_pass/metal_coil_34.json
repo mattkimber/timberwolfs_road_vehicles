@@ -1,0 +1,24 @@
+{
+    "files": [
+      "../../intermediate/output_fp/erf_c_series_flatbed.vox", 
+      "../../intermediate/output_fp/erf_e_series_flatbed.vox",
+      "../../intermediate/output_fp/modern_trailer_flatbed.vox",
+      "../../intermediate/output_fp/t45_trailer_flatbed.vox",
+      "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
+      "../../intermediate/output_fp/leyland_octopus_flatbed.vox"      
+    ],
+    "operations": [
+      {
+        "name": "_stel",
+        "type": "repeat",
+        "file": "cargo/metal_coil_centred_34.vox",
+        "input_ramp": "75,77",
+        "output_ramp": "19,21"
+      },
+      {
+        "name": "_copper",
+        "type": "repeat",
+        "file": "cargo/metal_coil_centred_34.vox"
+      }
+    ]
+}      

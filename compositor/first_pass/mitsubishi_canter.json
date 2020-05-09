@@ -1,0 +1,13 @@
+{
+    "files": [
+      "mitsubishi_canter.vox"
+    ],
+    "operations": [  
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/ford_cargo/mitsubishi_canter_curtainside.vox"
+      }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "files": [
+      "erf_c_series.vox", "erf_e_series.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/erf_c_series/erf_c_series_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/erf_c_series/erf_c_series_flatbed.vox"
+      },      
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/erf_c_series/erf_c_series_tanker.vox"
+      },      
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/erf_c_series/erf_c_series_curtainside.vox"
+      },      
+      {
+        "name": "_livestock",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/erf_c_series/erf_c_series_livestock.vox"
+      }
+    ]
+}

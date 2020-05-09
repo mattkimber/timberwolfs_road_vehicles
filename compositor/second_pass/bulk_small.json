@@ -1,0 +1,67 @@
+{
+    "files": [
+        "../../intermediate/output_fp/bedford_tk.vox",
+        "../../intermediate/output_fp/daf_lf.vox",
+        "../../intermediate/output_fp/erf_c_series.vox",
+        "../../intermediate/output_fp/erf_e_series.vox",
+        "../../intermediate/output_fp/foden_alpha.vox",        
+        "../../intermediate/output_fp/foden_s20.vox",
+        "../../intermediate/output_fp/foden_s21.vox", 
+        "../../intermediate/output_fp/guy_big_j6.vox",
+        "../../intermediate/output_fp/ford_cargo.vox", 
+        "../../intermediate/output_fp/iveco_eurocargo.vox", 
+        "../../intermediate/output_fp/mitsubishi_canter.vox",
+        "../../intermediate/output_fp/ford_d_series.vox",
+        "../../intermediate/output_fp/leyland_badger.vox", 
+        "../../intermediate/output_fp/leyland_octopus.vox",
+        "../../intermediate/output_fp/leyland_x_type.vox",
+        "../../intermediate/output_fp/mammoth_major_8.vox", 
+        "../../intermediate/output_fp/mercedes_lk.vox",        
+        "../../intermediate/output_fp/modern_trailer.vox",        
+        "../../intermediate/output_fp/prewar_trailer.vox",        
+        "../../intermediate/output_fp/saviem_sm.vox",
+        "../../intermediate/output_fp/sentinel_dg4.vox",
+        "../../intermediate/output_fp/t45_trailer.vox",
+        "../../intermediate/output_fp/thornycroft_type_j.vox",
+        "../../intermediate/output_fp/tram_trailer.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "produce_empty"      
+      },
+      {
+        "name": "_coal",
+        "type": "scale",
+        "file": "cargo/bulk_small.vox"
+      },
+      {
+        "name": "_iore",
+        "type": "scale",
+        "file": "cargo/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "72,76"
+      },
+      {
+        "name": "_core",
+        "type": "scale",
+        "file": "cargo/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "123,127"
+      },
+      {
+        "name": "_grey",
+        "type": "scale",
+        "file": "cargo/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "17,21"
+      },
+      {
+        "name": "_grain",
+        "type": "scale",
+        "file": "cargo/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "35,39"
+      }
+    ]
+}      

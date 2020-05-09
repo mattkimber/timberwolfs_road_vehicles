@@ -1,0 +1,15 @@
+{{- define "capacity_switch" -}}
+{{- $intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+    {{- if .realistic_capacity -}}
+    return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
+    {{- else}}
+    return {{.capacity_per_unit}};
+    {{- end -}}
+{{- else}}
+    {{- if .realistic_capacity}}
+    return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
+    {{- else}}
+    return {{.capacity_per_unit}};
+    {{- end -}}
+{{- end -}}
+{{- end -}}

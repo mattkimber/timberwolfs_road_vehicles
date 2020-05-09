@@ -1,0 +1,25 @@
+{
+    "files": [
+      "../../intermediate/output_fp/tram_trailer_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/tram_goods.vox"
+      },
+      {
+        "name": "_stel",
+        "type": "repeat",
+        "file": "cargo/metal_coil_narrow_52.vox",
+        "input_ramp": "75,77",
+        "output_ramp": "19,21"
+      },
+      {
+        "name": "_copper",
+        "type": "repeat",
+        "file": "cargo/metal_coil_narrow_52.vox"
+      }      
+    ]
+}      

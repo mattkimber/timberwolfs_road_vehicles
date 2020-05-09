@@ -1,17 +1,57 @@
 {{define "cargo_sprites" -}}
+
 {{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
 {{- $zoom := parseint .globals.zoom -}}
 {{ altsprites .id  $template $zoom }}
 
-{{- $cargos := "_copper,_goods,_coal,_grain,_grey,_iore,_lvst,_stel,_tanker,_timber,_wood" }}
-{{- if .has_alternate_goods -}}{{ $cargos = concat $cargos ",_goods_2" }}{{- end -}}
+{{- $cargos := "_coal,_grain,_grey,_iore" -}}
+{{- $flatbed_cargos := "_copper,_stel,_timber,_wood" -}}
 
-{{- $cargotypes := slice $cargos -}}
+{{- if .has_covered_goods -}}
+    {{- $cargos = concat $cargos ",_goods" }}
+{{- else -}}
+    {{- $flatbed_cargos = concat $flatbed_cargos ",_goods" -}}
+{{- end }}
+
+{{- if and .has_flatbed .has_piece_goods_tanker -}}
+    {{- $flatbed_cargos = concat $flatbed_cargos ",_drums,_barrels" -}}
+{{- else if .has_piece_goods_tanker -}}
+    {{- $cargos = concat $cargos ",_drums,_barrels" -}}
+{{- else -}}
+    {{- $cargos = concat $cargos ",_tanker" -}}
+{{- end -}}
+
+{{- if .has_flatbed_livestock -}}
+    {{- $flatbed_cargos = concat $flatbed_cargos ",_livestock" }}
+{{- else -}}
+    {{- $cargos = concat $cargos ",_livestock" -}}
+{{- end -}}
+
+{{- if .has_alternate_goods -}}{{ $cargos = concat $cargos ",_goods" }}{{- end -}}
+
+{{- if not .has_flatbed }}
+{{- $cargos = concat $cargos "," }}
+{{- $cargos = concat $cargos $flatbed_cargos }}
+{{- $flatbed_cargos = "" -}}
+{{- end }}
+
+{{""}}
+// CARGO SPRITES for {{.id}}
+// regular: {{$cargos}}
+// flatbed: {{$flatbed_cargos}}
+{{""}}
+
+{{- $cargotypes := slice $cargos -}}{{- $flatbed_cargotypes := slice $flatbed_cargos -}}
 {{- $id := .id }}
 {{ range $index, $element := $cargotypes }}
-{{ $cargo := concat $id $element }}{{ altsprites $cargo  $template $zoom }}
-{{- end}}
-{{ if .has_flatbed }}{{ $cargo := concat .id "_flatbed" }}{{ altsprites $cargo  $template $zoom }}{{end}}
+{{ $cargo := concat $id $element }}{{ altsprites $cargo $template $zoom }}
+{{- end -}}
 
+{{- $flatbed_id := concat $id "_flatbed" -}}
+{{ range $index, $element := $flatbed_cargotypes }}
+{{ $cargo := concat $flatbed_id $element }}{{ altsprites $cargo $template $zoom }}
+{{- end}}
+
+{{ if .has_flatbed }}{{ $cargo := concat .id "_flatbed" }}{{ altsprites $cargo  $template $zoom }}{{end}}
 
 {{- end}}

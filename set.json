@@ -230,7 +230,15 @@
       "template_directory": "templates/vehicles",
       "additional_text_field": "text",
       "additional_text_format": "{SILVER}%s",
-      "nestable_templates": [ "nested/cargo_sprites", "nested/rv_props", "nested/train_props","nested/cargo_spritegroups", "nested/speed_limiter" ],
+      "nestable_templates": [ 
+          "nested/cargo_sprites", 
+          "nested/rv_props", 
+          "nested/train_props",
+          "nested/alt_sprites_rail",
+          "nested/cargo_spritegroups", 
+          "nested/speed_limiter",
+          "nested/capacity_switch"
+        ],
       "globals": {
           "zoom": "4"
       }

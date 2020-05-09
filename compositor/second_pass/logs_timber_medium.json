@@ -1,0 +1,22 @@
+{
+    "files": [
+      "../../intermediate/output_fp/foden_s20_flatbed.vox",
+      "../../intermediate/output_fp/daf_lf_flatbed.vox",
+      "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/tram_trailer_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_wood",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/logs_medium.vox"
+      },
+      {
+        "name": "_timber",
+        "type": "scale",        
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/timber_medium.vox"
+      }
+    ]
+}      

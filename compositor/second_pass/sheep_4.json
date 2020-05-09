@@ -1,0 +1,17 @@
+{
+    "files": [
+      "../../intermediate/output_fp/leyland_badger.vox",
+      "../../intermediate/output_fp/leyland_x_type.vox",
+      "../../intermediate/output_fp/thornycroft_type_j.vox",
+      "../../intermediate/output_fp/sentinel_dg4.vox",
+      "../../intermediate/output_fp/prewar_trailer.vox"
+    ],
+    "operations": [
+      {
+        "name": "_livestock",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/4_sheep.vox"
+      }
+    ]
+}      

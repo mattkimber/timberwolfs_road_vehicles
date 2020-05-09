@@ -1,0 +1,25 @@
+{
+    "files": [
+      "sentinel_dg4.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/sentinel_dg4/sentinel_dg4_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/sentinel_dg4/sentinel_dg4_flatbed.vox"
+      },
+      {
+        "name": "_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/sentinel_dg4/sentinel_dg4_tanker.vox"
+      }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "files": [
+      "../../intermediate/output_fp/foden_alpha_flatbed.vox",
+      "../../intermediate/output_fp/foden_s20_flatbed.vox",
+      "../../intermediate/output_fp/foden_s21_flatbed.vox", 
+      "../../intermediate/output_fp/guy_big_j6_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_stel",
+        "type": "repeat",
+        "file": "cargo/metal_coil.vox",
+        "input_ramp": "75,77",
+        "output_ramp": "19,21"
+      },
+      {
+        "name": "_copper",
+        "type": "repeat",
+        "file": "cargo/metal_coil.vox"
+      }
+    ]
+}      
