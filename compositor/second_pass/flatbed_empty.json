@@ -21,7 +21,9 @@
       "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
       "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
       "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
-      "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+      "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+      "../../intermediate/output_fp/erf_c_series_flatbed.vox",     
+      "../../intermediate/output_fp/erf_e_series_flatbed.vox" 
     ],
     "operations": [
       {
