@@ -17,6 +17,18 @@
         "type": "scale",
         "scale": {"Z": 0.5 },
         "file": "cargo/_half/eng_supplies_post_1920_c.vox"
+      },
+      {
+        "name": "_fmsp",
+        "type": "scale",
+        "scale": {"Z": 0.5 },
+        "file": "cargo/_full/farm_supplies_post_1920_c.vox"
+      },      
+      {
+        "name": "_fmsp_half",
+        "type": "scale",
+        "scale": {"Z": 0.5 },
+        "file": "cargo/_half/farm_supplies_post_1920_c.vox"
       }
     ]
 }      

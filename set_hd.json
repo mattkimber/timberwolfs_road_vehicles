@@ -1,11 +1,11 @@
 {
     "grf": {
       "author_id": "TWF",
-      "grf_id": 4,
-      "name": "Timberwolf's UK Road Vehicles 2.0.0",
-      "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. Standard definition version with 2x zoom.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.",
+      "grf_id": 5,
+      "name": "Timberwolf's UK Road Vehicles 2.0.0 (HD)",
+      "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. High-definition version with 4x zoom.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.",
       "min_compat_version": 51,
-      "filename": "timberwolf_uk.nml",
+      "filename": "timberwolf_uk_hd.nml",
       "parameters": [
         {
             "id": "speed_limiters",
@@ -240,7 +240,7 @@
           "nested/capacity_switch"
         ],
       "globals": {
-          "zoom": "2"
+          "zoom": "4"
       }
     },
     "fixed_strings": {

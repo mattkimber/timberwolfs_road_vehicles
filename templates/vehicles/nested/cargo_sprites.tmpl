@@ -6,8 +6,8 @@
 
 {{- $cargos := "_coal,_clay,_grain,_grey,_iore,_scrap" -}}
 {{- $cargos = concat $cargos ",_coal_half,_clay_half,_grain_half,_grey_half,_iore_half,_scrap_half" }}
-{{- $flatbed_cargos := "_copper,_stel,_timber,_wood,_bdmt,_ensp" -}}
-{{- $flatbed_cargos = concat $flatbed_cargos ",_copper_half,_stel_half,_timber_half,_wood_half,_bdmt_half,_ensp_half" -}}
+{{- $flatbed_cargos := "_copper,_stel,_timber,_wood,_bdmt,_ensp,_fmsp" -}}
+{{- $flatbed_cargos = concat $flatbed_cargos ",_copper_half,_stel_half,_timber_half,_wood_half,_bdmt_half,_ensp_half,_fmsp_half" -}}
 
 {{- if .has_covered_goods -}}
     {{- $cargos = concat $cargos ",_goods" }}

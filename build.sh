@@ -18,3 +18,4 @@ for i in `ls intermediate/voxels`; do
 done
 
 ./roadie.exe set.json && ../nml/nmlc.exe timberwolf_uk.nml
+./roadie.exe set_hd.json && ../nml/nmlc.exe timberwolf_uk_hd.nml

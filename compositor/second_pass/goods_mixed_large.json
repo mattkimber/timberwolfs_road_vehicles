@@ -7,12 +7,14 @@
     "operations": [
       {
         "name": "_goods",
-        "type": "repeat",
+        "type": "scale",
+        "scale": {"z": 1.0},
         "file": "cargo/_full/goods_mixed_large.vox"
       },
       {
         "name": "_goods_half",
-        "type": "repeat",
+        "type": "scale",
+        "scale": {"z": 1.0},
         "file": "cargo/_half/goods_mixed_large.vox"
       }
     ]
