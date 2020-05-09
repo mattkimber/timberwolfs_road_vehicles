@@ -7,8 +7,14 @@ mkdir -p intermediate
 cp voxels/static/* intermediate/voxels
 
 for i in `ls intermediate/voxels`; do 
-	echo $i
-	./renderobject.exe -i intermediate/voxels/$i -o $i -s 4,2,1 -u
+    fn=`echo 4x/${i}_32bpp.png | sed -e s/.vox//`
+
+    if [ -e $fn ]; then 
+        echo "$i [cached]"
+    else
+        echo "$i [new]"
+	    ./renderobject.exe -i intermediate/voxels/$i -o $i -s 4,2,1 -u
+    fi
 done
 
 ./roadie.exe set.json && ../nml/nmlc.exe timberwolf_uk.nml

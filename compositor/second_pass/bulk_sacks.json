@@ -1,0 +1,80 @@
+{
+    "files": [
+      "leyland_steam_van.vox",
+      "dray_trailer.vox",
+      "foden_5t.vox"
+    ],
+    "operations": [
+      {
+        "name": "_coal",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox"
+      },
+      {
+        "name": "_iore",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "72,76"
+      },
+      {
+        "name": "_core",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "123,127"
+      },
+      {
+        "name": "_grey",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "17,21"
+      },
+      {
+        "name": "_grain",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "35,39"
+      },
+      {
+        "name": "_coal_half",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "n": 3
+      },
+      {
+        "name": "_iore_half",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "n": 3,
+        "input_ramp": "2,6",
+        "output_ramp": "72,76"
+      },
+      {
+        "name": "_core_half",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "n": 3,
+        "input_ramp": "2,6",
+        "output_ramp": "123,127"
+      },
+      {
+        "name": "_grey_half",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "n": 3,
+        "input_ramp": "2,6",
+        "output_ramp": "17,21"
+      },
+      {
+        "name": "_grain_half",
+        "type": "repeat",
+        "file": "cargo/_repeatable/sack.vox",
+        "n": 3,
+        "input_ramp": "2,6",
+        "output_ramp": "35,39"
+      }
+    ]
+}      

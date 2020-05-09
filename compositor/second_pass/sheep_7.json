@@ -1,0 +1,19 @@
+{
+    "files": [
+      "foden_5t.vox"
+    ],
+    "operations": [
+      {
+        "name": "_livestock",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_full/7_sheep.vox"
+      },
+      {
+        "name": "_livestock_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/7_sheep.vox"
+      }
+    ]
+}      

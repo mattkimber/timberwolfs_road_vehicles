@@ -7,51 +7,31 @@
       "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
       "../../intermediate/output_fp/saviem_sm_flatbed.vox",
       "../../intermediate/output_fp/ford_d_series_flatbed.vox",
-      "foden_5t.vox",
+      "../../intermediate/output_fp/daf_lf_flatbed.vox",
+      "../../intermediate/output_fp/foden_alpha_flatbed.vox",
+      "../../intermediate/output_fp/tram_trailer_flatbed.vox",
+      "../../intermediate/output_fp/modern_trailer_flatbed.vox",
+      "../../intermediate/output_fp/t45_trailer_flatbed.vox",
+      "../../intermediate/output_fp/foden_s20_flatbed.vox",
+      "../../intermediate/output_fp/foden_s21_flatbed.vox", 
+      "../../intermediate/output_fp/guy_big_j6_flatbed.vox",
       "../../intermediate/output_fp/leyland_badger_flatbed.vox",
       "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+      "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
+      "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
       "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
       "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
       "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+      "../../intermediate/output_fp/erf_c_series_flatbed.vox",     
+      "../../intermediate/output_fp/erf_e_series_flatbed.vox",
       "leyland_steam_van.vox",
-      "dray_trailer.vox"
+      "dray_trailer.vox",
+      "foden_5t.vox"
     ],
     "operations": [
       {
         "name": "",
         "type": "produce_empty"      
-      },
-      {
-        "name": "_stel",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_full/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "17,21"
-      },
-      {
-        "name": "_copper",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_full/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "123,127"
-      },
-      {
-        "name": "_stel_half",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_half/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "17,21"
-      },
-      {
-        "name": "_copper_half",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_half/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "123,127"
       }
     ]
 }      

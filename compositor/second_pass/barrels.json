@@ -1,0 +1,20 @@
+{
+    "files": [
+      "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+      "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+      "foden_5t.vox"
+    ],
+    "operations": [
+      {
+        "name": "_barrels",
+        "type": "repeat",
+        "file": "cargo/_repeatable/barrel.vox"
+      },
+      {
+        "name": "_barrels_half",
+        "type": "repeat",
+        "n": 3,
+        "file": "cargo/_repeatable/barrel.vox"
+      }
+    ]
+}      

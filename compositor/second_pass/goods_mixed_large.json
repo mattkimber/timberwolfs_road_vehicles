@@ -1,0 +1,19 @@
+{
+    "files": [
+      "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
+      "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
+      "../../intermediate/output_fp/guy_big_j6_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "file": "cargo/_full/goods_mixed_large.vox"
+      },
+      {
+        "name": "_goods_half",
+        "type": "repeat",
+        "file": "cargo/_half/goods_mixed_large.vox"
+      }
+    ]
+}      

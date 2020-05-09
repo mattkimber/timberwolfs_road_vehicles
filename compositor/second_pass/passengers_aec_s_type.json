@@ -1,0 +1,25 @@
+{
+    "files": [
+      "aec_s_type.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_empty/s_type_benches.vox"
+      },
+      {
+        "name": "_half",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_half/s_type_passengers.vox"
+      },
+      {
+        "name": "_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_full/s_type_passengers.vox"
+      }
+    ]
+}

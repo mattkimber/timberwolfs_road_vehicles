@@ -15,13 +15,25 @@
         "name": "_wood",
         "type": "scale",
         "scale": { "z": 1.0 } ,
-        "file": "cargo/logs_large.vox"
+        "file": "cargo/_full/logs_large.vox"
       },
       {
         "name": "_timber",
         "type": "scale",
         "scale": { "z": 1.0 } ,
-        "file": "cargo/timber_large.vox"
+        "file": "cargo/_full/timber_large.vox"
+      },
+      {
+        "name": "_wood_half",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/_half/logs_large.vox"
+      },
+      {
+        "name": "_timber_half",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/_half/timber_large.vox"
       }
     ]
 }      

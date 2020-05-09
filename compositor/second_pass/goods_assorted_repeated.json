@@ -1,0 +1,17 @@
+{
+    "files": [
+      "../../intermediate/output_fp/prewar_trailer_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "file": "cargo/_full/assorted_goods.vox"
+      },
+      {
+        "name": "_goods_half",
+        "type": "repeat",
+        "file": "cargo/_half/assorted_goods.vox"
+      }
+    ]
+}      

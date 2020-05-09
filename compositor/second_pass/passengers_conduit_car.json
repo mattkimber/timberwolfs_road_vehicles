@@ -1,0 +1,25 @@
+{
+    "files": [
+      "conduit_car.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_empty/conduit_car_benches.vox"
+      },
+      {
+        "name": "_half_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_half/conduit_car_passengers.vox"
+      },
+      {
+        "name": "_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_full/conduit_car_passengers.vox"
+      }
+    ]
+}

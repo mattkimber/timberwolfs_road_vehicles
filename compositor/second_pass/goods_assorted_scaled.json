@@ -1,0 +1,22 @@
+{
+    "files": [
+      "../../intermediate/output_fp/ford_d_series_flatbed.vox",
+      "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+      "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+      "foden_5t.vox"
+    ],
+    "operations": [
+      {
+        "name": "_goods",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/_full/assorted_goods.vox"
+      },
+      {
+        "name": "_goods_half",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/_half/assorted_goods.vox"
+      }
+    ]
+}      

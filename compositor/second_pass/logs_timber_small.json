@@ -10,20 +10,35 @@
       "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
       "../../intermediate/output_fp/leyland_badger_flatbed.vox",
       "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
-      "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+      "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+      "leyland_steam_van.vox",
+      "dray_trailer.vox",
+      "foden_5t.vox"
     ],
     "operations": [
       {
         "name": "_wood",
         "type": "scale",
         "scale": { "z": 1.0 } ,
-        "file": "cargo/logs_small.vox"
+        "file": "cargo/_full/logs_small.vox"
       },
       {
         "name": "_timber",
         "type": "scale",
         "scale": { "z": 1.0 } ,
-        "file": "cargo/timber_small.vox"
+        "file": "cargo/_full/timber_small.vox"
+      },
+      {
+        "name": "_wood_half",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/_half/logs_small.vox"
+      },
+      {
+        "name": "_timber_half",
+        "type": "scale",
+        "scale": { "z": 1.0 } ,
+        "file": "cargo/_half/timber_small.vox"
       }
     ]
 }      

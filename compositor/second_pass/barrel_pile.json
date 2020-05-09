@@ -1,0 +1,21 @@
+{
+    "files": [
+        "dray_trailer.vox",
+        "leyland_steam_van.vox",
+        "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+    ],
+    "operations": [
+        {
+            "name": "_barrels",
+            "type": "scale",
+            "scale": { "z": 1.0 } ,
+            "file": "cargo/_full/barrel_pile.vox"
+        },
+        {
+            "name": "_barrels_half",
+            "type": "scale",
+            "scale": { "z": 1.0 } ,
+            "file": "cargo/_half/barrel_pile.vox"
+        }
+    ]
+}      

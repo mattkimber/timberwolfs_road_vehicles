@@ -1,0 +1,20 @@
+{
+    "files": [
+      "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
+      "dray_trailer.vox",
+      "leyland_steam_van.vox"
+    ],
+    "operations": [
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "file": "cargo/_repeatable/crates_staggered.vox"
+      },
+      {
+        "name": "_goods_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/crates_staggered.vox"
+      }
+    ]
+}      

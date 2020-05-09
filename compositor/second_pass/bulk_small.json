@@ -33,33 +33,66 @@
       {
         "name": "_coal",
         "type": "scale",
-        "file": "cargo/bulk_small.vox"
+        "file": "cargo/_full/bulk_small.vox"
       },
       {
         "name": "_iore",
         "type": "scale",
-        "file": "cargo/bulk_small.vox",
+        "file": "cargo/_full/bulk_small.vox",
         "input_ramp": "2,6",
         "output_ramp": "72,76"
       },
       {
         "name": "_core",
         "type": "scale",
-        "file": "cargo/bulk_small.vox",
+        "file": "cargo/_full/bulk_small.vox",
         "input_ramp": "2,6",
         "output_ramp": "123,127"
       },
       {
         "name": "_grey",
         "type": "scale",
-        "file": "cargo/bulk_small.vox",
+        "file": "cargo/_full/bulk_small.vox",
         "input_ramp": "2,6",
         "output_ramp": "17,21"
       },
       {
         "name": "_grain",
         "type": "scale",
-        "file": "cargo/bulk_small.vox",
+        "file": "cargo/_full/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "35,39"
+      },
+      {
+        "name": "_coal_half",
+        "type": "scale",
+        "file": "cargo/_half/bulk_small.vox"
+      },
+      {
+        "name": "_iore_half",
+        "type": "scale",
+        "file": "cargo/_half/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "72,76"
+      },
+      {
+        "name": "_core_half",
+        "type": "scale",
+        "file": "cargo/_half/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "123,127"
+      },
+      {
+        "name": "_grey_half",
+        "type": "scale",
+        "file": "cargo/_half/bulk_small.vox",
+        "input_ramp": "2,6",
+        "output_ramp": "17,21"
+      },
+      {
+        "name": "_grain_half",
+        "type": "scale",
+        "file": "cargo/_half/bulk_small.vox",
         "input_ramp": "2,6",
         "output_ramp": "35,39"
       }
