@@ -3,6 +3,8 @@
 A road vehicle set for OpenTTD featuring buses, lorries, trams and others from early
 horse-drawn wagons to the present day.
 
+![Sample.](examples/sample.png)
+
 The set attempts to include a wide variety of vehicles from British haulage history.
 It prioritises gameplay, and vehicle statistics are chosen in the interest of 
 making road vehicles a viable alternative to rail transport - capacities are larger than
