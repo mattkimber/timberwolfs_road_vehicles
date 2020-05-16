@@ -2,7 +2,7 @@
     "grf": {
       "author_id": "TWF",
       "grf_id": 5,
-      "name": "Timberwolf's UK Road Vehicles 2.0.1 (HD)",
+      "name": "Timberwolf's UK Road Vehicles 2.1.0 (HD)",
       "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. High-definition version with 4x zoom.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.",
       "min_compat_version": 51,
       "filename": "timberwolf_uk_hd.nml",
@@ -144,7 +144,7 @@
         "RUBR", "SGBT", "SGCN", "WHEA", "WOOL", "OLSD", "SUGR", "METL",
         "PETR", "VALU", "VEHI", "JAVA", "BRCK", "CSTI", "CTAR", "ACID",
         "CHLO", "COKE", "CMNT", "MNO2", "IRON", "QLME", "SALT", "SASH",
-        "SULP", "ZINC", "SLAG"
+        "SULP", "ZINC", "SLAG", "RCYC", "CASS"
     ],
     "static_templates": [
       {

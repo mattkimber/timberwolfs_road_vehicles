@@ -1,0 +1,18 @@
+{{ $zoom := parseint .globals.zoom }}
+{{ altsprites .id "template_rv" $zoom }}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+    property {
+    {{template "rv_props" . }}
+        refittable_cargo_classes:       bitmask(CC_LIQUID);
+        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_BULK, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+        default_cargo_type:             GOOD;
+    }
+
+    graphics {
+        additional_text: return {{.additional_text_string}};
+        {{ template "speed_limiter" . }}
+        default: spriteset_{{.id}};
+    }
+}
+
