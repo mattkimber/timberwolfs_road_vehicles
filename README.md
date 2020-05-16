@@ -15,6 +15,10 @@ Both default industries and FIRS are explicitly supported - other industry sets 
 as ECS may also be playable although vehicle graphics may not exactly match the carried
 cargo.
 
+The set has a regular version featuring graphics for 2x
+zoom, and an HD version featuring 4x zoom at the cost of
+a larger file size.
+
 ## Parameters
 
 The following parameters are available:
@@ -24,7 +28,7 @@ The following parameters are available:
 * **56mph speed limiters**: When this is enabled, any vehicle built after 1991 will have an
   appropriate speed limiter fitted - 56mph/90kph for lorries, and 62mph/100kph for large
   coaches and buses. This is based on the *build* date, not the vehicle introduction date.
-* **Cars and vans obey national speed limit**: Some players may prefer than vans and cars do
+* **Cars and vans obey national speed limit**: Some players may prefer that vans and cars do
   not attempt to reach their mechanical top speed and instead respect the UK speed limit of
   70mph. (This parameter may be less necessary when playing with a road set that enforces
   speed limits)
