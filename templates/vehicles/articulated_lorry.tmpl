@@ -65,13 +65,28 @@ switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist 
 }
 {{- end }}
 
+{{ $trailers := parseint .articulated_units }}
+// realistic capacity per trailer {{ .realistic_capacity_per_trailer }}
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
 { 
     0: return 1;
+    {{ if ne .realistic_capacity_per_trailer "-1" -}}
     {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+    1: return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} - 1: {{.capacity_per_trailer}} - 1;
+    {{ if gt $trailers 2 }}
     return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{ end }}
     {{- else -}}
+    1: return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} - 1 : {{.capacity_per_trailer}} - 1;
+    {{ if gt $trailers 2 }}
     return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{ end }}
+    {{- end}}
+    {{- else -}}
+    1: return {{.capacity_per_trailer}} - 1;
+    {{ if gt $trailers 2 }}
+    return {{.capacity_per_trailer}};
+    {{ end }}
     {{- end}}
 }
 
@@ -129,31 +144,51 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
 
         // New cargos
         BDMT: switch_{{.id}}_graphics_bdmt;
+        BRCK: switch_{{.id}}_graphics_bdmt;
+
         SCMT: switch_{{.id}}_graphics_scrap;
         CLAY: switch_{{.id}}_graphics_clay;
+
+        VEHI: switch_{{.id}}_graphics_ensp;
         ENSP: switch_{{.id}}_graphics_ensp;
+
         FMSP: switch_{{.id}}_graphics_fmsp;
 
         COAL: switch_{{.id}}_graphics_coal;
+        COKE: switch_{{.id}}_graphics_coal;
+        SLAG: switch_{{.id}}_graphics_coal;
         COPR: switch_{{.id}}_graphics_copper;
         GRAI: switch_{{.id}}_graphics_grain;
         WHEA: switch_{{.id}}_graphics_grain;
         MAIZ: switch_{{.id}}_graphics_grain;
         SAND: switch_{{.id}}_graphics_grain;
+        SALT: switch_{{.id}}_graphics_grain;
+        SULP: switch_{{.id}}_graphics_grain;
         GRVL: switch_{{.id}}_graphics_grey;
         LIME: switch_{{.id}}_graphics_grey;
+        CMNT: switch_{{.id}}_graphics_grey;
+        MNO2: switch_{{.id}}_graphics_grey;
+        IRON: switch_{{.id}}_graphics_grey;
+        QLME: switch_{{.id}}_graphics_grey;
+        SASH: switch_{{.id}}_graphics_grey;
         IORE: switch_{{.id}}_graphics_iore;
         CORE: switch_{{.id}}_graphics_iore;
+        JAVA: switch_{{.id}}_graphics_iore;
         AORE: switch_{{.id}}_graphics_iore;
         SGBT: switch_{{.id}}_graphics_iore;
         LVST: switch_{{.id}}_graphics_livestock;
         STEL: switch_{{.id}}_graphics_stel;
         METL: switch_{{.id}}_graphics_stel;
+        CSTI: switch_{{.id}}_graphics_stel;
+        ZINC: switch_{{.id}}_graphics_stel;
         WDPR: switch_{{.id}}_graphics_timber;
         WOOD: switch_{{.id}}_graphics_wood;
         {{ if .has_piece_goods_tanker -}}
         OIL_: switch_{{.id}}_graphics_drums;
         RUBR: switch_{{.id}}_graphics_drums;
+        CTAR: switch_{{.id}}_graphics_drums;
+        ACID: switch_{{.id}}_graphics_drums;
+        CHLO: switch_{{.id}}_graphics_drums;
         WATR: switch_{{.id}}_graphics_barrels;
         RFPR: switch_{{.id}}_graphics_barrels;
         MILK: switch_{{.id}}_graphics_barrels;
@@ -161,6 +196,9 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         {{ else -}}
         OIL_: switch_{{.id}}_graphics_tanker;
         RUBR: switch_{{.id}}_graphics_tanker;
+        CTAR: switch_{{.id}}_graphics_tanker;
+        ACID: switch_{{.id}}_graphics_tanker;
+        CHLO: switch_{{.id}}_graphics_tanker;
         WATR: switch_{{.id}}_graphics_tanker;
         RFPR: switch_{{.id}}_graphics_tanker;
         MILK: switch_{{.id}}_graphics_tanker;
