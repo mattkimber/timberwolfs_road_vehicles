@@ -8,7 +8,8 @@
 1x/*
 2x/*
 4x/*
-files
 intermediate
 lang
 ~$Tracking Table.xlsm
+testvoxels
+minibuild.sh
