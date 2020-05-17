@@ -9,7 +9,7 @@
   "render_elevation": 30,
   "sprites": [
     { "angle": 0,
-      "width": 8,
+      "width": 9,
       "height": 32
     },
     { "angle": 45,
@@ -25,7 +25,7 @@
       "height": 24
     },
     { "angle": 180,
-      "width": 8,
+      "width": 9,
       "height": 32
     },
     { "angle": 225,
