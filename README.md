@@ -362,7 +362,8 @@ Wheeler's Pixeltool (http://www.richardwheeler.net/interactive/pixeltool.html).
 Rather than using sprites, I use voxel objects created
 in MagicaVoxel to create the set. This is why the only
 PNG files you'll see in this repository are the ones
-for the documentation.
+for the documentation, and the purchase sprites for
+articulated vehicles which have been manually created.
 
 Instead, a vehicle in this set starts its life as a
 voxel object:
