@@ -13,9 +13,9 @@ for i in `ls intermediate/voxels`; do
         echo "$i [cached]"
     else
         echo "$i [new]"
-	    ./renderobject.exe -i intermediate/voxels/$i -o $i -s 4,2,1 -u
+	    ../gorender/renderobject.exe -i intermediate/voxels/$i -o $i -s 4,2,1 -u
     fi
 done
 
-./roadie.exe set.json && ../nml/nmlc.exe timberwolf_uk.nml
-./roadie.exe set_hd.json && ../nml/nmlc.exe timberwolf_uk_hd.nml
+./roadie.exe set.json && ../nml/nmlc.exe -c timberwolf_uk.nml
+./roadie.exe set_hd.json && ../nml/nmlc.exe -c timberwolf_uk_hd.nml

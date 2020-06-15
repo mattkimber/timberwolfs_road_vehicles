@@ -46,7 +46,8 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1)
 {{- if ne $element "" -}}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
-     spriteset_{{$trailer}}{{$element}}; 
+     1: spriteset_{{$trailer}}{{$element}}; 
+     spriteset_invisible;
 }
 {{- end -}}
 {{- end}}
@@ -54,20 +55,21 @@ switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_co
 {{ range $index, $element := slice $groups }}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
-     spritegroup_{{$trailer}}{{$element}}; 
+     1: spritegroup_{{$trailer}}{{$element}}; 
+     spriteset_invisible;
 }
 {{- end}}
 
 {{- if .has_alternate_goods -}}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
-     switch_{{.trailer}}_random_goods; 
+     1: switch_{{.trailer}}_random_goods; 
+     spriteset_invisible;
 }
 {{- end }}
 
 {{ $trailers := parseint .articulated_units }}
-// realistic capacity per trailer {{ .realistic_capacity_per_trailer }}
-switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist ) 
 { 
     0: return 1;
     {{ if ne .realistic_capacity_per_trailer "-1" -}}
@@ -75,19 +77,61 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist )
     1: return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} - 1: {{.capacity_per_trailer}} - 1;
     {{ if gt $trailers 2 }}
     return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{ else }}
+    return 0;
     {{ end }}
     {{- else -}}
     1: return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} - 1 : {{.capacity_per_trailer}} - 1;
     {{ if gt $trailers 2 }}
     return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
+    {{ else}}
+    return 0;
     {{ end }}
     {{- end}}
     {{- else -}}
     1: return {{.capacity_per_trailer}} - 1;
     {{ if gt $trailers 2 }}
     return {{.capacity_per_trailer}};
+    {{ else }}
+    return 0;
     {{ end }}
     {{- end}}
+}
+
+{{ $trailers := parseint .articulated_units }}
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_mail, position_in_consist ) 
+{ 
+    0: return 1;
+    {{ if ne .realistic_capacity_per_trailer "-1" -}}
+    {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
+    1: return param_realistic_early_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} - 1: {{.mail_capacity_per_trailer}} - 1;
+    {{ if gt $trailers 2 }}
+    return param_realistic_early_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} : {{.mail_capacity_per_trailer}};
+    {{ else }}
+    return 0;
+    {{ end }}
+    {{- else -}}
+    1: return param_realistic_modern_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} - 1 : {{.mail_capacity_per_trailer}} - 1;
+    {{ if gt $trailers 2 }}
+    return param_realistic_modern_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} : {{.mail_capacity_per_trailer}};
+    {{ else}}
+    return 0;
+    {{ end }}
+    {{- end}}
+    {{- else -}}
+    1: return {{.mail_capacity_per_trailer}} - 1;
+    {{ if gt $trailers 2 }}
+    return {{.mail_capacity_per_trailer}};
+    {{ else }}
+    return 0;
+    {{ end }}
+    {{- end}}
+}
+
+switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, cargo_type_in_veh) {
+  MAIL: switch_{{.id}}_capacity_mail;
+  VALU: switch_{{.id}}_capacity_mail;
+  switch_{{.id}}_capacity_other;
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 

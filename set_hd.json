@@ -2,7 +2,7 @@
     "grf": {
       "author_id": "TWF",
       "grf_id": 5,
-      "name": "Timberwolf's UK Road Vehicles 2.1.2 (HD)",
+      "name": "Timberwolf's UK Road Vehicles 2.2.0 (HD)",
       "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. High-definition version with 4x zoom.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.",
       "min_compat_version": 51,
       "filename": "timberwolf_uk_hd.nml",
@@ -142,9 +142,9 @@
         "COPR", "DYES", "OIL_", "RFPR", "PETR", "PLAS", "WATR", "FISH", 
         "CERE", "FICR", "FRVG", "FRUT", "GRAI", "LVST", "MAIZ", "MILK", 
         "RUBR", "SGBT", "SGCN", "WHEA", "WOOL", "OLSD", "SUGR", "METL",
-        "PETR", "VALU", "VEHI", "JAVA", "BRCK", "CSTI", "CTAR", "ACID",
-        "CHLO", "COKE", "CMNT", "MNO2", "IRON", "QLME", "SALT", "SASH",
-        "SULP", "ZINC", "SLAG", "RCYC", "CASS"
+        "VALU", "JAVA", "BRCK", "CSTI", "CTAR", "ACID", "CHLO", "COKE", 
+        "CMNT", "MNO2", "IRON", "QLME", "SALT", "SASH", "SULP", "ZINC", 
+        "SLAG", "RCYC", "CASS"
     ],
     "static_templates": [
       {
@@ -160,6 +160,9 @@
       },
       {
           "template": "templates/static/livery_switches.tmpl"
+      },
+      {
+          "template": "templates/static/invisible.tmpl"
       }
     ],
     "sprite_templates": [
@@ -171,14 +174,14 @@
           "locations" : [[0,0],[17,0],[51,0],[95,0],[129,0],[146,0],[180,0],[224,0]],
           "sizes": [[9,32],[26,24],[36,14],[26,24],[9,32],[26,24],[36,14],[26,24]],
           "offsets": [
-                [-16,-68],
-                [-76,-44],
-                [-88,-32],
-                [-36,-52],
-                [-12,-76],
-                [-56,-52],
-                [-56,-32],
-                [-36,-48]
+            [-16,-68],
+            [-76,-44],
+            [-88,-32],
+            [-36,-52],
+            [-12,-76],
+            [-56,-52],
+            [-64,-40],
+            [-36,-48]
           ]
         },
         {
