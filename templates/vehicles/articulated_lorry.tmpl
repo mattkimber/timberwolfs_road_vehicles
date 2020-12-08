@@ -41,34 +41,48 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1)
 
 {{- $id := .id }}
 {{- $trailer := .trailer }}
+{{ $trailers := parseint .articulated_units }}
 
 {{ range $index, $element := slice $sets }}
 {{- if ne $element "" -}}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     {{ if gt $trailers 2 }}
+     spriteset_{{$trailer}}{{$element}}; 
+     {{else}}
      1: spriteset_{{$trailer}}{{$element}}; 
      spriteset_invisible;
+     {{end}}
 }
 {{- end -}}
 {{- end}}
 
+
 {{ range $index, $element := slice $groups }}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     {{ if gt $trailers 2 }}
+     spritegroup_{{$trailer}}{{$element}}; 
+     {{else}}
      1: spritegroup_{{$trailer}}{{$element}}; 
      spriteset_invisible;
+     {{end}}
 }
 {{- end}}
 
 {{- if .has_alternate_goods -}}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+    {{ if gt $trailers 2 }}
+    switch_{{.trailer}}_random_goods; 
+    {{else}}
      1: switch_{{.trailer}}_random_goods; 
      spriteset_invisible;
+     {{end}}
 }
 {{- end }}
 
-{{ $trailers := parseint .articulated_units }}
+
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist ) 
 { 
     0: return 1;
