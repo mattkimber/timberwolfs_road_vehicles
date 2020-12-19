@@ -15,6 +15,12 @@
     reliability_decay:              {{.reliability}};
     loading_speed:                  {{.loading_speed}};
 
+    {{- if .is_tram}}
+    tram_type:                      {{.roadtype}};
+    {{- else}}
+    road_type:                      {{.roadtype}};
+    {{- end}}
+
     sprite_id:                      SPRITE_ID_NEW_ROADVEH; 
     speed:                          {{.top_speed}} mph;
     misc_flags:                     bitmask({{if .is_tram}}ROADVEH_FLAG_TRAM, {{end}}ROADVEH_FLAG_2CC);
