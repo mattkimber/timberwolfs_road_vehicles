@@ -1,0 +1,25 @@
+{
+    "files": [
+      "daimler_charabanc.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_empty/charabanc_benches.vox"
+      },
+      {
+        "name": "_half_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_half/charabanc_benches.vox"
+      },
+      {
+        "name": "_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_full/charabanc_benches.vox"
+      }
+    ]
+}
