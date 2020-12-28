@@ -1,5 +1,4 @@
 *.grf
-*.nml
 .nmlcache
 *.exe
 1x
@@ -13,3 +12,5 @@ lang
 ~$Tracking Table.xlsm
 testvoxels
 minibuild.sh
+timberwolf_uk.nml
+timberwolf_uk_hd.nml

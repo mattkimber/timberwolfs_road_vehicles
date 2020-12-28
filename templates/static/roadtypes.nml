@@ -1,0 +1,11 @@
+roadtypetable {
+    ROAD,
+    ELRD,
+    DIRT_ROAD: [ DIRT, ROAD ]
+}
+
+tramtypetable {
+    RAIL,
+    ELRL
+}
+
