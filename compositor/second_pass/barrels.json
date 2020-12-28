@@ -8,13 +8,15 @@
       {
         "name": "_barrels",
         "type": "repeat",
-        "file": "cargo/_repeatable/barrel.vox"
+        "file": "cargo/_repeatable/barrel.vox",
+        "mask_original": true
       },
       {
         "name": "_barrels_half",
         "type": "repeat",
         "n": 3,
-        "file": "cargo/_repeatable/barrel.vox"
+        "file": "cargo/_repeatable/barrel.vox",
+        "mask_original": true
       }
     ]
 }      

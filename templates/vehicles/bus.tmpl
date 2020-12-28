@@ -1,8 +1,8 @@
 {{ $zoom := parseint .globals.zoom }}
-{{ if .is_tram}}{{ altsprites .id "template_tram" $zoom }}{{else}}{{ altsprites .id "template_rv" $zoom }}{{end}}
+{{ if .is_tram}}{{ altsprites8 .id "template_tram" $zoom }}{{else}}{{ altsprites8 .id "template_rv" $zoom }}{{end}}
 
 {{ if .has_alternate_livery -}}
-{{ $alt := concat .id "_alt"}}{{ altsprites $alt "template_rv" $zoom }}
+{{ $alt := concat .id "_alt"}}{{ altsprites8 $alt "template_rv" $zoom }}
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
   0: return spriteset_{{.id}};

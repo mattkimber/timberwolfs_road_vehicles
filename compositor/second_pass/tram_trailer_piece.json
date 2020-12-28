@@ -7,37 +7,27 @@
         "name": "_goods",
         "type": "repeat",
         "n": 1,
-        "file": "cargo/_full/tram_goods.vox"
+        "file": "cargo/_full/tram_goods.vox",
+        "mask_original": true
       },
       {
-        "name": "_stel",
+        "name": "_metal",
         "type": "repeat",
         "file": "cargo/_repeatable/metal_coil_narrow_52.vox",
-        "input_ramp": "75,77",
-        "output_ramp": "19,21"
-      },
-      {
-        "name": "_copper",
-        "type": "repeat",
-        "file": "cargo/_repeatable/metal_coil_narrow_52.vox"
+        "mask_original": true
       },
       {
         "name": "_goods_half",
         "type": "repeat",
         "n": 1,
-        "file": "cargo/_half/tram_goods.vox"
+        "file": "cargo/_half/tram_goods.vox",
+        "mask_original": true
       },
       {
-        "name": "_stel_half",
+        "name": "_metal_half",
         "type": "repeat",
         "file": "cargo/_half/metal_coil_narrow_52.vox",
-        "input_ramp": "75,77",
-        "output_ramp": "19,21"
-      },
-      {
-        "name": "_copper_half",
-        "type": "repeat",
-        "file": "cargo/_half/metal_coil_narrow_52.vox"
+        "mask_original": true
       }
     ]
 }      

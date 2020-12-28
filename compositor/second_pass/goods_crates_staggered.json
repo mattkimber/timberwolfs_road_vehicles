@@ -8,13 +8,15 @@
       {
         "name": "_goods",
         "type": "repeat",
-        "file": "cargo/_repeatable/crates_staggered.vox"
+        "file": "cargo/_repeatable/crates_staggered.vox",
+        "mask_original": true
       },
       {
         "name": "_goods_half",
         "type": "repeat",
         "n": 1,
-        "file": "cargo/_repeatable/crates_staggered.vox"
+        "file": "cargo/_repeatable/crates_staggered.vox",
+        "mask_original": true
       }
     ]
 }      

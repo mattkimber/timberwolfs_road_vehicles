@@ -1,0 +1,8 @@
+{{define "cargo_selector_v3"}}
+
+    {{- $cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea" }}
+    {{- $id := .id}}
+    {{- range $index, $element := slice $cargos }}
+        {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
+    {{- end}}
+{{end}}

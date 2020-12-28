@@ -22,36 +22,18 @@
         "type": "produce_empty"      
       },
       {
-        "name": "_stel",
+        "name": "_metal",
         "type": "scale",
         "scale": { "z": 1.0 },
         "file": "cargo/_full/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "17,21"
+        "mask_original": true
       },
       {
-        "name": "_copper",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_full/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "123,127"
-      },
-      {
-        "name": "_stel_half",
+        "name": "_metal_half",
         "type": "scale",
         "scale": { "z": 1.0 },
         "file": "cargo/_half/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "17,21"
-      },
-      {
-        "name": "_copper_half",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_half/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "123,127"
+        "mask_original": true
       }
     ]
 }      

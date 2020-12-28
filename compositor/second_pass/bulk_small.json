@@ -28,83 +28,25 @@
     "operations": [
       {
         "name": "",
-        "type": "produce_empty"      
+        "type": "produce_empty"
       },
       {
-        "name": "_coal",
+        "name": "_bulk_none",
         "type": "scale",
-        "file": "cargo/_full/bulk_small.vox"
+        "file": "cargo/_empty/bulk_small.vox",
+        "mask_original": true    
       },
       {
-        "name": "_iore",
-        "type": "scale",
-        "file": "cargo/_full/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "72,76"
-      },
-      {
-        "name": "_grey",
+        "name": "_bulk_full",
         "type": "scale",
         "file": "cargo/_full/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "17,21"
+        "mask_original": true
       },
       {
-        "name": "_grain",
-        "type": "scale",
-        "file": "cargo/_full/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "35,39"
-      },
-      {
-        "name": "_clay",
-        "type": "scale",
-        "file": "cargo/_full/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "115,122"
-      },
-      {
-        "name": "_scrap",
-        "type": "scale",
-        "file": "cargo/_full/bulk_scrap.vox"
-      },
-      {
-        "name": "_coal_half",
-        "type": "scale",
-        "file": "cargo/_half/bulk_small.vox"
-      },
-      {
-        "name": "_iore_half",
+        "name": "_bulk_half",
         "type": "scale",
         "file": "cargo/_half/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "72,76"
-      },
-      {
-        "name": "_grey_half",
-        "type": "scale",
-        "file": "cargo/_half/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "17,21"
-      },
-      {
-        "name": "_grain_half",
-        "type": "scale",
-        "file": "cargo/_half/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "35,39"
-      },
-      {
-        "name": "_clay_half",
-        "type": "scale",
-        "file": "cargo/_half/bulk_small.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "115,122"
-      },
-      {
-        "name": "_scrap_half",
-        "type": "scale",
-        "file": "cargo/_half/bulk_scrap.vox"
+        "mask_original": true
       }
     ]
 }      

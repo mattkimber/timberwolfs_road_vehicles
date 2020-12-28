@@ -1,7 +1,7 @@
 {{- $zoom := parseint .globals.zoom -}}
-{{ altsprites .id "template_rv" $zoom }}
+{{ altsprites8 .id "template_rv" $zoom }}
 {{- $black := concat .id "_black" -}}
-{{ altsprites $black "template_rv" $zoom }}
+{{ altsprites8 $black "template_rv" $zoom }}
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
   0: return spriteset_{{.id}};

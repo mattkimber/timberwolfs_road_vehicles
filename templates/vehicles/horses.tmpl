@@ -1,7 +1,7 @@
 {{- $zoom := parseint .globals.zoom -}}
 {{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
-{{$a := concat .id "_1"}}{{ altsprites $a $template $zoom }}
-{{$b := concat .id "_2"}}{{ altsprites $b $template $zoom }}
+{{$a := concat .id "_1"}}{{ altsprites8 $a $template $zoom }}
+{{$b := concat .id "_2"}}{{ altsprites8 $b $template $zoom }}
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_animation, motion_counter % 4) { 
     0..1: return spriteset_{{.id}}_1; 

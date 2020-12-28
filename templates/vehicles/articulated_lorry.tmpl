@@ -4,8 +4,8 @@
 {{- range $index, $element := slice .articulated_graphics -}}
 {{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
 {{- if ne $element "" -}}
-{{ $el_usc := concat "_" $element }}{{ $spr_id := concat $id $el_usc }}{{ altsprites $spr_id "template_rv" $zoom }}
-{{- else -}}{{ altsprites $id "template_rv" $zoom }}{{- end -}}
+{{ $el_usc := concat "_" $element }}{{ $spr_id := concat $id $el_usc }}{{ altsprites8 $spr_id "template_rv" $zoom }}
+{{- else -}}{{ altsprites8 $id "template_rv" $zoom }}{{- end -}}
 {{- end -}}
 {{- end}}
 
@@ -82,63 +82,26 @@ switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist 
 }
 {{- end }}
 
-
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist ) 
 { 
     0: return 1;
-    {{ if ne .realistic_capacity_per_trailer "-1" -}}
-    {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
-    1: return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} - 1: {{.capacity_per_trailer}} - 1;
-    {{ if gt $trailers 2 }}
-    return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
-    {{ else }}
-    return 0;
-    {{ end }}
-    {{- else -}}
-    1: return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} - 1 : {{.capacity_per_trailer}} - 1;
-    {{ if gt $trailers 2 }}
-    return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
-    {{ else}}
-    return 0;
-    {{ end }}
-    {{- end}}
-    {{- else -}}
     1: return {{.capacity_per_trailer}} - 1;
     {{ if gt $trailers 2 }}
     return {{.capacity_per_trailer}};
     {{ else }}
     return 0;
-    {{ end }}
     {{- end}}
 }
 
-{{ $trailers := parseint .articulated_units }}
+// Mail switch does nothing as there is no value for it currently.
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_mail, position_in_consist ) 
 { 
     0: return 1;
-    {{ if ne .realistic_capacity_per_trailer "-1" -}}
-    {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
-    1: return param_realistic_early_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} - 1: {{.mail_capacity_per_trailer}} - 1;
+    1: return {{.capacity_per_trailer}} - 1;
     {{ if gt $trailers 2 }}
-    return param_realistic_early_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} : {{.mail_capacity_per_trailer}};
+    return {{.capacity_per_trailer}};
     {{ else }}
     return 0;
-    {{ end }}
-    {{- else -}}
-    1: return param_realistic_modern_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} - 1 : {{.mail_capacity_per_trailer}} - 1;
-    {{ if gt $trailers 2 }}
-    return param_realistic_modern_vehicle_capacity ? {{.realistic_mail_capacity_per_trailer}} : {{.mail_capacity_per_trailer}};
-    {{ else}}
-    return 0;
-    {{ end }}
-    {{- end}}
-    {{- else -}}
-    1: return {{.mail_capacity_per_trailer}} - 1;
-    {{ if gt $trailers 2 }}
-    return {{.mail_capacity_per_trailer}};
-    {{ else }}
-    return 0;
-    {{ end }}
     {{- end}}
 }
 
@@ -150,7 +113,7 @@ switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, cargo_type_in_veh) {
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
 { 
-    {{- range $index, $element := slice .articulated_lengths -}}
+    {{- range $index, $element := slice .lengths -}}
     {{$index }}: return {{ $element }};
     {{- end}}    
     return 8;

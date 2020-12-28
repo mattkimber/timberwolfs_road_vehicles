@@ -1,0 +1,41 @@
+{{define "cargo_sprites_v3" }}
+
+// Base vehicle templates
+{{ $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
+{{- $zoom := parseint .globals.zoom -}}
+
+// The base vehicle (bulk cargo)
+{{ altsprites8 .id  $template $zoom }}
+
+
+// Base cargo types (recoloured to individual cargo)
+{{ $cargo_list := "bulk" -}}
+
+{{ if $cargo_list}}
+{{$id := .id}}
+
+{{ range $index, $element := slice $cargo_list -}}
+{{ if $element -}}
+// Cargo: {{$element}}
+{{$elus := concat "_" $element}}
+{{- range $idx2, $el2 := slice "_none,_half,_full" }}
+{{$cargo := concat $elus $el2  }}{{$fullid := concat $id $cargo}}{{ altsprites8 $fullid $template $zoom }}
+{{end}}
+
+// Cargo spritegroups
+
+{{$cargoid := concat $id $elus }}
+spritegroup spritegroup_{{$cargoid}} {
+	loading: [spriteset_{{$id}}_{{$element}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
+	loaded: [spriteset_{{$id}}_{{$element}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
+}
+{{end}} //eif element
+{{end}} //erange cargo_list
+
+
+{{end}} //eif cargo_list
+// End cargo sprites
+
+
+
+{{ end}}

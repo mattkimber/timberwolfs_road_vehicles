@@ -1,4 +1,4 @@
-{{ $zoom := parseint .globals.zoom }}{{ altsprites .id "template_rv" $zoom }}
+{{ $zoom := parseint .globals.zoom }}{{ altsprites8 .id "template_rv" $zoom }}
 
 spriteset (spriteset_purchase_{{.id}}, "purchase/{{.id}}_purchase.vox.png" ) 
 { template_purchase() } 
@@ -19,16 +19,12 @@ switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_co
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
 { 
     0: return 1;
-    {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
-    return param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
-    {{- else -}}
-    return param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_trailer}} : {{.capacity_per_trailer}};
-    {{- end}}
+    return {{.capacity_per_trailer}};
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
 { 
-    {{- range $index, $element := slice .articulated_lengths -}}
+    {{- range $index, $element := slice .lengths -}}
     {{$index }}: return {{ $element }};
     {{- end}}    
     return 8;

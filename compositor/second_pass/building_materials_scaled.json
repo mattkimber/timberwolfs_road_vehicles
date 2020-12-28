@@ -22,7 +22,8 @@
         "name": "_bdmt",        
         "type": "scale",
         "scale": { "z": 1.0 },
-        "file": "cargo/_repeatable/building_materials.vox"
+        "file": "cargo/_repeatable/building_materials.vox",
+        "mask_original": true
       },
       {
         "name": "_bdmt_half",
@@ -30,7 +31,8 @@
         "scale": { "z": 1.0 },
         "file": "cargo/_half/building_materials.vox",
         "input_ramp": "75,77",
-        "output_ramp": "19,21"
+        "output_ramp": "19,21",
+        "mask_original": true
       }
     ]
 }      

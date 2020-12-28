@@ -4,28 +4,16 @@
     ],
     "operations": [
       {
-        "name": "_stel",
+        "name": "_metal",
         "type": "repeat",
         "file": "cargo/_repeatable/metal_coil_centred.vox",
-        "input_ramp": "75,77",
-        "output_ramp": "19,21"
+        "mask_original": true
       },
       {
-        "name": "_copper",
-        "type": "repeat",
-        "file": "cargo/_repeatable/metal_coil_centred.vox"
-      },
-      {
-        "name": "_stel_half",
+        "name": "_metal_half",
         "type": "repeat",
         "file": "cargo/_half/metal_coil_centred.vox",
-        "input_ramp": "75,77",
-        "output_ramp": "19,21"
-      },
-      {
-        "name": "_copper_half",
-        "type": "repeat",
-        "file": "cargo/_half/metal_coil_centred.vox"
+        "mask_original": true
       }
     ]
 }      

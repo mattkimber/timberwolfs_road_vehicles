@@ -12,13 +12,15 @@
       {
         "name": "_drums",
         "type": "repeat",
-        "file": "cargo/_repeatable/oil_drum.vox"
+        "file": "cargo/_repeatable/oil_drum.vox",
+        "mask_original": true
       },
       {
         "name": "_drums_half",
         "type": "repeat",
         "n": 3,
-        "file": "cargo/_repeatable/oil_drum.vox"
+        "file": "cargo/_repeatable/oil_drum.vox",
+        "mask_original": true
       }
     ]
 }      

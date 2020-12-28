@@ -1,12 +1,8 @@
 {{- define "rv_props" }}
     name:                           {{.name_string}};
-    {{if eq .engine "steam" -}}
-    climates_available:             param_{{.enable_param}} && param_enable_steam ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
-    {{else if eq .engine "horse" -}}
-    climates_available:             param_{{.enable_param}} && param_enable_steam ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
-    {{else -}}
-    climates_available:             param_{{.enable_param}} {{if .is_light_rail}}&& (param_light_rail_mode == 1 || param_light_rail_mode == 2){{else if .is_hybrid_rail}}&& (param_hybrid_tram_mode == 1 || param_hybrid_tram_mode == 2){{end}} ? bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL) : NO_CLIMATE;
-    {{- end}}
+
+    climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+
     introduction_date:              date({{.intro_year}},{{.intro_month}},01);
     model_life:                     {{.model_life}} + 4;
     retire_early:                   -2;
@@ -23,36 +19,16 @@
 
     sprite_id:                      SPRITE_ID_NEW_ROADVEH; 
     speed:                          {{.top_speed}} mph;
-    misc_flags:                     bitmask({{if .is_tram}}ROADVEH_FLAG_TRAM, {{end}}ROADVEH_FLAG_2CC);
+    misc_flags:                     bitmask({{if .is_tram}}ROADVEH_FLAG_TRAM, {{end}}ROADVEH_FLAG_2CC, ROADVEH_FLAG_SPRITE_STACK);
     refit_cost:                     0; 
 
     running_cost_base:              RUNNING_COST_ROADVEH;
     weight:                         {{.weight}} ton;     
-{{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
-    {{- if .realistic_capacity}}
-    cargo_capacity:                 param_realistic_early_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
-    cost_factor:                    param_realistic_early_vehicle_capacity ? {{.realistic_cost}} : {{.cost}};
-    running_cost_factor:            param_realistic_early_vehicle_capacity ? {{.realistic_running_cost}} : {{.running_cost}};
-    power:                          {{if .realistic_power}}param_realistic_early_vehicle_capacity ? {{.realistic_power}} : {{end}}{{.power}};
-    {{- else}}
+
     cargo_capacity:                 {{.capacity_per_unit}};
     cost_factor:                    {{.cost}};
     running_cost_factor:            {{.running_cost}};
     power:                          {{.power}} hp;
-    {{- end -}}
-{{- else}}
-    {{- if .realistic_capacity}}
-    cargo_capacity:                 param_realistic_modern_vehicle_capacity ? {{.realistic_capacity_per_unit}} : {{.capacity_per_unit}};
-    cost_factor:                    param_realistic_modern_vehicle_capacity ? {{.realistic_cost}} : {{.cost}};
-    running_cost_factor:            param_realistic_modern_vehicle_capacity ? {{.realistic_running_cost}} : {{.running_cost}};
-    power:                          {{if .realistic_power}}param_realistic_modern_vehicle_capacity ? {{.realistic_power}} : {{end}}{{.power}};
-    {{- else}}
-    cargo_capacity:                 {{.capacity_per_unit}};
-    cost_factor:                    {{.cost}};
-    running_cost_factor:            {{.running_cost}};
-    power:                          {{.power}} hp;
-    {{- end -}}
-{{- end}}
 
 {{- if eq .engine "horse" }}
     sound_effect:                   SOUND_HORSE;

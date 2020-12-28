@@ -7,24 +7,28 @@
       {
         "name": "_ensp",
         "type": "repeat",
-        "file": "cargo/_full/eng_supplies_post_1920_b.vox"
+        "file": "cargo/_full/eng_supplies_post_1920_b.vox",
+        "mask_original": true
       },      
       {
         "name": "_ensp_half",
         "type": "repeat",
         "n": 1,
-        "file": "cargo/_full/eng_supplies_post_1920_b.vox"
+        "file": "cargo/_full/eng_supplies_post_1920_b.vox",
+        "mask_original": true
       },
       {
         "name": "_fmsp",
         "type": "repeat",
-        "file": "cargo/_full/farm_supplies_post_1920_b.vox"
+        "file": "cargo/_full/farm_supplies_post_1920_b.vox",
+        "mask_original": true
       },      
       {
         "name": "_fmsp_half",
         "type": "repeat",
         "n": 1,
-        "file": "cargo/_full/farm_supplies_post_1920_b.vox"
+        "file": "cargo/_full/farm_supplies_post_1920_b.vox",
+        "mask_original": true
       }
     ]
 }      

@@ -1,11 +1,11 @@
 // Empty
 {{ $zoom := parseint .globals.zoom -}}
 {{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
-{{ altsprites .id $template $zoom }}
+{{ altsprites8 .id $template $zoom }}
 
 // Loaded
-{{ $loaded := concat .id "_loaded" }}{{ altsprites $loaded $template $zoom }}
-{{ $half_loaded := concat .id "_half_loaded" }}{{ altsprites $half_loaded $template $zoom }}
+{{ $loaded := concat .id "_loaded" }}{{ altsprites8 $loaded $template $zoom }}
+{{ $half_loaded := concat .id "_half_loaded" }}{{ altsprites8 $half_loaded $template $zoom }}
 
 // Spritegroup
 spritegroup spritegroup_{{.id}} {                                      

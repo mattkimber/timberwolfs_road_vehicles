@@ -1,0 +1,19 @@
+{{define "cargo_switches_v3" }}
+{{- $id := .id }}
+{{- $bulk_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea" }}
+// Bulk cargo by type
+
+{{ range $index, $element := slice $bulk_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_bulk + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_bulk;
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+{{ end }}

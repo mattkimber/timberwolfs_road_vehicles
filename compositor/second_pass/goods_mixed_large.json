@@ -9,13 +9,15 @@
         "name": "_goods",
         "type": "scale",
         "scale": {"z": 1.0},
-        "file": "cargo/_full/goods_mixed_large.vox"
+        "file": "cargo/_full/goods_mixed_large.vox",
+        "mask_original": true
       },
       {
         "name": "_goods_half",
         "type": "scale",
         "scale": {"z": 1.0},
-        "file": "cargo/_half/goods_mixed_large.vox"
+        "file": "cargo/_half/goods_mixed_large.vox",
+        "mask_original": true
       }
     ]
 }      

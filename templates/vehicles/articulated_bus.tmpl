@@ -1,20 +1,15 @@
 {{ $zoom := parseint .globals.zoom -}}
 {{ $zoomstr := .globals.zoom -}}
 {{- $horse_type := .horse_type }}
-{{- $is_rail := or .is_light_rail .is_hybrid_rail }}
 {{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
 {{- $id := .id -}}
 {{- range $index, $element := slice .articulated_graphics -}}
     {{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
     {{- if ne $element "" -}}
         {{- $el_usc := concat "_" $element -}}{{- $spr_id := concat $id $el_usc -}}
-        {{ altsprites $spr_id $template $zoom }}
-        {{ if $is_rail -}}
-        {{ $templ_params := concat $spr_id "," }}{{ $templ_params = concat $templ_params $zoomstr }}
-        {{ template "alt_sprites_rail" $templ_params }}
-        {{- end -}}
+        {{ altsprites8 $spr_id $template $zoom }}
     {{- else -}}
-        {{ altsprites $id $template $zoom }}{{- end -}}
+        {{ altsprites8 $id $template $zoom }}{{- end -}}
 {{- end -}}
 {{- end}}
 
@@ -46,27 +41,14 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist )
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
 {
-    {{- $realistic_caps := slice .realistic_articulated_capacities -}}
-    {{- if ne .realistic_articulated_capacities "" -}}
-            {{$intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}    
-                {{- range $index, $element := slice .articulated_capacities -}}
-    {{ $index }}: return param_realistic_early_vehicle_capacity ? {{ index $realistic_caps $index }} : {{ $element }};
-                {{- end}}
-            {{- else -}}
-                {{- range $index, $element := slice .articulated_capacities -}}
-    {{ $index }}: return param_realistic_modern_vehicle_capacity ? {{ index $realistic_caps $index }} : {{ $element }};
-                {{- end}}
-            {{- end}}
-        {{- else -}}
     {{- range $index, $element := slice .articulated_capacities -}}
-    {{ $index }}: {{ $element }};
-    {{- end}}
-    {{- end -}}
+    {{ $index }}: return {{ $element }};
+    {{- end }}
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
 {
-    {{- range $index, $element := slice .articulated_lengths -}}
+    {{- range $index, $element := slice .lengths -}}
     {{$index }}: return {{ $element }};
     {{- end}}    
 }
@@ -117,58 +99,5 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         default: switch_{{.id}}_graphics;
   }
 }
-
-{{- if $is_rail }}
-
-// Articulation switches
-switch (FEAT_TRAINS, SELF, switch_{{.id}}_rail_articulation, extra_callback_info1) 
-{
-    {{- range $index, $element := slice .articulated_configuration -}}
-    {{ $index }}: return {{ $id }}_rail;
-    {{- end}}
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
-switch (FEAT_TRAINS, SELF, switch_{{.id}}_rail_length, position_in_consist ) 
-{
-    {{- range $index, $element := slice .articulated_lengths -}}
-    {{$index }}: return {{ $element }};
-    {{- end}}    
-}
-
-switch (FEAT_TRAINS, SELF, switch_{{.id}}_rail_capacity, position_in_consist ) 
-{
-    {{- range $index, $element := slice .articulated_capacities -}}
-    {{ $index }}: {{ $element }};
-    {{- end}}
-}
-
-switch (FEAT_TRAINS, SELF, switch_{{.id}}_rail_graphics, position_in_consist ) 
-{
-    {{- range $index, $element := slice .articulated_configuration -}}
-    {{ $index }}: return spriteset_{{ $id }}_{{ $element }}_rail;
-    {{- end}}
-}
-
-item(FEAT_TRAINS, {{.id}}_rail, {{.rail_numeric_id}}) {
-    property {
-        {{template "train_props" . }}
-        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
-        non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
-        default_cargo_type:             PASS;
-    }
-
-    graphics {
-        additional_text: return {{.additional_text_string}};
-
-        articulated_part: switch_{{.id}}_rail_articulation;
-        cargo_capacity: switch_{{.id}}_rail_capacity;
-        length: switch_{{.id}}_rail_length;
-        purchase_cargo_capacity: return {{.capacity_per_unit}};
-        purchase: spriteset_purchase_{{.id}};
-        default: switch_{{.id}}_rail_graphics;
-  }
-}
-{{ end }}
 
 
