@@ -22,7 +22,7 @@
         "type": "produce_empty"      
       },
       {
-        "name": "_metal",
+        "name": "_metal_full",
         "type": "scale",
         "scale": { "z": 1.0 },
         "file": "cargo/_full/metal_small.vox",

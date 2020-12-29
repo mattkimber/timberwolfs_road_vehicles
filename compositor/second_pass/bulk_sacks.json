@@ -6,8 +6,14 @@
     ],
     "operations": [
       {
-        "name": "_bulk_none",
+        "name": "",
         "type": "produce_empty"
+      },
+      {
+        "name": "_none",
+        "type": "scale",
+        "file": "cargo/_empty/null_cargo.vox",
+        "mask_original": true    
       },
       {
         "name": "_bulk_full",

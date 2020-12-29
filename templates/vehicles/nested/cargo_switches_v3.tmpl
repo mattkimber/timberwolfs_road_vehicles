@@ -16,4 +16,122 @@ switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
 }
 {{end}}
 
+{{ $metal_cargos := "alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc" }}
+{{ $has_flatbed := .has_flatbed }}
+{{ range $index, $element := slice $metal_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_metal + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_metal;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_metal;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+{{ $flatbed_cargos := "wood,wdpr" }}
+{{ range $index, $element := slice $flatbed_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    {{if eq $element "wood" }}1: spritegroup_{{$id}}_flatbed_wood;{{else}}1: spritegroup_{{$id}}_flatbed_timber;{{end}}
+    {{ else }}
+    0: spriteset_{{$id}};
+    {{if eq $element "wood" }}1: spritegroup_{{$id}}_wood;{{else}}1: spritegroup_{{$id}}_timber;{{end}}
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+
+{{ if .has_piece_goods_tanker }}
+{{ $barrel_cargos := "beer,cola,dyes,fzdr,milk,watr,soap" }}
+{{ $drum_cargos := "acid,chlo,ctar,eoil,lye_,nh3_,o2__,oil_,petr,plst,rfpr,rubr" }}
+
+{{ range $index, $element := slice $barrel_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_barrels;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_barrels;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+{{ range $index, $element := slice $drum_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_drums;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_drums;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+{{end}}
+
+{{ if not .has_covered_goods }}
+{{- $crate_cargos := "batt,boom,bubl,cera,java,nuts,papr,powr,toys,veng,vpts,plas,mnsp,coat,tyre,mail,good"}}
+{{ range $index, $element := slice $crate_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_crate + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_goods;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_goods;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+{{end}}
+
+{{ if .has_open_livestock }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_lvst, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_livestock;
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+
+
 {{ end }}

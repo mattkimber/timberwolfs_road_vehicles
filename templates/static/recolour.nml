@@ -366,9 +366,9 @@ replace(recolour_bulk + 41) {
 
 // Crate recolours
 
-// -> Batteries (yellow)
-recolour_crate = reserve_sprites(19);
+recolour_crate = reserve_sprites(22);
 
+// -> Batteries (yellow)
 replace(recolour_crate) {
     recolour_sprite {
         0x50..0x57: 0x3e..0x45;
@@ -514,6 +514,27 @@ replace(recolour_crate + 17) {
 replace(recolour_crate + 18) {
     recolour_sprite {
         0x50..0x57: 0xaa..0xb1;
+    }
+}
+
+// -> Tyres (dark grey)
+replace(recolour_crate + 19) {
+    recolour_sprite {
+        0x50..0x57: 0x03..0x0a;
+    }
+}
+
+// -> Mail (orange-yellow)
+replace(recolour_crate + 20) {
+    recolour_sprite {
+        0x50..0x57: 0xb8..0xbf;
+    }
+}
+
+// -> Goods (brown)
+replace(recolour_crate + 21) {
+    recolour_sprite {
+        0x50..0x57: 0x70..0x77;
     }
 }
 

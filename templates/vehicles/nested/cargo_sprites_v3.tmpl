@@ -7,9 +7,34 @@
 // The base vehicle (bulk cargo)
 {{ altsprites8 .id  $template $zoom }}
 
+// Alternate cargo options
+{{ if .has_flatbed }}{{ $cargo_id := concat .id "_flatbed" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
+{{ if not .has_piece_goods_tanker -}}{{ $cargo_id := concat .id "_tanker" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
+{{- if .has_covered_goods -}}{{ $cargo_id := concat .id "_goods" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
+{{if not .has_open_livestock}}{{ $cargo_id := concat .id "_livestock" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
+
+// Null cargo_empty
+{{ $cargo_id := concat .id "_none" }}{{ altsprites8 $cargo_id $template $zoom }}
+
 
 // Base cargo types (recoloured to individual cargo)
 {{ $cargo_list := "bulk" -}}
+
+{{ if .has_flatbed }}
+{{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber" }}
+{{else}}
+{{$cargo_list = concat $cargo_list ",metal,wood,timber" }}
+{{end}}
+
+{{ if .has_piece_goods_tanker -}}
+{{ if .has_flatbed}}{{$cargo_list = concat $cargo_list ",flatbed_drums,flatbed_barrels" }}{{else}}{{$cargo_list = concat $cargo_list ",drums,barrels" }}{{end}}
+{{ end }}
+
+{{ if not .has_covered_goods }}
+{{ if .has_flatbed}}{{$cargo_list = concat $cargo_list ",flatbed_goods" }}{{else}}{{$cargo_list = concat $cargo_list ",goods" }}{{end}}
+{{end}}
+
+{{ if .has_open_livestock }}{{$cargo_list = concat $cargo_list ",livestock" }}{{end}}
 
 {{ if $cargo_list}}
 {{$id := .id}}
@@ -18,7 +43,7 @@
 {{ if $element -}}
 // Cargo: {{$element}}
 {{$elus := concat "_" $element}}
-{{- range $idx2, $el2 := slice "_none,_half,_full" }}
+{{- range $idx2, $el2 := slice "_half,_full" }}
 {{$cargo := concat $elus $el2  }}{{$fullid := concat $id $cargo}}{{ altsprites8 $fullid $template $zoom }}
 {{end}}
 
@@ -26,8 +51,8 @@
 
 {{$cargoid := concat $id $elus }}
 spritegroup spritegroup_{{$cargoid}} {
-	loading: [spriteset_{{$id}}_{{$element}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
-	loaded: [spriteset_{{$id}}_{{$element}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
+	loading: [spriteset_{{$id}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
+	loaded: [spriteset_{{$id}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
 }
 {{end}} //eif element
 {{end}} //erange cargo_list

@@ -6,7 +6,7 @@
     ],
     "operations": [
       {
-        "name": "_ensp",
+        "name": "_ensp_full",
         "type": "repeat",
         "file": "cargo/_full/eng_supplies_post_1920_a.vox",
         "mask_original": true
@@ -19,7 +19,7 @@
         "mask_original": true
       },      
       {
-        "name": "_fmsp",
+        "name": "_fmsp_full",
         "type": "repeat",
         "file": "cargo/_full/farm_supplies_post_1920_a.vox",
         "mask_original": true

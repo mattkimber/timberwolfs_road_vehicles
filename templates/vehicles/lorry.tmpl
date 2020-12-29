@@ -16,6 +16,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         cargo_capacity: {{ template "capacity_switch" . }}
         {{ template "cargo_selector_v3" . }}
     
+        // Default to the goods sprite
+        {{if .has_covered_goods}}return spriteset_{{.id}}_goods;{{else}}return switch_{{.id}}_cargo_good;{{end}}
     }
 }
 

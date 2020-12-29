@@ -47,9 +47,9 @@ spritegroup spritegroup_{{$cargoid}} {
 // End cargo sprites
 
 {{ $has_cargo_switch := "" }}
-{{ $bulk_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea" }}
 {{ $bolster_cargos := "bdmt,wood,batt,beer,boom,bubl,cera,fzdr,java,nuts,papr,powr,toys,veng,vpts,plas,dyes,mnsp,ficr,soap,coat,alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc,wdpr,fmsp,ensp,tyre,pipe,vbod,vehi,stsh,stwr,rbar" }}
-{{ $metal_cargos := "alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc" }}
+
+
 {{ $early_liquids := "acid,beer,chlo,cola,ctar,dyes,eoil,fzdr,lye_,milk,nh3_,o2__,oil_,petr,plst,rfpr,rubr,soap,watr" }}
 {{ $early_cargos := "lvst,barrels" }}
 
@@ -71,37 +71,6 @@ switch(FEAT_TRAINS, SELF, switch_{{$id}}_cargo_{{$element}}, [
 {{end}}
 
 
-{{ if eq .cargo_handling "Bulk" "EarlyOpen" }}
-{{ $has_cargo_switch = "1" }}
-{{ range $index, $element := slice $bulk_cargos }}
-switch(FEAT_TRAINS, SELF, switch_{{$id}}_cargo_{{$element}}, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_bulk + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: switch_{{$id}}_curve;
-    1: switch_{{$id}}_bulk_curve;
-
-    // This should never be executed
-    return spriteset_invisible;
-}
-
-{{ end }}
-{{else if eq .cargo_handling "Steel" }}
-{{ $has_cargo_switch = "1" }}
-{{ range $index, $element := slice $metal_cargos }}
-{{ $palette := printf "recolour_metal + %d" $index }}
-
-switch(FEAT_TRAINS, SELF, switch_{{$id}}_cargo_{{$element}}, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? {{$palette}} : PALETTE_USE_DEFAULT), 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: switch_{{$id}}_curve;
-    1: switch_{{$id}}_metal_curve;
-
-
-    // This should never be executed
-    return spriteset_invisible;
-}
 
 {{ end }}
 {{ else if eq .cargo_handling "Bolster" }}

@@ -31,9 +31,9 @@
         "type": "produce_empty"
       },
       {
-        "name": "_bulk_none",
+        "name": "_none",
         "type": "scale",
-        "file": "cargo/_empty/bulk_small.vox",
+        "file": "cargo/_empty/null_cargo.vox",
         "mask_original": true    
       },
       {

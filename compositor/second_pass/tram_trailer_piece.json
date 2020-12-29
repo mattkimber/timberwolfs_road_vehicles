@@ -4,14 +4,14 @@
     ],
     "operations": [
       {
-        "name": "_goods",
+        "name": "_goods_full",
         "type": "repeat",
         "n": 1,
         "file": "cargo/_full/tram_goods.vox",
         "mask_original": true
       },
       {
-        "name": "_metal",
+        "name": "_metal_full",
         "type": "repeat",
         "file": "cargo/_repeatable/metal_coil_narrow_52.vox",
         "mask_original": true

@@ -19,7 +19,7 @@
     ],
     "operations": [
       {
-        "name": "_bdmt",        
+        "name": "_bdmt_full",        
         "type": "scale",
         "scale": { "z": 1.0 },
         "file": "cargo/_repeatable/building_materials.vox",

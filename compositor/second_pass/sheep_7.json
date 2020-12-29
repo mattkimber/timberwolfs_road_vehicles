@@ -4,7 +4,7 @@
     ],
     "operations": [
       {
-        "name": "_livestock",
+        "name": "_livestock_full",
         "type": "repeat",
         "n": 1,
         "file": "cargo/_full/7_sheep.vox",

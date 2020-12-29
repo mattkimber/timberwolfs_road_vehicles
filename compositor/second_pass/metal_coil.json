@@ -7,7 +7,7 @@
     ],
     "operations": [
       {
-        "name": "_metal",
+        "name": "_metal_full",
         "type": "repeat",
         "file": "cargo/_repeatable/metal_coil.vox",
         "mask_original": true

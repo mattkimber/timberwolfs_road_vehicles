@@ -17,14 +17,14 @@
     ],
     "operations": [
       {
-        "name": "_wood",
+        "name": "_wood_full",
         "type": "scale",
         "scale": { "z": 1.0 } ,
         "file": "cargo/_full/logs_small.vox",
         "mask_original": true
       },
       {
-        "name": "_timber",
+        "name": "_timber_full",
         "type": "scale",
         "scale": { "z": 1.0 } ,
         "file": "cargo/_full/timber_small.vox",

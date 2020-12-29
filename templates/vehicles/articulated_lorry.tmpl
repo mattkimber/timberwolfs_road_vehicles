@@ -21,56 +21,31 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1)
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-{{- $groups := "_copper,_coal,_grain,_grey,_iore,_stel,_timber,_wood,_bdmt,_scrap,_ensp,_fmsp,_clay" -}}
-{{- $sets := "" -}}
+// Cargo in trailer switch
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_cargo_selector, cargo_type_in_veh ) { 
+    {{ template "cargo_selector_v3" . }}
+    
+    // Default to the goods sprite
+    {{if .has_covered_goods}}return spriteset_{{.trailer}}_goods;{{else}}return switch_{{.trailer}}_cargo_good;{{end}}
+}
 
-{{- if .has_covered_goods -}}{{ $sets = concat $sets "_goods" }}
-{{- else -}}
-{{- if .has_alternate_goods -}}{{else -}}
-{{ $groups = concat $groups ",_goods" }}
-{{- end -}}
-{{- end}}
 
-{{- if .has_piece_goods_tanker -}}{{ $groups = concat $groups ",_drums,_barrels" }}
-{{- else -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_tanker" }}
-{{- end -}}
-
-{{- if .has_covered_livestock -}}{{- if ne $sets "" }}{{ $sets = concat $sets "," }}{{ end -}}{{ $sets = concat $sets "_livestock" }}
-{{- else -}}{{ $groups = concat $groups ",_livestock" }}
-{{- end -}}
-
-{{- $id := .id }}
-{{- $trailer := .trailer }}
 {{ $trailers := parseint .articulated_units }}
 
-{{ range $index, $element := slice $sets }}
-{{- if ne $element "" -}}
-switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
+// Trailer vs. motive unit switch
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
      {{ if gt $trailers 2 }}
-     spriteset_{{$trailer}}{{$element}}; 
+     switch_{{.id}}_cargo_selector; 
      {{else}}
-     1: spriteset_{{$trailer}}{{$element}}; 
+     1: switch_{{.id}}_cargo_selector;
      spriteset_invisible;
      {{end}}
 }
-{{- end -}}
-{{- end}}
 
 
-{{ range $index, $element := slice $groups }}
-switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics{{$element}}, position_in_consist ) { 
-     0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
-     {{ if gt $trailers 2 }}
-     spritegroup_{{$trailer}}{{$element}}; 
-     {{else}}
-     1: spritegroup_{{$trailer}}{{$element}}; 
-     spriteset_invisible;
-     {{end}}
-}
-{{- end}}
-
-{{- if .has_alternate_goods -}}
+// TODO: restore the alternate goods switch
+{{/* {{- if .has_alternate_goods -}}
 switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist ) { 
      0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
     {{ if gt $trailers 2 }}
@@ -80,7 +55,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{$id}}_graphics_goods, position_in_consist 
      spriteset_invisible;
      {{end}}
 }
-{{- end }}
+{{- end }} */}}
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist ) 
 { 
@@ -163,71 +138,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         purchase_cargo_capacity: spriteset_purchase_{{.id}};
         purchase: spriteset_purchase_{{.id}};
 
-        // New cargos
-        BDMT: switch_{{.id}}_graphics_bdmt;
-        BRCK: switch_{{.id}}_graphics_bdmt;
-
-        SCMT: switch_{{.id}}_graphics_scrap;
-        RCYC: switch_{{.id}}_graphics_scrap;
-        CLAY: switch_{{.id}}_graphics_clay;
-
-        VEHI: switch_{{.id}}_graphics_ensp;
-        ENSP: switch_{{.id}}_graphics_ensp;
-
-        FMSP: switch_{{.id}}_graphics_fmsp;
-
-        COAL: switch_{{.id}}_graphics_coal;
-        COKE: switch_{{.id}}_graphics_coal;
-        SLAG: switch_{{.id}}_graphics_coal;
-        COPR: switch_{{.id}}_graphics_copper;
-        GRAI: switch_{{.id}}_graphics_grain;
-        WHEA: switch_{{.id}}_graphics_grain;
-        MAIZ: switch_{{.id}}_graphics_grain;
-        SAND: switch_{{.id}}_graphics_grain;
-        SALT: switch_{{.id}}_graphics_grain;
-        SULP: switch_{{.id}}_graphics_grain;
-        CASS: switch_{{.id}}_graphics_grain;
-        GRVL: switch_{{.id}}_graphics_grey;
-        LIME: switch_{{.id}}_graphics_grey;
-        CMNT: switch_{{.id}}_graphics_grey;
-        MNO2: switch_{{.id}}_graphics_grey;
-        IRON: switch_{{.id}}_graphics_grey;
-        QLME: switch_{{.id}}_graphics_grey;
-        SASH: switch_{{.id}}_graphics_grey;
-        IORE: switch_{{.id}}_graphics_iore;
-        CORE: switch_{{.id}}_graphics_iore;
-        JAVA: switch_{{.id}}_graphics_iore;
-        AORE: switch_{{.id}}_graphics_iore;
-        SGBT: switch_{{.id}}_graphics_iore;
-        LVST: switch_{{.id}}_graphics_livestock;
-        STEL: switch_{{.id}}_graphics_stel;
-        METL: switch_{{.id}}_graphics_stel;
-        CSTI: switch_{{.id}}_graphics_stel;
-        ZINC: switch_{{.id}}_graphics_stel;
-        WDPR: switch_{{.id}}_graphics_timber;
-        WOOD: switch_{{.id}}_graphics_wood;
-        {{ if .has_piece_goods_tanker -}}
-        OIL_: switch_{{.id}}_graphics_drums;
-        RUBR: switch_{{.id}}_graphics_drums;
-        CTAR: switch_{{.id}}_graphics_drums;
-        ACID: switch_{{.id}}_graphics_drums;
-        CHLO: switch_{{.id}}_graphics_drums;
-        WATR: switch_{{.id}}_graphics_barrels;
-        RFPR: switch_{{.id}}_graphics_barrels;
-        MILK: switch_{{.id}}_graphics_barrels;
-        PETR: switch_{{.id}}_graphics_drums;
-        {{ else -}}
-        OIL_: switch_{{.id}}_graphics_tanker;
-        RUBR: switch_{{.id}}_graphics_tanker;
-        CTAR: switch_{{.id}}_graphics_tanker;
-        ACID: switch_{{.id}}_graphics_tanker;
-        CHLO: switch_{{.id}}_graphics_tanker;
-        WATR: switch_{{.id}}_graphics_tanker;
-        RFPR: switch_{{.id}}_graphics_tanker;
-        MILK: switch_{{.id}}_graphics_tanker;
-        PETR: switch_{{.id}}_graphics_tanker;
-        {{ end -}}
-        default: switch_{{.id}}_graphics_goods;
+        // Use a single switch, decide the cargo in here
+        default: switch_{{$id}}_graphics;
     }
 }
 

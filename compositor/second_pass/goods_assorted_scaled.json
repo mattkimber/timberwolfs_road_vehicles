@@ -7,7 +7,7 @@
     ],
     "operations": [
       {
-        "name": "_goods",
+        "name": "_goods_full",
         "type": "scale",
         "scale": { "z": 1.0 } ,
         "file": "cargo/_full/assorted_goods.vox",

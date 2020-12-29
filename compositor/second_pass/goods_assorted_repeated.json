@@ -4,7 +4,7 @@
     ],
     "operations": [
       {
-        "name": "_goods",
+        "name": "_goods_full",
         "type": "repeat",
         "file": "cargo/_full/assorted_goods.vox",
         "mask_original": true
