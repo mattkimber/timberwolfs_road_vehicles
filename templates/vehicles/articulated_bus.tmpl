@@ -1,9 +1,11 @@
 {{ $zoom := parseint .globals.zoom -}}
 {{ $zoomstr := .globals.zoom -}}
 {{- $horse_type := .horse_type }}
-{{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
 {{- $id := .id -}}
+{{ $articulated_lengths := slice .lengths }}
 {{- range $index, $element := slice .articulated_graphics -}}
+{{ $ttd_len := index $articulated_lengths $index }}
+{{- $template := concat "template_auto_" $ttd_len }}
     {{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
     {{- if ne $element "" -}}
         {{- $el_usc := concat "_" $element -}}{{- $spr_id := concat $id $el_usc -}}

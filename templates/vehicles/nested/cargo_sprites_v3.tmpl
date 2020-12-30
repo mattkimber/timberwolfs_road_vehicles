@@ -1,7 +1,7 @@
 {{define "cargo_sprites_v3" }}
 
 // Base vehicle templates
-{{ $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
+{{- $template := concat "template_auto_" .ttd_len }}
 {{- $zoom := parseint .globals.zoom -}}
 
 // The base vehicle (bulk cargo)
@@ -21,9 +21,9 @@
 {{ $cargo_list := "bulk" -}}
 
 {{ if .has_flatbed }}
-{{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber" }}
+{{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber,flatbed_pipe,flatbed_wire,flatbed_coil,flatbed_ensp,flatbed_fmsp" }}
 {{else}}
-{{$cargo_list = concat $cargo_list ",metal,wood,timber" }}
+{{$cargo_list = concat $cargo_list ",metal,wood,timber,pipe,wire,coil,ensp,fmsp" }}
 {{end}}
 
 {{ if .has_piece_goods_tanker -}}

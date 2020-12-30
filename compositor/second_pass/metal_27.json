@@ -1,0 +1,64 @@
+{
+    "files": [
+      "../../intermediate/output_fp/foden_alpha_flatbed.vox",
+      "../../intermediate/output_fp/foden_s20_flatbed.vox",
+      "../../intermediate/output_fp/foden_s21_flatbed.vox", 
+      "../../intermediate/output_fp/guy_big_j6_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_metal_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/metal_small_doubled.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_metal_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/metal_small_doubled.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_coil_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/metal_coil.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_coil_half",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_repeatable/metal_coil.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_wire_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/wire_rod.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_wire_half",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_repeatable/wire_rod.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_pipe_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/pipe_doubled.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_pipe_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/pipe_doubled.vox",
+        "mask_original": true
+      }
+    ]
+}      

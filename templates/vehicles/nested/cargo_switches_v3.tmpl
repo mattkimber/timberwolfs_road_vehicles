@@ -36,7 +36,8 @@ switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
 }
 {{end}}
 
-{{ $flatbed_cargos := "wood,wdpr" }}
+{{ $flatbed_cargos := "wood,wdpr,stsh,rbar,stwr,ensp,fmsp,pipe" }}
+{{ $cargo_sprites := slice "wood,timber,coil,wire,wire,ensp,fmsp,pipe" }}
 {{ range $index, $element := slice $flatbed_cargos }}
 switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
@@ -45,10 +46,10 @@ switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
 
     {{ if $has_flatbed }}
     0: spriteset_{{$id}}_flatbed;
-    {{if eq $element "wood" }}1: spritegroup_{{$id}}_flatbed_wood;{{else}}1: spritegroup_{{$id}}_flatbed_timber;{{end}}
+    {{ $sprite := index $cargo_sprites $index }}1: spritegroup_{{$id}}_flatbed_{{$sprite}};
     {{ else }}
     0: spriteset_{{$id}};
-    {{if eq $element "wood" }}1: spritegroup_{{$id}}_wood;{{else}}1: spritegroup_{{$id}}_timber;{{end}}
+    {{ $sprite := index $cargo_sprites $index }}1: spritegroup_{{$id}}_{{$sprite}};
     {{ end }}
 
     // This should never be executed

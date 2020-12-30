@@ -1,4 +1,5 @@
-{{ $zoom := parseint .globals.zoom }}{{ altsprites8 .id "template_rv" $zoom }}
+{{ $zoom := parseint .globals.zoom }}
+{{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_{{.id}}, cargo_type_in_veh) {
   MAIL: return {{.capacity_per_unit}};

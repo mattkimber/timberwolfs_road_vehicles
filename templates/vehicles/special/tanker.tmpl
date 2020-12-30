@@ -1,5 +1,5 @@
 {{ $zoom := parseint .globals.zoom }}
-{{ altsprites8 .id "template_rv" $zoom }}
+{{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {

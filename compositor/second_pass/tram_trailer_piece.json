@@ -4,16 +4,27 @@
     ],
     "operations": [
       {
-        "name": "_goods_full",
+        "name": "_coil_half",
         "type": "repeat",
-        "n": 1,
-        "file": "cargo/_full/tram_goods.vox",
+        "file": "cargo/_half/metal_coil_narrow_52.vox",
         "mask_original": true
       },
       {
-        "name": "_metal_full",
+        "name": "_coil_full",
         "type": "repeat",
         "file": "cargo/_repeatable/metal_coil_narrow_52.vox",
+        "mask_original": true
+      },      
+      {
+        "name": "_wire_half",
+        "type": "repeat",
+        "file": "cargo/_half/wire_rod_narrow_52.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_wire_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/wire_rod_narrow_52.vox",
         "mask_original": true
       },
       {
@@ -24,9 +35,38 @@
         "mask_original": true
       },
       {
-        "name": "_metal_half",
+        "name": "_goods_full",
         "type": "repeat",
-        "file": "cargo/_half/metal_coil_narrow_52.vox",
+        "n": 1,
+        "file": "cargo/_full/tram_goods.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_metal_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/metal_small.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_metal_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/metal_small.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_pipe_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/pipe_doubled.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_pipe_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/pipe_doubled.vox",
         "mask_original": true
       }
     ]

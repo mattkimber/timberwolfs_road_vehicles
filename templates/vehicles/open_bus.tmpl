@@ -1,7 +1,6 @@
 // Empty
 {{ $zoom := parseint .globals.zoom -}}
-{{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
-{{ altsprites8 .id $template $zoom }}
+{{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
 // Loaded
 {{ $loaded := concat .id "_loaded" }}{{ altsprites8 $loaded $template $zoom }}

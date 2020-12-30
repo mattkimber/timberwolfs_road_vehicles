@@ -1,5 +1,5 @@
 {{ $zoom := parseint .globals.zoom }}
-{{ if .is_tram}}{{ altsprites8 .id "template_tram" $zoom }}{{else}}{{ altsprites8 .id "template_rv" $zoom }}{{end}}
+{{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
 {{ if .has_alternate_livery -}}
 {{ $alt := concat .id "_alt"}}{{ altsprites8 $alt "template_rv" $zoom }}

@@ -55,6 +55,9 @@
     },
     "static_templates": [
       {
+        "template":  "templates/static/sprite_templates.nml"
+      },
+      {
         "template":  "templates/static/basecosts.nml"
       },
       {
