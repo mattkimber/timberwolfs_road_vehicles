@@ -36,11 +36,15 @@ switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
 }
 {{end}}
 
-{{ $flatbed_cargos := "wood,wdpr,stsh,rbar,stwr,ensp,fmsp,pipe" }}
-{{ $cargo_sprites := slice "wood,timber,coil,wire,wire,ensp,fmsp,pipe" }}
+{{ $flatbed_cargos := "wood,wdpr,stsh,rbar,stwr,ensp,fmsp,pipe,vehi" }}
+{{ $cargo_sprites := slice "wood,timber,coil,wire,wire,ensp,fmsp,pipe,vehicles" }}
 {{ range $index, $element := slice $flatbed_cargos }}
 switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    {{ if eq $element "vehi" }}
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_cars + ((random_bits >> 3) % 16) : PALETTE_USE_DEFAULT), 0x100),
+    {{else}}
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    {{end}}
     getbits(extra_callback_info1, 8, 8)
     ]) {
 

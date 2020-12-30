@@ -21,9 +21,9 @@
 {{ $cargo_list := "bulk" -}}
 
 {{ if .has_flatbed }}
-{{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber,flatbed_pipe,flatbed_wire,flatbed_coil,flatbed_ensp,flatbed_fmsp" }}
+{{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber,flatbed_pipe,flatbed_wire,flatbed_coil,flatbed_ensp,flatbed_fmsp,flatbed_vehicles" }}
 {{else}}
-{{$cargo_list = concat $cargo_list ",metal,wood,timber,pipe,wire,coil,ensp,fmsp" }}
+{{$cargo_list = concat $cargo_list ",metal,wood,timber,pipe,wire,coil,ensp,fmsp,vehicles" }}
 {{end}}
 
 {{ if .has_piece_goods_tanker -}}
