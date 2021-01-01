@@ -10,7 +10,7 @@
 // Alternate cargo options
 {{ if .has_flatbed }}{{ $cargo_id := concat .id "_flatbed" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
 {{ if not .has_piece_goods_tanker -}}{{ $cargo_id := concat .id "_tanker" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
-{{- if .has_covered_goods -}}{{ $cargo_id := concat .id "_goods" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
+{{- if or .has_alternate_goods .has_covered_goods -}}{{ $cargo_id := concat .id "_goods" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
 {{if not .has_open_livestock}}{{ $cargo_id := concat .id "_livestock" }}{{ altsprites8 $cargo_id $template $zoom }}{{end}}
 
 // Null cargo_empty
@@ -21,7 +21,11 @@
 {{ $cargo_list := "bulk" -}}
 
 {{ if .has_flatbed }}
+{{ if .has_year_dependent_cargo }}
+{{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber,flatbed_pipe,flatbed_wire,flatbed_coil,flatbed_ensp_early,flatbed_fmsp_early,flatbed_ensp_late,flatbed_fmsp_late,flatbed_vehicles_1890s,flatbed_vehicle_bodies_1890s,flatbed_vehicles_1920s,flatbed_vehicle_bodies_1920s,flatbed_vehicles_1950s,flatbed_vehicle_bodies_1950s,flatbed_vehicles_1980s,flatbed_vehicle_bodies_1980s" }}
+{{ else }}
 {{$cargo_list = concat $cargo_list ",flatbed_metal,flatbed_wood,flatbed_timber,flatbed_pipe,flatbed_wire,flatbed_coil,flatbed_ensp,flatbed_fmsp,flatbed_vehicles,flatbed_vehicle_bodies" }}
+{{ end }}
 {{else}}
 {{$cargo_list = concat $cargo_list ",metal,wood,timber,pipe,wire,coil,ensp,fmsp,vehicles,vehicle_bodies" }}
 {{end}}

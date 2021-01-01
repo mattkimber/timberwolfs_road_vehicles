@@ -4,7 +4,7 @@
 {{- $cargotypes := slice "_goods,_mail" -}}
 {{- $id := .id }}
 {{ range $index, $element := $cargotypes }}
-{{ $cargo := concat $id $element }}{{ altsprites8 $cargo "template_rv" $zoom }}
+{{ $cargo := concat $id $element }}{{ altsprites8 $cargo $template $zoom }}
 {{- end}}
 
 

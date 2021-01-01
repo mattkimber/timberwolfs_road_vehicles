@@ -1,7 +1,7 @@
 {{- define "rv_props" }}
     name:                           {{.name_string}};
 
-    climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+    climates_available:             param_{{.enable_param}} ? ALL_CLIMATES : NO_CLIMATE;
 
     introduction_date:              date({{.intro_year}},{{.intro_month}},01);
     model_life:                     {{.model_life}} + 4;

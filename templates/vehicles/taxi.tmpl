@@ -3,6 +3,8 @@
 {{- $black := concat .id "_black" -}}
 {{ altsprites8 $black $template $zoom }}
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
   0: return spriteset_{{.id}};
   1: return spriteset_{{.id}}_black;
@@ -22,6 +24,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     default: switch_{{.id}}_graphics;
     cargo_subtype_text: switch_cab_livery;
     additional_text: return {{.additional_text_string}};
+    purchase: spriteset_{{.id}}_purchase;
   }
 }
 

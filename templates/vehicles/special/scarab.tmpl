@@ -1,8 +1,7 @@
 {{ $zoom := parseint .globals.zoom }}
 {{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
-spriteset (spriteset_purchase_{{.id}}, "purchase/{{.id}}_purchase.vox.png" ) 
-{ template_purchase() } 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
 // Cargo articulation switches
 {{- $groups := "_goods,_mail" -}}
@@ -25,7 +24,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist )
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
 { 
-    {{- range $index, $element := slice .lengths -}}
+    {{- range $index, $element := slice .articulated_lengths -}}
     {{$index }}: return {{ $element }};
     {{- end}}    
     return 8;
@@ -79,8 +78,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         articulated_part: switch_{{.id}}_articulation;
         cargo_capacity: switch_{{.id}}_capacity;
         length: switch_{{.id}}_length;
-        purchase_cargo_capacity: spriteset_purchase_{{.id}};
-        purchase: spriteset_purchase_{{.id}};
+        purchase_cargo_capacity: spriteset_{{.id}}_purchase;
+        purchase: spriteset_{{.id}}_purchase;
         visual_effect: switch_{{.id}}_visual_effect;
 
         MAIL: switch_{{.id}}_graphics_mail;

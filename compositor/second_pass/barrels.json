@@ -2,7 +2,9 @@
     "files": [
       "../../intermediate/output_fp/leyland_badger_flatbed.vox",
       "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
-      "foden_5t.vox"
+      "foden_5t.vox",
+      "../../intermediate/output_fp/rubber_tyred_horse_cart_flatbed.vox",
+      "../../intermediate/output_fp/rubber_tyred_cart_flatbed.vox"
     ],
     "operations": [
       {

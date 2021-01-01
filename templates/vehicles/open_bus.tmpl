@@ -12,6 +12,7 @@ spritegroup spritegroup_{{.id}} {
 	loaded:  [ spriteset_{{.id}}, spriteset_{{.id}}_half_loaded, spriteset_{{.id}}_loaded ];
 }
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
   property {
@@ -24,6 +25,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
   graphics {
     default: spritegroup_{{.id}};
     additional_text: return {{.additional_text_string}};
+    purchase: spriteset_{{.id}}_purchase;
     {{template "speed_limiter" . }}  
   }
 }

@@ -2,7 +2,7 @@
 {{ $zoomstr := .globals.zoom -}}
 {{- $horse_type := .horse_type }}
 {{- $id := .id -}}
-{{ $articulated_lengths := slice .lengths }}
+{{ $articulated_lengths := slice .articulated_lengths }}
 {{- range $index, $element := slice .articulated_graphics -}}
 {{ $ttd_len := index $articulated_lengths $index }}
 {{- $template := concat "template_auto_" $ttd_len }}
@@ -15,8 +15,7 @@
 {{- end -}}
 {{- end}}
 
-spriteset (spriteset_purchase_{{.id}}, "purchase/{{.id}}_purchase.vox.png" ) 
-{ template_purchase() } 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
 // Articulation switches
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1) 
@@ -50,7 +49,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist )
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
 {
-    {{- range $index, $element := slice .lengths -}}
+    {{- range $index, $element := slice .articulated_lengths -}}
     {{$index }}: return {{ $element }};
     {{- end}}    
 }
@@ -96,9 +95,12 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         articulated_part: switch_{{.id}}_articulation;
         cargo_capacity: switch_{{.id}}_capacity;
         length: switch_{{.id}}_length;
-        {{if .horse_type}}colour_mapping: switch_{{.horse_type}}_colour_mapping;{{end}}
-        purchase_cargo_capacity: spriteset_purchase_{{.id}};
-        purchase: spriteset_purchase_{{.id}};
+        {{if .horse_type}}
+        colour_mapping: switch_{{.horse_type}}_colour_mapping;
+        purchase_colour_mapping: return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
+        {{end}}
+        purchase_cargo_capacity: spriteset_{{.id}}_purchase;
+        purchase: spriteset_{{.id}}_purchase;
         default: switch_{{.id}}_graphics;
   }
 }

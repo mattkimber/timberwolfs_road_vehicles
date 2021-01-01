@@ -1,6 +1,8 @@
 {{ $zoom := parseint .globals.zoom }}
 {{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
     {{template "rv_props" . }}
@@ -13,5 +15,6 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         additional_text: return {{.additional_text_string}};
         {{ template "speed_limiter" . }}
         default: spriteset_{{.id}};
+        purchase: spriteset_{{.id}}_purchase;
     }
 }

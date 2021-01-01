@@ -1,6 +1,7 @@
 {{ $zoom := parseint .globals.zoom }}
 {{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
 switch(FEAT_ROADVEHS, SELF, switch_capacity_{{.id}}, cargo_type_in_veh) {
   MAIL: {{.capacity_per_unit}};
@@ -22,6 +23,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
 
         cargo_capacity: switch_capacity_{{.id}};
         default: spriteset_{{.id}};
+        purchase: spriteset_{{.id}}_purchase;
     }
 }
 

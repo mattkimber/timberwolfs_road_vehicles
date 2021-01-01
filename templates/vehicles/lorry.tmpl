@@ -2,6 +2,8 @@
 
 {{ template "cargo_switches_v3" . }}
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
     {{template "rv_props" . }}
@@ -12,6 +14,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
 
     graphics {
         additional_text: return {{.additional_text_string}};
+        purchase: spriteset_{{.id}}_purchase;
         {{ template "speed_limiter" . }}
         cargo_capacity: {{ template "capacity_switch" . }}
         {{ template "cargo_selector_v3" . }}

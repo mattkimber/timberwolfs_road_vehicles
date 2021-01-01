@@ -23,7 +23,9 @@
         "../../intermediate/output_fp/sentinel_dg4.vox",
         "../../intermediate/output_fp/t45_trailer.vox",
         "../../intermediate/output_fp/thornycroft_type_j.vox",
-        "../../intermediate/output_fp/tram_trailer.vox"
+        "../../intermediate/output_fp/tram_trailer.vox",
+        "../../intermediate/output_fp/rubber_tyred_horse_cart.vox",
+        "../../intermediate/output_fp/rubber_tyred_cart.vox"
     ],
     "operations": [
       {

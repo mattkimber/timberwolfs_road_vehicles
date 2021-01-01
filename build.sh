@@ -15,6 +15,10 @@ echo ""
 ls intermediate/voxels/*.vox | xargs ../gorender/renderobject.exe -8 -r -s 2,1 -u -p
 ls voxels/horse/*.vox | xargs ../gorender/renderobject.exe -m files/manifest_horses.json -8 -r -s 2,1 -u -p
 
+echo ""
+echo "Rendering purchase sprites"
+../purchaser/purchaser.exe table.csv
+
 echo "Producing NML"
 ../roadie/roadie.exe set.json
 

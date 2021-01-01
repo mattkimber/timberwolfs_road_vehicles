@@ -5,6 +5,8 @@
 {{ altsprites8 "zorbo_3" $template $zoom }}
 {{ altsprites8 "zorbo_4" $template $zoom }}
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_animation, motion_counter % 4) { 
     0: return spriteset_zorbo_1; 
     1: return spriteset_zorbo_2; 
@@ -29,6 +31,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     default: switch_{{.id}}_animation;
     additional_text: return {{.additional_text_string}};
     colour_mapping: switch_{{.id}}_colour_mapping;
+    purchase: spriteset_{{.id}}_purchase;
     {{template "speed_limiter" . }}
   }
 }

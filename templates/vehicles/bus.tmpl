@@ -1,8 +1,9 @@
 {{ $zoom := parseint .globals.zoom }}
 {{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
 {{ if .has_alternate_livery -}}
-{{ $alt := concat .id "_alt"}}{{ altsprites8 $alt "template_rv" $zoom }}
+{{ $alt := concat .id "_alt"}}{{ altsprites8 $alt $template $zoom }}
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
   0: return spriteset_{{.id}};
@@ -23,8 +24,10 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
 {{ if .has_alternate_livery -}}
     cargo_subtype_text: switch_alt_livery;
     default: switch_{{.id}}_graphics;    
+    purchase: spriteset_{{.id}}_purchase;
 {{- else -}}
     default: spriteset_{{.id}};
+    purchase: spriteset_{{.id}}_purchase;
 {{ end -}}
     additional_text: return {{.additional_text_string}};
     {{template "speed_limiter" . }}
