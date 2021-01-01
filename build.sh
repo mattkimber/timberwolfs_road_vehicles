@@ -24,3 +24,9 @@ echo "Producing NML"
 
 echo "Compiling GRF"
 ../nml/nmlc.exe -c timberwolf_uk.nml
+
+echo "Building TAR"
+mkdir -p timberwolf_uk
+mv *.grf timberwolf_uk
+cp grf_readme/* timberwolf_uk
+tar -c timberwolf_uk > timberwolf_uk.tar

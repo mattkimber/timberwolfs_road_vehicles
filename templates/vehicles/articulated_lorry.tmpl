@@ -56,21 +56,24 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist 
     {{- end}}
 }
 
-// Mail switch does nothing as there is no value for it currently.
-switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_mail, position_in_consist ) 
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_boosted, position_in_consist ) 
 { 
     0: return 1;
-    1: return {{.capacity_per_trailer}} - 1;
+    1: return ({{.capacity_per_trailer}} * 2) - 1;
     {{ if gt $trailers 2 }}
-    return {{.capacity_per_trailer}};
+    return {{.capacity_per_trailer}} * 2;
     {{ else }}
     return 0;
     {{- end}}
 }
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, cargo_type_in_veh) {
-  MAIL: switch_{{.id}}_capacity_mail;
-  VALU: switch_{{.id}}_capacity_mail;
+  MAIL: switch_{{.id}}_capacity_boosted;
+  VALU: switch_{{.id}}_capacity_boosted;
+  GOOD: switch_{{.id}}_capacity_boosted;
+  ENSP: switch_{{.id}}_capacity_boosted;
+  FMSP: switch_{{.id}}_capacity_boosted;
+  POWR: switch_{{.id}}_capacity_boosted;
   switch_{{.id}}_capacity_other;
 }
 
@@ -81,6 +84,8 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist )
     {{- end}}    
     return 8;
 }
+
+{{template "running_cost_switch" . }}
 
 {{ $engine := .engine }}
 {{ $smoke_loc := .smoke_location }}
@@ -112,7 +117,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         {{template "rv_props" . }}
         refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
         non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
-        default_cargo_type:             GOOD;
+        default_cargo_type:             COAL;
     }
 
     graphics {
@@ -129,6 +134,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         {{end}}
         purchase_cargo_capacity: spriteset_{{.id}}_purchase;
         purchase: spriteset_{{.id}}_purchase;
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
 
         // Use a single switch, decide the cargo in here
         default: switch_{{$id}}_graphics;

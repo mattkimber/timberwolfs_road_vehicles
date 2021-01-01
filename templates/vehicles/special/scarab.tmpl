@@ -62,6 +62,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist )
     return VISUAL_EFFECT_DISABLE;    
 }
 
+{{template "running_cost_switch" . }}
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
@@ -81,6 +82,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         purchase_cargo_capacity: spriteset_{{.id}}_purchase;
         purchase: spriteset_{{.id}}_purchase;
         visual_effect: switch_{{.id}}_visual_effect;
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
 
         MAIL: switch_{{.id}}_graphics_mail;
         default: switch_{{.id}}_graphics_goods;

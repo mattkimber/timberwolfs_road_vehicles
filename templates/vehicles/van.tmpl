@@ -3,18 +3,16 @@
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
-switch(FEAT_ROADVEHS, SELF, switch_capacity_{{.id}}, cargo_type_in_veh) {
-  MAIL: {{.capacity_per_unit}};
-  VALU: {{.capacity_per_unit}};
-  return {{.capacity_per_unit}};
-}
+
+{{template "running_cost_switch" . }}
+{{ template "capacity_switch" . }}
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
         {{template "rv_props" . }}
         refittable_cargo_classes:       bitmask(CC_EXPRESS, CC_MAIL, CC_REFRIGERATED, CC_ARMOURED);
         non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_BULK);
-        default_cargo_type:             GOOD;
+        default_cargo_type:             MAIL;
     }
 
     graphics {
@@ -24,6 +22,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         cargo_capacity: switch_capacity_{{.id}};
         default: spriteset_{{.id}};
         purchase: spriteset_{{.id}}_purchase;
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
     }
 }
 

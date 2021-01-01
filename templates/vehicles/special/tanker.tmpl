@@ -3,18 +3,22 @@
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
+{{template "running_cost_switch" . }}
+
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
     {{template "rv_props" . }}
         refittable_cargo_classes:       bitmask(CC_LIQUID);
         non_refittable_cargo_classes:   bitmask(CC_PASSENGERS, CC_BULK, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
-        default_cargo_type:             GOOD;
+        default_cargo_type:             OIL_;
     }
 
     graphics {
         additional_text: return {{.additional_text_string}};
         {{ template "speed_limiter" . }}
         default: spriteset_{{.id}};
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
         purchase: spriteset_{{.id}}_purchase;
     }
 }

@@ -4,23 +4,29 @@
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
+{{template "running_cost_switch" . }}
+{{ template "capacity_switch" . }}
+
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
     {{template "rv_props" . }}
         refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
         non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
-        default_cargo_type:             GOOD;
+        default_cargo_type:             COAL;
     }
 
     graphics {
         additional_text: return {{.additional_text_string}};
         purchase: spriteset_{{.id}}_purchase;
         {{ template "speed_limiter" . }}
-        cargo_capacity: {{ template "capacity_switch" . }}
+        cargo_capacity: switch_capacity_{{.id}};
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
         {{ template "cargo_selector_v3" . }}
     
         // Default to the goods sprite
         {{if .has_covered_goods}}return spriteset_{{.id}}_goods;{{else}}return switch_{{.id}}_cargo_good;{{end}}
+
     }
 }
 

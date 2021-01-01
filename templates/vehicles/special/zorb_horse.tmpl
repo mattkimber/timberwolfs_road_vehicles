@@ -19,6 +19,8 @@ switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_colour_mapping, position_in_articulat
     return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
 }
 
+{{template "running_cost_switch" . }}
+
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
   property {
     {{template "rv_props" . }}
@@ -32,6 +34,9 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     additional_text: return {{.additional_text_string}};
     colour_mapping: switch_{{.id}}_colour_mapping;
     purchase: spriteset_{{.id}}_purchase;
+    running_cost_factor: switch_{{.id}}_running_cost;
+    purchase_running_cost_factor: return {{.running_cost}};
+    purchase_speed: return 28;
     {{template "speed_limiter" . }}
   }
 }

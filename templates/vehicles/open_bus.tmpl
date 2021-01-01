@@ -14,6 +14,8 @@ spritegroup spritegroup_{{.id}} {
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 
+{{template "running_cost_switch" . }}
+
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
   property {
     {{template "rv_props" . }}
@@ -26,7 +28,9 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     default: spritegroup_{{.id}};
     additional_text: return {{.additional_text_string}};
     purchase: spriteset_{{.id}}_purchase;
-    {{template "speed_limiter" . }}  
+    {{template "speed_limiter" . }}
+    running_cost_factor: switch_{{.id}}_running_cost;  
+    purchase_running_cost_factor: return {{.running_cost}};
   }
 }
 

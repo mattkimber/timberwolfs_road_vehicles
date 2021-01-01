@@ -1,3 +1,15 @@
 {{- define "capacity_switch" -}}
-return cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.capacity_per_unit}} : {{.capacity_per_unit}};
+
+{{$mail_boost := 2}}{{if eq .template "van"}}{{$mail_boost = 3}}{{end}}
+
+switch(FEAT_ROADVEHS, SELF, switch_capacity_{{.id}}, cargo_type_in_veh) {
+  GOOD: {{.capacity_per_unit}} * 2;
+  ENSP: {{.capacity_per_unit}} * 2;
+  FMSP: {{.capacity_per_unit}} * 2;
+  POWR: {{.capacity_per_unit}} * 2;
+  MAIL: {{.capacity_per_unit}} * {{$mail_boost}};
+  VALU: {{.capacity_per_unit}} * {{$mail_boost}};
+  return {{.capacity_per_unit}};
+}
+
 {{- end -}}
