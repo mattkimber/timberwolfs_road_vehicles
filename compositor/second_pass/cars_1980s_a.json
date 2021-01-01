@@ -25,6 +25,23 @@
         "mask_original": true,
         "input_ramps": ["200-207,82-89","200-207,82-89"],
         "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },
+      {
+        "name": "_vehicle_bodies_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_body_1980s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicle_bodies_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_body_1980s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
       }
     ]
 }      

@@ -36,8 +36,8 @@ switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
 }
 {{end}}
 
-{{ $flatbed_cargos := "wood,wdpr,stsh,rbar,stwr,ensp,fmsp,pipe,vehi" }}
-{{ $cargo_sprites := slice "wood,timber,coil,wire,wire,ensp,fmsp,pipe,vehicles" }}
+{{ $flatbed_cargos := "wood,wdpr,stsh,rbar,stwr,ensp,fmsp,pipe,vehi,vbod" }}
+{{ $cargo_sprites := slice "wood,timber,coil,wire,wire,ensp,fmsp,pipe,vehicles,vehicle_bodies" }}
 {{ range $index, $element := slice $flatbed_cargos }}
 switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
     {{ if eq $element "vehi" }}

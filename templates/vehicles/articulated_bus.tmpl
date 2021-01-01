@@ -96,6 +96,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         articulated_part: switch_{{.id}}_articulation;
         cargo_capacity: switch_{{.id}}_capacity;
         length: switch_{{.id}}_length;
+        {{if .horse_type}}colour_mapping: switch_{{.horse_type}}_colour_mapping;{{end}}
         purchase_cargo_capacity: spriteset_purchase_{{.id}};
         purchase: spriteset_purchase_{{.id}};
         default: switch_{{.id}}_graphics;
