@@ -1,0 +1,43 @@
+{{- $zoom := parseint .globals.zoom -}}
+{{- $template := concat "template_auto_" .ttd_len }}
+{{ altsprites8 "zorbo_1" $template $zoom }}
+{{ altsprites8 "zorbo_2" $template $zoom }}
+{{ altsprites8 "zorbo_3" $template $zoom }}
+{{ altsprites8 "zorbo_4" $template $zoom }}
+
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
+switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_animation, motion_counter % 4) { 
+    0: return spriteset_zorbo_1; 
+    1: return spriteset_zorbo_2; 
+    2: return spriteset_zorbo_3; 
+    return spriteset_zorbo_4; 
+} 
+
+switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_colour_mapping, position_in_articulated_veh) {
+    0: return recolour_horses + (random_bits % 25);
+    return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
+}
+
+{{template "running_cost_switch" . }}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+  property {
+    {{template "rv_props" . }}
+    cargo_allow_refit:              [ LVST ];
+    non_refittable_cargo_classes:   ALL_CARGO_CLASSES;
+    default_cargo_type:             LVST;
+  }
+
+  graphics {
+    default: switch_{{.id}}_animation;
+    additional_text: return {{.additional_text_string}};
+    colour_mapping: switch_{{.id}}_colour_mapping;
+    purchase: spriteset_{{.id}}_purchase;
+    running_cost_factor: switch_{{.id}}_running_cost;
+    purchase_running_cost_factor: return {{.running_cost}};
+    purchase_speed: return 28;
+    {{template "speed_limiter" . }}
+  }
+}
+

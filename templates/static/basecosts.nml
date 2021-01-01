@@ -1,0 +1,5 @@
+basecost {
+  PR_BUILD_VEHICLE_ROAD: param_build_costs - 1;
+  PR_RUNNING_ROADVEH: param_running_costs - 1;
+}
+

@@ -1,0 +1,951 @@
+// Bulk cargo
+
+// -> Aluminium Ore
+recolour_bulk = reserve_sprites(42);
+
+replace(recolour_bulk + 0) {
+    recolour_sprite {
+        0x01..0x06: 0x7a..0x7f;
+    }
+}
+
+
+// -> Building materials
+replace(recolour_bulk + 1) {
+    recolour_sprite {
+        0x01..0x06: 0x49..0x4e;
+    }
+}
+
+// -> BEANS!
+replace(recolour_bulk + 2) {
+    recolour_sprite {
+        0x01..0x06: 0xc0..0xc5;
+        0x02: 0xb9;
+        0x04: 0xc0;
+        0x05: 0xba;
+        0x06: 0xba;
+    }
+}
+
+// -> Cassava
+replace(recolour_bulk + 3) {
+    recolour_sprite {
+        0x01..0x06: 0x09..0x0e;
+    }
+}
+
+// -> Carbon Black
+replace(recolour_bulk + 4) {
+    recolour_sprite {
+        0x01: 0x01;
+        0x02: 0x01;
+        0x03: 0x02;
+        0x04: 0x02;
+        0x05: 0x03;
+        0x06: 0x03;
+    }
+}
+
+// -> Cement
+replace(recolour_bulk + 5) {
+    recolour_sprite {
+        0x01..0x06: 0x11..0x16;
+    }
+}
+
+// -> Cereal
+replace(recolour_bulk + 6) {
+    recolour_sprite {
+        0x01..0x06: 0x74..0x79;
+        0x01: 0x75;
+    }
+}
+
+
+// -> Clay
+replace(recolour_bulk + 7) {
+    recolour_sprite {
+        0x01..0x06: 0x72..0x77;
+    }
+}
+
+
+// -> Coal
+replace(recolour_bulk + 8) {
+    recolour_sprite {
+        0x01..0x0a: 0x01..0x0a;
+    }
+}
+
+// Coke
+replace(recolour_bulk + 9) {
+    recolour_sprite {
+        0x06: 0x08;
+        0x01..0x05: 0x02..0x06;
+    }
+}
+
+// -> Copper Ore
+replace(recolour_bulk + 10) {
+    recolour_sprite {
+        0x01..0x0a: 0x46..0x4f;
+    }
+}
+
+// -> Cotton Candy
+replace(recolour_bulk + 11) {
+    recolour_sprite {
+        0x03..0x06: 0x2e..0x31;
+        0x01: 0xa6;
+        0x02: 0xa7;
+    }
+}
+
+// -> Ferrochrome
+replace(recolour_bulk + 12) {
+    recolour_sprite {
+        0x01..0x06: 0x12..0x17;
+    }
+}
+
+// -> Plant fibres
+replace(recolour_bulk + 13) {
+    recolour_sprite {
+        0x01..0x06: 0x58..0x5d;
+    }
+}
+
+// -> Fruit
+replace(recolour_bulk + 14) {
+    recolour_sprite {
+        0x01: 0x58;
+        0x02: 0x59;
+        0x03: 0x2f;
+        0x04: 0x64;
+        0x05: 0xa4;
+        0x06: 0x1d;
+    }
+}
+
+// -> Grain
+replace(recolour_bulk + 15) {
+    recolour_sprite {
+        0x01..0x06: 0x22..0x27;
+    }
+}
+
+// -> Gravel
+replace(recolour_bulk + 16) {
+    recolour_sprite {
+        0x01..0x06: 0x10..0x15;
+        0x02: 0x37;
+        0x04: 0x38;
+    }
+}
+
+
+// -> Iron Ore
+replace(recolour_bulk + 17) {
+    recolour_sprite {
+        0x01..0x06: 0x49..0x4e;
+    }
+}
+
+
+// -> Lime
+replace(recolour_bulk + 18) {
+    recolour_sprite {
+        0x01..0x06: 0x09..0x0e;
+        0x05..0x06: 0x66..0x67;
+    }
+}
+
+// -> Kaolin
+replace(recolour_bulk + 19) {
+    recolour_sprite {
+        0x01: 0x77;
+        0x02: 0x77;
+        0x03: 0x78;
+        0x03: 0x78;
+        0x04: 0x79;
+        0x05: 0x79;
+        0x06: 0x79;
+    }
+}
+
+// -> Maiz
+replace(recolour_bulk + 20) {
+    recolour_sprite {
+        0x01..0x06: 0x74..0x79;
+        0x01: 0x75;
+    }
+}
+
+// -> Manganese Oxide
+replace(recolour_bulk + 21) {
+    recolour_sprite {
+        0x01: 0x10;
+        0x02: 0x10;
+        0x03: 0x11;
+        0x03: 0x11;
+        0x04: 0x12;
+        0x05: 0x13;
+    }
+}
+
+// -> Nitrate
+replace(recolour_bulk + 22) {
+    recolour_sprite {
+        0x01..0x02: 0xa6..0xa7;
+        0x03..0x06: 0xa6..0xa9;
+    }
+}
+
+// -> Oilseed
+replace(recolour_bulk + 23) {
+    recolour_sprite {
+        0x01..0x06: 0x3e..0x43;
+    }
+}
+
+
+// -> Peat
+replace(recolour_bulk + 24) {
+    recolour_sprite {
+        0x01..0x06: 0x68..0x6d;
+    }
+}
+
+// -> Phosphate
+replace(recolour_bulk + 25) {
+    recolour_sprite {
+        0x01..0x06: 0xc0..0xc5;
+    }
+}
+
+// -> Potash
+replace(recolour_bulk + 26) {
+    recolour_sprite {
+        0x01..0x06: 0x2b..0x30;
+    }
+}
+
+
+// -> Pyrite Ore
+replace(recolour_bulk + 27) {
+    recolour_sprite {
+        0x02: 0x24;
+        0x04: 0x35;
+        0x06: 0x33;
+    }
+}
+
+
+// -> Quicklime
+replace(recolour_bulk + 28) {
+    recolour_sprite {
+        0x01..0x06: 0x09..0x0e;
+        0x05..0x06: 0x66..0x67;
+    }
+}
+
+// -> Recyclables
+replace(recolour_bulk + 29) {
+    recolour_sprite {
+        0x01..0x06: 0x08..0x0d;
+        0x02: 0x93;
+        0x03: 0xb5;
+    }
+}
+
+// -> Salt
+replace(recolour_bulk + 30) {
+    recolour_sprite {
+        0x01..0x06: 0x09..0x0e;
+        0x02: 0x85;
+        0x03: 0x86;
+    }
+}
+
+// -> Sand
+replace(recolour_bulk + 31) {
+    recolour_sprite {
+        0x01..0x06: 0x35..0x3a;
+    }
+}
+
+
+// -> Soda ash
+replace(recolour_bulk + 32) {
+    recolour_sprite {
+        0x01..0x06: 0x0a..0x0f;
+    }
+}
+
+
+// -> Scrap Metal
+replace(recolour_bulk + 33) {
+    recolour_sprite {
+        0x01: 0x02;
+        0x02: 0x01;
+        0x03: 0x3c;
+        0x04: 0x46;
+    }
+}
+
+// -> Sugar Beet
+replace(recolour_bulk + 34) {
+    recolour_sprite {
+        0x01..0x06: 0x29..0x2e;
+    }
+}
+
+// -> Sugar Cane
+replace(recolour_bulk + 35) {
+    recolour_sprite {
+        0x01..0x06: 0x62..0x67;
+    }
+}
+
+// -> Slag
+replace(recolour_bulk + 36) {
+    recolour_sprite {
+        0x01..0x04: 0x06..0x09;
+        0x05: 0x25;
+        0x06: 0x0b;
+    }
+}
+
+
+// -> Sugar
+replace(recolour_bulk + 37) {
+    recolour_sprite {
+        0x01..0x06: 0x09..0x0e;
+        0x02: 0x85;
+        0x03: 0x86;
+    }
+}
+
+// -> Sulphur
+replace(recolour_bulk + 38) {
+    recolour_sprite {
+        0x01..0x04: 0x40..0x43;
+        0x05..0x06: 0xc3..0xc4;
+    }
+}
+
+// -> Toffee
+replace(recolour_bulk + 39) {
+    recolour_sprite {
+        0x01..0x06: 0x73..0x78;
+    }
+}
+
+// -> Uranium
+replace(recolour_bulk + 40) {
+    recolour_sprite {
+        0x01: 0xd0;
+        0x02: 0xd0;
+        0x03: 0xd0;
+        0x04: 0xd1;
+        0x05: 0xd1;
+        0x06: 0xd1;
+    }
+}
+
+
+// -> Wheat
+replace(recolour_bulk + 41) {
+    recolour_sprite {
+        0x01..0x06: 0x74..0x79;
+    }
+}
+
+
+
+// Crate recolours
+
+recolour_crate = reserve_sprites(22);
+
+// -> Batteries (yellow)
+replace(recolour_crate) {
+    recolour_sprite {
+        0x50..0x57: 0x3e..0x45;
+    }
+}
+
+// -> Beer (brown)
+replace(recolour_crate + 1) {
+    recolour_sprite {
+        0x50..0x57: 0x46..0x4d;
+    }
+}
+
+// -> Explosives (red/orange)
+replace(recolour_crate + 2) {
+    recolour_sprite {
+        0x50..0x57: 0xb6..0xbd;
+    }
+}
+
+// -> Bubbles (ice blue)
+replace(recolour_crate + 3) {
+    recolour_sprite {
+        0x50: 0xd6;
+        0x51: 0xd6;
+        0x52: 0xd5;
+        0x53: 0xd5;
+        0x54: 0xd4;
+        0x55: 0xd3;
+        0x56: 0xd3;
+        0x57: 0xd2;
+    }
+}
+
+// -> Ceramics (pale green)
+replace(recolour_crate + 4) {
+    recolour_sprite {
+        0x50..0x57: 0x60..0x67;
+    }
+}
+
+// -> Fizzy Drinks (red)
+replace(recolour_crate + 5) {
+    recolour_sprite {
+        0x50..0x57: 0xb2..0xb9;
+    }
+}
+
+// -> Coffee (dark brown)
+replace(recolour_crate + 6) {
+    recolour_sprite {
+        0x50..0x57: 0x68..0x6f;
+    }
+}
+
+// -> Nuts
+replace(recolour_crate + 7) {
+    recolour_sprite {
+        0x50..0x56: 0x35..0x3b;
+        0x57: 0x3b;
+    }
+}
+
+
+// -> Paper (white)
+replace(recolour_crate + 8) {
+    recolour_sprite {
+        0x50..0x57: 0x06..0x0d;
+    }
+}
+
+
+// -> Electrical machines (yellow)
+replace(recolour_crate + 9) {
+    recolour_sprite {
+        0x50: 0x40;
+        0x51: 0x40;
+        0x52..0x57: 0x40..0x45;
+    }
+}
+
+
+// -> Toys (blue)
+replace(recolour_crate + 10) {
+    recolour_sprite {
+        0x50..0x57: 0x90..0x97;
+    }
+}
+
+// -> Vehicle Engines (olive green)
+replace(recolour_crate + 11) {
+    recolour_sprite {
+        0x50..0x57: 0x18..0x1f;
+    }
+}
+
+// -> Vehicle Parts (black)
+replace(recolour_crate + 12) {
+    recolour_sprite {
+        0x50..0x57: 0x01..0x08;
+    }
+}
+
+
+// -> Plastics (purple)
+replace(recolour_crate + 13) {
+    recolour_sprite {
+        0x50..0x57: 0x88..0x8f;
+    }
+}
+
+
+// -> Dyes (pinky red)
+replace(recolour_crate + 14) {
+    recolour_sprite {
+        0x50..0x57: 0x28..0x2f;
+    }
+}
+
+// -> Packaging (mauve)
+replace(recolour_crate + 15) {
+    recolour_sprite {
+        0x50..0x57: 0x80..0x87;
+    }
+}
+
+// -> Fibre crops (green)
+replace(recolour_crate + 16) {
+    recolour_sprite {
+        0x50..0x57: 0x50..0x57;
+    }
+}
+
+
+// -> Cleaning Agents (odd red)
+replace(recolour_crate + 17) {
+    recolour_sprite {
+        0x50..0x57: 0xa2..0xa9;
+    }
+}
+
+// -> Coatings (light purple)
+replace(recolour_crate + 18) {
+    recolour_sprite {
+        0x50..0x57: 0xaa..0xb1;
+    }
+}
+
+// -> Tyres (dark grey)
+replace(recolour_crate + 19) {
+    recolour_sprite {
+        0x50..0x57: 0x03..0x0a;
+    }
+}
+
+// -> Mail (orange-yellow)
+replace(recolour_crate + 20) {
+    recolour_sprite {
+        0x50..0x57: 0xb8..0xbf;
+    }
+}
+
+// -> Goods (brown)
+replace(recolour_crate + 21) {
+    recolour_sprite {
+        0x50..0x57: 0x70..0x77;
+    }
+}
+
+//
+// METAL
+//
+
+
+recolour_metal = reserve_sprites(11);
+
+// Aluminium
+replace(recolour_metal) {
+    recolour_sprite {
+        0xc6..0xcd: 0x06..0x0d;
+        0x50..0x57: 0x92..0x99;
+    }
+}
+
+// Copper
+replace(recolour_metal + 1) {
+    recolour_sprite {
+        0xc6..0xcd: 0x48..0x4f;
+        0x50..0x57: 0x58..0x5f;
+    }
+}
+
+// Cast Iron
+replace(recolour_metal + 2) {
+    recolour_sprite {
+        0xc6..0xcd: 0x03..0x0a;
+        0x50..0x57: 0x88..0x8f;
+    }
+}
+
+// Iron
+replace(recolour_metal + 3) {
+    recolour_sprite {
+        0xc6..0xcd: 0x04..0x0b;
+        0x50..0x57: 0xb2..0xb9;        
+    }
+}
+
+// Generic Metal
+replace(recolour_metal + 4) {
+    recolour_sprite {
+        0xc6..0xcd: 0x10..0x17;
+        0x50..0x57: 0xb2..0xb9;
+    }
+}
+
+// Steel Alloy
+replace(recolour_metal + 5) {
+    recolour_sprite {
+        0xc6..0xcd: 0x20..0x27;
+        0x50..0x57: 0x46..0x4d;        
+    }
+}
+
+
+// Carbon Steel
+replace(recolour_metal + 6) {
+    recolour_sprite {
+        0xc6..0xcd: 0x05..0x0c;
+        0x50..0x57: 0x3e..0x45;        
+    }
+}
+
+
+// Generic Steel
+replace(recolour_metal + 7) {
+    recolour_sprite {
+        0xc6..0xcd: 0x10..0x17;
+        0x50..0x57: 0xb2..0xb9;        
+    }
+}
+
+
+// Steel Sections
+replace(recolour_metal + 8) {
+    recolour_sprite {
+        0xc6..0xcc: 0x11..0x17;
+        0xcd: 0x0e;
+        0x50..0x57: 0x50..0x57;
+    }
+}
+
+// Stainless Steel
+replace(recolour_metal + 9) {
+    recolour_sprite {
+        0xc6..0xcd: 0x07..0x0e;
+        0x50..0x57: 0x60..0x67;        
+    }
+}
+
+// Zinc
+replace(recolour_metal + 10) {
+    recolour_sprite {
+        0xc6..0xcb: 0x10..0x15;
+        0xcc..0xcd: 0x76..0x77;
+        0x50..0x57: 0xb7..0xbe;        
+    }
+}
+
+// Horses!
+
+recolour_horses = reserve_sprites(25);
+
+// -> 
+
+// Dark brown: 0x68..0x6f
+// Chestnut:   0x72..0x79
+// Grey:       0x02..0x09
+// Light:      0x06..0x0d
+// Gold:       0x20..0x27
+
+replace(recolour_horses + 0) {
+    recolour_sprite {
+        0x50..0x57: 0x68..0x6f;
+        0xc6..0xcd: 0x68..0x6f; 
+    }
+}
+
+replace(recolour_horses + 1) {
+    recolour_sprite {
+        0x50..0x57: 0x72..0x79;
+        0xc6..0xcd: 0x68..0x6f; 
+    }
+}
+
+replace(recolour_horses + 2) {
+    recolour_sprite {
+        0x50..0x57: 0x02..0x09;
+        0xc6..0xcd: 0x68..0x6f; 
+    }
+}
+
+replace(recolour_horses + 3) {
+    recolour_sprite {
+        0x50..0x57: 0x06..0x0d;
+        0xc6..0xcd: 0x68..0x6f; 
+    }
+}
+
+replace(recolour_horses + 4) {
+    recolour_sprite {
+        0x50..0x57: 0x20..0x27;
+        0xc6..0xcd: 0x68..0x6f; 
+    }
+}
+
+replace(recolour_horses + 5) {
+    recolour_sprite {
+        0x50..0x57: 0x68..0x6f;
+        0xc6..0xcd: 0x72..0x79; 
+    }
+}
+
+replace(recolour_horses + 6) {
+    recolour_sprite {
+        0x50..0x57: 0x72..0x79;
+        0xc6..0xcd: 0x72..0x79; 
+    }
+}
+
+replace(recolour_horses + 7) {
+    recolour_sprite {
+        0x50..0x57: 0x02..0x09;
+        0xc6..0xcd: 0x72..0x79; 
+    }
+}
+
+replace(recolour_horses + 8) {
+    recolour_sprite {
+        0x50..0x57: 0x06..0x0d;
+        0xc6..0xcd: 0x72..0x79; 
+    }
+}
+
+replace(recolour_horses + 9) {
+    recolour_sprite {
+        0x50..0x57: 0x20..0x27;
+        0xc6..0xcd: 0x72..0x79; 
+    }
+}
+
+replace(recolour_horses + 10) {
+    recolour_sprite {
+        0x50..0x57: 0x68..0x6f;
+        0xc6..0xcd: 0x02..0x09; 
+    }
+}
+
+replace(recolour_horses + 11) {
+    recolour_sprite {
+        0x50..0x57: 0x72..0x79;
+        0xc6..0xcd: 0x02..0x09; 
+    }
+}
+
+replace(recolour_horses + 12) {
+    recolour_sprite {
+        0x50..0x57: 0x02..0x09;
+        0xc6..0xcd: 0x02..0x09; 
+    }
+}
+
+replace(recolour_horses + 13) {
+    recolour_sprite {
+        0x50..0x57: 0x06..0x0d;
+        0xc6..0xcd: 0x02..0x09; 
+    }
+}
+
+replace(recolour_horses + 14) {
+    recolour_sprite {
+        0x50..0x57: 0x20..0x27;
+        0xc6..0xcd: 0x02..0x09; 
+    }
+}
+
+replace(recolour_horses + 15) {
+    recolour_sprite {
+        0x50..0x57: 0x68..0x6f;
+        0xc6..0xcd: 0x06..0x0d; 
+    }
+}
+
+replace(recolour_horses + 16) {
+    recolour_sprite {
+        0x50..0x57: 0x72..0x79;
+        0xc6..0xcd: 0x06..0x0d; 
+    }
+}
+
+replace(recolour_horses + 17) {
+    recolour_sprite {
+        0x50..0x57: 0x02..0x09;
+        0xc6..0xcd: 0x06..0x0d; 
+    }
+}
+
+replace(recolour_horses + 18) {
+    recolour_sprite {
+        0x50..0x57: 0x06..0x0d;
+        0xc6..0xcd: 0x06..0x0d; 
+    }
+}
+
+replace(recolour_horses + 19) {
+    recolour_sprite {
+        0x50..0x57: 0x20..0x27;
+        0xc6..0xcd: 0x06..0x0d; 
+    }
+}
+
+replace(recolour_horses + 20) {
+    recolour_sprite {
+        0x50..0x57: 0x68..0x6f;
+        0xc6..0xcd: 0x20..0x27; 
+    }
+}
+
+replace(recolour_horses + 21) {
+    recolour_sprite {
+        0x50..0x57: 0x72..0x79;
+        0xc6..0xcd: 0x20..0x27; 
+    }
+}
+
+replace(recolour_horses + 22) {
+    recolour_sprite {
+        0x50..0x57: 0x02..0x09;
+        0xc6..0xcd: 0x20..0x27; 
+    }
+}
+
+replace(recolour_horses + 23) {
+    recolour_sprite {
+        0x50..0x57: 0x06..0x0d;
+        0xc6..0xcd: 0x20..0x27; 
+    }
+}
+
+replace(recolour_horses + 24) {
+    recolour_sprite {
+        0x50..0x57: 0x20..0x27;
+        0xc6..0xcd: 0x20..0x27; 
+    }
+}
+
+// Car and similar cargo recolouring
+
+// red: 0xb2..0xb9
+// white: 0x08..0x0f
+// blue: 0x90..0x97
+// green: 0x58..0x5f
+
+recolour_cars = reserve_sprites(16);
+
+
+replace(recolour_cars + 0) {
+    recolour_sprite {
+        0x50..0x57: 0xb2..0xb9;
+        0xc6..0xcd: 0x08..0x0f; 
+    }
+}
+
+replace(recolour_cars + 1) {
+    recolour_sprite {
+        0x50..0x57: 0xb2..0xb9;
+        0xc6..0xcd: 0xb2..0xb9; 
+    }
+}
+
+
+replace(recolour_cars + 2) {
+    recolour_sprite {
+        0x50..0x57: 0xb2..0xb9;
+        0xc6..0xcd: 0x90..0x97; 
+    }
+}
+
+replace(recolour_cars + 3) {
+    recolour_sprite {
+        0x50..0x57: 0xb2..0xb9;
+        0xc6..0xcd: 0x58..0x5f; 
+    }
+}
+
+replace(recolour_cars + 4) {
+    recolour_sprite {
+        0x50..0x57: 0x08..0x0f;
+        0xc6..0xcd: 0xb2..0xb9; 
+    }
+}
+
+replace(recolour_cars + 5) {
+    recolour_sprite {
+        0x50..0x57: 0x08..0x0f;
+        0xc6..0xcd: 0x08..0x0f; 
+    }
+}
+
+
+replace(recolour_cars + 6) {
+    recolour_sprite {
+        0x50..0x57: 0x90..0x97;
+        0xc6..0xcd: 0x58..0x5f; 
+    }
+}
+
+replace(recolour_cars + 7) {
+    recolour_sprite {
+        0x50..0x57: 0x58..0x5f;
+        0xc6..0xcd: 0xb2..0xb9; 
+    }
+}
+
+replace(recolour_cars + 8) {
+    recolour_sprite {
+        0x50..0x57: 0x58..0x5f;
+        0xc6..0xcd: 0x08..0x0f; 
+    }
+}
+
+replace(recolour_cars + 9) {
+    recolour_sprite {
+        0x50..0x57: 0x58..0x5f;
+        0xc6..0xcd: 0x90..0x97; 
+    }
+}
+
+replace(recolour_cars + 10) {
+    recolour_sprite {
+        0x50..0x57: 0x58..0x5f;
+        0xc6..0xcd: 0x58..0x5f; 
+    }
+}
+
+
+replace(recolour_cars + 11) {
+    recolour_sprite {
+        0x50..0x57: 0x08..0x0f;
+        0xc6..0xcd: 0x90..0x97; 
+    }
+}
+
+replace(recolour_cars + 12) {
+    recolour_sprite {
+        0x50..0x57: 0x08..0x0f;
+        0xc6..0xcd: 0x58..0x5f; 
+    }
+}
+
+replace(recolour_cars + 13) {
+    recolour_sprite {
+        0x50..0x57: 0xb2..0xb9;
+        0xc6..0xcd: 0xb2..0xb9; 
+    }
+}
+
+replace(recolour_cars + 14) {
+    recolour_sprite {
+        0x50..0x57: 0x90..0x97;
+        0xc6..0xcd: 0x90..0x97; 
+    }
+}
+
+replace(recolour_cars + 15) {
+    recolour_sprite {
+        0x50..0x57: 0x90..0x97;
+        0xc6..0xcd: 0x08..0x0f; 
+    }
+}

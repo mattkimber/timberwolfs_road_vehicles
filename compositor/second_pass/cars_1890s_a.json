@@ -1,0 +1,46 @@
+{
+    "files": [
+        "foden_5t.vox",
+        "leyland_steam_van.vox",
+        "dray_trailer.vox",
+        "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+        "../../intermediate/output_fp/rubber_tyred_horse_cart_flatbed.vox",
+        "../../intermediate/output_fp/rubber_tyred_cart_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_vehicles_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_1890s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicles_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_1890s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },
+      {
+        "name": "_vehicle_bodies_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_body_1890s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicle_bodies_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_body_1890s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      }
+    ]
+}      

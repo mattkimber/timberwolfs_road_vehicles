@@ -5,16 +5,18 @@
     ],
     "operations": [
       {
-        "name": "_bdmt",
+        "name": "_bdmt_full",
         "type": "repeat",
         "file": "cargo/_repeatable/building_materials_narrow_52.vox",
         "input_ramp": "75,77",
-        "output_ramp": "19,21"
+        "output_ramp": "19,21",
+        "mask_original": true
       },      
       {
         "name": "_bdmt_half",
         "type": "repeat",
-        "file": "cargo/_half/building_materials_narrow_52.vox"
+        "file": "cargo/_half/building_materials_narrow_52.vox",
+        "mask_original": true
       }
     ]
 }      

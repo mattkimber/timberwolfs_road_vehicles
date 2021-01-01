@@ -2,34 +2,39 @@
     "files": [
       "foden_5t.vox",
       "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
-      "../../intermediate/output_fp/tram_trailer_flatbed.vox",
-      "dray_trailer.vox"
+      "dray_trailer.vox",
+      "../../intermediate/output_fp/rubber_tyred_horse_cart_flatbed.vox",
+      "../../intermediate/output_fp/rubber_tyred_cart_flatbed.vox"
 
     ],
     "operations": [
       {
-        "name": "_ensp",
+        "name": "_ensp_full",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_full/eng_supplies_pre_1920_b.vox"
+        "file": "cargo/_full/eng_supplies_pre_1920_b.vox",
+        "mask_original": true
       },      
       {
         "name": "_ensp_half",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_half/eng_supplies_pre_1920_b.vox"
+        "file": "cargo/_half/eng_supplies_pre_1920_b.vox",
+        "mask_original": true
       },
       {
-        "name": "_fmsp",
+        "name": "_fmsp_full",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_full/farm_supplies_pre_1920_b.vox"
+        "file": "cargo/_full/farm_supplies_pre_1920_b.vox",
+        "mask_original": true
       },      
       {
         "name": "_fmsp_half",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_half/farm_supplies_pre_1920_b.vox"
+        "file": "cargo/_half/farm_supplies_pre_1920_b.vox",
+        "mask_original": true
       }
     ]
 }      

@@ -1,11 +1,10 @@
 // Empty
 {{ $zoom := parseint .globals.zoom -}}
-{{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
-{{ altsprites .id $template $zoom }}
+{{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
 
 // Loaded
-{{ $loaded := concat .id "_loaded" }}{{ altsprites $loaded $template $zoom }}
-{{ $half_loaded := concat .id "_half_loaded" }}{{ altsprites $half_loaded $template $zoom }}
+{{ $loaded := concat .id "_loaded" }}{{ altsprites8 $loaded $template $zoom }}
+{{ $half_loaded := concat .id "_half_loaded" }}{{ altsprites8 $half_loaded $template $zoom }}
 
 // Spritegroup
 spritegroup spritegroup_{{.id}} {                                      
@@ -13,6 +12,9 @@ spritegroup spritegroup_{{.id}} {
 	loaded:  [ spriteset_{{.id}}, spriteset_{{.id}}_half_loaded, spriteset_{{.id}}_loaded ];
 }
 
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
+{{template "running_cost_switch" . }}
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
   property {
@@ -25,7 +27,10 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
   graphics {
     default: spritegroup_{{.id}};
     additional_text: return {{.additional_text_string}};
-    {{template "speed_limiter" . }}  
+    purchase: spriteset_{{.id}}_purchase;
+    {{template "speed_limiter" . }}
+    running_cost_factor: switch_{{.id}}_running_cost;  
+    purchase_running_cost_factor: return {{.running_cost}};
   }
 }
 

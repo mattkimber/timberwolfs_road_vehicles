@@ -1,0 +1,188 @@
+{{define "cargo_switches_v3" }}
+{{- $id := .id }}
+
+{{ if .has_year_dependent_cargo }}
+// Year dependent switches
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_vehi_year_selector, current_year) {
+    0..1918: return spritegroup_{{$id}}_flatbed_vehicles_1890s;
+    1919..1955: return spritegroup_{{$id}}_flatbed_vehicles_1920s;
+    1955..1989: return spritegroup_{{$id}}_flatbed_vehicles_1950s;
+    return spritegroup_{{$id}}_flatbed_vehicles_1980s;
+}
+
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_vbod_year_selector, current_year) {
+    0..1918: return spritegroup_{{$id}}_flatbed_vehicle_bodies_1890s;
+    1919..1955: return spritegroup_{{$id}}_flatbed_vehicle_bodies_1920s;
+    1955..1989: return spritegroup_{{$id}}_flatbed_vehicle_bodies_1950s;
+    return spritegroup_{{$id}}_flatbed_vehicle_bodies_1980s;
+}
+
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_ensp_year_selector, current_year) {
+    0..1922: return spritegroup_{{$id}}_flatbed_ensp_early;
+    return spritegroup_{{$id}}_flatbed_ensp_late;
+}
+
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_fmsp_year_selector, current_year) {
+    0..1922: return spritegroup_{{$id}}_flatbed_fmsp_early;
+    return spritegroup_{{$id}}_flatbed_fmsp_late;
+}
+
+{{ end }}
+
+
+{{- $bulk_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea" }}
+// Bulk cargo by type
+
+{{ range $index, $element := slice $bulk_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_bulk + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_bulk;
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+{{ $metal_cargos := "alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc" }}
+{{ $has_flatbed := .has_flatbed }}
+{{ range $index, $element := slice $metal_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_metal + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_metal;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_metal;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+{{ $flatbed_cargos := "wood,wdpr,stsh,rbar,stwr,ensp,fmsp,pipe,vehi,vbod" }}
+{{ $cargo_sprites := slice "wood,timber,coil,wire,wire,ensp,fmsp,pipe,vehicles,vehicle_bodies" }}
+{{ $has_yd_cargo := .has_year_dependent_cargo }}
+{{ range $index, $element := slice $flatbed_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    {{ if eq $element "vehi" }}
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_cars + ((random_bits >> 3) % 16) : PALETTE_USE_DEFAULT), 0x100),
+    {{else}}
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    {{end}}
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    {{ $is_yd_cargo := eq $element "ensp" "fmsp" "vehi" "vbod" }}
+    {{ if and $has_yd_cargo $is_yd_cargo}}
+    {{ $sprite := index $cargo_sprites $index }}1: switch_{{$id}}_{{$element}}_year_selector;
+    {{else}}
+    {{ $sprite := index $cargo_sprites $index }}1: spritegroup_{{$id}}_flatbed_{{$sprite}};
+    {{end}}
+    {{ else }}
+    0: spriteset_{{$id}};
+    {{ $sprite := index $cargo_sprites $index }}1: spritegroup_{{$id}}_{{$sprite}};
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+
+{{ if .has_piece_goods_tanker }}
+{{ $barrel_cargos := "beer,cola,dyes,fzdr,milk,watr,soap" }}
+{{ $drum_cargos := "acid,chlo,ctar,eoil,lye_,nh3_,o2__,oil_,petr,plst,rfpr,rubr" }}
+
+{{ range $index, $element := slice $barrel_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_barrels;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_barrels;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+{{ range $index, $element := slice $drum_cargos }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_drums;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_drums;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+{{end}}
+
+{{ if not .has_covered_goods }}
+{{- $crate_cargos := "batt,boom,bubl,cera,java,nuts,papr,powr,toys,veng,vpts,plas,mnsp,coat,tyre,mail,good"}}
+{{- $has_alt_goods := .has_alternate_goods }}
+
+{{ range $index, $element := slice $crate_cargos }}
+switch(FEAT_ROADVEHS, SELF, {{ if $has_alt_goods}}switch_{{$id}}_cargo_{{$element}}_inner{{else}}switch_{{$id}}_cargo_{{$element}}{{end}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? recolour_crate + {{$index}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    {{ if $has_flatbed }}
+    0: spriteset_{{$id}}_flatbed;
+    1: spritegroup_{{$id}}_flatbed_goods;
+    {{ else }}
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_goods;
+    {{ end }}
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+
+{{- if $has_alt_goods }}
+// Alternate between flatbed and regular sprites
+random_switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_{{$element}}, ) {
+	2: switch_{{$id}}_cargo_{{$element}}_inner;
+	2: spriteset_{{$id}}_goods;
+}
+{{end -}}
+{{end}}
+{{end}}
+
+{{ if .has_open_livestock }}
+switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_cargo_lvst, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+
+    0: spriteset_{{$id}};
+    1: spritegroup_{{$id}}_livestock;
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+{{end}}
+
+
+
+{{ end }}

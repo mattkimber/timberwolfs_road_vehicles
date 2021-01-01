@@ -15,10 +15,6 @@ Both default industries and FIRS are explicitly supported - other industry sets 
 as ECS may also be playable although vehicle graphics may not exactly match the carried
 cargo.
 
-The set has a regular version featuring graphics for 2x
-zoom, and an HD version featuring 4x zoom at the cost of
-a larger file size.
-
 ## Parameters
 
 The following parameters are available:
@@ -28,19 +24,6 @@ The following parameters are available:
 * **56mph speed limiters**: When this is enabled, any vehicle built after 1991 will have an
   appropriate speed limiter fitted - 56mph/90kph for lorries, and 62mph/100kph for large
   coaches and buses. This is based on the *build* date, not the vehicle introduction date.
-* **Cars and vans obey national speed limit**: Some players may prefer that vans and cars do
-  not attempt to reach their mechanical top speed and instead respect the UK speed limit of
-  70mph. (This parameter may be less necessary when playing with a road set that enforces
-  speed limits)
-* **Realistic early vehicle statistics**: Reduce the capacity, speed and power of early
-  vehicles (pre-1940) to realistic amounts. This can make the early game very hard with 
-  vehicles that cannot cope with the amount of cargo generated, do not make enough profit 
-  to cover the costs of their infrastructure and frequently stall out on hills.
-* **Realistic modern vehicle capacity**: Reduce the capacity of modern vehicles (post-1940)
-  to realistic amounts. (Speed and power amounts are generally realistic for these vehicles
-  even in gameplay-balanced mode). This is a separate parameter as it does not significantly
-  increase game difficulty, although road vehicles will be less useful than rail in almost
-  all circumstances with this enabled.
 * **Smoke effects**: By default vehicles produce exhaust smoke and various power effects.
   Some players may find this visually cluttering and prefer to switch the feature off.
 * **Purchase Cost modifier**: The default purchase costs are chosen to provide a good
@@ -51,35 +34,51 @@ The following parameters are available:
   the original Transport Tycoon vehicles. For a harder or easier game these can be increased
   or decreased, from 0.25x (a quarter of the default costs) to 32x. The higher levels will
   make it almost impossible to make a profit, especially with early vehicles.
+* **Running cost penalty for old vehicles** When vehicles reach the end of their working 
+  life they will become more expensive to run. Higher settings cause this this to happen 
+  faster and the increase in costs to be larger. 
+  For casual network games and other situations where players may not be able to replace 
+  expired vehicles for several decades, 'mild' is recommended as it will still allow most 
+  well-designed networks to break even or return a small profit.
 
 ### Vehicle selection parameters
 
-* **Enable Buses**: Enable large passenger vehicles such as the AEC Routemaster
-* **Enable Lorries**: Enable large cargo vehicles such as the ERF C-Series
-* **Enable Vans**: Enable smaller, faster cargo vehicles such as the Ford Transit
-* **Enable Cars**: Enable cars and taxi cabs such as the Austin FX4
-* **Enable Horse-Drawn Vehicles**: Enable vehicles which use horses for motive power 
-  (combines with the other parameters - for stagecoaches both this and "enable buses" must
-   be set)
-* **Enable Steam Vehicles**: Enable vehicles which use steam for motive power
-  (combines with the other parameters - for steam lorries both this and "enable lorries" must
-   be set)
-* **Enable Passenger Trams**: Enable passenger vehicles which run on tram rails
-* **Enable Cargo Trams**: Enable cargo vehicles which run on tram rails
-* **Enable Easter Eggs**: As an easter egg I included a couple of cars I've owned that would
-  not typically be used for taxi or cargo services. Some players may prefer not to have these
-  in the purchase list due to lack of realism.
+Selection parameters have been streamlined in Road Vehicles v3 as fine-grained control is
+possible by using the "Hide" option in the vehicle menu. A few simple parameters are
+retained for easy interoperability with the various other UK-themed bus and tram sets.
 
-### Tram purchase modes
+* **Enable Buses**: Enable buses, minibuses, taxis and other road passenger vehicles.
+* **Enable Lorries**: Enable lorries, vans and other road cargo vehicles.
+* **Enable Trams**: Enable passenger and cargo trams.
+* **Enable Easter Eggs**: The set includes a couple of cars I've owned that would
+  not typically be used for taxi or cargo services, and a further piece of whimsical
+  silliness spawned by a New Year's Eve discussion in #openttd. Some players may 
+  prefer not to have these in the purchase list due to lack of realism.
 
-* **Hybrid Tram Purchase Mode**: The set includes hybrid tram vehicles which are designed to
-  run on both tram tracks and mainline rail. This parameter allows choosing whether these
-  vehicles can be purchased as trams only, rail vehicles only, or both. (Or not available
-  at all, if preferred)
-* **Light Rail Purchase Mode**: The set includes light rail vehicles which are designed to
-  run on dedicated light rail tracks, for which OpenTTD has no direct analog by default.
-  This parameter allows choosing whether these vehicles can be purchased as trams only, 
-  rail vehicles only, or both. (Or not available at all, if preferred)
+## Running Costs
+
+You will need to replace your vehicles even with breakdowns
+set to "off"! As road vehicles reach the end of their useful life
+their running costs will increase, leaving you facing a
+trade-off between decreasing profits and a large bill for
+new trucks and buses.
+
+The default "spicy" setting is balanced to make keeping
+a particularly good class of vehicle running for a few
+extra years a viable option if the route it serves is
+highly profitable.
+
+Vehicles that were unsuccessful, unreliable or only built
+as experimental prototypes tend to have shorter usable
+life in game; be warned that if you use them, you will
+spend a lot more on replacement or running costs than
+the more proven options.
+
+Tip: If you're playing Villages Is Villages with economic
+settings enabled, increasing your operating expenses with
+some older vehicles will make it easier to save up cash
+for a megaproject, without losing it all to dividend
+payouts.
 
 ## Vehicle Types
 

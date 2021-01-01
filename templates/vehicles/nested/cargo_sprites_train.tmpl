@@ -1,0 +1,140 @@
+{{ $zoom := parseint .globals.zoom }}
+
+{{$len := .ttd_len}}{{$plen := parseint .ttd_len}}
+{{$template := concat "template_auto_" .ttd_len -}}
+
+
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png")
+{ 
+    template_purchase_1x() 
+}
+
+
+{{ altsprites8 .id $template $zoom }}
+
+// Cargo sprites
+{{ $cargo_list := "" -}}{{ $id := .id -}}
+
+// {{else if eq .cargo_handling "EarlyOpen" -}}
+//{{ $cargo_list = "bulk,lvst,barrels" -}}
+//{{else if eq .cargo_handling "Steel" -}}
+//{{ $cargo_list = "metal" -}}
+//{{else if eq .cargo_handling "Bolster" -}}
+// TODO: crate, tyre, pipe, stsh, stwr, rbar, vehicle
+
+{{ $cargo_list = "bulk,bdmt,wood,metal,timber,fmsp,ensp" -}}
+
+
+{{ if $cargo_list}}
+{{$fullid := concat $id "_none"}}{{ altsprites8 $fullid $template $zoom }}
+
+{{ range $index, $element := slice $cargo_list -}}{{ if $element -}}
+// Cargo: {{$element}}
+// cargo sprites are always 8 bit
+{{$elus := concat "_" $element}}{{ range $idx2, $el2 := slice "_half,_full" }}
+{{$cargo := concat $elus $el2  }}
+{{$fullid := concat $id $cargo}}{{ altsprites8 $fullid $template $zoom }}
+
+
+// Cargo spritegroups
+
+{{$cargoid := concat $id $elus }}
+spritegroup spritegroup_{{$cargoid}} {
+	loading: [spriteset_{{$id}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
+	loaded: [spriteset_{{$id}}_none, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_half, spriteset_{{$id}}_{{$element}}_full ];
+}
+
+// End cargo sprites
+
+{{ $has_cargo_switch := "" }}
+{{ $bolster_cargos := "bdmt,wood,batt,beer,boom,bubl,cera,fzdr,java,nuts,papr,powr,toys,veng,vpts,plas,dyes,mnsp,ficr,soap,coat,alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc,wdpr,fmsp,ensp,tyre,pipe,vbod,vehi,stsh,stwr,rbar" }}
+
+
+{{ $early_liquids := "acid,beer,chlo,cola,ctar,dyes,eoil,fzdr,lye_,milk,nh3_,o2__,oil_,petr,plst,rfpr,rubr,soap,watr" }}
+{{ $early_cargos := "lvst,barrels" }}
+
+{{ if eq .cargo_handling "EarlyOpen" }}
+{{ $has_cargo_switch = "1" }}
+{{ range $index, $element := slice $early_cargos }}
+switch(FEAT_TRAINS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_{{$id}}_curve;
+    1: switch_{{$id}}_{{$element}}_curve;
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+
+{{end}}
+{{end}}
+
+
+
+{{ end }}
+{{ else if eq .cargo_handling "Bolster" }}
+{{ $has_cargo_switch = "1" }}
+{{ range $index, $element := slice $bolster_cargos }}
+{{ $palette := "PALETTE_USE_DEFAULT" }}{{ $cargosprite := $element }}
+
+// Check recolour cargo
+// Be careful to update numbers when adding/removing cargo types
+{{if eq $element "batt" "beer" "boom" "bubl" "cera" "fzdr" "java" "nuts" "papr" "powr" "toys" "veng" "vpts" "plas" "dyes" "ficr" "mnsp" "soap" "coat" }}{{ $palette = printf "recolour_crate + %d - 2" $index }}{{ $cargosprite = "crate"}}{{end}}
+{{if eq $element "alum" "copr" "csti" "iron" "metl" "stal" "stcb" "stel" "stse" "stst" "zinc" }}{{ $palette =  printf "recolour_metal + %d - 21" $index }}{{ $cargosprite = "metal"}}{{end}}
+{{if eq $element "wdpr" }}{{ $cargosprite = "timber"}}{{end}}
+{{if eq $element "vbod" }}{{ $cargosprite = "vehicle_body"}}{{end}}
+{{if eq $element "vehi" }}{{ $cargosprite = "vehicle"}}{{end}}
+{{ end}}
+
+switch(FEAT_TRAINS, SELF, switch_{{$id}}_cargo_{{$element}}, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | (getbits(extra_callback_info1, 8, 8) == 1 ? {{$palette}} : PALETTE_USE_DEFAULT), 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_{{$id}}_curve;
+    1: switch_{{$id}}_{{$cargosprite}}_curve;
+   
+    // This should never be executed
+    return spriteset_invisible;
+}
+
+{{ end }}
+{{ else if eq .cargo_handling "Container" }}
+{{ $has_cargo_switch = "1" }}
+switch(FEAT_TRAINS, SELF, switch_{{$id}}_cargo_container, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_{{$id}}_curve;
+    1: switch_{{$id}}_container_curve;
+
+    // This should never be executed
+    return spriteset_invisible;
+}
+
+{{ end }}
+
+switch(FEAT_TRAINS, SELF, switch_{{.id}}_articulation, extra_callback_info1) {
+    0 .. 2: return vehicle_{{.id}};
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch (FEAT_TRAINS, SELF, switch_{{.id}}_length, position_in_articulated_veh % 3) 
+{
+    {{range $index, $element := slice .articulated_lengths -}}
+    {{$index }}: return {{ $element }};
+    {{end}}    
+}
+
+{{ if ne .cargo_handling "Container" }}
+switch (FEAT_TRAINS, SELF, switch_{{.id}}_graphics, position_in_articulated_veh % 3) 
+{
+    1: return switch_{{.id}}_curve;
+    {{ if gt $plen 8}}
+    0: return switch_{{.id}}_curve_front;
+    2: return switch_{{.id}}_curve_rear;
+    {{ end }}
+    return spriteset_invisible;
+}
+{{end}}
+{{end}}

@@ -8,28 +8,32 @@
     ],
     "operations": [
       {
-        "name": "_ensp",
+        "name": "_ensp_full",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_full/eng_supplies_post_1920_a.vox"
+        "file": "cargo/_full/eng_supplies_post_1920_a.vox",
+        "mask_original": true
       },      
       {
         "name": "_ensp_half",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_half/eng_supplies_post_1920_a.vox"
+        "file": "cargo/_half/eng_supplies_post_1920_a.vox",
+        "mask_original": true
       },
       {
-        "name": "_fmsp",
+        "name": "_fmsp_full",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_full/farm_supplies_post_1920_a.vox"
+        "file": "cargo/_full/farm_supplies_post_1920_a.vox",
+        "mask_original": true
       },      
       {
         "name": "_fmsp_half",
         "type": "scale",
         "scale": {"Z": 1.0 },
-        "file": "cargo/_half/farm_supplies_post_1920_a.vox"
+        "file": "cargo/_half/farm_supplies_post_1920_a.vox",
+        "mask_original": true
       }
     ]
 }      

@@ -6,16 +6,18 @@
     ],
     "operations": [
         {
-            "name": "_barrels",
+            "name": "_barrels_full",
             "type": "scale",
             "scale": { "z": 1.0 } ,
-            "file": "cargo/_full/barrel_pile.vox"
+            "file": "cargo/_full/barrel_pile.vox",
+            "mask_original": true
         },
         {
             "name": "_barrels_half",
             "type": "scale",
             "scale": { "z": 1.0 } ,
-            "file": "cargo/_half/barrel_pile.vox"
+            "file": "cargo/_half/barrel_pile.vox",
+            "mask_original": true
         }
     ]
 }      

@@ -1,9 +1,19 @@
 {{- $zoom := parseint .globals.zoom -}}
-{{- $template := "template_rv" }}{{ if .is_tram }}{{ $template = "template_tram" }}{{- end -}}
-{{$a := concat .id "_1"}}{{ altsprites $a $template $zoom }}
-{{$b := concat .id "_2"}}{{ altsprites $b $template $zoom }}
+{{- $template := concat "template_auto_" .ttd_len }}
+{{$a := concat .id "_1"}}{{ altsprites8 $a $template $zoom }}
+{{$b := concat .id "_2"}}{{ altsprites8 $b $template $zoom }}
+{{$c := concat .id "_3"}}{{ altsprites8 $c $template $zoom }}
+{{$d := concat .id "_4"}}{{ altsprites8 $d $template $zoom }}
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_animation, motion_counter % 4) { 
-    0..1: return spriteset_{{.id}}_1; 
-    return spriteset_{{.id}}_2; 
+    0: return spriteset_{{.id}}_1; 
+    1: return spriteset_{{.id}}_2; 
+    2: return spriteset_{{.id}}_3; 
+    return spriteset_{{.id}}_4; 
 } 
+
+// Horses are assumed to be the first 
+switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_colour_mapping, position_in_articulated_veh) {
+    0: return recolour_horses + (random_bits % 25);
+    return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
+}

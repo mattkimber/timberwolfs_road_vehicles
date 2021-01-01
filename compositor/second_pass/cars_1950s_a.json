@@ -1,0 +1,52 @@
+{
+    "files": [
+      "../../intermediate/output_fp/foden_s20_flatbed.vox",
+      "../../intermediate/output_fp/bedford_tk_flatbed.vox",
+      "../../intermediate/output_fp/ford_cargo_flatbed.vox", 
+      "../../intermediate/output_fp/ford_d_series_flatbed.vox",
+      "../../intermediate/output_fp/erf_c_series_flatbed.vox", 
+      "../../intermediate/output_fp/t45_trailer_flatbed.vox",
+      "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
+      "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
+      "../../intermediate/output_fp/foden_s21_flatbed.vox", 
+      "../../intermediate/output_fp/guy_big_j6_flatbed.vox",
+      "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
+      "../../intermediate/output_fp/saviem_sm_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_vehicles_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_1950s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicles_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_1950s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },
+      {
+        "name": "_vehicle_bodies_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_body_1950s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicle_bodies_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_body_1950s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      }
+    ]
+}      

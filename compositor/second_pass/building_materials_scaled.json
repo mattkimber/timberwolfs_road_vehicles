@@ -15,14 +15,17 @@
       "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
       "leyland_steam_van.vox",
       "dray_trailer.vox",
-      "../../intermediate/output_fp/daf_lf_flatbed.vox"
+      "../../intermediate/output_fp/daf_lf_flatbed.vox",
+      "../../intermediate/output_fp/rubber_tyred_horse_cart_flatbed.vox",
+      "../../intermediate/output_fp/rubber_tyred_cart_flatbed.vox"
     ],
     "operations": [
       {
-        "name": "_bdmt",        
+        "name": "_bdmt_full",        
         "type": "scale",
         "scale": { "z": 1.0 },
-        "file": "cargo/_repeatable/building_materials.vox"
+        "file": "cargo/_repeatable/building_materials.vox",
+        "mask_original": true
       },
       {
         "name": "_bdmt_half",
@@ -30,7 +33,8 @@
         "scale": { "z": 1.0 },
         "file": "cargo/_half/building_materials.vox",
         "input_ramp": "75,77",
-        "output_ramp": "19,21"
+        "output_ramp": "19,21",
+        "mask_original": true
       }
     ]
 }      

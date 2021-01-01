@@ -1,84 +1,31 @@
-{{ template "cargo_sprites" . }}
+{{ template "cargo_sprites_v3" . }}
 
-{{ template "cargo_spritegroups" . }}
+{{ template "cargo_switches_v3" . }}
+
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
+{{template "running_cost_switch" . }}
+{{ template "capacity_switch" . }}
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
     {{template "rv_props" . }}
         refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
         non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
-        default_cargo_type:             GOOD;
+        default_cargo_type:             COAL;
     }
 
     graphics {
         additional_text: return {{.additional_text_string}};
+        purchase: spriteset_{{.id}}_purchase;
         {{ template "speed_limiter" . }}
-        cargo_capacity: {{ template "capacity_switch" . }}
-
-        // New cargos
-        BDMT: spritegroup_{{.id}}_bdmt;
-        BRCK: spritegroup_{{.id}}_bdmt;
-        SCMT: spritegroup_{{.id}}_scrap;
-        RCYC: spritegroup_{{.id}}_scrap;
-        CLAY: spritegroup_{{.id}}_clay;
-
-        VEHI: spritegroup_{{.id}}_ensp;
-        ENSP: spritegroup_{{.id}}_ensp;
-
-        FMSP: spritegroup_{{.id}}_fmsp;
-
-        COAL: spritegroup_{{.id}}_coal;
-        COKE: spritegroup_{{.id}}_coal;
-        SLAG: spritegroup_{{.id}}_coal;
-        COPR: spritegroup_{{.id}}_copper;
-        GRAI: spritegroup_{{.id}}_grain;
-        WHEA: spritegroup_{{.id}}_grain;
-        MAIZ: spritegroup_{{.id}}_grain;
-        SAND: spritegroup_{{.id}}_grain;
-        SALT: spritegroup_{{.id}}_grain;
-        SULP: spritegroup_{{.id}}_grain;
-        CASS: spritegroup_{{.id}}_grain;
-        GRVL: spritegroup_{{.id}}_grey;
-        LIME: spritegroup_{{.id}}_grey;
-        CMNT: spritegroup_{{.id}}_grey;
-        MNO2: spritegroup_{{.id}}_grey;
-        IRON: spritegroup_{{.id}}_grey;
-        QLME: spritegroup_{{.id}}_grey;
-        SASH: spritegroup_{{.id}}_grey;
-        IORE: spritegroup_{{.id}}_iore;
-        CORE: spritegroup_{{.id}}_iore;
-        JAVA: spritegroup_{{.id}}_iore;
-        AORE: spritegroup_{{.id}}_iore;
-        SGBT: spritegroup_{{.id}}_iore;
-        LVST: {{if .has_covered_livestock }}spriteset_{{.id}}_livestock;{{else}}spritegroup_{{.id}}_livestock;{{end}}
-        STEL: spritegroup_{{.id}}_stel;
-        METL: spritegroup_{{.id}}_stel;
-        CSTI: spritegroup_{{.id}}_stel;
-        ZINC: spritegroup_{{.id}}_stel;
-        WDPR: spritegroup_{{.id}}_timber;
-        WOOD: spritegroup_{{.id}}_wood;
-        {{- if .has_piece_goods_tanker }}
-        OIL_: spritegroup_{{.id}}_drums;
-        RUBR: spritegroup_{{.id}}_drums;
-        CTAR: spritegroup_{{.id}}_drums;
-        ACID: spritegroup_{{.id}}_drums;
-        CHLO: spritegroup_{{.id}}_drums;
-        WATR: spritegroup_{{.id}}_barrels;
-        RFPR: spritegroup_{{.id}}_barrels;
-        MILK: spritegroup_{{.id}}_barrels;
-        PETR: spritegroup_{{.id}}_drums;
-        {{- else }}
-        OIL_: spriteset_{{.id}}_tanker;
-        RUBR: spriteset_{{.id}}_tanker;
-        CTAR: spriteset_{{.id}}_tanker;
-        ACID: spriteset_{{.id}}_tanker;
-        CHLO: spriteset_{{.id}}_tanker;
-        WATR: spriteset_{{.id}}_tanker;
-        RFPR: spriteset_{{.id}}_tanker;
-        MILK: spriteset_{{.id}}_tanker;
-        PETR: spriteset_{{.id}}_tanker;
-        {{- end }}
-        default: {{if .has_covered_goods }}spriteset_{{.id}}_goods;{{else}}spritegroup_{{.id}}_goods;{{end}}
+        cargo_capacity: switch_capacity_{{.id}};
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
+        {{ template "cargo_selector_v3" . }}
+    
+        // Default to the goods sprite
+        {{if .has_covered_goods}}return spriteset_{{.id}}_goods;{{else}}return switch_{{.id}}_cargo_good;{{end}}
 
     }
 }

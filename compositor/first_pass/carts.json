@@ -1,0 +1,20 @@
+{
+    "files": [
+      "rubber_tyred_horse_cart.vox",      
+      "rubber_tyred_cart.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/cart_lowside.vox"
+      },
+      {
+        "name": "_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/cart_flatbed.vox"
+      }
+    ]
+}

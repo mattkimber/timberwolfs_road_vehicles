@@ -6,91 +6,27 @@
     ],
     "operations": [
       {
-        "name": "_coal",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox"
+        "name": "",
+        "type": "produce_empty"
       },
       {
-        "name": "_iore",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "72,76"
-      },
-      {
-        "name": "_grey",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "17,21"
-      },
-      {
-        "name": "_grain",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "35,39"
-      },
-      {
-        "name": "_clay",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "input_ramp": "2,6",
-        "output_ramp": "115,122"
-      },
-      {
-        "name": "_scrap",
+        "name": "_none",
         "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_full/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "72,74"
+        "file": "cargo/_empty/null_cargo.vox",
+        "mask_original": true    
       },
       {
-        "name": "_coal_half",
+        "name": "_bulk_full",
         "type": "repeat",
         "file": "cargo/_repeatable/sack.vox",
-        "n": 3
+        "mask_original": true
       },
       {
-        "name": "_iore_half",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "n": 3,
-        "input_ramp": "2,6",
-        "output_ramp": "72,76"
-      },
-      {
-        "name": "_grey_half",
+        "name": "_bulk_half",
         "type": "repeat",
         "file": "cargo/_repeatable/sack.vox",
         "n": 3,
-        "input_ramp": "2,6",
-        "output_ramp": "17,21"
-      },
-      {
-        "name": "_grain_half",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "n": 3,
-        "input_ramp": "2,6",
-        "output_ramp": "35,39"
-      },
-      {
-        "name": "_clay_half",
-        "type": "repeat",
-        "file": "cargo/_repeatable/sack.vox",
-        "n": 3,
-        "input_ramp": "2,6",
-        "output_ramp": "115,122"
-      },
-      {
-        "name": "_scrap_half",
-        "type": "scale",
-        "scale": { "z": 1.0 },
-        "file": "cargo/_half/metal_small.vox",
-        "input_ramp": "2,7",
-        "output_ramp": "72,74"
+        "mask_original": true
       }
     ]
 }      

@@ -1,19 +1,15 @@
 {{- define "capacity_switch" -}}
-{{- $intro_yr := parseint .intro_year}}{{if le $intro_yr 1940 -}}
-    {{- if .realistic_capacity -}}
-    return param_realistic_early_vehicle_capacity ? 
-        (cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.realistic_mail_capacity_per_unit}} : {{.realistic_capacity_per_unit}}) : 
-        (cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.mail_capacity_per_unit}} : {{.capacity_per_unit}});
-    {{- else}}
-    return cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.mail_capacity_per_unit}} : {{.capacity_per_unit}};
-    {{- end -}}
-{{- else}}
-    {{- if .realistic_capacity}}
-    return param_realistic_modern_vehicle_capacity ? 
-        (cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.realistic_mail_capacity_per_unit}} : {{.realistic_capacity_per_unit}}) : 
-        (cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.mail_capacity_per_unit}} : {{.capacity_per_unit}});
-    {{- else}}
-    return cargo_type_in_veh == MAIL || cargo_type_in_veh == VALU ? {{.mail_capacity_per_unit}} : {{.capacity_per_unit}};
-    {{- end -}}
-{{- end -}}
+
+{{$mail_boost := 2}}{{if eq .template "van"}}{{$mail_boost = 3}}{{end}}
+
+switch(FEAT_ROADVEHS, SELF, switch_capacity_{{.id}}, cargo_type_in_veh) {
+  GOOD: {{.capacity_per_unit}} * 2;
+  ENSP: {{.capacity_per_unit}} * 2;
+  FMSP: {{.capacity_per_unit}} * 2;
+  POWR: {{.capacity_per_unit}} * 2;
+  MAIL: {{.capacity_per_unit}} * {{$mail_boost}};
+  VALU: {{.capacity_per_unit}} * {{$mail_boost}};
+  return {{.capacity_per_unit}};
+}
+
 {{- end -}}

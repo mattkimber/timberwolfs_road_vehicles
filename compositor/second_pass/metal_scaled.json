@@ -1,0 +1,84 @@
+{
+    "files": [
+      "../../intermediate/output_fp/daf_lf_flatbed.vox",
+      "../../intermediate/output_fp/bedford_tk_flatbed.vox",
+      "../../intermediate/output_fp/ford_cargo_flatbed.vox", 
+      "../../intermediate/output_fp/iveco_eurocargo_flatbed.vox", 
+      "../../intermediate/output_fp/mitsubishi_canter_flatbed.vox",
+      "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
+      "../../intermediate/output_fp/saviem_sm_flatbed.vox",
+      "../../intermediate/output_fp/ford_d_series_flatbed.vox",
+      "foden_5t.vox",
+      "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+      "../../intermediate/output_fp/leyland_x_type_flatbed.vox",
+      "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
+      "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+      "leyland_steam_van.vox",
+      "dray_trailer.vox",
+      "../../intermediate/output_fp/rubber_tyred_horse_cart_flatbed.vox",
+      "../../intermediate/output_fp/rubber_tyred_cart_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "produce_empty"      
+      },
+      {
+        "name": "_coil_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_repeatable/metal_coil_centred.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_coil_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/metal_coil_centred.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_metal_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/metal_small.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_metal_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/metal_small.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_wire_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_repeatable/wire_rod_centred.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_wire_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/wire_rod_centred.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_pipe_full",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_full/pipe.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_pipe_half",
+        "type": "scale",
+        "scale": { "z": 1.0 },
+        "file": "cargo/_half/pipe.vox",
+        "mask_original": true
+      }
+    ]
+}      

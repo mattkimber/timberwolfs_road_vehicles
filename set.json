@@ -1,37 +1,16 @@
 {
     "grf": {
       "author_id": "TWF",
-      "grf_id": 4,
-      "name": "Timberwolf's UK Road Vehicles 2.3.3",
-      "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. Standard definition version with 2x zoom.{}(c) 2016-2020 Matt Kimber. {}{BLACK}License:{SILVER}GPLv2.",
-      "min_compat_version": 51,
+      "grf_id": 10,
+      "name": "Timberwolf's UK Road Vehicles 3.0.2",
+      "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. Features 2x zoom for all vehicle sprites.{}(c) 2016-2021 Matt Kimber. {}{BLACK}License:{SILVER}CC-BY-SA-3.0",
+      "min_compat_version": 1,
       "filename": "timberwolf_uk.nml",
       "parameters": [
         {
             "id": "speed_limiters",
             "name": "56mph speed limiters",
             "desc": "Vehicles built after 1991 will have a mandatory 56mph/90kmh speed limiter fitted (62mph/100kmh for buses).",
-            "type": "bool",
-            "default_value": 0
-        },
-        {
-            "id": "car_speed_limits",
-            "name": "Cars and vans obey national speed limit",
-            "desc": "Cars and vans obey the 70mph UK national speed limit.",
-            "type": "bool",
-            "default_value": 0
-        },
-        {
-            "id": "realistic_early_vehicle_capacity",
-            "name": "Realistic early vehicle statistics",
-            "desc": "Prefer realism over gameplay for pre-1940s vehicles. {}{RED}Warning!{BLACK} This will significantly increase difficulty levels in the early game.",
-            "type": "bool",
-            "default_value": 0
-        },
-        {
-            "id": "realistic_modern_vehicle_capacity",
-            "name": "Realistic modern vehicle capacity",
-            "desc": "Prefer realistic capacities over gameplay for post-1940s vehicles.",
             "type": "bool",
             "default_value": 0
         },
@@ -51,7 +30,8 @@
             "max_value": 7,
             "default_value": 2,
             "value_names": [ "0.25x", "0.5x", "1x", "2x", "4x", "8x", "16x", "32x" ]
-        },{
+        },
+        {
             "id": "running_costs",
             "name": "Running Cost Modifier",
             "desc": "Increase or decrease running costs to change difficulty, or balance with other GRF sets.  Higher values may be difficult, especially in the early game.",
@@ -60,101 +40,59 @@
             "max_value": 7,
             "default_value": 2,
             "value_names": [ "0.25x", "0.5x", "1x", "2x", "4x", "8x", "16x", "32x" ]
-        },{
-            "id": "enable_buses",
-            "name": "Enable Buses",
-            "desc": "Choose whether buses and coaches from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_lorries",
-            "name": "Enable Lorries",
-            "desc": "Choose whether large freight vehicles from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_vans",
-            "name": "Enable Vans",
-            "desc": "Choose whether vans and small freight vehicles from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_cars",
-            "name": "Enable Cars",
-            "desc": "Choose whether cabs, minicabs and other small passenger vehicles from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_horse_drawn",
-            "name": "Enable Horse-Drawn Vehicles",
-            "desc": "Choose whether horse-drawn wagons and coaches from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_steam",
-            "name": "Enable Steam Vehicles",
-            "desc": "Choose whether early steam-powered vehicles from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_passenger_trams",
-            "name": "Enable Passenger Trams",
-            "desc": "Choose whether passenger trams from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_cargo_trams",
-            "name": "Enable Cargo Trams",
-            "desc": "Choose whether cargo trams from this set will be available for purchase during the game.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "enable_easter_eggs",
-            "name": "Enable Easter Eggs",
-            "desc": "This set includes representations of some of the creator's own vehicles for fun. Use this option to enable or disable them.",
-            "type": "bool",
-            "default_value": 1
-        },{
-            "id": "hybrid_tram_mode",
-            "name": "Hybrid Tram Purchase Mode",
-            "desc": "Choose whether hybrid rail/tram vehicles appear in the tram purchase list, the rail vehicle purchase list, both, or neither.",
-            "type": "int",
-            "min_value": 0,
-            "max_value": 3,
-            "default_value": 1,
-            "value_names": [ "Unavailable", "Tram only", "Tram and Rail", "Rail only" ]
-        },{
-            "id": "light_rail_mode",
-            "name": "Light Rail Purchase Mode",
-            "desc": "Choose whether light rail vehicles appear in the tram purchase list, the rail vehicle purchase list, both, or neither.",
-            "type": "int",
-            "min_value": 0,
-            "max_value": 3,
-            "default_value": 1,
-            "value_names": [ "Unavailable", "Tram only", "Tram and Rail", "Rail only" ]
-        }   
+        },
+        {
+          "id": "run_cost_penalty",
+          "name": "Running cost penalty for old vehicles",
+          "desc": "When vehicles reach the end of their working life they will become more expensive to run. Higher settings cause this this to happen faster and the increase in costs to be larger. For casual network games and other situations where players may not be able to replace expired vehicles for several decades, 'mild' is recommended as it will still allow most well-designed networks to break even or return a small profit.",
+          "type": "int",
+          "min_value": 0,
+          "max_value": 2,
+          "default_value": 1,
+          "value_names": [ "Mild", "Spicy", "Painful" ]
+      },
+      {
+          "id": "enable_buses",
+          "name": "Enable Buses",
+          "desc": "Enables buses, minibuses, taxis and other road passenger vehicles.",
+          "type": "bool",
+          "default_value": 1
+      },
+      {
+          "id": "enable_lorries",
+          "name": "Enable Lorries",
+          "desc": "Enable lorries, vans and other road cargo vehicles.",
+          "type": "bool",
+          "default_value": 1
+      },
+      {
+          "id": "enable_trams",
+          "name": "Enable Trams",
+          "desc": "Enable passenger and cargo trams.",
+          "type": "bool",
+          "default_value": 1
+      },
+      {
+          "id": "enable_easter_eggs",
+          "name": "Enable Easter Eggs",
+          "desc": "Enable whimsical silliness and vehicles not normally used for revenue service.",
+          "type": "bool",
+          "default_value": 1
+      }
       ]
     },
-    "cargo_table": [        
-        "PASS", "TOUR", "MAIL", "COAL", "IORE", "GRVL", "SAND", "AORE", 
-        "CORE", "CLAY", "SCMT", "WOOD", "LIME", "GOOD", "FOOD", "STEL", 
-        "FMSP", "ENSP", "BEER", "BDMT", "MNSP", "PAPR", "WDPR", "VEHI",
-        "COPR", "DYES", "OIL_", "RFPR", "PETR", "PLAS", "WATR", "FISH", 
-        "CERE", "FICR", "FRVG", "FRUT", "GRAI", "LVST", "MAIZ", "MILK", 
-        "RUBR", "SGBT", "SGCN", "WHEA", "WOOL", "OLSD", "SUGR", "METL",
-        "VALU", "JAVA", "BRCK", "CSTI", "CTAR", "ACID", "CHLO", "COKE", 
-        "CMNT", "MNO2", "IRON", "QLME", "SALT", "SASH", "SULP", "ZINC", 
-        "SLAG", "RCYC", "CASS"
-    ],
     "static_templates": [
       {
-        "template":  "templates/static/basecosts.tmpl"
+        "template":  "templates/static/sprite_templates.nml"
+      },
+      {
+        "template":  "templates/static/basecosts.nml"
       },
       {
         "template":  "templates/static/roadtypes.nml"
       },
       {
-        "template":  "templates/static/disable_items.tmpl",
+        "template":  "templates/static/disable_items.nml",
         "data" : {
           "Feature": "FEAT_ROADVEHS",
           "Start": "0",
@@ -162,75 +100,24 @@
         }
       },
       {
-          "template": "templates/static/livery_switches.tmpl"
+          "template": "templates/static/livery_switches.nml"
       },
       {
-          "template": "templates/static/invisible.tmpl"
+          "template": "templates/static/invisible.nml"
+      },
+      {
+        "template":  "templates/static/recolour.nml"
       }
     ],
     "sprite_templates": [
         {
-          "names": ["template_rv_1x", "template_rv_2x", "template_rv_4x"],
-          "location_scales": [1,2,4],
-          "size_scales": [1,2,4],
-          "offset_scales": [0.25,0.5,1],
-          "locations" : [[0,0],[17,0],[51,0],[95,0],[129,0],[146,0],[180,0],[224,0]],
-          "sizes": [[9,32],[26,24],[36,14],[26,24],[9,32],[26,24],[36,14],[26,24]],
-          "offsets": [
-              [-16,-68],
-              [-76,-44],
-              [-88,-32],
-              [-36,-52],
-              [-12,-76],
-              [-56,-52],
-              [-64,-40],
-              [-36,-48]
-          ]
-        },
-        {
-          "names": ["template_rail_1x", "template_rail_2x", "template_rail_4x"],
-          "location_scales": [1,2,4],
-          "size_scales": [1,2,4],
-          "offset_scales": [0.25,0.5,1],
-          "locations" : [[0,0],[17,0],[51,0],[95,0],[129,0],[146,0],[180,0],[224,0]],
-          "sizes": [[9,32],[26,24],[36,14],[26,24],[9,32],[26,24],[36,14],[26,24]],
-          "offsets": [
-              [-14,-64],
-              [-72,-52],
-              [-72,-40],
-              [-44,-60],
-              [-14,-72],
-              [-64,-56],
-              [-56,-40],
-              [-36,-56]
-          ]
-        },
-        {
-          "names": ["template_tram_1x", "template_tram_2x", "template_tram_4x"],
-          "location_scales": [1,2,4],
-          "size_scales": [1,2,4],
-          "offset_scales": [0.25,0.5,1],
-          "locations" : [[0,0],[17,0],[51,0],[95,0],[129,0],[146,0],[180,0],[224,0]],
-          "sizes": [[9,32],[26,24],[36,14],[26,24],[9,32],[26,24],[36,14],[26,24]],
-          "offsets": [
-            [-16,-68],
-            [-76,-44],
-            [-88,-32],
-            [-36,-52],
-            [-12,-76],
-            [-56,-52],
-            [-56,-32],
-            [-36,-48]
-          ]
-        },
-        {
-          "names": [ "template_purchase" ],
+          "names": [ "template_purchase_1x" ],
           "location_scales": [1],
           "size_scales": [1],
           "offset_scales": [1],
           "locations": [[0,0]],
-          "sizes": [[36,28]],
-          "offsets": [[-16, -20]]
+          "sizes": [[64,14]],
+          "offsets": [[-43, -8]]
         }
       ],
     "sprites": {
@@ -239,12 +126,13 @@
       "additional_text_field": "text",
       "additional_text_format": "{SILVER}%s",
       "nestable_templates": [ 
-          "nested/cargo_sprites", 
-          "nested/rv_props", 
-          "nested/train_props",
-          "nested/alt_sprites_rail",
+          "nested/cargo_sprites_v3", 
+          "nested/cargo_switches_v3",
+          "nested/cargo_selector_v3",
+          "nested/rv_props",
           "nested/cargo_spritegroups", 
           "nested/speed_limiter",
+          "nested/running_cost_switch",
           "nested/capacity_switch"
         ],
       "globals": {
@@ -256,5 +144,121 @@
         "str_cargo_pax_black_cab": " (Black Cab)",
         "str_livery_regular": " (Regular Livery)",
         "str_livery_alt": " (Alternate Livery)"
-    }
+    },
+    "cargo_table": [        
+        "ACID",
+        "ALUM",
+        "AORE",
+        "BATT",
+        "BDMT",
+        "BEAN",
+        "BEER",
+        "BOOM",
+        "BRCK",
+        "BUBL",
+        "CASS",
+        "CBLK",
+        "CERA",
+        "CERE",
+        "CHLO",
+        "CLAY",
+        "CMNT",
+        "COAL",
+        "COAT",
+        "COKE",
+        "COLA",
+        "COPR",
+        "CORE",
+        "CSTI",
+        "CTAR",
+        "CTCD",
+        "DIAM",
+        "DYES",
+        "ENSP",
+        "EOIL",
+        "FECR",
+        "FERT",
+        "FICR",
+        "FISH",
+        "FMSP",
+        "FOOD",
+        "FRUT",
+        "FRVG",
+        "FZDR",
+        "GOLD",
+        "GOOD",
+        "GRAI",
+        "GRVL",
+        "IORE",
+        "IRON",
+        "JAVA",
+        "KAOL",
+        "LIME",
+        "LVST",
+        "LYE_",
+        "MAIL",
+        "MAIZ",
+        "METL",
+        "MILK",
+        "MNO2",
+        "MNSP",
+        "NH3_",
+        "NITR",
+        "NUTS",
+        "O2__",
+        "OIL_",
+        "OLSD",
+        "PAPR",
+        "PASS",
+        "PEAT",
+        "PETR",
+        "PHOS",
+        "PIPE",
+        "PLAS",
+        "PLST",
+        "PORE",
+        "POTA",
+        "POWR",
+        "QLME",
+        "RBAR",
+        "RCYC",
+        "RFPR",
+        "RUBR",
+        "SALT",
+        "SAND",
+        "SASH",
+        "SCMT",
+        "SGBT",
+        "SGCN",
+        "SLAG",
+        "SOAP",
+        "STAL",
+        "STCB",
+        "STEL",
+        "STSE",
+        "STSH",
+        "STST",
+        "STWR",
+        "SUGR",
+        "SULP",
+        "SWET",
+        "TOFF",
+        "TOUR",
+        "TOYS",
+        "TYRE",
+        "URAN",
+        "VALU",
+        "VBOD",
+        "VEHI",
+        "VENG",
+        "VPTS",
+        "WATR",
+        "WDPR",
+        "WHEA",
+        "WOOD",
+        "WOOL",
+        "YETI",
+        "YETY",
+        "ZINC"
+    ]
 }

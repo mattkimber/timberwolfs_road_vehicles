@@ -1,0 +1,44 @@
+{
+    "files": [
+        "../../intermediate/output_fp/leyland_badger_flatbed.vox",
+        "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
+        "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
+        "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+    ],
+    "operations": [
+      {
+        "name": "_vehicles_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_1920s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicles_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_1920s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },
+      {
+        "name": "_vehicle_bodies_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/car_body_1920s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      },      
+      {
+        "name": "_vehicle_bodies_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/car_body_1920s.vox",
+        "mask_original": true,
+        "input_ramps": ["200-207,82-89","200-207,82-89"],
+        "output_ramps": ["200-207,82-89","82-89,200-207"]
+      }
+    ]
+}      

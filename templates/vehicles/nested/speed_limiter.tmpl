@@ -1,14 +1,7 @@
 {{- define "speed_limiter" -}}
-    {{- $intro_yr := parseint .intro_year }}
-    {{if le $intro_yr 1940 -}}
-        {{if .realistic_speed}}speed: param_realistic_early_vehicle_capacity ? {{.kmish_realistic_speed}} : {{.kmish_speed}};{{end}}
-    {{- else -}}
-        {{if or .limiter_speed .speed_limit_speed -}}
-        speed: {{if .limiter_speed -}}
-            (build_year >= 1991 && param_speed_limiters) ? {{.kmish_limiter_speed}} : {{end -}}
-            {{- if .speed_limit_speed -}}
-            (current_year >= 1965 && param_car_speed_limits) ? {{.kmish_speed_limit_speed}} : {{end -}}
-            {{.kmish_speed}};
-        {{- end}}
-    {{- end -}}
+    {{if .limiter_speed -}}
+    speed: {{if .limiter_speed -}}
+        (build_year >= 1991 && param_speed_limiters) ? {{.kmish_limiter_speed}} : {{end -}}
+        {{.kmish_speed}};
+    {{- end}}
 {{- end -}}
