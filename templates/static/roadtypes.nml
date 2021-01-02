@@ -1,11 +1,11 @@
 roadtypetable {
     ROAD,
-    ELRD,
+    ELRD: [ ELRD, ROAD ],
     DIRT_ROAD: [ DIRT, ROAD ]
 }
 
 tramtypetable {
-    RAIL,
+    RAIL: [RAIL, ELRL ],
     ELRL
 }
 
