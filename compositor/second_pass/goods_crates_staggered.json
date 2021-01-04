@@ -2,6 +2,7 @@
     "files": [
       "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
       "dray_trailer.vox",
+      "horse_cart_trailer.vox",
       "leyland_steam_van.vox"
     ],
     "operations": [
