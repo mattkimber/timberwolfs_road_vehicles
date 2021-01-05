@@ -3,7 +3,8 @@
         "../../intermediate/output_fp/leyland_badger_flatbed.vox",
         "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
         "../../intermediate/output_fp/sentinel_dg4_flatbed.vox",
-        "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox"
+        "../../intermediate/output_fp/thornycroft_type_j_flatbed.vox",
+        "../../intermediate/output_fp/vulcan_lorry_flatbed.vox"
     ],
     "operations": [
       {

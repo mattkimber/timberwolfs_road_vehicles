@@ -5,7 +5,8 @@
         "../../intermediate/output_fp/erf_c_series.vox",
         "../../intermediate/output_fp/erf_e_series.vox",
         "../../intermediate/output_fp/foden_alpha.vox",        
-        "../../intermediate/output_fp/foden_s20.vox",
+        "../../intermediate/output_fp/foden_s20.vox",     
+        "../../intermediate/output_fp/vulcan_mk2.vox",
         "../../intermediate/output_fp/foden_s21.vox", 
         "../../intermediate/output_fp/guy_big_j6.vox",
         "../../intermediate/output_fp/ford_cargo.vox", 
@@ -23,6 +24,7 @@
         "../../intermediate/output_fp/sentinel_dg4.vox",
         "../../intermediate/output_fp/t45_trailer.vox",
         "../../intermediate/output_fp/thornycroft_type_j.vox",
+        "../../intermediate/output_fp/vulcan_lorry.vox",
         "../../intermediate/output_fp/tram_trailer.vox",
         "../../intermediate/output_fp/rubber_tyred_horse_cart.vox",
         "../../intermediate/output_fp/rubber_tyred_cart.vox"

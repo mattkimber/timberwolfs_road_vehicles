@@ -4,7 +4,8 @@
       "../../intermediate/output_fp/ford_cargo_flatbed.vox", 
       "../../intermediate/output_fp/iveco_eurocargo_flatbed.vox", 
       "../../intermediate/output_fp/mitsubishi_canter_flatbed.vox",
-      "../../intermediate/output_fp/ford_d_series_flatbed.vox"
+      "../../intermediate/output_fp/ford_d_series_flatbed.vox",
+      "../../intermediate/output_fp/vulcan_lorry_flatbed.vox"
     ],
     "operations": [
       {

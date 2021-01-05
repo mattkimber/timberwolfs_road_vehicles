@@ -1,7 +1,8 @@
 {
     "files": [
       "../../intermediate/output_fp/tram_trailer_flatbed.vox",
-      "../../intermediate/output_fp/foden_s20_flatbed.vox"
+      "../../intermediate/output_fp/foden_s20_flatbed.vox",
+      "../../intermediate/output_fp/vulcan_mk2_flatbed.vox"
     ],
     "operations": [
       {
