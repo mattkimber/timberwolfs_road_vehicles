@@ -5,7 +5,8 @@
       "../../intermediate/output_fp/modern_trailer_flatbed.vox",
       "../../intermediate/output_fp/t45_trailer_flatbed.vox",
       "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
-      "../../intermediate/output_fp/leyland_octopus_flatbed.vox"      
+      "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
+      "../../intermediate/output_fp/seddon_atkinson_400_flatbed.vox"      
     ],
     "operations": [
       {

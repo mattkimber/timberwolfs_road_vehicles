@@ -54,6 +54,9 @@
 {{- else if eq .engine "electric" }}
     sound_effect:                   SOUND_ELECTRIC_SPARK;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
+{{- else if eq .engine "electric_with_bong" }}
+    sound_effect:                   SOUND_MAGLEV;
+    visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "t5" }}
     sound_effect:                   sound("sounds/volvo.wav");
 {{- else if eq .engine "35d" }}

@@ -1,7 +1,6 @@
 {
     "files": [
-      "mammoth_major_8.vox", 
-      "leyland_octopus.vox"
+      "seddon_atkinson_400.vox"
     ],
     "operations": [
       {
@@ -10,6 +9,12 @@
         "n": 1,        
         "file": "cargo/mammoth_major_8/mammoth_major_8_lowside.vox"
       },
+      {
+        "name": "_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/seddon_400/seddon_400_curtainside.vox"
+      },   
       {
         "name": "_flatbed",
         "type": "repeat",
@@ -20,7 +25,7 @@
         "name": "_tanker",
         "type": "repeat",
         "n": 1,        
-        "file": "cargo/mammoth_major_8/mammoth_major_8_tanker.vox"
+        "file": "cargo/seddon_400/seddon_400_tanker.vox"
       },  
       {
         "name": "_livestock",
