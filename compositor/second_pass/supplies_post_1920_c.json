@@ -3,6 +3,7 @@
       "../../intermediate/output_fp/foden_s21_flatbed.vox",
       "../../intermediate/output_fp/erf_c_series_flatbed.vox", 
       "../../intermediate/output_fp/erf_e_series_flatbed.vox", 
+      "../../intermediate/output_fp/volvo_fh12_flatbed.vox",
       "../../intermediate/output_fp/guy_big_j6_flatbed.vox"
     ],
     "operations": [

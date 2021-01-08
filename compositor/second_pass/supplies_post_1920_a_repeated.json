@@ -2,6 +2,7 @@
     "files": [
       "../../intermediate/output_fp/leyland_octopus_flatbed.vox",
       "../../intermediate/output_fp/seddon_atkinson_400_flatbed.vox",
+      "../../intermediate/output_fp/erf_lv_flatbed.vox",
       "../../intermediate/output_fp/mammoth_major_8_flatbed.vox",
       "../../intermediate/output_fp/foden_alpha_flatbed.vox"
     ],
