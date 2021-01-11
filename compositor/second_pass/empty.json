@@ -29,6 +29,7 @@
       "../../intermediate/output_fp/erf_c_series_flatbed.vox",     
       "../../intermediate/output_fp/erf_e_series_flatbed.vox",
       "../../intermediate/output_fp/volvo_fh12_flatbed.vox",
+      "../../intermediate/output_fp/daf_cf_flatbed.vox",
       "leyland_steam_van.vox",
       "dray_trailer.vox",
       "horse_cart_trailer.vox",
