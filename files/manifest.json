@@ -11,6 +11,7 @@
     "contrast": 0.025,
     "pad_to_full_length": false,
     "detail_boost": 15.0,
+    "falloff_adjustment": 0.35,
     "is_hill": false,
     "size": {
         "x": 126,
