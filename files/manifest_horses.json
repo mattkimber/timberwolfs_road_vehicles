@@ -10,8 +10,9 @@
     "brightness": -0.025,
     "contrast": 0.025,
     "pad_to_full_length": false,
-    "detail_boost": 15.0,
-    "falloff_adjustment": 0.35,
+    "detail_boost": 30.0,
+    "falloff_adjustment": 0.25,
+    "joggle": 0.23,
     "is_hill": false,
     "size": {
         "x": 158,
