@@ -2,7 +2,7 @@ roadtypetable {
     ROAD,
     ELRD: [ ELRD, ROAD ],
     DIRT_ROAD: [ DIRT, ROAD ],
-    DIRT_ONLY: [ DONL, DIRT, OFFR ],
+    DIRT_ONLY: [ DRTO ],
 }
 
 tramtypetable {
@@ -14,7 +14,7 @@ tramtypetable {
 if (param_enable_easter_eggs) {
     item(FEAT_ROADTYPES, roadtype_donl) {
         property {
-            label:                      "DONL";
+            label:                      "DRTO";
             powered_roadtype_list:      ["DIRT","OFFR"];
             roadtype_flags:             bitmask(ROADTYPE_FLAG_HIDDEN);
         }
