@@ -1,0 +1,3 @@
+if (version_openttd(1,10,0) > openttd_version) {
+	error(FATAL, REQUIRES_OPENTTD, string(STR_OPENTTD_VERSION));
+}

@@ -1,11 +1,23 @@
 roadtypetable {
     ROAD,
     ELRD: [ ELRD, ROAD ],
-    DIRT_ROAD: [ DIRT, ROAD ]
+    DIRT_ROAD: [ DIRT, ROAD ],
+    DIRT_ONLY: [ DONL, DIRT, OFFR ],
 }
 
 tramtypetable {
     RAIL: [RAIL, ELRL ],
     ELRL
+}
+
+// Define the Fordson road type if easter eggs are enabled
+if (param_enable_easter_eggs) {
+    item(FEAT_ROADTYPES, roadtype_donl) {
+        property {
+            label:                      "DONL";
+            powered_roadtype_list:      ["DIRT","OFFR"];
+            roadtype_flags:             bitmask(ROADTYPE_FLAG_HIDDEN);
+        }
+    }
 }
 
