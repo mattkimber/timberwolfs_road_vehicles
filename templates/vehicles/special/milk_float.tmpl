@@ -1,0 +1,28 @@
+{{ $zoom := parseint .globals.zoom }}
+{{- $template := concat "template_auto_" .ttd_len }}{{ altsprites8 .id $template $zoom }}
+{{$full := concat .id "_full"}}{{ altsprites8 $full $template $zoom }}
+
+spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+
+spritegroup spritegroup_{{.id}} { 
+    loading: [ spriteset_{{.id}}, spriteset_{{$full}} ]; 
+    loaded: [ spriteset_{{.id}}, spriteset_{{$full}} ]; 
+} 
+
+{{template "running_cost_switch" . }}
+
+item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
+    property {
+    {{template "rv_props" . }}
+        default_cargo_type:             MILK;
+    }
+
+    graphics {
+        additional_text: return {{.additional_text_string}};
+        {{ template "speed_limiter" . }}
+        default: spritegroup_{{.id}};
+        running_cost_factor: switch_{{.id}}_running_cost;
+        purchase_running_cost_factor: return {{.running_cost}};
+        purchase: spriteset_{{.id}}_purchase;
+    }
+}
