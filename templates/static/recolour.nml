@@ -362,6 +362,12 @@ replace(recolour_bulk + 41) {
     }
 }
 
+// -> Fertiliser
+replace(recolour_bulk + 42) {
+    recolour_sprite {
+        0x01..0x06: 0x69..0x6e;
+    }
+}
 
 
 // Crate recolours

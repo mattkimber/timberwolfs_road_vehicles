@@ -30,7 +30,7 @@ switch(FEAT_ROADVEHS, SELF, switch_{{$id}}_fmsp_year_selector, current_year) {
 {{ end }}
 
 
-{{- $bulk_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea" }}
+{{- $bulk_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea,fert" }}
 // Bulk cargo by type
 
 {{ range $index, $element := slice $bulk_cargos }}

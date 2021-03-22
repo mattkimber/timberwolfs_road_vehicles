@@ -1,0 +1,25 @@
+{
+    "files": [
+      "inshaw_steam_carriage.vox"
+    ],
+    "operations": [
+      {
+        "name": "",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_empty/inshaw_benches.vox"
+      },
+      {
+        "name": "_half_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_half/inshaw_benches.vox"
+      },
+      {
+        "name": "_loaded",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/_full/inshaw_benches.vox"
+      }
+    ]
+}
