@@ -1,7 +1,7 @@
 // Bulk cargo
 
 // -> Aluminium Ore
-recolour_bulk = reserve_sprites(42);
+recolour_bulk = reserve_sprites(43);
 
 replace(recolour_bulk + 0) {
     recolour_sprite {
