@@ -4,7 +4,7 @@
     climates_available:             param_{{.enable_param}} ? ALL_CLIMATES : NO_CLIMATE;
 
     introduction_date:              date({{.intro_year}},{{.intro_month}},01);
-    model_life:                     {{.model_life}} + 4;
+    model_life:                     {{if eq .model_life "-1"}}VEHICLE_NEVER_EXPIRES{{else}}{{.model_life}} + 4{{end}};
     retire_early:                   -2;
 
     vehicle_life:                   {{.vehicle_life}};
