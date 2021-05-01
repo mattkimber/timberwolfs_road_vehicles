@@ -2,7 +2,7 @@
     "grf": {
       "author_id": "TWF",
       "grf_id": 10,
-      "name": "Timberwolf's UK Road Vehicles 3.1.8",
+      "name": "Timberwolf's UK Road Vehicles 3.1.9",
       "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. Features 2x zoom for all vehicle sprites.{}(c) 2016-2021 Matt Kimber. {}{BLACK}License:{SILVER}CC-BY-SA-3.0",
       "min_compat_version": 1,
       "filename": "timberwolf_uk.nml",
