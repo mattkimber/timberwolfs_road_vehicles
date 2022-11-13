@@ -2,6 +2,7 @@
     "files": [
         "../../intermediate/output_fp/bedford_tk.vox",
         "../../intermediate/output_fp/daf_lf.vox",
+        "../../intermediate/output_fp/renault_etech_d.vox",
         "../../intermediate/output_fp/erf_c_series.vox",
         "../../intermediate/output_fp/erf_e_series.vox",
         "../../intermediate/output_fp/volvo_fh12.vox",
@@ -24,7 +25,8 @@
         "../../intermediate/output_fp/leyland_x_type.vox",
         "../../intermediate/output_fp/mammoth_major_8.vox", 
         "../../intermediate/output_fp/mercedes_lk.vox",        
-        "../../intermediate/output_fp/modern_trailer.vox",        
+        "../../intermediate/output_fp/modern_trailer.vox",  
+        "../../intermediate/output_fp/2020s_trailer.vox",    
         "../../intermediate/output_fp/prewar_trailer.vox",        
         "../../intermediate/output_fp/saviem_sm.vox",
         "../../intermediate/output_fp/sentinel_dg4.vox",

@@ -1,7 +1,7 @@
 {{- define "rv_props" }}
     name:                           {{.name_string}};
 
-    climates_available:             param_{{.enable_param}} ? ALL_CLIMATES : NO_CLIMATE;
+    climates_available:             {{if eq "never" .enable_param}}NO_CLIMATE{{else}}param_{{.enable_param}} ? ALL_CLIMATES : NO_CLIMATE{{end}};
 
     introduction_date:              date({{.intro_year}},{{.intro_month}},01);
     model_life:                     {{if eq .model_life "-1"}}VEHICLE_NEVER_EXPIRES{{else}}{{.model_life}} + 4{{end}};
@@ -32,30 +32,30 @@
     power:                          {{.power}} hp;
 
 {{- if eq .engine "horse" }}
-    sound_effect:                   SOUND_HORSE;
+    sound_effect:                   SOUND_FARM_3;
 {{- else if eq .engine "steam" }}
-    sound_effect:                   SOUND_TRAIN;
+    sound_effect:                   SOUND_DEPARTURE_STEAM;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_STEAM, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "diesel" }}
-    sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+    sound_effect:                   SOUND_DEPARTURE_OLD_RV_1;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "powerful" }}
-    sound_effect:                   SOUND_TRUCK_START;
+    sound_effect:                   SOUND_DEPARTURE_MODERN_BUS;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "coach" }}
-    sound_effect:                   SOUND_TRUCK_START_2;
+    sound_effect:                   SOUND_DEPARTURE_OLD_BUS;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_DIESEL, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "hydrogen" }}
-    sound_effect:                   SOUND_MAGLEV_2;
+    sound_effect:                   SOUND_DEPARTURE_MONORAIL;
 {{- else if eq .engine "clean" }}
-    sound_effect:                   SOUND_BUS_START_PULL_AWAY;
+    sound_effect:                   SOUND_DEPARTURE_OLD_RV_1;
 {{- else if eq .engine "petrol" }}
-    sound_effect:                   SOUND_TRUCK_START;
+    sound_effect:                   SOUND_DEPARTURE_MODERN_BUS;
 {{- else if eq .engine "electric" }}
-    sound_effect:                   SOUND_ELECTRIC_SPARK;
+    sound_effect:                   SOUND_POWER_STATION;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "electric_with_bong" }}
-    sound_effect:                   SOUND_MAGLEV;
+    sound_effect:                   SOUND_DEPARTURE_MAGLEV;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_ELECTRIC, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "t5" }}
     sound_effect:                   sound("sounds/volvo.wav");

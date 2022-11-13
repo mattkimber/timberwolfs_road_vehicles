@@ -6,10 +6,12 @@
       "../../intermediate/output_fp/volvo_fh12_flatbed.vox",
       "../../intermediate/output_fp/daf_cf_flatbed.vox",
       "../../intermediate/output_fp/modern_trailer_flatbed.vox",
+      "../../intermediate/output_fp/2020s_trailer_flatbed.vox",
       "../../intermediate/output_fp/foden_alpha_flatbed.vox",
       "../../intermediate/output_fp/man_tgs_flatbed.vox",
       "../../intermediate/output_fp/saviem_sm_flatbed.vox",
-      "../../intermediate/output_fp/daf_lf_flatbed.vox"
+      "../../intermediate/output_fp/daf_lf_flatbed.vox",
+      "../../intermediate/output_fp/renault_etech_d_flatbed.vox"
     ],
     "operations": [
       {

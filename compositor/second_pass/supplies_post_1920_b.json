@@ -2,6 +2,7 @@
     "files": [
       "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
       "../../intermediate/output_fp/daf_lf_flatbed.vox", 
+      "../../intermediate/output_fp/renault_etech_d_flatbed.vox",
       "../../intermediate/output_fp/foden_s20_flatbed.vox", 
       "../../intermediate/output_fp/vulcan_mk2_flatbed.vox", 
       "../../intermediate/output_fp/saviem_sm_flatbed.vox"
