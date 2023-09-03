@@ -4,6 +4,7 @@
 {{ altsprites8 $black $template $zoom }}
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+alternative_sprites(spriteset_{{.id}}_purchase, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/{{.id}}_purchase.png") { template_purchase_2x() }
 
 switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, cargo_subtype) {
   0: return spriteset_{{.id}};

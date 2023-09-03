@@ -3,6 +3,7 @@
 {{$full := concat .id "_full"}}{{ altsprites8 $full $template $zoom }}
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
+alternative_sprites(spriteset_{{.id}}_purchase, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/{{.id}}_purchase.png") { template_purchase_2x() }
 
 spritegroup spritegroup_{{.id}} { 
     loading: [ spriteset_{{.id}}, spriteset_{{$full}} ]; 

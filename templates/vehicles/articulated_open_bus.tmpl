@@ -1,92 +1,66 @@
 {{ $zoom := parseint .globals.zoom -}}
+{{ $zoomstr := .globals.zoom -}}
 {{- $horse_type := .horse_type }}
 {{- $id := .id -}}
 {{ $articulated_lengths := slice .articulated_lengths }}
 {{- range $index, $element := slice .articulated_graphics -}}
 {{ $ttd_len := index $articulated_lengths $index }}
 {{- $template := concat "template_auto_" $ttd_len }}
-{{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
-{{- if ne $element "" -}}
-{{ $el_usc := concat "_" $element }}{{ $spr_id := concat $id $el_usc }}{{ altsprites8 $spr_id $template $zoom }}
-{{- else -}}{{ altsprites8 $id $template $zoom }}{{- end -}}
+    {{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
+    {{- if ne $element "" -}}
+        {{- $el_usc := concat "_" $element -}}{{- $spr_id := concat $id $el_usc -}}
+        {{ altsprites8 $spr_id $template $zoom }}
+    {{- else -}}
+        {{ altsprites8 $id $template $zoom }}{{- end -}}
+        {{ $loaded := concat $id "_full" }}{{ altsprites8 $loaded $template $zoom }}
+        {{ $half_loaded := concat $id "_half" }}{{ altsprites8 $half_loaded $template $zoom }}
+
+        spritegroup spritegroup_{{$id}} {
+            loading: [spriteset_{{$id}}, spriteset_{{$id}}_half, spriteset_{{$id}}_half, spriteset_{{$id}}_full ];
+            loaded: [spriteset_{{$id}}, spriteset_{{$id}}_half, spriteset_{{$id}}_half, spriteset_{{$id}}_full ];
+        }
 {{- end -}}
 {{- end}}
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
 alternative_sprites(spriteset_{{.id}}_purchase, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "2x/{{.id}}_purchase.png") { template_purchase_2x() }
 
-// Cargo articulation switches
+// Articulation switches
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1) 
-{ 
+{
     {{- range $index, $element := slice .articulated_configuration -}}
     {{ $index }}: return {{ $id }};
     {{- end}}
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-// Cargo in trailer switch
-switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_cargo_selector, cargo_type_in_veh ) { 
-    {{ template "cargo_selector_v3" . }}
-    
-    // Default to the goods sprite
-    {{if .has_covered_goods}}return spriteset_{{.trailer}}_goods;{{else}}return switch_{{.trailer}}_cargo_good;{{end}}
-}
-
-
-{{ $trailers := parseint .articulated_units }}
-
-// Trailer vs. motive unit switch
-switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) { 
-     0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
-     {{ if gt $trailers 2 }}
-     switch_{{.id}}_cargo_selector; 
-     {{else}}
-     1: switch_{{.id}}_cargo_selector;
-     spriteset_invisible;
-     {{end}}
-}
-
-switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist ) 
-{ 
-    0: return 1;
-    1: return {{.capacity_per_trailer}} - 1;
-    {{ if gt $trailers 2 }}
-    return {{.capacity_per_trailer}};
-    {{ else }}
-    return 0;
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) 
+{
+    {{- range $index, $element := slice .articulated_configuration -}}
+    {{- if eq $index 0 }}{{- if $horse_type }}
+    {{ $index }}:  switch_{{$horse_type}}_animation;
+    {{- else }}
+    {{ $index }}: return {{if ne $element "" }}spriteset_{{ $id }}_{{ $element }}{{else}}spritegroup_{{ $id }}{{end}};
+    {{- end -}}
+    {{- else -}}
+    {{ $index }}: return {{if ne $element "" }}spriteset_{{ $id }}_{{ $element }}{{else}}spritegroup_{{ $id }}{{end}};
+    {{- end -}}
     {{- end}}
 }
 
-switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_boosted, position_in_consist ) 
-{ 
-    0: return 1;
-    1: return ({{.capacity_per_trailer}} * 2) - 1;
-    {{ if gt $trailers 2 }}
-    return {{.capacity_per_trailer}} * 2;
-    {{ else }}
-    return 0;
-    {{- end}}
-}
-
-switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, cargo_type_in_veh) {
-  MAIL: switch_{{.id}}_capacity_boosted;
-  VALU: switch_{{.id}}_capacity_boosted;
-  GOOD: switch_{{.id}}_capacity_boosted;
-  ENSP: switch_{{.id}}_capacity_boosted;
-  FMSP: switch_{{.id}}_capacity_boosted;
-  POWR: switch_{{.id}}_capacity_boosted;
-  switch_{{.id}}_capacity_other;
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, position_in_consist ) 
+{
+    {{- range $index, $element := slice .articulated_capacities -}}
+    {{ $index }}: return {{ $element }};
+    {{- end }}
 }
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
-{ 
+{
     {{- range $index, $element := slice .articulated_lengths -}}
     {{$index }}: return {{ $element }};
     {{- end}}    
-    return 8;
 }
-
-{{template "running_cost_switch" . }}
 
 {{ $engine := .engine }}
 {{ $smoke_loc := .smoke_location }}
@@ -112,13 +86,15 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist )
     return VISUAL_EFFECT_DISABLE;    
 }
 
+{{template "running_cost_switch" . }}
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
     property {
         {{template "rv_props" . }}
-        refittable_cargo_classes:       bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
-        non_refittable_cargo_classes:   bitmask(CC_PASSENGERS);
-        default_cargo_type:             COAL;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:   bitmask(CC_BULK, CC_LIQUID, CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED, CC_ARMOURED, CC_MAIL);
+        default_cargo_type:             PASS;
+
     }
 
     graphics {
@@ -137,9 +113,8 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         purchase: spriteset_{{.id}}_purchase;
         running_cost_factor: switch_{{.id}}_running_cost;
         purchase_running_cost_factor: return {{.running_cost}};
-
-        // Use a single switch, decide the cargo in here
-        default: switch_{{$id}}_graphics;
-    }
+        default: switch_{{.id}}_graphics;
+  }
 }
+
 
