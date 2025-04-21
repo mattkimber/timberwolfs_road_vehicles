@@ -1,15 +1,20 @@
 {{ $zoom := parseint .globals.zoom -}}
 {{- $horse_type := .horse_type }}
+{{- $engine_sprite := .engine_sprite}}
 {{- $id := .id -}}
 {{ $articulated_lengths := slice .articulated_lengths }}
+
 {{- range $index, $element := slice .articulated_graphics -}}
 {{ $ttd_len := index $articulated_lengths $index }}
 {{- $template := concat "template_auto_" $ttd_len }}
-{{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
-{{- if ne $element "" -}}
-{{ $el_usc := concat "_" $element }}{{ $spr_id := concat $id $el_usc }}{{ altsprites8 $spr_id $template $zoom }}
-{{- else -}}{{ altsprites8 $id $template $zoom }}{{- end -}}
-{{- end -}}
+{{- $lte0 := le $index 0 -}}
+{{- if and $engine_sprite $lte0 -}}
+{{ else -}}
+{{- if eq $engine_sprite "" -}}{{- if ne $element "" -}}
+    {{ $el_usc := concat "_" $element }}{{ $spr_id := concat $id $el_usc }}{{ altsprites8 $spr_id $template $zoom }}
+{{- else -}}
+    {{ altsprites8 $id $template $zoom }}{{- end -}}
+{{- end -}}{{- end -}}
 {{- end}}
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
@@ -35,7 +40,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_cargo_selector, cargo_type_in_veh ) 
 // Trailer vs. motive unit switch
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) { 
      {{if .additional_power_units}}0..{{.additional_power_units}}{{else}}0{{end}}: 
-     {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}{{if $engine_sprite}}spriteset_{{$engine_sprite}}{{else}}spriteset_{{$id}}{{end}}{{end}};
      {{ if gt $trailers 2 }}
      switch_{{.id}}_cargo_selector; 
      {{else}}
@@ -133,7 +138,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         colour_mapping: switch_{{.horse_type}}_{{if .additional_power_units}}plus{{.additional_power_units}}_{{end}}colour_mapping;
         purchase_colour_mapping: return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
         {{end}}
-        purchase_cargo_capacity: return {{.capacity}} / {{.articulated_units}};
+        purchase_cargo_capacity: spriteset_{{.id}}_purchase;
         purchase: spriteset_{{.id}}_purchase;
         running_cost_factor: switch_{{.id}}_running_cost;
         purchase_running_cost_factor: return {{.running_cost}};

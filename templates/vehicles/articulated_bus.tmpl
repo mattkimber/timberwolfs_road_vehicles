@@ -1,18 +1,25 @@
 {{ $zoom := parseint .globals.zoom -}}
 {{ $zoomstr := .globals.zoom -}}
 {{- $horse_type := .horse_type }}
+{{- $engine_sprite := .engine_sprite}}
 {{- $id := .id -}}
 {{ $articulated_lengths := slice .articulated_lengths }}
 {{- range $index, $element := slice .articulated_graphics -}}
-{{ $ttd_len := index $articulated_lengths $index }}
-{{- $template := concat "template_auto_" $ttd_len }}
-    {{- $lte0 := le $index 0 -}}{{- if and $horse_type $lte0 -}}{{- else -}}
-    {{- if ne $element "" -}}
-        {{- $el_usc := concat "_" $element -}}{{- $spr_id := concat $id $el_usc -}}
-        {{ altsprites8 $spr_id $template $zoom }}
-    {{- else -}}
-        {{ altsprites8 $id $template $zoom }}{{- end -}}
-{{- end -}}
+    {{- $ttd_len := index $articulated_lengths $index -}}
+    {{- $template := concat "template_auto_" $ttd_len -}}
+    {{- $lte0 := le $index 0 -}}
+
+    {{- if and $engine_sprite $lte0 -}}
+        // No engine sprite
+    {{ else -}}
+        {{- if ne $element "" -}}
+            {{- $el_usc := concat "_" $element -}}{{- $spr_id := concat $id $el_usc -}}
+            {{ altsprites8 $spr_id $template $zoom }}
+        {{- else -}}
+            {{ altsprites8 $id $template $zoom }}
+        {{- end -}}
+    {{- end -}}
+
 {{- end}}
 
 spriteset(spriteset_{{.id}}_purchase, "1x/{{.id}}_purchase.png") { template_purchase_1x() }
@@ -27,16 +34,18 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1)
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
+{{- $base_sprite := .base_sprite }}
+{{- if not $base_sprite }}{{ $base_sprite = .id }}{{ end }}
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) 
 {
     {{- range $index, $element := slice .articulated_configuration -}}
     {{- if eq $index 0 }}{{- if $horse_type }}
     {{ $index }}:  switch_{{$horse_type}}_animation;
     {{- else }}
-    {{ $index }}: return {{if ne $element "" }}spriteset_{{ $id }}_{{ $element }}{{else}}spriteset_{{ $id }}{{end}};
+    {{ $index }}: return {{if ne $element "" }}spriteset_{{ $base_sprite }}_{{ $element }}{{else}}spriteset_{{ $base_sprite }}{{end}};
     {{- end -}}
     {{- else -}}
-    {{ $index }}: return {{if ne $element "" }}spriteset_{{ $id }}_{{ $element }}{{else}}spriteset_{{ $id }}{{end}};
+    {{ $index }}: return {{if ne $element "" }}spriteset_{{ $base_sprite }}_{{ $element }}{{else}}spriteset_{{ $base_sprite }}{{end}};
     {{- end -}}
     {{- end}}
 }
@@ -104,7 +113,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         colour_mapping: switch_{{.horse_type}}_colour_mapping;
         purchase_colour_mapping: return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
         {{end}}
-        purchase_cargo_capacity: return {{.capacity}} / {{.articulated_units}};
+        purchase_cargo_capacity: spriteset_{{.id}}_purchase;
         purchase: spriteset_{{.id}}_purchase;
         running_cost_factor: switch_{{.id}}_running_cost;
         purchase_running_cost_factor: return {{.running_cost}};
