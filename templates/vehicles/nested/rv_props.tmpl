@@ -17,6 +17,11 @@
     road_type:                      {{.roadtype}};
     {{- end}}
 
+    {{- if .variant_group}}
+    variant_group:                  {{.variant_group}};
+    extra_flags:                    bitmask(VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    {{- end}}
+
     sprite_id:                      SPRITE_ID_NEW_ROADVEH; 
     speed:                          {{.top_speed}} mph;
     misc_flags:                     bitmask({{if .is_tram}}ROADVEH_FLAG_TRAM, {{end}}ROADVEH_FLAG_2CC, ROADVEH_FLAG_SPRITE_STACK);
@@ -33,6 +38,7 @@
 
 {{- if eq .engine "horse" }}
     sound_effect:                   SOUND_FARM_3;
+    visual_effect:                  VISUAL_EFFECT_DISABLE;
 {{- else if eq .engine "steam" }}
     sound_effect:                   SOUND_DEPARTURE_STEAM;
     visual_effect:                  param_smoke ? visual_effect(VISUAL_EFFECT_STEAM, {{.smoke_location}}) : VISUAL_EFFECT_DISABLE;

@@ -57,6 +57,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist )
 
 {{ $engine := .engine }}
 {{ $smoke_loc := .smoke_location }}
+{{- if ne $engine "horse" }}
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist ) 
 { 
     {{- range $index, $element := slice .articulated_visual_effects -}}
@@ -78,6 +79,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist )
     {{- end}}
     return VISUAL_EFFECT_DISABLE;    
 }
+{{- end}}
 
 {{template "running_cost_switch" . }}
 
@@ -94,7 +96,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         additional_text: return {{.additional_text_string}};
         {{template "speed_limiter" . }}
 
-        visual_effect: switch_{{.id}}_visual_effect;
+        {{if ne $engine "horse" }}visual_effect: switch_{{.id}}_visual_effect;{{end}}
         articulated_part: switch_{{.id}}_articulation;
         cargo_capacity: switch_{{.id}}_capacity;
         length: switch_{{.id}}_length;
@@ -102,7 +104,7 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         colour_mapping: switch_{{.horse_type}}_colour_mapping;
         purchase_colour_mapping: return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
         {{end}}
-        purchase_cargo_capacity: spriteset_{{.id}}_purchase;
+        purchase_cargo_capacity: return {{.capacity}} / {{.articulated_units}};
         purchase: spriteset_{{.id}}_purchase;
         running_cost_factor: switch_{{.id}}_running_cost;
         purchase_running_cost_factor: return {{.running_cost}};

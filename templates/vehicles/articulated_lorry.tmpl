@@ -18,9 +18,8 @@ alternative_sprites(spriteset_{{.id}}_purchase, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP
 // Cargo articulation switches
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation, extra_callback_info1) 
 { 
-    {{- range $index, $element := slice .articulated_configuration -}}
-    {{ $index }}: return {{ $id }};
-    {{- end}}
+    {{- range $index, $element := slice .articulated_configuration }}
+    {{ $index }}: return {{ $id }};{{end}}
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -32,12 +31,11 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_cargo_selector, cargo_type_in_veh ) 
     {{if .has_covered_goods}}return spriteset_{{.trailer}}_goods;{{else}}return switch_{{.trailer}}_cargo_good;{{end}}
 }
 
-
-{{ $trailers := parseint .articulated_units }}
-
+{{ $trailers := parseint .articulated_units -}}
 // Trailer vs. motive unit switch
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) { 
-     0: {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
+     {{if .additional_power_units}}0..{{.additional_power_units}}{{else}}0{{end}}: 
+     {{- if $horse_type }}switch_{{$horse_type}}_animation{{- else }}spriteset_{{$id}}{{end}};
      {{ if gt $trailers 2 }}
      switch_{{.id}}_cargo_selector; 
      {{else}}
@@ -48,8 +46,8 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_graphics, position_in_consist ) {
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist ) 
 { 
-    0: return 1;
-    1: return {{.capacity_per_trailer}} - 1;
+    {{if .additional_power_units}}0..{{.additional_power_units}}{{else}}0{{end}}: return 1;
+    {{if .additional_power_units}}1+{{.additional_power_units}}{{else}}1{{end}}: return {{.capacity_per_trailer}} - {{if .additional_power_units}}(1+{{.additional_power_units}}){{else}}1{{end}};
     {{ if gt $trailers 2 }}
     return {{.capacity_per_trailer}};
     {{ else }}
@@ -59,8 +57,8 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_other, position_in_consist 
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity_boosted, position_in_consist ) 
 { 
-    0: return 1;
-    1: return ({{.capacity_per_trailer}} * 2) - 1;
+    {{if .additional_power_units}}0..{{.additional_power_units}}{{else}}0{{end}}: return 1;
+    {{if .additional_power_units}}1+{{.additional_power_units}}{{else}}1{{end}}: return ({{.capacity_per_trailer}} * 2) - {{if .additional_power_units}}(1+{{.additional_power_units}}){{else}}1{{end}};
     {{ if gt $trailers 2 }}
     return {{.capacity_per_trailer}} * 2;
     {{ else }}
@@ -80,7 +78,7 @@ switch(FEAT_ROADVEHS, SELF, switch_{{.id}}_capacity, cargo_type_in_veh) {
 
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist ) 
 { 
-    {{- range $index, $element := slice .articulated_lengths -}}
+    {{- range $index, $element := slice .articulated_lengths }}
     {{$index }}: return {{ $element }};
     {{- end}}    
     return 8;
@@ -89,7 +87,8 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_length, position_in_consist )
 {{template "running_cost_switch" . }}
 
 {{ $engine := .engine }}
-{{ $smoke_loc := .smoke_location }}
+{{- $smoke_loc := .smoke_location }}
+{{- if ne $engine "horse" }}
 switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist ) 
 { 
     {{- range $index, $element := slice .articulated_visual_effects -}}
@@ -111,6 +110,7 @@ switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_visual_effect, position_in_consist )
     {{- end}}
     return VISUAL_EFFECT_DISABLE;    
 }
+{{- end}}
 
 
 item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
@@ -125,15 +125,15 @@ item(FEAT_ROADVEHS, {{.id}}, {{.numeric_id}}) {
         additional_text: return {{.additional_text_string}};
         {{template "speed_limiter" . }}
 
-        visual_effect: switch_{{.id}}_visual_effect;
+        {{if ne $engine "horse" }}visual_effect: switch_{{.id}}_visual_effect;{{end}}
         articulated_part: switch_{{.id}}_articulation;
         cargo_capacity: switch_{{.id}}_capacity;
         length: switch_{{.id}}_length;
         {{if .horse_type}}
-        colour_mapping: switch_{{.horse_type}}_colour_mapping;
+        colour_mapping: switch_{{.horse_type}}_{{if .additional_power_units}}plus{{.additional_power_units}}_{{end}}colour_mapping;
         purchase_colour_mapping: return base_sprite_2cc + CB_RESULT_COLOUR_MAPPING_ADD_CC;
         {{end}}
-        purchase_cargo_capacity: spriteset_{{.id}}_purchase;
+        purchase_cargo_capacity: return {{.capacity}} / {{.articulated_units}};
         purchase: spriteset_{{.id}}_purchase;
         running_cost_factor: switch_{{.id}}_running_cost;
         purchase_running_cost_factor: return {{.running_cost}};
