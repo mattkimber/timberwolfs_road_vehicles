@@ -11,11 +11,11 @@
     "brightness": -0.025,
     "contrast": 0.025,
     "pad_to_full_length": false,
-    "detail_boost": 30.0,
+    "detail_boost": 5.0,
     "falloff_adjustment": 0.25,
     "joggle": -0.35,
     "is_hill": false,
-    "max_colour_push": 2,
+    "dither_flat_areas": true,
     "fosterise": true,
     "size": {
         "x": 126,
