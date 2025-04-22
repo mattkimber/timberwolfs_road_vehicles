@@ -1,0 +1,21 @@
+{
+    "files": [
+       "horse_cart_trailer.vox",
+       "horse_wagon_trailer.vox"
+    ],
+    "operations": [
+      {
+        "name": "_drums_full",
+        "type": "repeat",
+        "file": "cargo/_repeatable/oil_drum.vox",
+        "mask_original": true
+      },
+      {
+        "name": "_drums_half",
+        "type": "repeat",
+        "n": 1,
+        "file": "cargo/_repeatable/oil_drum.vox",
+        "mask_original": true
+      }
+    ]
+}      

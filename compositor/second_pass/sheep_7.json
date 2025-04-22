@@ -1,12 +1,13 @@
 {
     "files": [
-      "foden_5t.vox"
+      "foden_5t.vox",
+      "horse_wagon_trailer.vox"
     ],
     "operations": [
       {
         "name": "_livestock_full",
-        "type": "repeat",
-        "n": 1,
+        "type": "scale",
+        "scale": { "z": 1.0 },
         "file": "cargo/_full/7_sheep.vox",
         "mask_original": true
       },
