@@ -1,3 +1,9 @@
+v3.4.1
+------
+
+Slightly more variety in early vehicle trailers
+Reduce excessive action 2 usage
+
 v3.4.0
 ------
 
