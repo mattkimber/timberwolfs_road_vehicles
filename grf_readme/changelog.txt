@@ -1,3 +1,9 @@
+v3.4.0
+------
+
+Created alternate length variants for tram wagons and DLR
+Added drawbar trailers to some early wagons
+
 v3.3.0
 ------
 
