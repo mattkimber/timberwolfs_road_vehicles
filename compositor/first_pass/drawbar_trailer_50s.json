@@ -1,0 +1,37 @@
+{
+    "files": [
+      "drawbar_trailer.vox"
+    ],
+    "operations": [
+      {
+        "name": "_50s",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_50s_lowside.vox"
+      },
+      {
+        "name": "_50s_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_trailer_flatbed.vox"
+      },      
+      {
+        "name": "_50s_tanker",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_50s_tanker.vox"
+      },
+      {
+        "name": "_50s_livestock",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_50s_livestock.vox"
+      },
+      {
+        "name": "_50s_goods",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_50s_curtainside.vox"
+      }
+    ]
+}

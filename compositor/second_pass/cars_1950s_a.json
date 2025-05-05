@@ -14,7 +14,9 @@
       "../../intermediate/output_fp/foden_s21_flatbed.vox", 
       "../../intermediate/output_fp/guy_big_j6_flatbed.vox",
       "../../intermediate/output_fp/mercedes_lk_flatbed.vox",
-      "../../intermediate/output_fp/saviem_sm_flatbed.vox"
+      "../../intermediate/output_fp/saviem_sm_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_50s_flatbed.vox"
     ],
     "operations": [
       {

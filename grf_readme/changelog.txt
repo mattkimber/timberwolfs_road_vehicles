@@ -1,3 +1,9 @@
+v3.4.2
+------
+
+More drawbar variants
+Some possible weight/capacity bugs fixed
+
 v3.4.1
 ------
 

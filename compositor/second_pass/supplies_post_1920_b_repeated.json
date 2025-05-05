@@ -2,7 +2,9 @@
     "files": [
       "../../intermediate/output_fp/modern_trailer_flatbed.vox",
       "../../intermediate/output_fp/2020s_trailer_flatbed.vox",
-      "../../intermediate/output_fp/t45_trailer_flatbed.vox"
+      "../../intermediate/output_fp/t45_trailer_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_50s_flatbed.vox"
     ],
     "operations": [
       {
