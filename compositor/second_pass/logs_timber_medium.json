@@ -5,6 +5,8 @@
       "../../intermediate/output_fp/daf_lf_flatbed.vox",
       "../../intermediate/output_fp/renault_etech_d_flatbed.vox",
       "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_old_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_old_metal_flatbed.vox",
       "../../intermediate/output_fp/tram_trailer_flatbed.vox"
     ],
     "operations": [

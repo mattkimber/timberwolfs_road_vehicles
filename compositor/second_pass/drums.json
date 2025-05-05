@@ -8,6 +8,8 @@
        "dray_trailer.vox",
        "foden_5t.vox",
        "leyland_steam_van.vox",
+       "../../intermediate/output_fp/drawbar_trailer_old_flatbed.vox",
+       "../../intermediate/output_fp/drawbar_trailer_old_metal_flatbed.vox",
        "../../intermediate/output_fp/rubber_tyred_horse_cart_flatbed.vox",
        "../../intermediate/output_fp/rubber_tyred_cart_flatbed.vox"
     ],

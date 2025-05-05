@@ -1,0 +1,19 @@
+{
+    "files": [
+      "drawbar_trailer_old.vox"
+    ],
+    "operations": [
+      {
+        "name": "_metal",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_trailer_old_lowside_metal.vox"
+      },
+      {
+        "name": "_metal_flatbed",
+        "type": "repeat",
+        "n": 1,        
+        "file": "cargo/trailers/drawbar_trailer_old_flatbed_metal.vox"
+      }
+    ]
+}

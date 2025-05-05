@@ -1,6 +1,8 @@
 {
     "files": [
-      "../../intermediate/output_fp/prewar_trailer_flatbed.vox"
+      "../../intermediate/output_fp/prewar_trailer_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_old_flatbed.vox",
+      "../../intermediate/output_fp/drawbar_trailer_old_metal_flatbed.vox"
     ],
     "operations": [
       {

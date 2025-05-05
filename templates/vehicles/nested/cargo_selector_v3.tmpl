@@ -1,30 +1,40 @@
 {{define "cargo_selector_v3"}}
 
-    {{- $switch_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea,alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc,wood,wdpr,stsh,stwr,pipe,ensp,fmsp,rbar,vehi,vbod,fert" }}
+    {{- $switch_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea,alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc,wood,wdpr,stsh,pipe,ensp,fmsp,vehi,vbod,fert" }}
     {{- $id := .id}}
     {{- if .trailer}}{{$id = .trailer}}{{end}}
     {{- range $index, $element := slice $switch_cargos }}
-        {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
+    {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
     {{- end}}
 
     {{- $liquid_cargos := "acid,beer,chlo,cola,ctar,dyes,eoil,fzdr,lye_,milk,nh3_,o2__,oil_,petr,plst,rfpr,rubr,soap,watr" }}
-    {{ if .has_piece_goods_tanker }}
-    {{- range $index, $element := slice $liquid_cargos }}
-        {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
-    {{- end}}
+    {{ if .has_piece_goods_tanker }}    
+        {{- $barrel_cargos := "beer,cola,dyes,fzdr,milk,watr,soap" }}
+        {{- $drum_cargos := "acid,chlo,ctar,eoil,lye_,nh3_,o2__,oil_,petr,plst,rfpr,rubr" }}
+        {{- range $index, $element := slice $barrel_cargos }}
+    {{ toupper $element }}: switch_{{$id}}_cargo_barrels;
+        {{- end}}
+        {{- range $index, $element := slice $drum_cargos }}
+    {{ toupper $element }}: switch_{{$id}}_cargo_drums;
+        {{- end}}
     {{ else }}
     {{- range $index, $element := slice $liquid_cargos }}
-        {{ toupper $element }}: spriteset_{{$id}}_tanker;
+    {{ toupper $element }}: spriteset_{{$id}}_tanker;
     {{- end}}
     {{ end }}
 
     {{- $crate_cargos := "batt,boom,bubl,cera,java,nuts,papr,powr,toys,veng,vpts,plas,mnsp,coat,tyre,mail,good"}}
-    {{- $has_covered_goods := .has_covered_goods }} 
+    {{- $has_covered_goods := .has_covered_goods }}{{- $no_goods_recolour := .no_goods_recolour }} {{- $skip_crates := or  .has_covered_goods .no_goods_recolour }}
+    {{- if not $skip_crates }}
     {{- range $index, $element := slice $crate_cargos }}
-        {{ toupper $element }}: {{ if $has_covered_goods }}spriteset_{{$id}}_goods{{else}}switch_{{$id}}_cargo_{{$element}}{{end}};
+    {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
     {{- end}}
-
+    {{- end}}
+    STWR: switch_{{$id}}_cargo_wire;
+    RBAR: switch_{{$id}}_cargo_wire;
     // Livestock
     LVST: {{ if .has_open_livestock }}switch_{{$id}}_cargo_lvst{{else}}spriteset_{{$id}}_livestock{{end}};
 
+    // Default to the goods sprite
+    return {{ if $has_covered_goods }}spriteset_{{$id}}_goods{{ else if $no_goods_recolour}}switch_{{$id}}_cargo_piece_goods{{else}}switch_{{$id}}_cargo_good{{end}};
 {{end}}

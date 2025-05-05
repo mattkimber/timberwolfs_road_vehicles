@@ -133,7 +133,6 @@
           "nested/cargo_switches_v3",
           "nested/cargo_selector_v3",
           "nested/rv_props",
-          "nested/cargo_spritegroups", 
           "nested/speed_limiter",
           "nested/running_cost_switch",
           "nested/capacity_switch"
