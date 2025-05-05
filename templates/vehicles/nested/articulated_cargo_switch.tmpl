@@ -1,0 +1,20 @@
+{{define "articulated_cargo_switch"}}
+switch (FEAT_ROADVEHS, SELF, switch_{{.id}}_articulation_{{.element}}, position_in_consist ) { 
+     {{if .additional_power_units}}0..{{.additional_power_units}}{{else}}0{{end}}: 
+     {{- if .horse_type }}switch_{{.horse_type}}_animation
+     {{- else }}
+        {{- if and .engine_carries_load .fixed_engine_spriteset }}
+            spriteset_{{.engine_sprite}}_{{.fixed_engine_spriteset}}
+        {{- else if .engine_sprite}}
+            {{- if .engine_carries_load}} switch_{{.engine_sprite}}_cargo_{{.element}}{{else}}spriteset_{{.engine_sprite}}{{end}}
+        {{- else}}
+            {{- if .engine_carries_load}} switch_{{.id}}_cargo_{{.element}}{{else}}spriteset_{{.id}}{{end}}
+     {{- end}}{{- end}};
+     {{ if gt .trailers 2 }}
+     switch_{{.trailer}}_cargo_{{.element}}; 
+     {{else}}
+     1: switch_{{.trailer}}_cargo_{{.element}};
+     spriteset_invisible;
+     {{end}}
+}
+{{end}}

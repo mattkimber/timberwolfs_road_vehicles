@@ -1,0 +1,62 @@
+{{define "articulated_cargo_switches"}}
+    {{- $trailers := parseint .articulated_units }}{{- $additional_power_units := .additional_power_units }}{{- $horse_type := .horse_type }}
+    {{- $engine_sprite := .engine_sprite }}{{- $engine_carries_load := .engine_carries_load }}
+    {{- $switch_cargos := "aore,bdmt,bean,cass,cblk,cmnt,cere,clay,coal,coke,core,ctcd,fecr,ficr,frut,grai,grvl,iore,lime,kaol,maiz,mno2,nitr,olsd,peat,phos,pota,pore,qlme,rcyc,salt,sand,sash,scmt,sgbt,sgcn,slag,sugr,sulp,toff,uran,whea,alum,copr,csti,iron,metl,stal,stcb,stel,stse,stst,zinc,wood,wdpr,stsh,pipe,ensp,fmsp,vehi,vbod,fert" }}
+    {{- $id := .id}}{{- $trailer := .trailer }}
+    {{- $tanker_spriteset := "tanker"}}{{- if .parent_piece_goods_tanker}}{{$tanker_spriteset = ""}}{{end}}
+    {{- $livestock_spriteset := "livestock"}}{{- if .parent_open_livestock}}{{$livestock_spriteset = ""}}{{end}}
+    {{- range $index, $element := slice $switch_cargos }}
+
+// Articulated switches for {{$id}}
+
+// SWITCH CARGO    
+        {{ template "articulated_cargo_switch" (dict "element" $element "trailers" $trailers "id" $id "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+
+// {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
+    {{- end}}
+
+    {{- $liquid_cargos := "acid,beer,chlo,cola,ctar,dyes,eoil,fzdr,lye_,milk,nh3_,o2__,oil_,petr,plst,rfpr,rubr,soap,watr" }}
+    {{ if .has_piece_goods_tanker }}    
+        {{- $barrel_cargos := "beer,cola,dyes,fzdr,milk,watr,soap" }}
+        {{- $drum_cargos := "acid,chlo,ctar,eoil,lye_,nh3_,o2__,oil_,petr,plst,rfpr,rubr" }}
+        {{- range $index, $element := slice $barrel_cargos }}
+        
+        {{ template "articulated_cargo_switch" (dict "element" $element "trailers" $trailers "id" $id "fixed_engine_spriteset" $tanker_spriteset "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+        {{- end}}
+        {{- range $index, $element := slice $drum_cargos }}
+        {{ template "articulated_cargo_switch" (dict "element" $element "trailers" $trailers "id" $id "fixed_engine_spriteset" $tanker_spriteset  "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+
+// DRUMS
+
+//    {{ toupper $element }}: switch_{{$id}}_cargo_drums;
+        {{- end}}
+    {{ else }}
+    {{- range $index, $element := slice $liquid_cargos }}
+
+// TANKER
+    {{ template "articulated_cargo_spriteset" (dict "element" $element "spriteset" "tanker" "trailers" $trailers "id" $id "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+
+//    {{ toupper $element }}: spriteset_{{$id}}_tanker;
+    {{- end}}
+    {{ end }}
+
+    {{- $crate_cargos := "batt,boom,bubl,cera,java,nuts,papr,powr,toys,veng,vpts,plas,mnsp,coat,tyre,mail,good"}}
+    {{- $has_covered_goods := .has_covered_goods }}{{- $no_goods_recolour := .no_goods_recolour }} {{- $skip_crates := or  .has_covered_goods .no_goods_recolour }}
+    {{- if not $skip_crates }}
+    {{- range $index, $element := slice $crate_cargos }}
+
+// ELEMENT
+    {{ template "articulated_cargo_switch" (dict "element" $element "trailers" $trailers "id" $id "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+//  {{ toupper $element }}: switch_{{$id}}_cargo_{{$element}};
+    {{- end}}
+    {{- end}}
+// LIVESTOCK
+
+//    LVST: 
+    {{ if .has_open_livestock }}
+        {{ template "articulated_cargo_switch" (dict "element" "lvst" "trailers" $trailers "id" $id "fixed_engine_spriteset" $livestock_spriteset "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+    {{else}}
+        {{ template "articulated_cargo_spriteset" (dict "element" "lvst" "spriteset" "livestock" "fixed_engine_spriteset" $livestock_spriteset "trailers" $trailers "id" $id "additional_power_units" $additional_power_units "horse_type" $horse_type "engine_sprite" $engine_sprite "engine_carries_load" $engine_carries_load "trailer" $trailer) }}
+    {{end}}
+
+{{end}}
