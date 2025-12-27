@@ -95,5 +95,4 @@ And Finally...
 My thanks to all the people on the OpenTTD forums, 
 IRC channel and Discord who offered suggestions, 
 help and advice while I was creating the set, and
-also to my YouTube subscribers and commenters for
-encouraging me to post development videos.
+also to my YouTube subscribers and commenters.

@@ -10,6 +10,7 @@
     vehicle_life:                   {{.vehicle_life}};
     reliability_decay:              {{.reliability}};
     loading_speed:                  {{.loading_speed}};
+    cargo_age_period:               (185 * cargo_age_multiplier) / 2;
 
     {{- if .is_tram}}
     tram_type:                      {{.roadtype}};

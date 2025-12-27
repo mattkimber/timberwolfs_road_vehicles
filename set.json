@@ -2,7 +2,7 @@
     "grf": {
       "author_id": "TWF",
       "grf_id": 10,
-      "name": "Timberwolf's UK Road Vehicles 3.4.2",
+      "name": "Timberwolf's UK Road Vehicles 3.4.3",
       "description": "Description:{SILVER}A set of vehicles common in the UK, including trucks and buses. Features 2x zoom for all vehicle sprites.{}(c) 2016-2025 Matt Kimber. {}{BLACK}License:{SILVER}CC-BY-SA-3.0",
       "min_compat_version": 1,
       "filename": "timberwolf_uk.nml",
@@ -78,7 +78,17 @@
           "desc": "Enable whimsical silliness and vehicles not normally used for revenue service.",
           "type": "bool",
           "default_value": 1
-      }
+      },
+      {
+          "id": "slower_cargo_aging",
+          "name": "Cargo decay time",
+          "desc": "When using extreme sized maps with slow economy speeds (e.g. in JGRPP) the default cargo payment algorithm does not scale well to long train routes. This parameter allows slowing down cargo payment decay to allow more satisfying gameplay on extreme map sizes. {SILVER}Note:{BLACK} will make the game significantly easier - you may wish to increase running costs to compensate.",
+          "type": "int",
+          "min_value": 0,
+          "max_value": 4,
+          "default_value": 0,
+                "value_names": [ "Normal (1x)", "Savage {RED}(0.5x)", "Relaxed (2x)", "Casual (3x)", "Silly (4x)" ]
+}
       ]
     },
     "static_templates": [
@@ -110,6 +120,9 @@
       },
       {
         "template":  "templates/static/recolour.nml"
+      },
+      {
+        "template": "templates/static/variables.nml"
       }
     ],
     "sprite_templates": [

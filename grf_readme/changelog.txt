@@ -1,3 +1,8 @@
+v3.4.3
+------
+
+Allow modifying cargo aging for extremely large/small maps
+
 v3.4.2
 ------
 
